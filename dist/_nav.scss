@@ -8,5 +8,10 @@ nav {
     list-style-type: none;
     width: 100%;
     margin-top: 1rem;
+
+    li {
+      margin: 0 1rem;
+      border-bottom: 4px solid rgb(189, 1, 139);
+    }
   }
 }

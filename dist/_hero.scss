@@ -1,0 +1,10 @@
+header {
+  min-height: 100vh;
+  background-color: #282733;
+  color: #fff;
+}
+
+.hero {
+  @include flex(space-around, center);
+  min-height: 70vh;
+}

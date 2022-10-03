@@ -27,6 +27,28 @@ nav ul {
   width: 100%;
   margin-top: 1rem;
 }
+nav ul li {
+  margin: 0 1rem;
+  border-bottom: 4px solid rgb(189, 1, 139);
+}
+
+header {
+  min-height: 100vh;
+  background-color: #282733;
+  color: #fff;
+}
+
+.hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 70vh;
+}
 
 * {
   margin: 0;
