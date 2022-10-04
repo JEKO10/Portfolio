@@ -2,9 +2,25 @@ header {
   min-height: 100vh;
   background-color: #282733;
   color: #fff;
+  font-family: "Nunito", sans-serif;
 }
 
 .hero {
-  @include flex(space-around, center);
+  @include flex(space-between, center);
   min-height: 70vh;
+  max-width: 85vw;
+  margin: 0 auto;
+
+  h1 {
+    font-size: 4rem;
+    max-width: 700px;
+
+    span {
+      background: linear-gradient(
+        to top,
+        rgb(189, 1, 139) 1%,
+        rgba(0, 0, 0, 0) 100%
+      );
+    }
+  }
 }

@@ -1,17 +1,25 @@
 nav {
   @include flex(center, center);
   flex-direction: column;
-  padding: 20px 40px;
+  padding: 30px 40px;
 
   ul {
     @include flex(space-around, center);
     list-style-type: none;
     width: 100%;
-    margin-top: 1rem;
 
-    li {
-      margin: 0 1rem;
+    #name {
+      font-weight: 700;
+    }
+
+    li:not(#name) {
       border-bottom: 4px solid rgb(189, 1, 139);
+      font-weight: 800;
+      cursor: pointer;
+
+      // &:last-of-type {
+      //   font-size: 1.5rem;
+      // }
     }
   }
 }
