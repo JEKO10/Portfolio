@@ -13,9 +13,17 @@ nav {
     }
 
     li:not(#name) {
-      border-bottom: 4px solid rgb(189, 1, 139);
+      padding: 0 10px;
       font-weight: 800;
+      line-height: 30px;
+      box-shadow: inset 0 -4px 0 -1px #c3423f;
+      transition: box-shadow 1s ease, color 1.1s ease;
       cursor: pointer;
+
+      &:hover {
+        color: #000;
+        box-shadow: inset 0 -40px 0 -1px #c3423f;
+      }
 
       // &:last-of-type {
       //   font-size: 1.5rem;

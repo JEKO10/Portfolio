@@ -16,11 +16,16 @@ header {
     max-width: 700px;
 
     span {
-      background: linear-gradient(
-        to top,
-        rgb(189, 1, 139) 1%,
-        rgba(0, 0, 0, 0) 100%
-      );
+      color: #c3423f;
+      background: linear-gradient(#c3423f 0 0) 100% / 0 no-repeat;
+      transition: 1s, background-position 0s ease;
+      cursor: pointer;
+
+      &:hover {
+        color: #fff;
+        background: linear-gradient(#c3423f 0 0) 0 / 100% no-repeat;
+        padding: 0 20px;
+      }
     }
   }
 }
