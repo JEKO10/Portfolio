@@ -16,13 +16,13 @@ nav {
       padding: 0 10px;
       font-weight: 800;
       line-height: 30px;
-      box-shadow: inset 0 -4px 0 -1px #c3423f;
+      box-shadow: inset 0 -4px 0 -1px $primaryColor;
       transition: box-shadow 1s ease, color 1.1s ease;
       cursor: pointer;
 
       &:hover {
-        color: #000;
-        box-shadow: inset 0 -40px 0 -1px #c3423f;
+        color: $secondaryColor;
+        box-shadow: inset 0 -40px 0 -1px $primaryColor;
       }
 
       // &:last-of-type {

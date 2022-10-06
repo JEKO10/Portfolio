@@ -1,0 +1,59 @@
+.projects {
+  max-width: 90vw;
+  margin: 0 auto;
+  font-family: $primaryFont;
+  padding: 40px 0;
+
+  h2 {
+    color: $primaryColor;
+  }
+
+  article {
+    @include flex(space-between, center);
+    padding: 3rem 0;
+    border-bottom: 1px solid $primaryColor;
+
+    h2 {
+      font-size: 4rem;
+    }
+
+    p {
+      font-size: 1.3rem;
+      padding: 20px 0;
+    }
+
+    a {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: uppercase;
+      font-weight: 800;
+      text-decoration: none;
+      color: #fff;
+      background-color: $primaryColor;
+      padding: 5px 20px;
+      transition: all 500ms ease;
+
+      i {
+        padding-left: 1rem;
+      }
+
+      &:hover {
+        color: $secondaryColor;
+      }
+    }
+
+    .info {
+      max-width: 30%;
+    }
+
+    .video {
+      max-width: 50%;
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}

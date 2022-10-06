@@ -1,14 +1,14 @@
 header {
   min-height: 100vh;
-  background-color: #282733;
+  background-color: $secondaryColor;
   color: #fff;
-  font-family: "Nunito", sans-serif;
+  font-family: $primaryFont;
 }
 
 .hero {
   @include flex(space-between, center);
   min-height: 70vh;
-  max-width: 85vw;
+  max-width: 80vw;
   margin: 0 auto;
 
   h1 {
@@ -16,15 +16,15 @@ header {
     max-width: 700px;
 
     span {
-      color: #c3423f;
-      background: linear-gradient(#c3423f 0 0) 100% / 0 no-repeat;
+      color: $primaryColor;
+      background: linear-gradient($primaryColor 0 0) 100% / 0 no-repeat;
       transition: 1s, background-position 0s ease;
       cursor: pointer;
 
       &:hover {
         color: #fff;
-        background: linear-gradient(#c3423f 0 0) 0 / 100% no-repeat;
-        padding: 0 20px;
+        background: linear-gradient($primaryColor 0 0) 0 / 100% no-repeat;
+        padding: 0 30px;
       }
     }
   }
