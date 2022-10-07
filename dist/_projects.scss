@@ -19,7 +19,13 @@
 
     p {
       font-size: 1.3rem;
-      padding: 20px 0;
+      padding: 25px 0;
+      letter-spacing: 1px;
+
+      span {
+        color: #02a3a5;
+        font-weight: 700;
+      }
     }
 
     a {
