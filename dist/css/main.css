@@ -69,9 +69,21 @@ header {
   max-width: 80vw;
   margin: 0 auto;
 }
+.hero > div a {
+  font-size: 2rem;
+  color: #c3423f;
+  text-decoration: none;
+  margin-right: 1rem;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+.hero > div a:hover {
+  color: #fff;
+}
 .hero h1 {
   font-size: 4rem;
   max-width: 700px;
+  margin-bottom: 1rem;
 }
 .hero h1 span {
   color: #c3423f;

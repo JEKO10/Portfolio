@@ -11,9 +11,24 @@ header {
   max-width: 80vw;
   margin: 0 auto;
 
+  > div {
+    a {
+      font-size: 2rem;
+      color: $primaryColor;
+      text-decoration: none;
+      margin-right: 1rem;
+      transition: all 500ms ease;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
   h1 {
     font-size: 4rem;
     max-width: 700px;
+    margin-bottom: 1rem;
 
     span {
       color: $primaryColor;
