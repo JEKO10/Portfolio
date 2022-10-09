@@ -12,6 +12,8 @@ header {
   margin: 0 auto;
 
   > div {
+    margin-bottom: 2rem;
+
     a {
       font-size: 2rem;
       color: $primaryColor;
@@ -21,6 +23,19 @@ header {
 
       &:hover {
         color: #fff;
+      }
+    }
+
+    p {
+      font-size: 1.3rem;
+      max-width: 550px;
+      letter-spacing: 1px;
+      line-height: 35px;
+      margin-top: 1.5rem;
+      color: rgba(255, 255, 255, 0.6);
+
+      span {
+        color: rgba(255, 255, 255, 1);
       }
     }
   }

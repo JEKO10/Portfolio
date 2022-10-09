@@ -69,6 +69,9 @@ header {
   max-width: 80vw;
   margin: 0 auto;
 }
+.hero > div {
+  margin-bottom: 2rem;
+}
 .hero > div a {
   font-size: 2rem;
   color: #c3423f;
@@ -79,6 +82,17 @@ header {
 }
 .hero > div a:hover {
   color: #fff;
+}
+.hero > div p {
+  font-size: 1.3rem;
+  max-width: 550px;
+  letter-spacing: 1px;
+  line-height: 35px;
+  margin-top: 1.5rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+.hero > div p span {
+  color: rgb(255, 255, 255);
 }
 .hero h1 {
   font-size: 4rem;
