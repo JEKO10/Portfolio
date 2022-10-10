@@ -65,7 +65,7 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: 70vh;
+  min-height: 85vh;
   max-width: 80vw;
   margin: 0 auto;
 }
@@ -189,4 +189,18 @@ header {
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #121217;
+}
+::-webkit-scrollbar-thumb {
+  background: #c3423f;
+  border-radius: 20px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7f2a29;
 }/*# sourceMappingURL=main.css.map */
