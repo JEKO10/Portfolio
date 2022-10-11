@@ -1,0 +1,23 @@
+.aboutMe {
+  background-color: #121217;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%23351c1f' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%23592527' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%237c2f2f' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%23a03837' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%23C3423F' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: cover;
+  color: #fff;
+  font-family: $primaryFont;
+
+  > div {
+    max-width: 90vw;
+    margin: 0 auto;
+  }
+
+  article {
+    @include flex(space-between, center);
+    height: 95vh;
+
+    p {
+      font-size: 1.3rem;
+      max-width: 730px;
+      line-height: 30px;
+    }
+  }
+}
