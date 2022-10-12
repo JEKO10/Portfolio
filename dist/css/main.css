@@ -213,6 +213,51 @@ header {
   line-height: 30px;
 }
 
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 100px 50px;
+  background: #121217;
+  color: #fff;
+  font-family: "Nunito", sans-serif;
+}
+footer ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style-type: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #c3423f;
+  font-weight: 900;
+}
+footer a {
+  font-size: 2rem;
+  color: #c3423f;
+  text-decoration: none;
+  margin-right: 1rem;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+footer a:hover {
+  color: #fff;
+}
+
 * {
   margin: 0;
   padding: 0;

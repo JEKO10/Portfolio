@@ -1,0 +1,27 @@
+footer {
+  @include flex(space-between, center);
+  padding: 100px 50px;
+  background: $secondaryColor;
+  color: #fff;
+  font-family: $primaryFont;
+
+  ul {
+    @include flex(space-between, center);
+    list-style-type: none;
+    flex-direction: column;
+    color: $primaryColor;
+    font-weight: 900;
+  }
+
+  a {
+    font-size: 2rem;
+    color: $primaryColor;
+    text-decoration: none;
+    margin-right: 1rem;
+    transition: all 500ms ease;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
