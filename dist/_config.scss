@@ -3,6 +3,7 @@
 $primaryColor: #c3423f;
 $secondaryColor: #121217;
 $primaryFont: "Nunito", sans-serif;
+$defaultTransition: all 500ms ease;
 
 @mixin flex($justify, $align) {
   display: flex;

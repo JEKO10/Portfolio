@@ -1,16 +1,27 @@
 footer {
   @include flex(space-between, center);
-  padding: 100px 50px;
+  padding: 80px 70px;
   background: $secondaryColor;
   color: #fff;
   font-family: $primaryFont;
 
   ul {
-    @include flex(space-between, center);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px 30px;
     list-style-type: none;
-    flex-direction: column;
     color: $primaryColor;
-    font-weight: 900;
+
+    li {
+      font-size: 1.2rem;
+      font-weight: 900;
+      transition: $defaultTransition;
+      cursor: pointer;
+
+      &:hover {
+        color: #fff;
+      }
+    }
   }
 
   a {
@@ -18,7 +29,7 @@ footer {
     color: $primaryColor;
     text-decoration: none;
     margin-right: 1rem;
-    transition: all 500ms ease;
+    transition: $defaultTransition;
 
     &:hover {
       color: #fff;

@@ -19,7 +19,7 @@ header {
       color: $primaryColor;
       text-decoration: none;
       margin-right: 1rem;
-      transition: all 500ms ease;
+      transition: $defaultTransition;
 
       &:hover {
         color: #fff;
