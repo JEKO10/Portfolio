@@ -1,0 +1,14 @@
+.contact {
+  min-height: 90vh;
+  max-width: 90vw;
+  margin: 0 auto;
+  font-family: $primaryFont;
+
+  h2 {
+    color: $primaryColor;
+  }
+
+  img {
+    height: 500px;
+  }
+}
