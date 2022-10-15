@@ -1,6 +1,6 @@
 .projects {
   max-width: 90vw;
-  margin: 0 auto 3rem;
+  margin: 0 auto;
   font-family: $primaryFont;
   padding: 40px 0;
   // background-color: $primaryColor;
@@ -40,6 +40,7 @@
       background-color: $primaryColor;
       padding: 5px 20px;
       transition: $defaultTransition;
+      cursor: pointer;
 
       i {
         padding-left: 1rem;

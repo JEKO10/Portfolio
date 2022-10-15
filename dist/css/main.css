@@ -116,7 +116,7 @@ header {
 
 .projects {
   max-width: 90vw;
-  margin: 0 auto 3rem;
+  margin: 0 auto;
   font-family: "Nunito", sans-serif;
   padding: 40px 0;
 }
@@ -166,6 +166,7 @@ header {
   padding: 5px 20px;
   -webkit-transition: all 500ms ease;
   transition: all 500ms ease;
+  cursor: pointer;
 }
 .projects article a i {
   padding-left: 1rem;
@@ -214,13 +215,91 @@ header {
 }
 
 .contact {
-  min-height: 90vh;
   max-width: 90vw;
   margin: 0 auto;
-  font-family: "Nunito", sans-serif;
+  padding: 1rem 0;
 }
 .contact h2 {
   color: #c3423f;
+  font-family: "Nunito", sans-serif;
+}
+.contact > article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.contact form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+.contact form input {
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: "Nunito", sans-serif;
+  padding: 10px 15px;
+  width: 100%;
+  margin: 0.5rem 0;
+  border: 2px solid #c3423f;
+  border-radius: 5px;
+  color: #c3423f;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+.contact form input::-webkit-input-placeholder {
+  color: #c3423f;
+}
+.contact form input::-moz-placeholder {
+  color: #c3423f;
+}
+.contact form input:-ms-input-placeholder {
+  color: #c3423f;
+}
+.contact form input::-ms-input-placeholder {
+  color: #c3423f;
+}
+.contact form input::placeholder {
+  color: #c3423f;
+}
+.contact form input:focus {
+  outline: none;
+  -webkit-box-shadow: -3px 2px 0px 1px #c3423f;
+          box-shadow: -3px 2px 0px 1px #c3423f;
+}
+.contact form button {
+  color: #fff;
+  background-color: #c3423f;
+  font-family: "Nunito", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 0.5rem;
+  padding: 10px 30px;
+  border-radius: 5px;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+  cursor: pointer;
+}
+.contact form button:hover, .contact form button:focus {
+  outline: none;
+  -webkit-box-shadow: -3px 2px 1px 1px #c3423f;
+          box-shadow: -3px 2px 1px 1px #c3423f;
 }
 .contact img {
   height: 500px;
