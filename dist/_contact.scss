@@ -17,7 +17,8 @@
     flex-direction: column;
     width: 100%;
 
-    input {
+    input,
+    textarea {
       font-size: 1rem;
       font-weight: 700;
       font-family: $primaryFont;
@@ -28,6 +29,8 @@
       border-radius: 5px;
       color: $primaryColor;
       transition: $defaultTransition;
+      resize: vertical;
+      max-height: 200px;
 
       &::placeholder {
         color: $primaryColor;
