@@ -36,6 +36,10 @@
         color: $primaryColor;
       }
 
+      &:hover {
+        box-shadow: -3px 2px 15px 1px $primaryColor;
+      }
+
       &:focus {
         outline: none;
         box-shadow: -3px 2px 0px 1px $primaryColor;
