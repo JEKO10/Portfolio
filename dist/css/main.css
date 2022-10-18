@@ -208,6 +208,27 @@ header {
           align-items: center;
   height: 95vh;
 }
+.aboutMe article h2 {
+  font-weight: 500;
+}
+.aboutMe article ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style-type: none;
+  margin: 2rem 0;
+  gap: 20px;
+}
+.aboutMe article ul li {
+  background-color: #c3423f;
+  padding: 5px 10px;
+}
 .aboutMe article p {
   font-size: 1.3rem;
   max-width: 730px;

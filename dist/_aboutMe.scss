@@ -14,6 +14,22 @@
     @include flex(space-between, center);
     height: 95vh;
 
+    h2 {
+      font-weight: 500;
+    }
+
+    ul {
+      @include flex(flex-start, center);
+      list-style-type: none;
+      margin: 2rem 0;
+      gap: 20px;
+
+      li {
+        background-color: $primaryColor;
+        padding: 5px 10px;
+      }
+    }
+
     p {
       font-size: 1.3rem;
       max-width: 730px;
