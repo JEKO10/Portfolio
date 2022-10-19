@@ -35,5 +35,18 @@
       max-width: 730px;
       line-height: 30px;
     }
+
+    img {
+      animation: rotating 1s cubic-bezier(0, 1, 1, 1) alternate infinite;
+    }
+  }
+}
+
+@keyframes rotating {
+  from {
+    transform: translateY(0) rotate(0deg);
+  }
+  to {
+    transform: translateY(-25px) rotate(360deg);
   }
 }

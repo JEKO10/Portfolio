@@ -234,7 +234,32 @@ header {
   max-width: 730px;
   line-height: 30px;
 }
+.aboutMe article img {
+  -webkit-animation: rotating 1s cubic-bezier(0, 1, 1, 1) alternate infinite;
+          animation: rotating 1s cubic-bezier(0, 1, 1, 1) alternate infinite;
+}
 
+@-webkit-keyframes rotating {
+  from {
+    -webkit-transform: translateY(0) rotate(0deg);
+            transform: translateY(0) rotate(0deg);
+  }
+  to {
+    -webkit-transform: translateY(-25px) rotate(360deg);
+            transform: translateY(-25px) rotate(360deg);
+  }
+}
+
+@keyframes rotating {
+  from {
+    -webkit-transform: translateY(0) rotate(0deg);
+            transform: translateY(0) rotate(0deg);
+  }
+  to {
+    -webkit-transform: translateY(-25px) rotate(360deg);
+            transform: translateY(-25px) rotate(360deg);
+  }
+}
 .contact {
   max-width: 90vw;
   margin: 0 auto;
