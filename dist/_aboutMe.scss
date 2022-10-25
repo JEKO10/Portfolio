@@ -8,6 +8,11 @@
   > div {
     max-width: 90vw;
     margin: 0 auto;
+
+    img {
+      animation: rotating 1s cubic-bezier(0, 1, 1, 1) alternate infinite;
+      margin-left: 0.5rem;
+    }
   }
 
   article {
@@ -34,17 +39,14 @@
       font-size: 1.3rem;
       max-width: 730px;
       line-height: 30px;
-    }
-
-    img {
-      animation: rotating 1s cubic-bezier(0, 1, 1, 1) alternate infinite;
+      letter-spacing: 1px;
     }
   }
 }
 
 @keyframes rotating {
   from {
-    transform: translateY(0) rotate(0deg);
+    transform: translateY(10px) rotate(0deg);
   }
   to {
     transform: translateY(-25px) rotate(360deg);
