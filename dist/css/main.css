@@ -29,8 +29,10 @@ nav ul {
 }
 nav ul #name {
   font-weight: 700;
+  color: #fff;
+  text-decoration: none;
 }
-nav ul a {
+nav ul a:not(#name) {
   color: #fff;
   text-decoration: none;
   padding: 3px 10px;
@@ -44,7 +46,7 @@ nav ul a {
   transition: box-shadow 1s ease, color 1.1s ease, -webkit-box-shadow 1s ease;
   cursor: pointer;
 }
-nav ul a:hover {
+nav ul a:not(#name):hover {
   color: #121217;
   -webkit-box-shadow: inset 0 -40px 0 -1px #c3423f;
           box-shadow: inset 0 -40px 0 -1px #c3423f;
@@ -378,6 +380,25 @@ header {
 }
 .contact img {
   height: 500px;
+}
+
+.aboutHero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.aboutHero img {
+  height: 600px;
 }
 
 footer {

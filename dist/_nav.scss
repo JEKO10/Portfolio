@@ -10,9 +10,11 @@ nav {
 
     #name {
       font-weight: 700;
+      color: #fff;
+      text-decoration: none;
     }
 
-    a {
+    a:not(#name) {
       color: #fff;
       text-decoration: none;
       padding: 3px 10px;
@@ -26,10 +28,6 @@ nav {
         color: $secondaryColor;
         box-shadow: inset 0 -40px 0 -1px $primaryColor;
       }
-
-      // &:last-of-type {
-      //   font-size: 1.5rem;
-      // }
     }
   }
 }
