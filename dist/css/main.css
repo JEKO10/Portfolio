@@ -109,7 +109,7 @@ header {
   background: linear-gradient(#c3423f 0 0) 100%/0 no-repeat;
   -webkit-transition: 1s, background-position 0s ease;
   transition: 1s, background-position 0s ease;
-  cursor: pointer;
+  cursor: default;
 }
 .hero h1 span:hover {
   color: #fff;
@@ -123,8 +123,10 @@ header {
   margin: 0 auto;
   font-family: "Nunito", sans-serif;
   padding: 40px 0;
+  border-top: 5px solid #c3423f;
 }
-.projects h2 {
+.projects > h2 {
+  font-size: 2rem;
   color: #c3423f;
 }
 .projects article {
@@ -137,11 +139,12 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 3rem 0;
+  padding: 5rem 0;
   border-bottom: 1px solid #c3423f;
 }
 .projects article h2 {
   font-size: 4rem;
+  color: #c3423f;
 }
 .projects article p {
   font-size: 1.3rem;
@@ -152,7 +155,10 @@ header {
   color: #02a3a5;
   font-weight: 700;
 }
-.projects article a {
+.projects article .info {
+  max-width: 30%;
+}
+.projects article .info a {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -172,21 +178,43 @@ header {
   transition: all 500ms ease;
   cursor: pointer;
 }
-.projects article a i {
+.projects article .info a i {
   padding-left: 1rem;
 }
-.projects article a:hover {
+.projects article .info a:hover {
   color: #121217;
 }
-.projects article .info {
-  max-width: 30%;
-}
 .projects article .video {
-  max-width: 50%;
+  width: 55%;
 }
-.projects article .video img {
-  height: 100%;
+.projects article .video a {
+  display: block;
+  position: relative;
+  padding-top: 63.9658%;
+}
+.projects article .video a video {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+  border: 5px solid #c3423f;
+  border-radius: 15px;
+  -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+.projects article .video a img {
+  position: absolute;
+  left: 0;
+  bottom: -2rem;
+  -webkit-transform: translateX(-60%);
+          transform: translateX(-60%);
+  max-width: 40%;
+}
+.projects article .video a img#fitness {
+  bottom: -3rem;
 }
 
 .aboutMe {
@@ -200,6 +228,7 @@ header {
 }
 .aboutMe > div > h2 {
   font-size: 2.5rem;
+  color: #c3423f;
 }
 .aboutMe > div img {
   -webkit-animation: rotating 1s cubic-bezier(0, 1, 1, 1) alternate infinite;

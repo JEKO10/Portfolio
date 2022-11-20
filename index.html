@@ -93,10 +93,15 @@
           <a href="#">Learn More <i class="fa-solid fa-angles-right"></i></a>
         </div>
         <div class="video">
-          <img src="./images/black.jpg" alt="video" />
+          <a href="">
+            <video playsinline muted loop autoplay>
+              <source src="./images/vid.mkv" type="video/mp4" />
+            </video>
+            <img src="./images/walkmate.png" alt="IMG" />
+          </a>
         </div>
       </article>
-      <article>
+      <!-- <article>
         <div class="info">
           <h2>Audiophile E-commerce</h2>
           <p>
@@ -108,8 +113,8 @@
         <div class="video">
           <img src="./images/black.jpg" alt="video" />
         </div>
-      </article>
-      <article>
+      </article> -->
+      <!-- <article>
         <div class="info">
           <h2>Museum</h2>
           <p>
@@ -120,10 +125,10 @@
         <div class="video">
           <img src="./images/black.jpg" alt="video" />
         </div>
-      </article>
+      </article> -->
       <article>
         <div class="info">
-          <h2>Fitness-Exercises</h2>
+          <h2>Fitness exercises</h2>
           <p>
             React application with two separate APIs! Modern designed
             application with a large selection of exercises!
@@ -131,12 +136,17 @@
           <a href="#">Learn More <i class="fa-solid fa-angles-right"></i></a>
         </div>
         <div class="video">
-          <img src="./images/black.jpg" alt="video" />
+          <a href="">
+            <video playsinline muted loop autoplay>
+              <source src="./images/vid.mkv" type="video/mp4" />
+            </video>
+            <img src="./images/fitness.png" alt="IMG" id="fitness" />
+          </a>
         </div>
       </article>
       <article>
         <div class="info">
-          <h2>Travel-advisor</h2>
+          <h2>Travel advisor</h2>
           <p>
             An advanced Travel Advisor using Leaflet map. Searching for places,
             restaurants, hotels and attractions based on location, data
@@ -145,12 +155,17 @@
           <a href="#">Learn More <i class="fa-solid fa-angles-right"></i></a>
         </div>
         <div class="video">
-          <img src="./images/black.jpg" alt="video" />
+          <a href="">
+            <video playsinline muted loop autoplay>
+              <source src="./images/vid.mkv" type="video/mp4" />
+            </video>
+            <img src="./images/malkmate.png" alt="IMG" />
+          </a>
         </div>
       </article>
       <article>
         <div class="info">
-          <h2>IP-Address-Tracker</h2>
+          <h2>IP address tracker</h2>
           <p>
             This is a solution to the IP address tracker challenge on Frontend
             Mentor. This project allows you to find location of given IP
@@ -159,12 +174,17 @@
           <a href="#">Learn More <i class="fa-solid fa-angles-right"></i></a>
         </div>
         <div class="video">
-          <img src="./images/black.jpg" alt="video" />
+          <a href="">
+            <video playsinline muted loop autoplay>
+              <source src="./images/vid.mkv" type="video/mp4" />
+            </video>
+            <img src="./images/malkmate.png" alt="IMG" />
+          </a>
         </div>
       </article>
       <article>
         <div class="info">
-          <h2>Voice-translator</h2>
+          <h2>Voice & text translate</h2>
           <p>
             Translator made with multiple APIs. Voice translator is using Alan
             AI - a complete voice AI platform for in-app voice assistants.
@@ -172,12 +192,17 @@
           <a href="#">Learn More <i class="fa-solid fa-angles-right"></i></a>
         </div>
         <div class="video">
-          <img src="./images/black.jpg" alt="video" />
+          <a href="">
+            <video playsinline muted loop autoplay>
+              <source src="./images/vid.mkv" type="video/mp4" />
+            </video>
+            <img src="./images/malkmate.png" alt="IMG" />
+          </a>
         </div>
       </article>
       <article>
         <div class="info">
-          <h2>Galleria-slideshow</h2>
+          <h2>Galleria slideshow</h2>
           <p>
             Another beautifully styled project based on famous art pictures.
             This website helps users to inform about art, artists and much more!
@@ -188,23 +213,41 @@
           </a>
         </div>
         <div class="video">
-          <img src="./images/black.jpg" alt="video" />
+          <a href="">
+            <video playsinline muted loop autoplay>
+              <source src="./images/vid.mkv" type="video/mp4" />
+            </video>
+            <img src="./images/malkmate.png" alt="IMG" />
+          </a>
         </div>
       </article>
     </section>
     <section class="contact" id="contact">
       <h2>Get in touch</h2>
       <article>
-        <form action="contact.php" method="POST" class="form">
-          <input type="text" placeholder="Type your name" />
-          <input type="email" placeholder="Email address" />
+        <form method="post" action="contact.php" class="form">
+          <input
+            type="name"
+            name="name"
+            id="name"
+            placeholder="Type your name"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email address"
+            required
+          />
           <textarea
             name="message"
             placeholder="Your message"
             rows="1"
             id="message"
+            required
           ></textarea>
-          <button type="submit" id="submit">Send</button>
+          <button id="submit">Send</button>
         </form>
         <img src="./images/contact.svg" alt="IMG" />
       </article>
