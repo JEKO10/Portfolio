@@ -186,6 +186,21 @@ header {
 }
 .projects article .video {
   width: 55%;
+  position: relative;
+  isolation: isolate;
+}
+.projects article .video::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  bottom: 1px;
+  height: 8px;
+  border-radius: 25px;
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
+  background-color: #000;
+  z-index: -1;
 }
 .projects article .video a {
   display: block;
@@ -202,15 +217,13 @@ header {
      object-fit: fill;
   border: 5px solid #c3423f;
   border-radius: 15px;
-  -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 .projects article .video a img {
   position: absolute;
   left: 0;
   bottom: -2rem;
-  -webkit-transform: translateX(-60%);
-          transform: translateX(-60%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   max-width: 40%;
 }
 .projects article .video a img#fitness {
