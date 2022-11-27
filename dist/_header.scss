@@ -1,6 +1,6 @@
 header {
   height: 150vh;
   background: url("../../images/bg.png") center;
-  background-blend-mode: overlay;
-  font-family: "Big Shoulders Display", cursive;
+  // background-blend-mode: overlay;
+  font-family: $primaryFont;
 }

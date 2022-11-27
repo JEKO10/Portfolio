@@ -2,8 +2,53 @@
 header {
   height: 150vh;
   background: url("../../images/bg.png") center;
-  background-blend-mode: overlay;
   font-family: "Big Shoulders Display", cursive;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 25px 40px;
+}
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style-type: none;
+  width: 100%;
+}
+nav ul a {
+  font-size: 1.2rem;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-weight: 600;
+  line-height: 30px;
+  padding: 5px 10px;
+  -webkit-box-shadow: inset 0 -4px 0 -1px #fff;
+          box-shadow: inset 0 -4px 0 -1px #fff;
+  -webkit-transition: color 1.1s ease, -webkit-box-shadow 1s ease;
+  transition: color 1.1s ease, -webkit-box-shadow 1s ease;
+  transition: box-shadow 1s ease, color 1.1s ease;
+  transition: box-shadow 1s ease, color 1.1s ease, -webkit-box-shadow 1s ease;
+  cursor: pointer;
+}
+nav ul a:hover {
+  color: #0e121a;
+  -webkit-box-shadow: inset 0 -40px 0 -1px #fff;
+          box-shadow: inset 0 -40px 0 -1px #fff;
 }
 
 * {

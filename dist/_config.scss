@@ -1,1 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+$primaryColor: #0e121a;
+$secondaryColor: #0000ff;
+$primaryFont: "Big Shoulders Display", cursive;
+$defaultTransition: all 500ms ease;
+
+@mixin flex($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
