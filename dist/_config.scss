@@ -1,12 +1,1 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap");
-
-$primaryColor: #c3423f;
-$secondaryColor: #121217;
-$primaryFont: "Nunito", sans-serif;
-$defaultTransition: all 500ms ease;
-
-@mixin flex($justify, $align) {
-  display: flex;
-  justify-content: $justify;
-  align-items: $align;
-}
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100;200;300;400;500;600;700;800;900&display=swap");
