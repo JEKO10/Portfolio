@@ -1,0 +1,131 @@
+.hero {
+  @include flex(space-between, center);
+  height: 50%;
+  max-width: 95vw;
+  margin: 0 auto 10rem;
+
+  h1 {
+    color: rgb(255, 255, 255);
+    font-size: 4rem;
+    background-image: linear-gradient(90deg, #5ed3f3, blue);
+    background-size: 0% 3px;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    background-position: left top;
+    display: inline;
+    cursor: default;
+    animation: name 5s 1.5s ease;
+    transition: 1s background-size ease;
+
+    &:hover {
+      background-size: 100% 3px;
+    }
+  }
+
+  p {
+    font-size: 1.7rem;
+    color: #dcdcdc;
+    max-width: 650px;
+    line-height: 40px;
+    letter-spacing: 1px;
+  }
+
+  button {
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: transparent;
+    font-family: "Big Shoulders Display", cursive;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+    position: relative;
+    background-image: linear-gradient(to top, #fff 50%, rgba(0, 0, 0, 0) 50%);
+    background-size: 150% 200%;
+    background-position: top;
+    border: 2.5px solid #fff;
+    margin-top: 2rem;
+    padding: 10px 50px;
+    cursor: pointer;
+    transition: all 500ms ease;
+    animation: button 1.5s ease;
+
+    &:hover {
+      background-position: bottom;
+      color: #000;
+    }
+
+    &::before {
+      content: "";
+      height: 4px;
+      width: 40px;
+      /* background-color: #5ed3f3; */
+      background-color: #0000ff;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -1rem;
+      border-radius: 10px;
+      animation: buttonBefore 3s ease;
+    }
+  }
+
+  #me {
+    position: absolute;
+    top: 9%;
+    right: 3rem;
+  }
+
+  ul {
+    list-style-type: none;
+
+    li {
+      margin: 20px 0;
+
+      a {
+        color: #dcdcdc;
+        font-size: 1.5rem;
+        transition: all 500ms ease;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+@keyframes name {
+  0% {
+    background-size: 0% 3px;
+  }
+
+  50% {
+    background-size: 100% 3px;
+  }
+
+  100% {
+    background-size: 0% 3px;
+  }
+}
+
+@keyframes button {
+  from {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes buttonBefore {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 40px;
+  }
+}

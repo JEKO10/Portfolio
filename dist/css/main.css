@@ -51,6 +51,171 @@ nav ul a:hover {
           box-shadow: inset 0 -40px 0 -1px #fff;
 }
 
+.hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 50%;
+  max-width: 95vw;
+  margin: 0 auto 10rem;
+}
+.hero h1 {
+  color: rgb(255, 255, 255);
+  font-size: 4rem;
+  background-image: -webkit-gradient(linear, left top, right top, from(#5ed3f3), to(blue));
+  background-image: linear-gradient(90deg, #5ed3f3, blue);
+  background-size: 0% 3px;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  background-position: left top;
+  display: inline;
+  cursor: default;
+  -webkit-animation: name 5s 1.5s ease;
+          animation: name 5s 1.5s ease;
+  -webkit-transition: 1s background-size ease;
+  transition: 1s background-size ease;
+}
+.hero h1:hover {
+  background-size: 100% 3px;
+}
+.hero p {
+  font-size: 1.7rem;
+  color: #dcdcdc;
+  max-width: 650px;
+  line-height: 40px;
+  letter-spacing: 1px;
+}
+.hero button {
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: transparent;
+  font-family: "Big Shoulders Display", cursive;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 2px;
+  position: relative;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(50%, #fff), color-stop(50%, rgba(0, 0, 0, 0)));
+  background-image: linear-gradient(to top, #fff 50%, rgba(0, 0, 0, 0) 50%);
+  background-size: 150% 200%;
+  background-position: top;
+  border: 2.5px solid #fff;
+  margin-top: 2rem;
+  padding: 10px 50px;
+  cursor: pointer;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+  -webkit-animation: button 1.5s ease;
+          animation: button 1.5s ease;
+}
+.hero button:hover {
+  background-position: bottom;
+  color: #000;
+}
+.hero button::before {
+  content: "";
+  height: 4px;
+  width: 40px;
+  /* background-color: #5ed3f3; */
+  background-color: #0000ff;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: -1rem;
+  border-radius: 10px;
+  -webkit-animation: buttonBefore 3s ease;
+          animation: buttonBefore 3s ease;
+}
+.hero #me {
+  position: absolute;
+  top: 9%;
+  right: 3rem;
+}
+.hero ul {
+  list-style-type: none;
+}
+.hero ul li {
+  margin: 20px 0;
+}
+.hero ul li a {
+  color: #dcdcdc;
+  font-size: 1.5rem;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+.hero ul li a:hover {
+  color: #fff;
+}
+
+@-webkit-keyframes name {
+  0% {
+    background-size: 0% 3px;
+  }
+  50% {
+    background-size: 100% 3px;
+  }
+  100% {
+    background-size: 0% 3px;
+  }
+}
+
+@keyframes name {
+  0% {
+    background-size: 0% 3px;
+  }
+  50% {
+    background-size: 100% 3px;
+  }
+  100% {
+    background-size: 0% 3px;
+  }
+}
+@-webkit-keyframes button {
+  from {
+    -webkit-transform: translateX(-30px);
+            transform: translateX(-30px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes button {
+  from {
+    -webkit-transform: translateX(-30px);
+            transform: translateX(-30px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes buttonBefore {
+  from {
+    width: 0;
+  }
+  to {
+    width: 40px;
+  }
+}
+@keyframes buttonBefore {
+  from {
+    width: 0;
+  }
+  to {
+    width: 40px;
+  }
+}
 * {
   margin: 0;
   padding: 0;
