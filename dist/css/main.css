@@ -216,9 +216,54 @@ nav ul a:hover {
     width: 40px;
   }
 }
+.about {
+  color: #fff;
+  font-family: "Big Shoulders Display", cursive;
+}
+.about > div {
+  max-width: 80vw;
+  margin: 0 auto;
+}
+.about h2 {
+  font-size: 4rem;
+  text-transform: capitalize;
+}
+.about p {
+  font-size: 2rem;
+  line-height: 40px;
+  letter-spacing: 1px;
+  font-weight: 300;
+  padding: 2rem 0 1rem;
+  color: #dcdcdc;
+}
+.about ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style-type: none;
+  margin: 1rem 0;
+  gap: 20px;
+}
+.about ul li {
+  background-color: #000;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 1.5rem;
+}
+
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+body {
+  background-color: #0e121a;
 }/*# sourceMappingURL=main.css.map */

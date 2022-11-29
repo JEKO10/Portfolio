@@ -1,0 +1,37 @@
+.about {
+  color: #fff;
+  font-family: "Big Shoulders Display", cursive;
+
+  > div {
+    max-width: 80vw;
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-size: 4rem;
+    text-transform: capitalize;
+  }
+
+  p {
+    font-size: 2rem;
+    line-height: 40px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    padding: 2rem 0 1rem;
+    color: $paragraphColor;
+  }
+
+  ul {
+    @include flex(space-between, center);
+    list-style-type: none;
+    margin: 1rem 0;
+    gap: 20px;
+
+    li {
+      background-color: #000;
+      color: #fff;
+      padding: 5px 10px;
+      font-size: 1.5rem;
+    }
+  }
+}
