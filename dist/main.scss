@@ -9,3 +9,22 @@
 body {
   background-color: #0e121a;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+
+  &-track {
+    // background: #fd8c8a;
+    background: #2f3032;
+  }
+
+  &-thumb {
+    background: $secondaryColor;
+    border-radius: 20px;
+    transition: all 500ms ease;
+
+    &:hover {
+      background: #000081;
+    }
+  }
+}
