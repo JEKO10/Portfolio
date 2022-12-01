@@ -257,6 +257,54 @@ nav ul a:hover {
   font-size: 1.5rem;
 }
 
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 40px;
+  background: #41454e;
+  font-family: "Big Shoulders Display", cursive;
+  color: #fff;
+}
+footer ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px 30px;
+  list-style-type: none;
+}
+footer ul li {
+  color: #dcdcdc;
+  font-size: 1.2rem;
+  font-weight: 900;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+  cursor: pointer;
+}
+footer ul li:hover {
+  color: #fff;
+}
+footer ul li a {
+  color: #dcdcdc;
+  font-size: 1.5rem;
+  text-decoration: none;
+  margin-right: 1rem;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+footer ul li a:hover {
+  color: #fff;
+}
+footer h2 {
+  font-size: 2rem;
+  letter-spacing: 3px;
+}
+
 * {
   margin: 0;
   padding: 0;

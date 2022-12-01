@@ -1,0 +1,43 @@
+footer {
+  @include flex(space-between, center);
+  padding: 40px;
+  background: #41454e;
+  font-family: $primaryFont;
+  color: #fff;
+
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px 30px;
+    list-style-type: none;
+
+    li {
+      color: $paragraphColor;
+      font-size: 1.2rem;
+      font-weight: 900;
+      transition: $defaultTransition;
+      cursor: pointer;
+
+      &:hover {
+        color: #fff;
+      }
+
+      a {
+        color: $paragraphColor;
+        font-size: 1.5rem;
+        text-decoration: none;
+        margin-right: 1rem;
+        transition: $defaultTransition;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  h2 {
+    font-size: 2rem;
+    letter-spacing: 3px;
+  }
+}
