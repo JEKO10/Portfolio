@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #0e121a;
 }
@@ -15,16 +19,31 @@ body {
 
   &-track {
     // background: #fd8c8a;
-    background: #2f3032;
+    background: #363636;
   }
 
   &-thumb {
-    background: $secondaryColor;
+    background: #626262;
     border-radius: 20px;
     transition: all 500ms ease;
 
     &:hover {
-      background: #000081;
+      background: #4f4f4f;
     }
   }
+}
+
+#title {
+  font-size: 4rem;
+  width: max-content;
+  max-width: 100%;
+  background: linear-gradient(
+    121.57deg,
+    #ffffff 18.77%,
+    rgba(255, 255, 255, 0.66) 60.15%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: capitalize;
 }

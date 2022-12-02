@@ -1,6 +1,8 @@
 .about {
-  color: #fff;
-  font-family: "Big Shoulders Display", cursive;
+  height: 450px;
+  font-family: $primaryFont;
+  background: url("../../images/about.png") center no-repeat;
+  background-size: 100% 100%;
 
   > div {
     max-width: 80vw;
@@ -28,10 +30,11 @@
     gap: 20px;
 
     li {
-      background-color: #000;
-      color: #fff;
+      background-color: $paragraphColor;
+      color: $primaryColor;
       padding: 5px 10px;
       font-size: 1.5rem;
+      font-weight: 600;
     }
   }
 }
