@@ -1,0 +1,34 @@
+.projects {
+  max-width: 95vw;
+  margin: 0 auto;
+  padding: 40px 0;
+  font-family: $primaryFont;
+
+  article {
+    @include flex(space-between, center);
+    padding: 5rem 0;
+    border-bottom: 1px solid $secondaryColor;
+
+    .info {
+      max-width: 40%;
+    }
+
+    h2 {
+      font-size: 4rem;
+      color: $secondaryColor;
+    }
+
+    p {
+      font-size: 1.8rem;
+      padding: 25px 0;
+      letter-spacing: 1.5px;
+      line-height: 40px;
+      color: $paragraphColor;
+
+      span {
+        color: #02a3a5;
+        font-weight: 700;
+      }
+    }
+  }
+}
