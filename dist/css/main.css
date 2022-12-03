@@ -298,6 +298,38 @@ nav ul a:hover {
   color: #02a3a5;
   font-weight: 700;
 }
+.projects article a {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  text-decoration: none;
+  color: #fff;
+  background-color: #0000ff;
+  padding: 10px 30px;
+  margin-top: 2rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+.projects article a i {
+  padding-left: 10px;
+}
+.projects article .workImg {
+  width: 55%;
+}
+.projects article .workImg img {
+  border: 4px solid #0000ff;
+  border-radius: 15px;
+  width: 100%;
+}
 
 footer {
   display: -webkit-box;
