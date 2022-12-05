@@ -11,6 +11,22 @@
 
     .info {
       max-width: 40%;
+
+      a {
+        font-size: 1.3rem;
+        text-transform: uppercase;
+        font-weight: 800;
+        text-decoration: none;
+        color: #fff;
+        background-color: $secondaryColor;
+        padding: 10px 30px;
+        letter-spacing: 2px;
+        cursor: pointer;
+
+        i {
+          padding-left: 10px;
+        }
+      }
     }
 
     h2 {
@@ -26,28 +42,8 @@
       color: $paragraphColor;
 
       span {
-        color: #02a3a5;
+        color: #01a3a5;
         font-weight: 700;
-      }
-    }
-
-    a {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 1.3rem;
-      text-transform: uppercase;
-      font-weight: 800;
-      text-decoration: none;
-      color: #fff;
-      background-color: $secondaryColor;
-      padding: 10px 30px;
-      margin-top: 2rem;
-      letter-spacing: 2px;
-      cursor: pointer;
-
-      i {
-        padding-left: 10px;
       }
     }
 
