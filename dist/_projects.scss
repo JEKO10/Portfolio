@@ -7,7 +7,7 @@
   article {
     @include flex(space-between, center);
     padding: 5rem 0;
-    border-bottom: 1px solid $secondaryColor;
+    border-bottom: 1px solid $paragraphColor;
 
     .info {
       max-width: 40%;
@@ -30,7 +30,7 @@
     }
 
     h2 {
-      font-size: 4rem;
+      font-size: 3.5rem;
       color: $secondaryColor;
     }
 
@@ -51,7 +51,7 @@
       width: 55%;
 
       img {
-        border: 4px solid $secondaryColor;
+        border: 4px solid $paragraphColor;
         border-radius: 15px;
         width: 100%;
       }

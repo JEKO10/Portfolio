@@ -69,8 +69,8 @@ nav ul a:hover {
 .hero h1 {
   color: rgb(255, 255, 255);
   font-size: 4rem;
-  background-image: -webkit-gradient(linear, left top, right top, from(#5ed3f3), to(blue));
-  background-image: linear-gradient(90deg, #5ed3f3, blue);
+  background-image: -webkit-gradient(linear, left top, right top, from(#5ed3f3), to(#0000ff));
+  background-image: linear-gradient(90deg, #5ed3f3, #0000ff);
   background-size: 0% 3px;
   background-repeat: no-repeat;
   border-radius: 5px;
@@ -278,7 +278,7 @@ nav ul a:hover {
       -ms-flex-align: center;
           align-items: center;
   padding: 5rem 0;
-  border-bottom: 1px solid #0000ff;
+  border-bottom: 1px solid #dcdcdc;
 }
 .projects article .info {
   max-width: 40%;
@@ -298,7 +298,7 @@ nav ul a:hover {
   padding-left: 10px;
 }
 .projects article h2 {
-  font-size: 4rem;
+  font-size: 3.5rem;
   color: #0000ff;
 }
 .projects article p {
@@ -316,9 +316,117 @@ nav ul a:hover {
   width: 55%;
 }
 .projects article .workImg img {
-  border: 4px solid #0000ff;
+  border: 4px solid #dcdcdc;
   border-radius: 15px;
   width: 100%;
+}
+
+.contact {
+  max-width: 90vw;
+  margin: 0 auto;
+  font-family: "Big Shoulders Display", cursive;
+  padding: 1rem 0;
+}
+.contact > article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.contact form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+.contact form input,
+.contact form textarea {
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: "Big Shoulders Display", cursive;
+  padding: 10px 15px;
+  width: 100%;
+  margin: 0.5rem 0;
+  border: 2px solid #0000ff;
+  border-radius: 5px;
+  color: #0000ff;
+  resize: vertical;
+  max-height: 200px;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+.contact form input::-webkit-input-placeholder, .contact form textarea::-webkit-input-placeholder {
+  color: #0000ff;
+}
+.contact form input::-moz-placeholder, .contact form textarea::-moz-placeholder {
+  color: #0000ff;
+}
+.contact form input:-ms-input-placeholder, .contact form textarea:-ms-input-placeholder {
+  color: #0000ff;
+}
+.contact form input::-ms-input-placeholder, .contact form textarea::-ms-input-placeholder {
+  color: #0000ff;
+}
+.contact form input::placeholder,
+.contact form textarea::placeholder {
+  color: #0000ff;
+}
+.contact form input:hover,
+.contact form textarea:hover {
+  -webkit-box-shadow: -3px 2px 15px 1px #0000ff;
+          box-shadow: -3px 2px 15px 1px #0000ff;
+}
+.contact form input:focus,
+.contact form textarea:focus {
+  outline: none;
+  -webkit-box-shadow: -3px 2px 0px 1px #0000ff;
+          box-shadow: -3px 2px 0px 1px #0000ff;
+}
+.contact form button {
+  margin-top: 0.5rem;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 2.5px solid #fff;
+  color: #fff;
+  padding: 10px 50px;
+  font-size: 1.2rem;
+  font-family: "Big Shoulders Display", cursive;
+  letter-spacing: 2px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 800;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+  position: relative;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(50%, #fff), color-stop(50%, rgba(0, 0, 0, 0)));
+  background-image: linear-gradient(to top, #fff 50%, rgba(0, 0, 0, 0) 50%);
+  background-size: 150% 200%;
+  background-position: top;
+  outline: none;
+  -webkit-box-shadow: -3px 2px 1px 1px #0000ff;
+          box-shadow: -3px 2px 1px 1px #0000ff;
+}
+.contact form button:hover, .contact form button:focus {
+  background-position: bottom;
+  color: #000;
+}
+.contact img {
+  height: 500px;
 }
 
 footer {
