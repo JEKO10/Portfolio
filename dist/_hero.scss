@@ -15,7 +15,7 @@
     display: inline;
     cursor: default;
     animation: name 5s 1.5s ease;
-    transition: 1s background-size ease;
+    transition: background-size 1s ease;
 
     &:hover {
       background-size: 100% 3px;
@@ -46,7 +46,7 @@
     margin-top: 2rem;
     padding: 10px 50px;
     cursor: pointer;
-    transition: all 500ms ease;
+    transition: $defaultTransition;
     animation: button 1.5s ease;
 
     &:hover {
@@ -77,6 +77,7 @@
 
   ul {
     list-style-type: none;
+    z-index: 2;
 
     li {
       margin: 20px 0;
@@ -84,10 +85,11 @@
       a {
         color: $paragraphColor;
         font-size: 1.5rem;
-        transition: all 500ms ease;
+        transition: $defaultTransition;
 
         &:hover {
           color: #fff;
+          text-shadow: -10px 3px 0 $secondaryColor;
         }
       }
     }

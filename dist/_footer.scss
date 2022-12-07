@@ -30,7 +30,7 @@ footer {
         transition: $defaultTransition;
 
         &:hover {
-          color: #fff;
+          text-shadow: -10px 3px 0 $secondaryColor;
         }
       }
     }

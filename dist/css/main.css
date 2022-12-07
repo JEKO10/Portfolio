@@ -79,8 +79,8 @@ nav ul a:hover {
   cursor: default;
   -webkit-animation: name 5s 1.5s ease;
           animation: name 5s 1.5s ease;
-  -webkit-transition: 1s background-size ease;
-  transition: 1s background-size ease;
+  -webkit-transition: background-size 1s ease;
+  transition: background-size 1s ease;
 }
 .hero h1:hover {
   background-size: 100% 3px;
@@ -140,6 +140,7 @@ nav ul a:hover {
 }
 .hero ul {
   list-style-type: none;
+  z-index: 2;
 }
 .hero ul li {
   margin: 20px 0;
@@ -152,6 +153,7 @@ nav ul a:hover {
 }
 .hero ul li a:hover {
   color: #fff;
+  text-shadow: -10px 3px 0 #0000ff;
 }
 
 @-webkit-keyframes name {
@@ -259,6 +261,12 @@ nav ul a:hover {
   padding: 5px 10px;
   font-size: 1.5rem;
   font-weight: 600;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+.about ul li:hover {
+  -webkit-box-shadow: -10px 5px 0 0 rgb(0, 0, 255);
+          box-shadow: -10px 5px 0 0 rgb(0, 0, 255);
 }
 
 .projects {
@@ -363,12 +371,12 @@ nav ul a:hover {
   border-radius: 5px;
   -webkit-box-shadow: 6px 6px 7px 0px rgb(0, 0, 0);
           box-shadow: 6px 6px 7px 0px rgb(0, 0, 0);
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
 }
 .contact > article ul:hover {
-  -webkit-box-shadow: -15px 10px 0px 0px rgb(0, 0, 255);
-          box-shadow: -15px 10px 0px 0px rgb(0, 0, 255);
+  -webkit-box-shadow: -15px 10px 0 0 rgb(0, 0, 255);
+          box-shadow: -15px 10px 0 0 rgb(0, 0, 255);
 }
 .contact > article ul li {
   font-size: 1.5rem;
@@ -395,14 +403,14 @@ nav ul a:hover {
   background-color: #363636;
   padding: 20px;
   border-radius: 5px;
-  -webkit-box-shadow: 6px 6px 7px 0px rgb(0, 0, 0);
-          box-shadow: 6px 6px 7px 0px rgb(0, 0, 0);
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
+  -webkit-box-shadow: 6px 6px 7px 0 rgb(0, 0, 0);
+          box-shadow: 6px 6px 7px 0 rgb(0, 0, 0);
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
 }
 .contact form:hover {
-  -webkit-box-shadow: -20px 15px 0px 0px rgb(0, 0, 255);
-          box-shadow: -20px 15px 0px 0px rgb(0, 0, 255);
+  -webkit-box-shadow: -20px 15px 0 0 rgb(0, 0, 255);
+          box-shadow: -20px 15px 0 0 rgb(0, 0, 255);
 }
 .contact form input,
 .contact form textarea {
@@ -445,8 +453,8 @@ nav ul a:hover {
 .contact form input:focus,
 .contact form textarea:focus {
   outline: none;
-  -webkit-box-shadow: -3px 2px 0px 1px #0000ff;
-          box-shadow: -3px 2px 0px 1px #0000ff;
+  -webkit-box-shadow: -3px 2px 0 1px #0000ff;
+          box-shadow: -3px 2px 0 1px #0000ff;
 }
 .contact form button {
   margin-top: 0.5rem;
@@ -516,7 +524,7 @@ footer ul li a {
   transition: all 500ms ease;
 }
 footer ul li a:hover {
-  color: #fff;
+  text-shadow: -10px 3px 0 #0000ff;
 }
 footer h2 {
   font-size: 2rem;
