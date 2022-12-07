@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  background-color: #0e121a;
+  background-color: $primaryColor;
 }
 
 ::-webkit-scrollbar {
@@ -20,7 +20,7 @@ body {
 
   &-track {
     // background: #fd8c8a;
-    background: #363636;
+    background: $tertiaryColor;
   }
 
   &-thumb {
@@ -29,7 +29,7 @@ body {
     transition: all 500ms ease;
 
     &:hover {
-      background: #4f4f4f;
+      background: darken(#626262, 10%);
     }
   }
 }
@@ -41,7 +41,7 @@ body {
   background: linear-gradient(
     121.57deg,
     #ffffff 18.77%,
-    rgba(255, 255, 255, 0.66) 60.15%
+    rgba(255, 255, 255, 0.6) 60.15%
   );
   background-clip: text;
   -webkit-background-clip: text;

@@ -35,7 +35,7 @@ nav ul a {
   color: #fff;
   text-decoration: none;
   letter-spacing: 1px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 30px;
   padding: 5px 10px;
   -webkit-box-shadow: inset 0 -4px 0 -1px #fff;
@@ -47,7 +47,7 @@ nav ul a {
   cursor: pointer;
 }
 nav ul a:hover {
-  color: #0e121a;
+  color: #0000ff;
   -webkit-box-shadow: inset 0 -40px 0 -1px #fff;
           box-shadow: inset 0 -40px 0 -1px #fff;
 }
@@ -318,12 +318,14 @@ nav ul a:hover {
 .projects article .workImg img {
   border: 4px solid #dcdcdc;
   border-radius: 15px;
+  -webkit-box-shadow: 5px 10px 5px 0px rgb(0, 0, 0);
+          box-shadow: 5px 10px 5px 0px rgb(0, 0, 0);
   width: 100%;
 }
 
 .contact {
   max-width: 90vw;
-  margin: 0 auto;
+  margin: 0rem auto 5rem;
   font-family: "Big Shoulders Display", cursive;
   padding: 1rem 0;
 }
@@ -334,9 +336,46 @@ nav ul a:hover {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-top: 2rem;
+}
+.contact > article ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  list-style-type: none;
+  width: 30%;
+  background-color: #363636;
+  color: #dcdcdc;
+  padding: 20px;
+  border-radius: 5px;
+  -webkit-box-shadow: 6px 6px 7px 0px rgb(0, 0, 0);
+          box-shadow: 6px 6px 7px 0px rgb(0, 0, 0);
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.contact > article ul:hover {
+  -webkit-box-shadow: -15px 10px 0px 0px rgb(0, 0, 255);
+          box-shadow: -15px 10px 0px 0px rgb(0, 0, 255);
+}
+.contact > article ul li {
+  font-size: 1.5rem;
+  margin: 5px 0;
+}
+.contact > article ul li i {
+  padding-right: 50px;
 }
 .contact form {
   display: -webkit-box;
@@ -352,12 +391,24 @@ nav ul a:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 100%;
+  width: 50%;
+  background-color: #363636;
+  padding: 20px;
+  border-radius: 5px;
+  -webkit-box-shadow: 6px 6px 7px 0px rgb(0, 0, 0);
+          box-shadow: 6px 6px 7px 0px rgb(0, 0, 0);
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.contact form:hover {
+  -webkit-box-shadow: -20px 15px 0px 0px rgb(0, 0, 255);
+          box-shadow: -20px 15px 0px 0px rgb(0, 0, 255);
 }
 .contact form input,
 .contact form textarea {
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: 1px;
   font-family: "Big Shoulders Display", cursive;
   padding: 10px 15px;
   width: 100%;
@@ -412,18 +463,13 @@ nav ul a:hover {
   font-weight: 800;
   -webkit-transition: all 500ms ease;
   transition: all 500ms ease;
-  position: relative;
-  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(50%, #fff), color-stop(50%, rgba(0, 0, 0, 0)));
-  background-image: linear-gradient(to top, #fff 50%, rgba(0, 0, 0, 0) 50%);
-  background-size: 150% 200%;
-  background-position: top;
-  outline: none;
-  -webkit-box-shadow: -3px 2px 1px 1px #0000ff;
-          box-shadow: -3px 2px 1px 1px #0000ff;
 }
 .contact form button:hover, .contact form button:focus {
-  background-position: bottom;
-  color: #000;
+  outline: none;
+  background-color: #fff;
+  color: #0000ff;
+  -webkit-box-shadow: -5px 4px 1px 1px #0000ff;
+          box-shadow: -5px 4px 1px 1px #0000ff;
 }
 .contact img {
   height: 500px;
@@ -440,7 +486,7 @@ footer {
       -ms-flex-align: center;
           align-items: center;
   padding: 40px;
-  background: #41454e;
+  background: #363636;
   font-family: "Big Shoulders Display", cursive;
   color: #fff;
 }
@@ -505,7 +551,7 @@ body {
   transition: all 500ms ease;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #4f4f4f;
+  background: #494949;
 }
 
 #title {
@@ -514,7 +560,7 @@ body {
   width: -moz-max-content;
   width: max-content;
   max-width: 100%;
-  background: linear-gradient(121.57deg, #ffffff 18.77%, rgba(255, 255, 255, 0.66) 60.15%);
+  background: linear-gradient(121.57deg, #ffffff 18.77%, rgba(255, 255, 255, 0.6) 60.15%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

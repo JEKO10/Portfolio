@@ -1,7 +1,7 @@
 footer {
   @include flex(space-between, center);
   padding: 40px;
-  background: #41454e;
+  background: $tertiaryColor;
   font-family: $primaryFont;
   color: #fff;
 

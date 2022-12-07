@@ -1,22 +1,59 @@
 .contact {
   max-width: 90vw;
-  margin: 0 auto;
+  margin: 0rem auto 5rem;
   font-family: $primaryFont;
   padding: 1rem 0;
 
   > article {
-    @include flex(space-between, center);
+    @include flex(space-between, flex-start);
+    margin-top: 2rem;
+
+    ul {
+      @include flex(flex-start, flex-start);
+      flex-direction: column;
+      list-style-type: none;
+      width: 30%;
+      background-color: $tertiaryColor;
+      color: $paragraphColor;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 6px 6px 7px 0px rgb(0, 0, 0);
+      transition: all 1s ease;
+
+      &:hover {
+        box-shadow: -15px 10px 0px 0px rgba(0, 0, 255, 1);
+      }
+
+      li {
+        font-size: 1.5rem;
+        margin: 5px 0;
+
+        i {
+          padding-right: 50px;
+        }
+      }
+    }
   }
 
   form {
     @include flex(center, flex-start);
     flex-direction: column;
-    width: 100%;
+    width: 50%;
+    background-color: $tertiaryColor;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 6px 6px 7px 0px rgb(0, 0, 0);
+    transition: all 1s ease;
+
+    &:hover {
+      box-shadow: -20px 15px 0px 0px rgba(0, 0, 255, 1);
+    }
 
     input,
     textarea {
       font-size: 1rem;
-      font-weight: 700;
+      font-weight: 800;
+      letter-spacing: 1px;
       font-family: $primaryFont;
       padding: 10px 15px;
       width: 100%;
@@ -56,17 +93,13 @@
       text-transform: uppercase;
       font-weight: 800;
       transition: all 500ms ease;
-      position: relative;
-      background-image: linear-gradient(to top, #fff 50%, rgba(0, 0, 0, 0) 50%);
-      background-size: 150% 200%;
-      background-position: top;
-      outline: none;
-      box-shadow: -3px 2px 1px 1px $secondaryColor;
 
       &:hover,
       &:focus {
-        background-position: bottom;
-        color: #000;
+        outline: none;
+        background-color: #fff;
+        color: $secondaryColor;
+        box-shadow: -5px 4px 1px 1px $secondaryColor;
       }
     }
   }
