@@ -1,8 +1,7 @@
 .about {
   height: 450px;
   font-family: $primaryFont;
-  background: url("../../images/about.png") center no-repeat;
-  background-size: 100% 100%;
+  padding-top: 20px;
 
   > div {
     max-width: 80vw;

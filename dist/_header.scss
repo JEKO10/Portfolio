@@ -1,19 +1,18 @@
 header {
   height: 100vh;
-  background: url("../../images/header.png") center no-repeat;
-  background-size: 100% 100%;
   font-family: $primaryFont;
 
   #bgCircle {
     position: absolute;
     right: 0;
     top: -10rem;
-    z-index: 0;
+    z-index: -1;
   }
 
   #circle {
     position: absolute;
     left: -7rem;
     bottom: -10rem;
+    z-index: -1;
   }
 }

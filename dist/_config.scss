@@ -12,3 +12,33 @@ $defaultTransition: all 500ms ease;
   justify-content: $justify;
   align-items: $align;
 }
+
+@mixin mediaLarge {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin mediaMediumLarge {
+  @media screen and (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin mediaMedium {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mediaMediumLow {
+  @media screen and (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin mediaSmall {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
