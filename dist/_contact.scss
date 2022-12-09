@@ -3,6 +3,14 @@
   margin: 0rem auto 5rem;
   font-family: $primaryFont;
   padding: 1rem 0;
+  position: relative;
+
+  #circle {
+    position: absolute;
+    right: -10rem;
+    top: -12rem;
+    z-index: -1;
+  }
 
   > article {
     @include flex(space-between, flex-start);
@@ -51,9 +59,9 @@
 
     input,
     textarea {
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-weight: 800;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
       font-family: $primaryFont;
       padding: 10px 15px;
       width: 100%;
@@ -102,9 +110,5 @@
         box-shadow: -5px 4px 1px 1px $secondaryColor;
       }
     }
-  }
-
-  img {
-    height: 500px;
   }
 }

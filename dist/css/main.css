@@ -3,10 +3,16 @@ header {
   height: 100vh;
   font-family: "Big Shoulders Display", cursive;
 }
+header #corner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
 header #bgCircle {
   position: absolute;
-  right: 0;
   top: -10rem;
+  right: 0;
   z-index: -1;
 }
 header #circle {
@@ -345,6 +351,13 @@ nav ul a:hover {
   margin: 0rem auto 5rem;
   font-family: "Big Shoulders Display", cursive;
   padding: 1rem 0;
+  position: relative;
+}
+.contact #circle {
+  position: absolute;
+  right: -10rem;
+  top: -12rem;
+  z-index: -1;
 }
 .contact > article {
   display: -webkit-box;
@@ -423,9 +436,9 @@ nav ul a:hover {
 }
 .contact form input,
 .contact form textarea {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 800;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   font-family: "Big Shoulders Display", cursive;
   padding: 10px 15px;
   width: 100%;
@@ -488,9 +501,6 @@ nav ul a:hover {
   -webkit-box-shadow: -5px 4px 1px 1px #0000ff;
           box-shadow: -5px 4px 1px 1px #0000ff;
 }
-.contact img {
-  height: 500px;
-}
 
 footer {
   display: -webkit-box;
@@ -502,10 +512,11 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 40px;
-  background: #363636;
+  padding: 50px;
+  background: url("../../images/rt.png") center/cover no-repeat;
+  background-size: 100% 100%;
   font-family: "Big Shoulders Display", cursive;
-  color: #fff;
+  color: #dcdcdc;
 }
 footer ul {
   display: grid;
@@ -516,7 +527,7 @@ footer ul {
 footer ul li {
   color: #dcdcdc;
   font-size: 1.2rem;
-  font-weight: 900;
+  font-weight: 700;
   -webkit-transition: all 500ms ease;
   transition: all 500ms ease;
   cursor: pointer;

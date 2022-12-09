@@ -2,10 +2,17 @@ header {
   height: 100vh;
   font-family: $primaryFont;
 
+  #corner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
   #bgCircle {
     position: absolute;
-    right: 0;
     top: -10rem;
+    right: 0;
     z-index: -1;
   }
 

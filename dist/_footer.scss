@@ -1,9 +1,11 @@
 footer {
   @include flex(space-between, center);
-  padding: 40px;
-  background: $tertiaryColor;
+  padding: 50px;
+  // background-color: $tertiaryColor;
+  background: url("../../images/rt.png") center/cover no-repeat;
+  background-size: 100% 100%;
   font-family: $primaryFont;
-  color: #fff;
+  color: $paragraphColor;
 
   ul {
     display: grid;
@@ -14,7 +16,7 @@ footer {
     li {
       color: $paragraphColor;
       font-size: 1.2rem;
-      font-weight: 900;
+      font-weight: 700;
       transition: $defaultTransition;
       cursor: pointer;
 
