@@ -1,2 +1,61 @@
 @include mediaLarge {
+  .hero {
+    #me {
+      top: 4rem;
+      width: 30%;
+    }
+
+    #bgCircle {
+      width: 60%;
+    }
+
+    p {
+      max-width: 600px;
+    }
+  }
+}
+
+@include mediaMediumLarge {
+  header {
+    #corner {
+      width: 40%;
+    }
+  }
+
+  .hero {
+    height: 75%;
+
+    #me {
+      top: 6rem;
+      right: 3.5rem;
+    }
+
+    #bgCircle {
+      top: -6rem;
+    }
+
+    p {
+      // font-size: 1.3rem;
+      //   max-width: 400px;
+      //   line-height: 30px;
+      font-size: 1.5rem;
+      max-width: 450px;
+      line-height: 35px;
+    }
+  }
+
+  .about {
+    p {
+      font-size: 1.6rem;
+      line-height: 35px;
+    }
+
+    ul {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+  }
+}
+
+@include mediaMedium {
 }

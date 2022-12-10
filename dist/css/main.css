@@ -9,18 +9,6 @@ header #corner {
   left: 0;
   z-index: -1;
 }
-header #bgCircle {
-  position: absolute;
-  top: -10rem;
-  right: 0;
-  z-index: -1;
-}
-header #circle {
-  position: absolute;
-  left: -7rem;
-  bottom: -10rem;
-  z-index: -1;
-}
 
 nav {
   display: -webkit-box;
@@ -151,8 +139,20 @@ nav ul a:hover {
 }
 .hero #me {
   position: absolute;
-  top: 9%;
+  top: 4rem;
   right: 3rem;
+}
+.hero #bgCircle {
+  position: absolute;
+  top: -10rem;
+  right: 0;
+  z-index: -2;
+}
+.hero #circle {
+  position: absolute;
+  left: -7rem;
+  bottom: -10rem;
+  z-index: -1;
 }
 .hero ul {
   list-style-type: none;
@@ -239,6 +239,7 @@ nav ul a:hover {
   height: 450px;
   font-family: "Big Shoulders Display", cursive;
   padding-top: 20px;
+  margin-bottom: 5rem;
 }
 .about > div {
   max-width: 80vw;
@@ -502,6 +503,49 @@ nav ul a:hover {
           box-shadow: -5px 4px 1px 1px #0000ff;
 }
 
+@media (max-width: 1200px) {
+  .hero #me {
+    top: 4rem;
+    width: 30%;
+  }
+  .hero #bgCircle {
+    width: 60%;
+  }
+  .hero p {
+    max-width: 600px;
+  }
+}
+@media screen and (max-width: 992px) {
+  header #corner {
+    width: 40%;
+  }
+  .hero {
+    height: 75%;
+  }
+  .hero #me {
+    top: 6rem;
+    right: 3.5rem;
+  }
+  .hero #bgCircle {
+    top: -6rem;
+  }
+  .hero p {
+    font-size: 1.5rem;
+    max-width: 450px;
+    line-height: 35px;
+  }
+  .about p {
+    font-size: 1.6rem;
+    line-height: 35px;
+  }
+  .about ul {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
 footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -560,12 +604,10 @@ footer h2 {
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
 body {
   background-color: #0e121a;
-  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {

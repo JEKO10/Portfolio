@@ -9,12 +9,10 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
 body {
   background-color: $primaryColor;
-  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {

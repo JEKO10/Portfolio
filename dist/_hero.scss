@@ -71,8 +71,22 @@
 
   #me {
     position: absolute;
-    top: 9%;
+    top: 4rem;
     right: 3rem;
+  }
+
+  #bgCircle {
+    position: absolute;
+    top: -10rem;
+    right: 0;
+    z-index: -2;
+  }
+
+  #circle {
+    position: absolute;
+    left: -7rem;
+    bottom: -10rem;
+    z-index: -1;
   }
 
   ul {
