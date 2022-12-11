@@ -101,10 +101,10 @@ nav ul a:hover {
   color: #fff;
   background-color: transparent;
   font-family: "Big Shoulders Display", cursive;
+  position: relative;
   text-transform: uppercase;
   font-weight: 800;
   letter-spacing: 2px;
-  position: relative;
   background-image: -webkit-gradient(linear, left bottom, left top, color-stop(50%, #fff), color-stop(50%, rgba(0, 0, 0, 0)));
   background-image: linear-gradient(to top, #fff 50%, rgba(0, 0, 0, 0) 50%);
   background-size: 150% 200%;
@@ -148,6 +148,11 @@ nav ul a:hover {
   right: 0;
   z-index: -2;
 }
+.hero #smallCircle {
+  display: none;
+  position: absolute;
+  z-index: -2;
+}
 .hero #circle {
   position: absolute;
   left: -7rem;
@@ -157,6 +162,11 @@ nav ul a:hover {
 .hero ul {
   list-style-type: none;
   z-index: 2;
+  position: fixed;
+  top: 50%;
+  right: 1rem;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 .hero ul li {
   margin: 20px 0;
@@ -523,7 +533,7 @@ nav ul a:hover {
     height: 75%;
   }
   .hero #me {
-    top: 6rem;
+    top: 5rem;
     right: 3.5rem;
   }
   .hero #bgCircle {
@@ -544,6 +554,69 @@ nav ul a:hover {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
+  }
+}
+@media screen and (max-width: 768px) {
+  header {
+    height: 140vh;
+  }
+  header #corner {
+    width: 50%;
+  }
+  .hero {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding-top: 30px;
+  }
+  .hero div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .hero p {
+    max-width: 95%;
+    text-align: center;
+  }
+  .hero ul {
+    display: none;
+  }
+  .hero #smallCircle {
+    display: inline;
+    top: 17rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 100%;
+  }
+  .hero #bgCircle {
+    display: none;
+  }
+  .hero #me {
+    top: 25rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 35%;
+  }
+  .hero #circle {
+    bottom: -27rem;
   }
 }
 footer {

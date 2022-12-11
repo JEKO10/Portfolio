@@ -26,7 +26,7 @@
     height: 75%;
 
     #me {
-      top: 6rem;
+      top: 5rem;
       right: 3.5rem;
     }
 
@@ -58,4 +58,53 @@
 }
 
 @include mediaMedium {
+  header {
+    height: 140vh;
+
+    #corner {
+      width: 50%;
+    }
+  }
+
+  .hero {
+    @include flex(center, flex-start);
+    padding-top: 30px;
+
+    div {
+      @include flex(center, center);
+      flex-direction: column;
+    }
+
+    p {
+      max-width: 95%;
+      text-align: center;
+    }
+
+    ul {
+      display: none;
+    }
+
+    #smallCircle {
+      display: inline;
+      top: 17rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+    }
+
+    #bgCircle {
+      display: none;
+    }
+
+    #me {
+      top: 25rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 35%;
+    }
+
+    #circle {
+      bottom: -27rem;
+    }
+  }
 }
