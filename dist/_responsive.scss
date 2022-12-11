@@ -45,6 +45,8 @@
   }
 
   .about {
+    height: 650px;
+
     p {
       font-size: 1.6rem;
       line-height: 35px;
@@ -59,7 +61,7 @@
 
 @include mediaMedium {
   header {
-    height: 140vh;
+    margin-bottom: 20rem;
 
     #corner {
       width: 50%;
@@ -89,7 +91,6 @@
       top: 17rem;
       left: 50%;
       transform: translateX(-50%);
-      width: 100%;
     }
 
     #bgCircle {
@@ -104,7 +105,30 @@
     }
 
     #circle {
-      bottom: -27rem;
+      bottom: -30rem;
+    }
+  }
+
+  .about {
+    > div {
+      max-width: 90vw;
+    }
+  }
+}
+
+@include mediaMediumLow {
+  header {
+    margin-bottom: 15rem;
+  }
+
+  .hero {
+    #me {
+      top: 27rem;
+      width: 40%;
+    }
+
+    #smallCircle {
+      top: 21rem;
     }
   }
 }

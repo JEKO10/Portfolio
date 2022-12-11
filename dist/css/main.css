@@ -68,7 +68,7 @@ nav ul a:hover {
           align-items: center;
   height: 70%;
   max-width: 95vw;
-  margin: 0 auto 8rem;
+  margin: 0 auto;
 }
 .hero h1 {
   color: rgb(255, 255, 255);
@@ -152,6 +152,7 @@ nav ul a:hover {
   display: none;
   position: absolute;
   z-index: -2;
+  width: 100%;
 }
 .hero #circle {
   position: absolute;
@@ -249,7 +250,6 @@ nav ul a:hover {
   height: 450px;
   font-family: "Big Shoulders Display", cursive;
   padding-top: 20px;
-  margin-bottom: 5rem;
 }
 .about > div {
   max-width: 80vw;
@@ -264,7 +264,7 @@ nav ul a:hover {
   line-height: 40px;
   letter-spacing: 1px;
   font-weight: 300;
-  padding: 2rem 0 1rem;
+  padding: 20px 0;
   color: #dcdcdc;
 }
 .about ul {
@@ -544,6 +544,9 @@ nav ul a:hover {
     max-width: 450px;
     line-height: 35px;
   }
+  .about {
+    height: 650px;
+  }
   .about p {
     font-size: 1.6rem;
     line-height: 35px;
@@ -558,7 +561,7 @@ nav ul a:hover {
 }
 @media screen and (max-width: 768px) {
   header {
-    height: 140vh;
+    margin-bottom: 20rem;
   }
   header #corner {
     width: 50%;
@@ -603,7 +606,6 @@ nav ul a:hover {
     left: 50%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
-    width: 100%;
   }
   .hero #bgCircle {
     display: none;
@@ -616,7 +618,22 @@ nav ul a:hover {
     width: 35%;
   }
   .hero #circle {
-    bottom: -27rem;
+    bottom: -30rem;
+  }
+  .about > div {
+    max-width: 90vw;
+  }
+}
+@media screen and (max-width: 576px) {
+  header {
+    margin-bottom: 15rem;
+  }
+  .hero #me {
+    top: 27rem;
+    width: 40%;
+  }
+  .hero #smallCircle {
+    top: 21rem;
   }
 }
 footer {
