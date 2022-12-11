@@ -68,6 +68,10 @@
     }
   }
 
+  nav ul {
+    display: none;
+  }
+
   .hero {
     @include flex(center, flex-start);
     padding-top: 30px;
@@ -129,6 +133,42 @@
 
     #smallCircle {
       top: 21rem;
+    }
+  }
+}
+
+@include mediaSmall {
+  body,
+  html {
+    overflow-x: hidden;
+  }
+
+  header {
+    #corner {
+      width: 80%;
+    }
+  }
+
+  .hero {
+    h1 {
+      font-size: 3.5rem;
+    }
+
+    #me {
+      top: 26rem;
+      width: 45%;
+    }
+
+    #smallCircle {
+      width: 120%;
+    }
+  }
+
+  .about {
+    height: 770px;
+
+    p {
+      font-size: 1.5rem;
     }
   }
 }
