@@ -2,7 +2,7 @@ footer {
   @include flex(space-between, center);
   padding: 50px;
   // background-color: $tertiaryColor;
-  background: url("../../images/rt.png") center/cover no-repeat;
+  background: url("../../images/background/footer.png") center/cover no-repeat;
   background-size: 100% 100%;
   font-family: $primaryFont;
   color: $paragraphColor;

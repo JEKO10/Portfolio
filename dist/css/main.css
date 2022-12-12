@@ -513,6 +513,55 @@ nav ul a:hover {
           box-shadow: -5px 4px 1px 1px #0000ff;
 }
 
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 50px;
+  background: url("../../images/background/footer.png") center/cover no-repeat;
+  background-size: 100% 100%;
+  font-family: "Big Shoulders Display", cursive;
+  color: #dcdcdc;
+}
+footer ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px 30px;
+  list-style-type: none;
+}
+footer ul li {
+  color: #dcdcdc;
+  font-size: 1.2rem;
+  font-weight: 700;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+  cursor: pointer;
+}
+footer ul li:hover {
+  color: #fff;
+}
+footer ul li a {
+  color: #dcdcdc;
+  font-size: 1.5rem;
+  text-decoration: none;
+  margin-right: 1rem;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+footer ul li a:hover {
+  text-shadow: -10px 3px 0 #0000ff;
+}
+footer h2 {
+  font-size: 2rem;
+  letter-spacing: 3px;
+}
+
 @media (max-width: 1200px) {
   .hero #me {
     top: 4rem;
@@ -626,6 +675,18 @@ nav ul a:hover {
   .about > div {
     max-width: 90vw;
   }
+  footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 80px 30px 50px;
+    background-size: 200% 100%;
+  }
+  footer h2 {
+    grid-column: span 2;
+    grid-row: 1;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
 }
 @media screen and (max-width: 576px) {
   header {
@@ -640,22 +701,14 @@ nav ul a:hover {
   }
 }
 @media screen and (max-width: 480px) {
-  body,
-html {
-    overflow-x: hidden;
-  }
   header #corner {
     width: 80%;
   }
   .hero h1 {
     font-size: 3.5rem;
   }
-  .hero #me {
-    top: 26rem;
-    width: 45%;
-  }
   .hero #smallCircle {
-    width: 120%;
+    top: 23rem;
   }
   .about {
     height: 770px;
@@ -663,56 +716,17 @@ html {
   .about p {
     font-size: 1.5rem;
   }
+  footer {
+    padding: 80px 30px 20px;
+    background-size: 300% 100%;
+    text-align: center;
+  }
+  footer ul {
+    grid-column: span 2;
+    margin: 1rem 0;
+    grid-gap: 10px;
+  }
 }
-footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 50px;
-  background: url("../../images/rt.png") center/cover no-repeat;
-  background-size: 100% 100%;
-  font-family: "Big Shoulders Display", cursive;
-  color: #dcdcdc;
-}
-footer ul {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px 30px;
-  list-style-type: none;
-}
-footer ul li {
-  color: #dcdcdc;
-  font-size: 1.2rem;
-  font-weight: 700;
-  -webkit-transition: all 500ms ease;
-  transition: all 500ms ease;
-  cursor: pointer;
-}
-footer ul li:hover {
-  color: #fff;
-}
-footer ul li a {
-  color: #dcdcdc;
-  font-size: 1.5rem;
-  text-decoration: none;
-  margin-right: 1rem;
-  -webkit-transition: all 500ms ease;
-  transition: all 500ms ease;
-}
-footer ul li a:hover {
-  text-shadow: -10px 3px 0 #0000ff;
-}
-footer h2 {
-  font-size: 2rem;
-  letter-spacing: 3px;
-}
-
 * {
   margin: 0;
   padding: 0;
