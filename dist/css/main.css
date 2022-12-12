@@ -296,7 +296,7 @@ nav ul a:hover {
 }
 
 .projects {
-  max-width: 95vw;
+  max-width: 90vw;
   margin: 0 auto;
   padding: 40px 0;
   font-family: "Big Shoulders Display", cursive;
@@ -654,7 +654,7 @@ footer h2 {
   }
   .hero #smallCircle {
     display: inline;
-    top: 17rem;
+    top: 15rem;
     left: 50%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
@@ -692,15 +692,18 @@ footer h2 {
   header {
     margin-bottom: 15rem;
   }
-  .hero #me {
-    top: 27rem;
-    width: 40%;
-  }
   .hero #smallCircle {
-    top: 21rem;
+    top: 18rem;
+  }
+  .hero #me {
+    top: 25rem;
+    width: 40%;
   }
 }
 @media screen and (max-width: 480px) {
+  header {
+    margin-bottom: 10rem;
+  }
   header #corner {
     width: 80%;
   }
@@ -709,6 +712,9 @@ footer h2 {
   }
   .hero #smallCircle {
     top: 23rem;
+  }
+  .hero #me {
+    top: 28rem;
   }
   .about {
     height: 770px;
@@ -736,10 +742,12 @@ footer h2 {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   background-color: #0e121a;
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {

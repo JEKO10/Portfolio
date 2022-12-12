@@ -92,7 +92,7 @@
 
     #smallCircle {
       display: inline;
-      top: 17rem;
+      top: 15rem;
       left: 50%;
       transform: translateX(-50%);
     }
@@ -140,19 +140,21 @@
   }
 
   .hero {
-    #me {
-      top: 27rem;
-      width: 40%;
+    #smallCircle {
+      top: 18rem;
     }
 
-    #smallCircle {
-      top: 21rem;
+    #me {
+      top: 25rem;
+      width: 40%;
     }
   }
 }
 
 @include mediaSmall {
   header {
+    margin-bottom: 10rem;
+
     #corner {
       width: 80%;
     }
@@ -165,6 +167,10 @@
 
     #smallCircle {
       top: 23rem;
+    }
+
+    #me {
+      top: 28rem;
     }
   }
 
