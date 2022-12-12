@@ -679,7 +679,6 @@ footer h2 {
     display: grid;
     grid-template-columns: 1fr;
     padding: 80px 30px 50px;
-    background-size: 200% 100%;
   }
   footer h2 {
     grid-column: span 2;
@@ -723,8 +722,9 @@ footer h2 {
     font-size: 1.5rem;
   }
   footer {
-    padding: 80px 30px 20px;
-    background-size: 300% 100%;
+    background: url("../../images/background/smallFooter.png") center/cover no-repeat;
+    background-size: 100% 100%;
+    padding: 80px 30px 10px;
     text-align: center;
   }
   footer ul {
