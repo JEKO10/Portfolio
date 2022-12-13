@@ -21,6 +21,8 @@
       flex-direction: column;
       list-style-type: none;
       width: 30%;
+      background: url("../../images/design/contact.svg") top right no-repeat;
+      background-size: 40%;
       background-color: $tertiaryColor;
       color: $paragraphColor;
       padding: 20px;
@@ -47,6 +49,7 @@
     @include flex(center, flex-start);
     flex-direction: column;
     width: 50%;
+    background: url("../../images/design/form.svg") right no-repeat;
     background-color: $tertiaryColor;
     padding: 20px;
     border-radius: 5px;
@@ -59,7 +62,7 @@
 
     input,
     textarea {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       font-weight: 800;
       letter-spacing: 2px;
       font-family: $primaryFont;

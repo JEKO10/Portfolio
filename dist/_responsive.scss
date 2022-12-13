@@ -13,6 +13,19 @@
       max-width: 600px;
     }
   }
+
+  .contact > article {
+    @include flex(flex-start, flex-start);
+
+    form {
+      margin-right: 3rem;
+    }
+
+    ul {
+      width: 40%;
+      background-size: 45%;
+    }
+  }
 }
 
 @include mediaMediumLarge {
@@ -55,6 +68,23 @@
     ul {
       flex-wrap: wrap;
       justify-content: flex-start;
+    }
+  }
+
+  .contact > article {
+    flex-direction: column;
+
+    form {
+      margin: 0 0 2rem;
+      width: 95%;
+    }
+
+    ul {
+      width: 95%;
+
+      li {
+        font-size: 2rem;
+      }
     }
   }
 }
@@ -116,6 +146,13 @@
   .about {
     > div {
       max-width: 90vw;
+    }
+  }
+
+  .contact > article {
+    form,
+    ul {
+      width: 100%;
     }
   }
 

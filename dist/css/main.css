@@ -398,6 +398,8 @@ nav ul a:hover {
           flex-direction: column;
   list-style-type: none;
   width: 30%;
+  background: url("../../images/design/contact.svg") top right no-repeat;
+  background-size: 40%;
   background-color: #363636;
   color: #dcdcdc;
   padding: 20px;
@@ -433,6 +435,7 @@ nav ul a:hover {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 50%;
+  background: url("../../images/design/form.svg") right no-repeat;
   background-color: #363636;
   padding: 20px;
   border-radius: 5px;
@@ -447,7 +450,7 @@ nav ul a:hover {
 }
 .contact form input,
 .contact form textarea {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 800;
   letter-spacing: 2px;
   font-family: "Big Shoulders Display", cursive;
@@ -573,6 +576,24 @@ footer h2 {
   .hero p {
     max-width: 600px;
   }
+  .contact > article {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .contact > article form {
+    margin-right: 3rem;
+  }
+  .contact > article ul {
+    width: 40%;
+    background-size: 45%;
+  }
 }
 @media screen and (max-width: 992px) {
   header #corner {
@@ -606,6 +627,22 @@ footer h2 {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
+  }
+  .contact > article {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contact > article form {
+    margin: 0 0 2rem;
+    width: 95%;
+  }
+  .contact > article ul {
+    width: 95%;
+  }
+  .contact > article ul li {
+    font-size: 2rem;
   }
 }
 @media screen and (max-width: 768px) {
@@ -674,6 +711,10 @@ footer h2 {
   }
   .about > div {
     max-width: 90vw;
+  }
+  .contact > article form,
+.contact > article ul {
+    width: 100%;
   }
   footer {
     display: grid;
