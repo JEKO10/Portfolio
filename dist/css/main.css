@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@300;400;500;600;700;800&family=Lato:wght@700&display=swap");
 header {
   height: 100vh;
   font-family: "Big Shoulders Display", cursive;
@@ -451,46 +451,45 @@ nav ul a:hover {
 .contact form input,
 .contact form textarea {
   font-size: 1.2rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 2px;
-  font-family: "Big Shoulders Display", cursive;
+  font-family: "Lato", sans-serif;
   padding: 10px 15px;
   width: 100%;
   margin: 0.5rem 0;
-  border: 2px solid #0000ff;
+  border: 2px solid #0e121a;
   border-radius: 5px;
-  color: #0000ff;
   resize: vertical;
   max-height: 200px;
   -webkit-transition: all 500ms ease;
   transition: all 500ms ease;
 }
 .contact form input::-webkit-input-placeholder, .contact form textarea::-webkit-input-placeholder {
-  color: #0000ff;
+  color: #0e121a;
 }
 .contact form input::-moz-placeholder, .contact form textarea::-moz-placeholder {
-  color: #0000ff;
+  color: #0e121a;
 }
 .contact form input:-ms-input-placeholder, .contact form textarea:-ms-input-placeholder {
-  color: #0000ff;
+  color: #0e121a;
 }
 .contact form input::-ms-input-placeholder, .contact form textarea::-ms-input-placeholder {
-  color: #0000ff;
+  color: #0e121a;
 }
 .contact form input::placeholder,
 .contact form textarea::placeholder {
-  color: #0000ff;
+  color: #0e121a;
 }
 .contact form input:hover,
 .contact form textarea:hover {
-  -webkit-box-shadow: -3px 2px 15px 1px #0000ff;
-          box-shadow: -3px 2px 15px 1px #0000ff;
+  -webkit-box-shadow: -3px 2px 15px 1px #dcdcdc;
+          box-shadow: -3px 2px 15px 1px #dcdcdc;
 }
 .contact form input:focus,
 .contact form textarea:focus {
   outline: none;
-  -webkit-box-shadow: -3px 2px 0 1px #0000ff;
-          box-shadow: -3px 2px 0 1px #0000ff;
+  -webkit-box-shadow: -3px 2px 0 1px #dcdcdc;
+          box-shadow: -3px 2px 0 1px #dcdcdc;
 }
 .contact form button {
   margin-top: 0.5rem;
@@ -511,7 +510,7 @@ nav ul a:hover {
 .contact form button:hover, .contact form button:focus {
   outline: none;
   background-color: #fff;
-  color: #0000ff;
+  color: #0e121a;
   -webkit-box-shadow: -5px 4px 1px 1px #0000ff;
           box-shadow: -5px 4px 1px 1px #0000ff;
 }
@@ -761,6 +760,15 @@ footer h2 {
   }
   .about p {
     font-size: 1.5rem;
+  }
+  .contact > article form {
+    padding: 10px;
+  }
+  .contact > article ul {
+    background-size: 60%;
+  }
+  .contact > article ul li i {
+    padding-right: 20px;
   }
   footer {
     background: url("../../images/background/smallFooter.png") center/cover no-repeat;

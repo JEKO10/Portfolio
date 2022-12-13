@@ -63,30 +63,29 @@
     input,
     textarea {
       font-size: 1.2rem;
-      font-weight: 800;
+      font-weight: 700;
       letter-spacing: 2px;
-      font-family: $primaryFont;
+      font-family: $secondaryFont;
       padding: 10px 15px;
       width: 100%;
       margin: 0.5rem 0;
-      border: 2px solid $secondaryColor;
+      border: 2px solid $primaryColor;
       border-radius: 5px;
-      color: $secondaryColor;
       resize: vertical;
       max-height: 200px;
       transition: $defaultTransition;
 
       &::placeholder {
-        color: $secondaryColor;
+        color: $primaryColor;
       }
 
       &:hover {
-        box-shadow: -3px 2px 15px 1px $secondaryColor;
+        box-shadow: -3px 2px 15px 1px $paragraphColor;
       }
 
       &:focus {
         outline: none;
-        box-shadow: -3px 2px 0 1px $secondaryColor;
+        box-shadow: -3px 2px 0 1px $paragraphColor;
       }
     }
 
@@ -109,7 +108,7 @@
       &:focus {
         outline: none;
         background-color: #fff;
-        color: $secondaryColor;
+        color: $primaryColor;
         box-shadow: -5px 4px 1px 1px $secondaryColor;
       }
     }

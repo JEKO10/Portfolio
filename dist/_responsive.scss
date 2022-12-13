@@ -218,6 +218,20 @@
     }
   }
 
+  .contact > article {
+    form {
+      padding: 10px;
+    }
+
+    ul {
+      background-size: 60%;
+
+      li i {
+        padding-right: 20px;
+      }
+    }
+  }
+
   footer {
     background: url("../../images/background/smallFooter.png") center/cover
       no-repeat;
