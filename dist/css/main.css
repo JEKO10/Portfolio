@@ -154,6 +154,12 @@ nav ul a:hover {
   z-index: -2;
   width: 100%;
 }
+.hero #tinyCircle {
+  display: none;
+  position: absolute;
+  z-index: -2;
+  width: 100%;
+}
 .hero #circle {
   position: absolute;
   left: -7rem;
@@ -732,17 +738,13 @@ footer h2 {
     margin-bottom: 15rem;
   }
   .hero #smallCircle {
-    top: 18rem;
+    top: 17rem;
   }
   .hero #me {
     top: 25rem;
-    width: 40%;
   }
 }
 @media screen and (max-width: 480px) {
-  header {
-    margin-bottom: 10rem;
-  }
   header #corner {
     width: 80%;
   }
@@ -750,10 +752,15 @@ footer h2 {
     font-size: 3.5rem;
   }
   .hero #smallCircle {
-    top: 23rem;
+    display: none;
+  }
+  .hero #tinyCircle {
+    display: inline;
+    top: 18rem;
   }
   .hero #me {
-    top: 28rem;
+    top: 27rem;
+    width: 50%;
   }
   .about {
     height: 770px;

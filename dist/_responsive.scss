@@ -177,20 +177,17 @@
 
   .hero {
     #smallCircle {
-      top: 18rem;
+      top: 17rem;
     }
 
     #me {
       top: 25rem;
-      width: 40%;
     }
   }
 }
 
 @include mediaSmall {
   header {
-    margin-bottom: 10rem;
-
     #corner {
       width: 80%;
     }
@@ -202,11 +199,17 @@
     }
 
     #smallCircle {
-      top: 23rem;
+      display: none;
+    }
+
+    #tinyCircle {
+      display: inline;
+      top: 18rem;
     }
 
     #me {
-      top: 28rem;
+      top: 27rem;
+      width: 50%;
     }
   }
 
