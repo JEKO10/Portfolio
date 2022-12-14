@@ -6,7 +6,7 @@
     }
 
     #bgCircle {
-      width: 60%;
+      width: 65%;
     }
 
     p {
@@ -98,8 +98,14 @@
     }
   }
 
-  nav ul {
-    display: none;
+  nav {
+    ul {
+      display: none;
+    }
+
+    .menuBtn {
+      display: block;
+    }
   }
 
   .hero {
