@@ -97,6 +97,20 @@ nav .menuBtn .menuBurger::after {
   -webkit-transition: all 500ms ease-in-out;
   transition: all 500ms ease-in-out;
 }
+nav .menuBtn .menuBurger.open {
+  -webkit-transform: rotate(720deg);
+          transform: rotate(720deg);
+  background: transparent;
+}
+nav .menuBtn .menuBurger.open::before {
+  -webkit-transform: rotate(45deg) translate(5px, 8px);
+          transform: rotate(45deg) translate(5px, 8px);
+}
+nav .menuBtn .menuBurger.open::after {
+  width: 28px;
+  -webkit-transform: rotate(-45deg) translate(3px, -7px);
+          transform: rotate(-45deg) translate(3px, -7px);
+}
 
 .hero {
   display: -webkit-box;
@@ -699,7 +713,7 @@ footer h2 {
   header #corner {
     width: 50%;
   }
-  nav ul {
+  nav ul.hide {
     display: none;
   }
   nav .menuBtn {
@@ -736,7 +750,7 @@ footer h2 {
     max-width: 95%;
     text-align: center;
   }
-  .hero ul {
+  .hero ul.hide {
     display: none;
   }
   .hero #smallCircle {
