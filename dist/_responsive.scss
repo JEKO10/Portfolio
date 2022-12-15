@@ -99,8 +99,28 @@
   }
 
   nav {
-    ul.hide {
-      display: none;
+    ul {
+      justify-content: flex-start;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.95);
+      height: 100%;
+      width: 100%;
+      z-index: 1;
+
+      li {
+        margin: 45px 0;
+
+        a {
+          font-size: 2rem;
+        }
+      }
+
+      &.hide {
+        display: none;
+      }
     }
 
     .menuBtn {
@@ -122,8 +142,24 @@
       text-align: center;
     }
 
-    ul.hide {
-      display: none;
+    ul {
+      @include flex(center, center);
+      top: inherit;
+      bottom: 2rem;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      li {
+        margin: 0 25px;
+
+        a {
+          font-size: 2rem;
+        }
+      }
+
+      &.hide {
+        display: none;
+      }
     }
 
     #smallCircle {

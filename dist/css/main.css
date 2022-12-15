@@ -56,7 +56,7 @@ nav ul a:hover {
           box-shadow: inset 0 -40px 0 -1px #fff;
 }
 nav .menuBtn {
-  position: absolute;
+  position: fixed;
   top: 2rem;
   right: 2rem;
   z-index: 2;
@@ -713,6 +713,28 @@ footer h2 {
   header #corner {
     width: 50%;
   }
+  nav ul {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+  }
+  nav ul li {
+    margin: 45px 0;
+  }
+  nav ul li a {
+    font-size: 2rem;
+  }
   nav ul.hide {
     display: none;
   }
@@ -749,6 +771,28 @@ footer h2 {
   .hero p {
     max-width: 95%;
     text-align: center;
+  }
+  .hero ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    top: inherit;
+    bottom: 2rem;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  .hero ul li {
+    margin: 0 25px;
+  }
+  .hero ul li a {
+    font-size: 2rem;
   }
   .hero ul.hide {
     display: none;
@@ -858,6 +902,9 @@ footer h2 {
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+}
+html.hide {
+  overflow: hidden;
 }
 
 body {
