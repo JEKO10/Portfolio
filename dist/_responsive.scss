@@ -99,6 +99,13 @@
   }
 
   nav {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    height: 80px;
+    width: 100%;
+    z-index: 2;
+
     ul {
       justify-content: flex-start;
       flex-direction: column;
@@ -130,7 +137,7 @@
 
   .hero {
     @include flex(center, flex-start);
-    padding-top: 30px;
+    margin-top: 100px;
 
     div {
       @include flex(center, center);
@@ -219,11 +226,11 @@
 
   .hero {
     #smallCircle {
-      top: 17rem;
+      top: 19rem;
     }
 
     #me {
-      top: 25rem;
+      top: 27rem;
     }
   }
 }
@@ -240,17 +247,21 @@
       font-size: 3.5rem;
     }
 
+    button {
+      margin-top: 1rem;
+    }
+
     #smallCircle {
       display: none;
     }
 
     #tinyCircle {
       display: inline;
-      top: 18rem;
+      top: 20rem;
     }
 
     #me {
-      top: 27rem;
+      top: 29rem;
       width: 50%;
     }
   }
