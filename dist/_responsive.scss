@@ -14,6 +14,12 @@
     }
   }
 
+  .projects article .workImg {
+    img {
+      width: 97%;
+    }
+  }
+
   .contact > article {
     @include flex(flex-start, flex-start);
 
@@ -68,6 +74,31 @@
     ul {
       flex-wrap: wrap;
       justify-content: flex-start;
+    }
+  }
+
+  .projects article {
+    align-items: flex-start;
+    flex-direction: column;
+
+    .info {
+      max-width: 100%;
+      margin-bottom: 4rem;
+
+      p {
+        font-size: 2rem;
+        max-width: 95%;
+        line-height: 50px;
+        letter-spacing: 1.5px;
+      }
+    }
+
+    .workImg {
+      width: 95%;
+
+      img {
+        width: 100%;
+      }
     }
   }
 
@@ -196,6 +227,10 @@
     > div {
       max-width: 90vw;
     }
+  }
+
+  .projects article .workImg {
+    width: 100%;
   }
 
   .contact > article {

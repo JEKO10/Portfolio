@@ -381,17 +381,25 @@ nav .menuBtn .menuBurger.open::after {
 }
 .projects article .info a {
   font-size: 1.3rem;
-  text-transform: uppercase;
   font-weight: 800;
   text-decoration: none;
-  color: #fff;
-  background-color: #0000ff;
-  padding: 10px 30px;
+  border-radius: 15px;
+  color: #dcdcdc;
+  background-color: #363636;
+  padding: 10px 20px;
+  margin-right: 1rem;
   letter-spacing: 2px;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
   cursor: pointer;
 }
+.projects article .info a:hover {
+  color: #fff;
+  -webkit-box-shadow: -10px 5px 0 0 rgb(0, 0, 255);
+          box-shadow: -10px 5px 0 0 rgb(0, 0, 255);
+}
 .projects article .info a i {
-  padding-left: 10px;
+  padding-left: 5px;
 }
 .projects article h2 {
   font-size: 3.5rem;
@@ -637,6 +645,9 @@ footer h2 {
   .hero p {
     max-width: 600px;
   }
+  .projects article .workImg img {
+    width: 97%;
+  }
   .contact > article {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -688,6 +699,31 @@ footer h2 {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
+  }
+  .projects article {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .projects article .info {
+    max-width: 100%;
+    margin-bottom: 4rem;
+  }
+  .projects article .info p {
+    font-size: 2rem;
+    max-width: 95%;
+    line-height: 50px;
+    letter-spacing: 1.5px;
+  }
+  .projects article .workImg {
+    width: 95%;
+  }
+  .projects article .workImg img {
+    width: 100%;
   }
   .contact > article {
     -webkit-box-orient: vertical;
@@ -827,6 +863,9 @@ footer h2 {
   }
   .about > div {
     max-width: 90vw;
+  }
+  .projects article .workImg {
+    width: 100%;
   }
   .contact > article form,
 .contact > article ul {

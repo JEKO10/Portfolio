@@ -14,17 +14,25 @@
 
       a {
         font-size: 1.3rem;
-        text-transform: uppercase;
+        // text-transform: uppercase;
         font-weight: 800;
         text-decoration: none;
-        color: #fff;
-        background-color: $secondaryColor;
-        padding: 10px 30px;
+        border-radius: 15px;
+        color: $paragraphColor;
+        background-color: $tertiaryColor;
+        padding: 10px 20px;
+        margin-right: 1rem;
         letter-spacing: 2px;
+        transition: all 500ms ease;
         cursor: pointer;
 
+        &:hover {
+          color: #fff;
+          box-shadow: -10px 5px 0 0 rgba(0, 0, 255, 1);
+        }
+
         i {
-          padding-left: 10px;
+          padding-left: 5px;
         }
       }
     }
