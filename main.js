@@ -21,7 +21,6 @@ navListItems.forEach((item) => {
 });
 
 window.addEventListener("resize", () => {
-  console.log(window.innerWidth);
   if (window.innerWidth > 768) {
     document.documentElement.classList.remove("hide");
   }

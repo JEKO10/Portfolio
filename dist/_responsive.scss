@@ -229,8 +229,14 @@
     }
   }
 
-  .projects article .workImg {
-    width: 100%;
+  .projects article {
+    .info p {
+      max-width: 100%;
+    }
+
+    .workImg {
+      width: 100%;
+    }
   }
 
   .contact > article {
@@ -266,6 +272,17 @@
 
     #me {
       top: 27rem;
+    }
+  }
+
+  .projects article {
+    .info p {
+      font-size: 1.7rem;
+      line-height: 40px;
+
+      &#walk {
+        padding-bottom: 0;
+      }
     }
   }
 }
@@ -306,6 +323,26 @@
 
     p {
       font-size: 1.5rem;
+    }
+  }
+
+  .projects article {
+    padding: 50px 0;
+
+    .info {
+      margin-bottom: 2rem;
+
+      p {
+        font-size: 1.5rem;
+        line-height: 35px;
+      }
+    }
+
+    a {
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin: 0 auto 1rem;
     }
   }
 

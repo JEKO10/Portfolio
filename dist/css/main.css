@@ -195,7 +195,7 @@ nav .menuBtn .menuBurger.open::after {
 }
 .hero #me {
   position: absolute;
-  top: 4rem;
+  top: 5rem;
   right: 3rem;
 }
 .hero #bgCircle {
@@ -407,7 +407,7 @@ nav .menuBtn .menuBurger.open::after {
 }
 .projects article p {
   font-size: 1.8rem;
-  padding: 25px 0;
+  padding: 35px 0;
   letter-spacing: 1.5px;
   line-height: 40px;
   color: #dcdcdc;
@@ -864,6 +864,9 @@ footer h2 {
   .about > div {
     max-width: 90vw;
   }
+  .projects article .info p {
+    max-width: 100%;
+  }
   .projects article .workImg {
     width: 100%;
   }
@@ -893,6 +896,13 @@ footer h2 {
   .hero #me {
     top: 27rem;
   }
+  .projects article .info p {
+    font-size: 1.7rem;
+    line-height: 40px;
+  }
+  .projects article .info p#walk {
+    padding-bottom: 0;
+  }
 }
 @media screen and (max-width: 480px) {
   header #corner {
@@ -920,6 +930,22 @@ footer h2 {
   }
   .about p {
     font-size: 1.5rem;
+  }
+  .projects article {
+    padding: 50px 0;
+  }
+  .projects article .info {
+    margin-bottom: 2rem;
+  }
+  .projects article .info p {
+    font-size: 1.5rem;
+    line-height: 35px;
+  }
+  .projects article a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto 1rem;
   }
   .contact > article form {
     padding: 10px;
