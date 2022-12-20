@@ -195,8 +195,8 @@ nav .menuBtn .menuBurger.open::after {
 }
 .hero #me {
   position: absolute;
-  top: 5rem;
-  right: 3rem;
+  top: 4rem;
+  right: 4rem;
 }
 .hero #bgCircle {
   position: absolute;
@@ -362,6 +362,15 @@ nav .menuBtn .menuBurger.open::after {
   margin: 0 auto;
   padding: 40px 0;
   font-family: "Big Shoulders Display", cursive;
+  position: relative;
+}
+.projects #circle {
+  position: absolute;
+  top: 50%;
+  right: -5rem;
+  -webkit-transform: translate(30%, -35%);
+          transform: translate(30%, -35%);
+  z-index: -1;
 }
 .projects article {
   display: -webkit-box;
@@ -392,11 +401,13 @@ nav .menuBtn .menuBurger.open::after {
   -webkit-transition: all 500ms ease;
   transition: all 500ms ease;
   cursor: pointer;
+  -webkit-box-shadow: -4px 5px 7px 1px #000;
+          box-shadow: -4px 5px 7px 1px #000;
 }
 .projects article .info a:hover {
   color: #fff;
-  -webkit-box-shadow: -10px 5px 0 0 rgb(0, 0, 255);
-          box-shadow: -10px 5px 0 0 rgb(0, 0, 255);
+  -webkit-box-shadow: -4px 5px 0 1px #000;
+          box-shadow: -4px 5px 0 1px #000;
 }
 .projects article .info a i {
   padding-left: 5px;
@@ -422,8 +433,8 @@ nav .menuBtn .menuBurger.open::after {
 .projects article .workImg img {
   border: 4px solid #dcdcdc;
   border-radius: 15px;
-  -webkit-box-shadow: 5px 10px 5px 0px rgb(0, 0, 0);
-          box-shadow: 5px 10px 5px 0px rgb(0, 0, 0);
+  -webkit-box-shadow: 5px 10px 5px 0 rgb(0, 0, 0);
+          box-shadow: 5px 10px 5px 0 rgb(0, 0, 0);
   width: 100%;
 }
 
@@ -436,8 +447,8 @@ nav .menuBtn .menuBurger.open::after {
 }
 .contact #circle {
   position: absolute;
-  right: -10rem;
   top: -12rem;
+  right: -10rem;
   z-index: -1;
 }
 .contact > article {
@@ -552,14 +563,14 @@ nav .menuBtn .menuBurger.open::after {
 }
 .contact form input:hover,
 .contact form textarea:hover {
-  -webkit-box-shadow: -3px 2px 15px 1px #dcdcdc;
-          box-shadow: -3px 2px 15px 1px #dcdcdc;
+  -webkit-box-shadow: -4px 5px 7px 1px #000;
+          box-shadow: -4px 5px 7px 1px #000;
 }
 .contact form input:focus,
 .contact form textarea:focus {
   outline: none;
-  -webkit-box-shadow: -3px 2px 0 1px #dcdcdc;
-          box-shadow: -3px 2px 0 1px #dcdcdc;
+  -webkit-box-shadow: -4px 5px 0 1px #000;
+          box-shadow: -4px 5px 0 1px #000;
 }
 .contact form button {
   margin-top: 0.5rem;
@@ -687,7 +698,7 @@ footer h2 {
     line-height: 35px;
   }
   .about {
-    height: 650px;
+    height: 500px;
   }
   .about p {
     font-size: 1.6rem;
@@ -744,10 +755,10 @@ footer h2 {
 }
 @media screen and (max-width: 768px) {
   header {
-    margin-bottom: 20rem;
+    margin-bottom: 15rem;
   }
   header #corner {
-    width: 50%;
+    width: 45%;
   }
   nav {
     background-color: rgba(0, 0, 0, 0.8);
@@ -859,16 +870,26 @@ footer h2 {
     width: 35%;
   }
   .hero #circle {
-    bottom: -30rem;
+    bottom: -36rem;
+  }
+  .about {
+    height: 550px;
+    padding-top: 90px;
   }
   .about > div {
     max-width: 90vw;
+  }
+  .projects {
+    padding-top: 90px;
   }
   .projects article .info p {
     max-width: 100%;
   }
   .projects article .workImg {
     width: 100%;
+  }
+  .contact {
+    padding-top: 90px;
   }
   .contact > article form,
 .contact > article ul {
@@ -888,13 +909,22 @@ footer h2 {
 }
 @media screen and (max-width: 576px) {
   header {
-    margin-bottom: 15rem;
+    margin-bottom: 10rem;
+  }
+  header #corner {
+    width: 50%;
   }
   .hero #smallCircle {
     top: 19rem;
   }
   .hero #me {
     top: 27rem;
+  }
+  .hero #circle {
+    bottom: -34rem;
+  }
+  .about {
+    height: 600px;
   }
   .projects article .info p {
     font-size: 1.7rem;
@@ -925,8 +955,11 @@ footer h2 {
     top: 29rem;
     width: 50%;
   }
+  .hero #circle {
+    bottom: -35rem;
+  }
   .about {
-    height: 770px;
+    height: 800px;
   }
   .about p {
     font-size: 1.5rem;

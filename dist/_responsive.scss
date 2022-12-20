@@ -64,7 +64,7 @@
   }
 
   .about {
-    height: 650px;
+    height: 500px;
 
     p {
       font-size: 1.6rem;
@@ -122,10 +122,10 @@
 
 @include mediaMedium {
   header {
-    margin-bottom: 20rem;
+    margin-bottom: 15rem;
 
     #corner {
-      width: 50%;
+      width: 45%;
     }
   }
 
@@ -219,30 +219,41 @@
     }
 
     #circle {
-      bottom: -30rem;
+      bottom: -36rem;
     }
   }
 
   .about {
+    height: 550px;
+    padding-top: 90px;
+
     > div {
       max-width: 90vw;
     }
   }
 
-  .projects article {
-    .info p {
-      max-width: 100%;
-    }
+  .projects {
+    padding-top: 90px;
 
-    .workImg {
-      width: 100%;
+    article {
+      .info p {
+        max-width: 100%;
+      }
+
+      .workImg {
+        width: 100%;
+      }
     }
   }
 
-  .contact > article {
-    form,
-    ul {
-      width: 100%;
+  .contact {
+    padding-top: 90px;
+
+    > article {
+      form,
+      ul {
+        width: 100%;
+      }
     }
   }
 
@@ -262,7 +273,11 @@
 
 @include mediaMediumLow {
   header {
-    margin-bottom: 15rem;
+    margin-bottom: 10rem;
+
+    #corner {
+      width: 50%;
+    }
   }
 
   .hero {
@@ -273,6 +288,14 @@
     #me {
       top: 27rem;
     }
+
+    #circle {
+      bottom: -34rem;
+    }
+  }
+
+  .about {
+    height: 600px;
   }
 
   .projects article {
@@ -316,10 +339,14 @@
       top: 29rem;
       width: 50%;
     }
+
+    #circle {
+      bottom: -35rem;
+    }
   }
 
   .about {
-    height: 770px;
+    height: 800px;
 
     p {
       font-size: 1.5rem;
