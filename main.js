@@ -23,5 +23,9 @@ navListItems.forEach((item) => {
 window.addEventListener("resize", () => {
   if (window.innerWidth > 768) {
     document.documentElement.classList.remove("hide");
+    menuBurger.classList.remove("open");
+    navList.classList.add("hide");
+    socials.classList.add("hide");
+    document.documentElement.classList.remove("hide");
   }
 });

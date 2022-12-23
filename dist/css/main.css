@@ -790,6 +790,10 @@ footer h2 {
   nav ul li a {
     font-size: 2rem;
   }
+  nav ul li a:hover {
+    -webkit-box-shadow: inset 0 -4px 0 -1px #fff;
+            box-shadow: inset 0 -4px 0 -1px #fff;
+  }
   nav ul.hide {
     display: none;
   }
@@ -838,7 +842,7 @@ footer h2 {
         -ms-flex-align: center;
             align-items: center;
     top: inherit;
-    bottom: 2rem;
+    bottom: 1rem;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);

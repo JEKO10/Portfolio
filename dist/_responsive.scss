@@ -153,6 +153,10 @@
 
         a {
           font-size: 2rem;
+
+          &:hover {
+            box-shadow: inset 0 -4px 0 -1px #fff;
+          }
         }
       }
 
@@ -183,7 +187,7 @@
     ul {
       @include flex(center, center);
       top: inherit;
-      bottom: 2rem;
+      bottom: 1rem;
       left: 50%;
       transform: translate(-50%, -50%);
 
