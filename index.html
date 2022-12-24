@@ -13,6 +13,15 @@
       src="https://kit.fontawesome.com/992ccce3a9.js"
       crossorigin="anonymous"
     ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("-bZK2T35a5KgMIbTk");
+      })();
+    </script>
     <title>Aleksa Bubanja Portfolio</title>
   </head>
   <body>
@@ -256,28 +265,15 @@
       <h2 id="title">Get in touch</h2>
       <article>
         <form>
-          <input
-            type="name"
-            name="name"
-            id="name"
-            placeholder="Type your name"
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Email address"
-            required
-          />
+          <input type="name" id="name" placeholder="Type your name" required />
+          <input type="email" id="email" placeholder="Email address" required />
           <textarea
-            name="message"
             placeholder="Your message"
             rows="1"
             id="message"
             required
           ></textarea>
-          <button>Send</button>
+          <button id="submit">Send</button>
         </form>
         <ul>
           <li>
