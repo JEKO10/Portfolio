@@ -56,8 +56,18 @@
     box-shadow: 6px 6px 7px 0 rgb(0, 0, 0);
     transition: $defaultTransition;
 
-    &:hover {
-      box-shadow: -20px 15px 0 0 rgba(0, 0, 255, 1);
+    // &:hover {
+    //   box-shadow: -20px 15px 0 0 rgba(0, 0, 255, 1);
+    // }
+
+    p {
+      color: $paragraphColor;
+      font-size: 1.5rem;
+      font-weight: 600;
+      padding-right: 15px;
+      display: none;
+      transition: $defaultTransition;
+      font-family: $secondaryFont;
     }
 
     input,
@@ -74,10 +84,6 @@
       resize: vertical;
       max-height: 200px;
       transition: $defaultTransition;
-
-      &::placeholder {
-        color: $primaryColor;
-      }
 
       &:hover {
         // box-shadow: -3px 2px 15px 1px $paragraphColor;
@@ -105,13 +111,21 @@
       font-weight: 800;
       transition: $defaultTransition;
 
-      &:hover,
-      &:focus {
+      &:hover {
         outline: none;
         background-color: #fff;
         color: $primaryColor;
         box-shadow: -5px 4px 1px 1px $secondaryColor;
       }
     }
+  }
+}
+
+@keyframes emptyField {
+  from {
+    transform: translateX(20px);
+  }
+  to {
+    transform: translateX(0);
   }
 }
