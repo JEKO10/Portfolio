@@ -197,12 +197,16 @@ nav .menuBtn .menuBurger.open::after {
   position: absolute;
   top: 4rem;
   right: 4rem;
+  -webkit-animation: opacityAnimation 5s ease;
+          animation: opacityAnimation 5s ease;
 }
 .hero #bgCircle {
   position: absolute;
   top: -10rem;
   right: 0;
   z-index: -2;
+  -webkit-animation: opacityAnimation 4s ease;
+          animation: opacityAnimation 4s ease;
 }
 .hero #smallCircle {
   display: none;
@@ -306,6 +310,28 @@ nav .menuBtn .menuBurger.open::after {
   }
   to {
     width: 40px;
+  }
+}
+@-webkit-keyframes opacityAnimation {
+  0% {
+    opacity: 0;
+  }
+  66% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes opacityAnimation {
+  0% {
+    opacity: 0;
+  }
+  66% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 .about {

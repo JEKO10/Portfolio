@@ -9,6 +9,8 @@ let email = document.querySelector("#email");
 let message = document.querySelector("#message");
 const alertMessage = document.querySelector("form p");
 
+AOS.init();
+
 menuBtn.addEventListener("click", () => {
   menuBurger.classList.toggle("open");
   navList.classList.toggle("hide");

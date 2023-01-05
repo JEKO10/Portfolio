@@ -73,6 +73,7 @@
     position: absolute;
     top: 4rem;
     right: 4rem;
+    animation: opacityAnimation 5s ease;
   }
 
   #bgCircle {
@@ -80,6 +81,7 @@
     top: -10rem;
     right: 0;
     z-index: -2;
+    animation: opacityAnimation 4s ease;
   }
 
   #smallCircle {
@@ -161,5 +163,17 @@
 
   to {
     width: 40px;
+  }
+}
+
+@keyframes opacityAnimation {
+  0% {
+    opacity: 0;
+  }
+  66% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

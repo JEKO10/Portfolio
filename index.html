@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./dist/css/main.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script
       src="https://kit.fontawesome.com/992ccce3a9.js"
       crossorigin="anonymous"
@@ -30,13 +31,20 @@
         src="./images/background/cornerCircle.png"
         alt="cornerCircle"
         id="corner"
+        data-aos="fade-right"
       />
       <nav>
         <ul class="hide">
-          <li><a href="#about">About</a></li>
-          <li><a href="#work">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li>
+          <li data-aos="fade-down" data-aos-duration="1500">
+            <a href="#about">About</a>
+          </li>
+          <li data-aos="fade-down" data-aos-duration="2000">
+            <a href="#work">Projects</a>
+          </li>
+          <li data-aos="fade-down" data-aos-duration="2500">
+            <a href="#contact">Contact</a>
+          </li>
+          <li data-aos="fade-down" data-aos-duration="3000">
             <a
               href="https://drive.google.com/file/d/19pmPUFnRrOPoWghnMZOEYX0rWmjwUzEv/view?usp=sharing"
               target="_blank"
@@ -66,7 +74,7 @@
         />
         <div>
           <h1>Aleksa Bubanja</h1>
-          <p>
+          <p data-aos="fade-right" data-aos-duration="2000">
             I am 19 years old self-taught front-end developer from Montenegro. I
             have experience working with HTML, CSS, Sass, JavaScript, React.js,
             JQuery, and Typescript.
@@ -77,17 +85,29 @@
         </div>
         <img src="./images/me.png" alt="Aleksa Bubanja" id="me" />
         <ul class="hide">
-          <li>
+          <li
+            data-aos="fade-left"
+            data-aos-duration="1500"
+            data-aos-delay="1500"
+          >
             <a href="https://github.com/JEKO10" target="_blank">
               <i class="fa-brands fa-github"></i>
             </a>
           </li>
-          <li>
+          <li
+            data-aos="fade-left"
+            data-aos-duration="2000"
+            data-aos-delay="2000"
+          >
             <a href="mailto:aleksa3b@gmail.com">
               <i class="fa-sharp fa-solid fa-envelope"></i>
             </a>
           </li>
-          <li>
+          <li
+            data-aos="fade-left"
+            data-aos-duration="2500"
+            data-aos-delay="2500"
+          >
             <a
               href="https://www.linkedin.com/in/aleksa-bubanja-338b35220/"
               target="_blank"
@@ -95,7 +115,11 @@
               <i class="fa-brands fa-linkedin"></i>
             </a>
           </li>
-          <li>
+          <li
+            data-aos="fade-left"
+            data-aos-duration="3000"
+            data-aos-delay="3000"
+          >
             <a href="https://twitter.com/aleksa3b" target="_blank">
               <i class="fa-brands fa-twitter"></i>
             </a>
@@ -330,6 +354,7 @@
         </li>
       </ul>
     </footer>
-    <script src="./main.js"></script>
+    <script defer src="./main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   </body>
 </html>
