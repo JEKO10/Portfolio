@@ -14,7 +14,7 @@
   }
 
   article {
-    @include flex(space-between, center);
+    @include flex(space-between, flex-start);
     padding: 5rem 0;
     border-bottom: 1px solid $paragraphColor;
 
