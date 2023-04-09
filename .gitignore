@@ -22,3 +22,13 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
+
+.env
+.env.example
+.env.local
+.env.staging
