@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { createGlobalStyle, css } from "styled-components";
+import { createGlobalStyle, css } from "styled-components";
 
 export const GlobalStyles = React.memo(
   createGlobalStyle`${css`
@@ -13,11 +13,3 @@ export const GlobalStyles = React.memo(
     }
   `}`
 );
-
-export const HomePage = styled.section`
-  padding: 20px;
-
-  * {
-    padding: 30px 0;
-  }
-`;

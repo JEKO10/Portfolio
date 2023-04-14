@@ -1,22 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-import { GlobalStyles, HomePage } from "./assets/style/GlobalStyles";
+import { GlobalStyles } from "./assets/style/GlobalStyles";
+import { Loader, Preloader } from "./assets/style/Preloader.style";
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+  }, []);
+
   return (
-    <HomePage>
+    <main>
       <GlobalStyles />
-      <h1>I am currently rebuilding my portfolio site.</h1>
-      <h2>Here is my temporary portfolio: </h2>
-      <a
-        href="https://aleksa-bubanja.netlify.app"
-        target="_blank"
-        rel="noreferrer"
-      >
-        Aleksa Bubanja Portfolio
-      </a>
-      <h2>Thank you for understanding.</h2>
-    </HomePage>
+      {isLoading ? (
+        <Preloader>
+          <Loader></Loader>
+        </Preloader>
+      ) : (
+        <h1>Welcome to my potfolio</h1>
+      )}
+    </main>
   );
 }
 
