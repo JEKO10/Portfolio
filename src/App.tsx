@@ -1,28 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import { GlobalStyles } from "./assets/style/GlobalStyles";
-import { Loader, Preloader } from "./assets/style/Preloader.style";
+import Taskbar from "./components/Taskbar";
+// import { Loader, Preloader } from "./assets/style/Preloader.style";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
-  }, []);
+  // useEffect(() => {
+  //   setIsLoading(true);
+  //   setTimeout(() => {
+  //     setIsLoading(false);
+  //   }, 3000);
+  // }, []);
 
   return (
     <main>
       <GlobalStyles />
-      {isLoading ? (
+      {/* {isLoading ? (
         <Preloader>
           <Loader></Loader>
         </Preloader>
       ) : (
-        <h1>Welcome to my potfolio</h1>
-      )}
+        <h1>W</h1>
+      )} */}
+      <Taskbar />
     </main>
   );
 }

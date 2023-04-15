@@ -11,5 +11,10 @@ export const GlobalStyles = React.memo(
       text-align: center;
       font-family: "Roboto", sans-serif;
     }
+
+    body {
+      background-color: #008080;
+      overflow: hidden;
+    }
   `}`
 );
