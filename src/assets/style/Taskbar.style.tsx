@@ -36,5 +36,10 @@ export const Start = styled.button<ButtonProps>`
 
 export const Dash = styled.img`
   height: 35px;
-  margin-left: 5px;
+  margin: 0 5px;
+`;
+
+export const Toolbar = styled.img`
+  height: 35px;
+  cursor: pointer;
 `;
