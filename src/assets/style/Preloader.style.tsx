@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import preloaderImg from "../images/preloader.jpg";
 
-export const Preloader = styled.div`
+export const LoaderContainer = styled.div`
   height: 100vh;
   width: 100vw;
   position: relative;
@@ -17,9 +17,9 @@ export const Loader = styled.div`
   bottom: 0;
   width: 100%;
   height: 12px;
-  background: linear-gradient(0.25turn, transparent, #81b5c5, transparent);
+  background: linear-gradient(0.25turn, transparent, #8dc9dc, transparent);
 
-  animation: loading 1s alternate infinite;
+  animation: loading 800ms alternate infinite;
 
   @keyframes loading {
     0% {
@@ -30,3 +30,9 @@ export const Loader = styled.div`
     }
   }
 `;
+
+// export const Bios = styled.img`
+//   height: 100vh;
+//   width: 100vw;
+//   background-size: cover;
+// `;

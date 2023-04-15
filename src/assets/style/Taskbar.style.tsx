@@ -13,7 +13,7 @@ export const TaskBar = styled.section`
   bottom: 0;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   padding: 0 10px;
   height: 45px;
   width: 100%;
@@ -21,8 +21,8 @@ export const TaskBar = styled.section`
 `;
 
 export const Start = styled.button<ButtonProps>`
-  height: 27px;
-  width: 63px;
+  height: 35px;
+  width: 82px;
   background: ${({ isClicked }) =>
     isClicked
       ? `
@@ -32,4 +32,9 @@ export const Start = styled.button<ButtonProps>`
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
+`;
+
+export const Dash = styled.img`
+  height: 35px;
+  margin-left: 5px;
 `;

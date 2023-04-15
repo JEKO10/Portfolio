@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-import { Start, TaskBar } from "../assets/style/Taskbar.style";
+import dash from "../assets/images/dash.jpg";
+import { Dash, Start, TaskBar } from "../assets/style/Taskbar.style";
 
 const Taskbar = () => {
   const [isClicked, setIsClicked] = useState(false);
@@ -8,10 +9,13 @@ const Taskbar = () => {
   return (
     <>
       <TaskBar>
-        <Start
-          isClicked={isClicked}
-          onMouseDown={() => setIsClicked(!isClicked)}
-        />
+        <div>
+          <Start
+            isClicked={isClicked}
+            onMouseDown={() => setIsClicked(!isClicked)}
+          />
+          <Dash src={dash} alt="dash" />
+        </div>
       </TaskBar>
     </>
   );
