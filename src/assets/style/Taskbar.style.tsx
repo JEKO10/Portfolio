@@ -4,7 +4,6 @@ import clicked from "../images/clicked.png";
 import name from "../images/name.png";
 import startButton from "../images/start.png";
 import taskbar from "../images/taskbar.jpg";
-import toolbar from "../images/toolbar.png";
 
 type ButtonProps = {
   isClicked: boolean;
@@ -32,7 +31,7 @@ export const Start = styled.button<ButtonProps>`
   `
       : `url(${startButton})`};
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   cursor: pointer;
 `;
 
@@ -41,20 +40,11 @@ export const Name = styled.button`
   width: 163px;
   background: url(${name});
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   cursor: pointer;
 `;
 
 export const Dash = styled.img`
   height: 35px;
   margin: 0 5px;
-`;
-
-export const ToolButton = styled.img`
-  height: 35px;
-  width: 163px;
-  background: url(${toolbar});
-  background-repeat: no-repeat;
-  background-size: cover;
-  cursor: pointer;
 `;

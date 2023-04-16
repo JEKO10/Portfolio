@@ -14,10 +14,7 @@ const Taskbar = () => {
           <Dash src={dash} alt="dash" />
           <Name />
         </div>
-        <div>
-          <Dash src={dash} alt="dash" />
-          <Toolbar />
-        </div>
+        <Toolbar />
       </TaskBar>
     </>
   );
