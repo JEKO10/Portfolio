@@ -1,25 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 
 import dash from "../assets/images/dash.jpg";
-import toolbar from "../assets/images/toolbar.png";
-import { Dash, Start, TaskBar, Toolbar } from "../assets/style/Taskbar.style";
+import { Dash, Name, TaskBar } from "../assets/style/Taskbar.style";
+import StartButton from "./StartButton";
+import Toolbar from "./Toolbar";
 
 const Taskbar = () => {
-  const [isClicked, setIsClicked] = useState(false);
-
   return (
     <>
       <TaskBar>
         <div>
-          <Start
-            isClicked={isClicked}
-            onMouseDown={() => setIsClicked(!isClicked)}
-          />
+          <StartButton />
           <Dash src={dash} alt="dash" />
+          <Name />
         </div>
         <div>
           <Dash src={dash} alt="dash" />
-          <Toolbar src={toolbar} alt="clock" />
+          <Toolbar />
         </div>
       </TaskBar>
     </>

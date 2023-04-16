@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 
+import GlobalFonts from "./assets/fonts/fonts";
 import { GlobalStyles } from "./assets/style/GlobalStyles";
 import { Preloader } from "./components/Preloader";
 import Home from "./pages/Home";
@@ -17,6 +18,7 @@ function App() {
   return (
     <main>
       <GlobalStyles />
+      <GlobalFonts />
       {isLoading ? <Preloader /> : <Home />}
     </main>
   );

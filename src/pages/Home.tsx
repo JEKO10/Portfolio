@@ -5,6 +5,7 @@ import Taskbar from "../components/Taskbar";
 const Home = () => {
   return (
     <section>
+      <h1>aelsla</h1>
       <Taskbar />
     </section>
   );

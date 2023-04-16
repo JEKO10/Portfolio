@@ -8,13 +8,12 @@ export const GlobalStyles = React.memo(
       padding: 0;
       border: 0;
       box-sizing: border-box;
-      text-align: center;
-      font-family: "Roboto", sans-serif;
     }
 
     body {
       background-color: #008080;
       overflow: hidden;
+      font-family: "w95fa", sans-serif;
     }
   `}`
 );
