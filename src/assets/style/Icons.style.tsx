@@ -4,6 +4,7 @@ import recycle from "../images/recycle.png";
 
 type IconName = {
   iconName: string;
+  isClicked: boolean;
 };
 
 export const IconsContainer = styled.article`
@@ -18,6 +19,13 @@ export const Icon = styled.button<IconName>`
   height: 100px;
   width: 100px;
   background: ${({ iconName }) => `url(${iconName})`};
+  background-blend-mode: ${({ isClicked }) =>
+    isClicked
+      ? `
+     background-blend-mode: hard-light;
+     background-color: blue;
+     `
+      : `background-blend-mode: none;`};
   background-repeat: no-repeat;
   background-size: contain;
   margin: 20px 15px;
