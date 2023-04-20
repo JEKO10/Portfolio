@@ -20,12 +20,8 @@ export const Icon = styled.button<IconName>`
   width: 100px;
   background: ${({ iconName }) => `url(${iconName})`};
   background-blend-mode: ${({ isClicked }) =>
-    isClicked
-      ? `
-     background-blend-mode: hard-light;
-     background-color: blue;
-     `
-      : `background-blend-mode: none;`};
+    isClicked ? "hard-light" : "none"};
+  background-color: ${({ isClicked }) => (isClicked ? "blue" : "transparent")};
   background-repeat: no-repeat;
   background-size: contain;
   margin: 20px 15px;

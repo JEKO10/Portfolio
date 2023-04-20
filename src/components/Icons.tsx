@@ -5,11 +5,29 @@ import contact from "../assets/images/contact.png";
 import work from "../assets/images/work.png";
 import { Icon, IconsContainer, RecycleBin } from "../assets/style/Icons.style";
 
-const Icons = () => {
-  const [isClicked, setIsClicked] = useState(false);
+type ClickedState = {
+  about: boolean;
+  work: boolean;
+  contact: boolean;
+};
 
-  const handleClick = () => {
-    setIsClicked(true);
+const Icons = () => {
+  const [isClicked, setIsClicked] = useState<ClickedState>({
+    about: false,
+    work: false,
+    contact: false,
+  });
+
+  const handleClick = (iconName: string) => {
+    setIsClicked({
+      about: false,
+      work: false,
+      contact: false,
+    });
+    setIsClicked((prevState) => ({
+      ...prevState,
+      [iconName]: true,
+    }));
   };
 
   return (
@@ -17,18 +35,18 @@ const Icons = () => {
       <IconsContainer>
         <Icon
           iconName={about}
-          isClicked={isClicked}
-          onDoubleClick={() => handleClick()}
+          isClicked={isClicked.about}
+          onDoubleClick={() => handleClick("about")}
         />
         <Icon
           iconName={work}
-          isClicked={isClicked}
-          onDoubleClick={() => handleClick()}
+          isClicked={isClicked.work}
+          onDoubleClick={() => handleClick("work")}
         />
         <Icon
           iconName={contact}
-          isClicked={isClicked}
-          onDoubleClick={() => handleClick()}
+          isClicked={isClicked.contact}
+          onDoubleClick={() => handleClick("contact")}
         />
       </IconsContainer>
       <RecycleBin />
