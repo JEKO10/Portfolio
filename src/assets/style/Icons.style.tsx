@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-import recycle from "../images/recycle.png";
-
 type IconName = {
   iconName: string;
   isClicked: boolean;
@@ -28,14 +26,17 @@ export const Icon = styled.button<IconName>`
   cursor: pointer;
 `;
 
-export const RecycleBin = styled.button`
+export const RecycleBin = styled.button<IconName>`
   height: 100px;
   width: 100px;
   position: absolute;
   bottom: 2rem;
   right: 0;
   margin: 30px;
-  background: url(${recycle});
+  background: ${({ iconName }) => `url(${iconName})`};
+  background-blend-mode: ${({ isClicked }) =>
+    isClicked ? "hard-light" : "none"};
+  background-color: ${({ isClicked }) => (isClicked ? "blue" : "transparent")};
   background-repeat: no-repeat;
   background-size: contain;
   cursor: pointer;
