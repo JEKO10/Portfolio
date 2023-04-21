@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 
 import about from "../assets/images/about.png";
 import contact from "../assets/images/contact.png";
@@ -13,13 +13,12 @@ type ClickedState = {
   recycle: boolean;
 };
 
-const Icons = () => {
-  const [isClicked, setIsClicked] = useState<ClickedState>({
-    about: false,
-    work: false,
-    contact: false,
-    recycle: false,
-  });
+type IconsProp = {
+  isClicked: ClickedState;
+  setIsClicked: React.Dispatch<React.SetStateAction<ClickedState>>;
+};
+
+const Icons: React.FC<IconsProp> = ({ isClicked, setIsClicked }) => {
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   const handleClick = (iconName: string) => {
@@ -35,10 +34,6 @@ const Icons = () => {
     }));
   };
 
-  useEffect(() => {
-    document.addEventListener("click", clickOutside, true);
-  }, []);
-
   const clickOutside = (e: MouseEvent) => {
     if (!buttonRef.current?.contains(e.target as Node)) {
       setIsClicked({
@@ -49,6 +44,10 @@ const Icons = () => {
       });
     }
   };
+
+  useEffect(() => {
+    document.addEventListener("click", clickOutside, true);
+  }, []);
 
   return (
     <>
