@@ -16,13 +16,13 @@ type FilesProps = {
   isOpen: ClickedState;
 };
 
-const Files: React.FC<FilesProps> = () => {
+const Files: React.FC<FilesProps> = ({ isOpen }) => {
   return (
     <section>
-      <About />
-      <Contact />
-      <Work />
-      <RecycleBin />
+      {isOpen.about && <About />}
+      {isOpen.contact && <Contact />}
+      {isOpen.work && <Work />}
+      {isOpen.recycle && <RecycleBin />}
     </section>
   );
 };

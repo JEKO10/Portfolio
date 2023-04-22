@@ -32,13 +32,6 @@ const Icons: React.FC<IconsProps> = ({
   ) => {
     switch (event.detail) {
       case 1:
-        setIsClicked({
-          about: false,
-          work: false,
-          contact: false,
-          recycle: false,
-        });
-
         setIsClicked((prevState) => ({
           ...prevState,
           [iconName]: true,
