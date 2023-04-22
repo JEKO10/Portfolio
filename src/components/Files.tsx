@@ -5,7 +5,18 @@ import Contact from "./files/Contact";
 import RecycleBin from "./files/RecycleBin";
 import Work from "./files/Work";
 
-const Files = () => {
+type ClickedState = {
+  about: boolean;
+  work: boolean;
+  contact: boolean;
+  recycle: boolean;
+};
+
+type FilesProps = {
+  isOpen: ClickedState;
+};
+
+const Files: React.FC<FilesProps> = () => {
   return (
     <section>
       <About />

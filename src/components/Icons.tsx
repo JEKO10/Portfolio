@@ -13,25 +13,55 @@ type ClickedState = {
   recycle: boolean;
 };
 
-type IconsProp = {
+type IconsProps = {
   isClicked: ClickedState;
   setIsClicked: React.Dispatch<React.SetStateAction<ClickedState>>;
+  setIsOpen: React.Dispatch<React.SetStateAction<ClickedState>>;
 };
 
-const Icons: React.FC<IconsProp> = ({ isClicked, setIsClicked }) => {
+const Icons: React.FC<IconsProps> = ({
+  isClicked,
+  setIsClicked,
+  setIsOpen,
+}) => {
   const buttonRef = useRef<HTMLButtonElement>(null);
 
-  const handleClick = (iconName: string) => {
-    setIsClicked({
-      about: false,
-      work: false,
-      contact: false,
-      recycle: false,
-    });
-    setIsClicked((prevState) => ({
-      ...prevState,
-      [iconName]: true,
-    }));
+  const handleClick = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    iconName: string
+  ) => {
+    switch (event.detail) {
+      case 1:
+        setIsClicked({
+          about: false,
+          work: false,
+          contact: false,
+          recycle: false,
+        });
+
+        setIsClicked((prevState) => ({
+          ...prevState,
+          [iconName]: true,
+        }));
+        break;
+      case 2:
+        setIsOpen((prevState) => ({
+          ...prevState,
+          [iconName]: true,
+        }));
+
+        setIsClicked((prevState) => ({
+          ...prevState,
+          [iconName]: true,
+        }));
+        break;
+      default:
+        setIsClicked((prevState) => ({
+          ...prevState,
+          [iconName]: true,
+        }));
+        break;
+    }
   };
 
   const clickOutside = (e: MouseEvent) => {
@@ -55,26 +85,26 @@ const Icons: React.FC<IconsProp> = ({ isClicked, setIsClicked }) => {
         <Icon
           iconName={about}
           isClicked={isClicked.about}
-          onClick={() => handleClick("about")}
+          onClick={(event) => handleClick(event, "about")}
           ref={buttonRef}
         />
         <Icon
           iconName={work}
           isClicked={isClicked.work}
-          onClick={() => handleClick("work")}
+          onClick={(event) => handleClick(event, "work")}
           ref={buttonRef}
         />
         <Icon
           iconName={contact}
           isClicked={isClicked.contact}
-          onClick={() => handleClick("contact")}
+          onClick={(event) => handleClick(event, "contact")}
           ref={buttonRef}
         />
       </IconsContainer>
       <RecycleBin
         iconName={recycle}
         isClicked={isClicked.recycle}
-        onClick={() => handleClick("recycle")}
+        onClick={(event) => handleClick(event, "recycle")}
         ref={buttonRef}
       />
     </>

@@ -18,11 +18,21 @@ const Home = () => {
     contact: false,
     recycle: false,
   });
+  const [isOpen, setIsOpen] = useState<ClickedState>({
+    about: false,
+    work: false,
+    contact: false,
+    recycle: false,
+  });
 
   return (
     <section>
-      <Icons isClicked={isClicked} setIsClicked={setIsClicked} />
-      <Files />
+      <Icons
+        isClicked={isClicked}
+        setIsClicked={setIsClicked}
+        setIsOpen={setIsOpen}
+      />
+      <Files isOpen={isOpen} />
       <Taskbar />
     </section>
   );
