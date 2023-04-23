@@ -8,7 +8,20 @@ import {
   ToolButton,
 } from "../assets/style/Toolbar.style";
 
-const Toolbar = () => {
+type ClickedState = {
+  about: boolean;
+  work: boolean;
+  contact: boolean;
+  recycle: boolean;
+  time?: boolean;
+};
+
+type ToolbarType = {
+  isOpen: ClickedState;
+  setIsOpen: React.Dispatch<React.SetStateAction<ClickedState>>;
+};
+
+const Toolbar: React.FC<ToolbarType> = ({ setIsOpen, isOpen }) => {
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
@@ -28,7 +41,7 @@ const Toolbar = () => {
   });
 
   return (
-    <ToolbarContainer>
+    <ToolbarContainer onClick={() => setIsOpen({ ...isOpen, time: true })}>
       <Dash src={dash} alt="dash" />
       <ToolButton />
       <Clock>{formattedTime}</Clock>

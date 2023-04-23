@@ -9,6 +9,7 @@ type ClickedState = {
   work: boolean;
   contact: boolean;
   recycle: boolean;
+  time?: boolean;
 };
 
 const Home = () => {
@@ -23,6 +24,7 @@ const Home = () => {
     work: false,
     contact: false,
     recycle: false,
+    time: false,
   });
 
   return (
@@ -33,7 +35,7 @@ const Home = () => {
         setIsOpen={setIsOpen}
       />
       <Files isOpen={isOpen} />
-      <Taskbar />
+      <Taskbar isOpen={isOpen} setIsOpen={setIsOpen} />
     </section>
   );
 };

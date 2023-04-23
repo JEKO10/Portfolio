@@ -1,15 +1,17 @@
 import React from "react";
 
-import About from "./files/About";
-import Contact from "./files/Contact";
-import RecycleBin from "./files/RecycleBin";
-import Work from "./files/Work";
+import About from "./windows/About";
+import Contact from "./windows/Contact";
+import RecycleBin from "./windows/RecycleBin";
+import Time from "./windows/Time";
+import Work from "./windows/Work";
 
 type ClickedState = {
   about: boolean;
   work: boolean;
   contact: boolean;
   recycle: boolean;
+  time?: boolean;
 };
 
 type FilesProps = {
@@ -23,6 +25,7 @@ const Files: React.FC<FilesProps> = ({ isOpen }) => {
       {isOpen.contact && <Contact />}
       {isOpen.work && <Work />}
       {isOpen.recycle && <RecycleBin />}
+      {isOpen.time && <Time />}
     </section>
   );
 };

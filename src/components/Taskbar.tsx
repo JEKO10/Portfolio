@@ -5,7 +5,20 @@ import { Dash, Name, TaskBar } from "../assets/style/Taskbar.style";
 import StartButton from "./StartButton";
 import Toolbar from "./Toolbar";
 
-const Taskbar = () => {
+type ClickedState = {
+  about: boolean;
+  work: boolean;
+  contact: boolean;
+  recycle: boolean;
+  time?: boolean;
+};
+
+type TaskbarType = {
+  isOpen: ClickedState;
+  setIsOpen: React.Dispatch<React.SetStateAction<ClickedState>>;
+};
+
+const Taskbar: React.FC<TaskbarType> = ({ setIsOpen, isOpen }) => {
   return (
     <>
       <TaskBar>
@@ -14,7 +27,7 @@ const Taskbar = () => {
           <Dash src={dash} alt="dash" />
           <Name />
         </div>
-        <Toolbar />
+        <Toolbar setIsOpen={setIsOpen} isOpen={isOpen} />
       </TaskBar>
     </>
   );
