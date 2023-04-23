@@ -5,25 +5,10 @@ import contact from "../assets/images/contact.png";
 import recycle from "../assets/images/recycle.png";
 import work from "../assets/images/work.png";
 import { Icon, IconsContainer, RecycleBin } from "../assets/style/Icons.style";
+import { useGlobalContext } from "../context";
 
-type ClickedState = {
-  about: boolean;
-  work: boolean;
-  contact: boolean;
-  recycle: boolean;
-};
-
-type IconsProps = {
-  isClicked: ClickedState;
-  setIsClicked: React.Dispatch<React.SetStateAction<ClickedState>>;
-  setIsOpen: React.Dispatch<React.SetStateAction<ClickedState>>;
-};
-
-const Icons: React.FC<IconsProps> = ({
-  isClicked,
-  setIsClicked,
-  setIsOpen,
-}) => {
+const Icons = () => {
+  const { isClicked, setIsClicked, setIsOpen } = useGlobalContext();
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   const handleClick = (

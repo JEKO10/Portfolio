@@ -2,23 +2,13 @@ import React from "react";
 
 import dash from "../assets/images/dash.jpg";
 import { Dash, Name, TaskBar } from "../assets/style/Taskbar.style";
+import { useGlobalContext } from "../context";
 import StartButton from "./StartButton";
 import Toolbar from "./Toolbar";
 
-type ClickedState = {
-  about: boolean;
-  work: boolean;
-  contact: boolean;
-  recycle: boolean;
-  time?: boolean;
-};
+const Taskbar = () => {
+  const { setIsOpen, isOpen } = useGlobalContext();
 
-type TaskbarType = {
-  isOpen: ClickedState;
-  setIsOpen: React.Dispatch<React.SetStateAction<ClickedState>>;
-};
-
-const Taskbar: React.FC<TaskbarType> = ({ setIsOpen, isOpen }) => {
   return (
     <>
       <TaskBar>

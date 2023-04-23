@@ -1,24 +1,15 @@
 import React from "react";
 
+import { useGlobalContext } from "../context";
 import About from "./windows/About";
 import Contact from "./windows/Contact";
 import RecycleBin from "./windows/RecycleBin";
 import Time from "./windows/Time";
 import Work from "./windows/Work";
 
-type ClickedState = {
-  about: boolean;
-  work: boolean;
-  contact: boolean;
-  recycle: boolean;
-  time?: boolean;
-};
+const Files = () => {
+  const { isOpen } = useGlobalContext();
 
-type FilesProps = {
-  isOpen: ClickedState;
-};
-
-const Files: React.FC<FilesProps> = ({ isOpen }) => {
   return (
     <section>
       {isOpen.about && <About />}
