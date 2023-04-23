@@ -20,7 +20,7 @@ I am an ambitious front-end developer looking for my first job. I have experienc
 
 - React
 - TypeScript
-- Eslint
+- ESLint
 - Styled Components
 - Context API
 - Vite
