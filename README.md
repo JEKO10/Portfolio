@@ -18,6 +18,14 @@ I am an ambitious front-end developer looking for my first job. I have experienc
 
 ## Built with
 
+- React
+- TypeScript
+- Eslint
+- Styled Components
+- Context API
+- Vite
+- Netlify
+
 ## Live preview
 
 [Click for live preview](https://jeko10.github.io/Portfolio/)
