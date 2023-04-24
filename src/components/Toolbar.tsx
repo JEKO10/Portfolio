@@ -7,22 +7,12 @@ import {
   ToolbarContainer,
   ToolButton,
 } from "../assets/style/Toolbar.style";
+import { useGlobalContext } from "../context";
 
-type ClickedState = {
-  about: boolean;
-  work: boolean;
-  contact: boolean;
-  recycle: boolean;
-  time?: boolean;
-};
-
-type ToolbarType = {
-  isOpen: ClickedState;
-  setIsOpen: React.Dispatch<React.SetStateAction<ClickedState>>;
-};
-
-const Toolbar: React.FC<ToolbarType> = ({ setIsOpen, isOpen }) => {
+const Toolbar = () => {
   const [time, setTime] = useState(new Date());
+
+  const { setIsOpen, isOpen } = useGlobalContext();
 
   useEffect(() => {
     const intervalID = setInterval(() => {

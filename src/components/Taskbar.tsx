@@ -2,13 +2,10 @@ import React from "react";
 
 import dash from "../assets/images/dash.jpg";
 import { Dash, Name, TaskBar } from "../assets/style/Taskbar.style";
-import { useGlobalContext } from "../context";
 import StartButton from "./StartButton";
 import Toolbar from "./Toolbar";
 
 const Taskbar = () => {
-  const { setIsOpen, isOpen } = useGlobalContext();
-
   return (
     <>
       <TaskBar>
@@ -17,7 +14,7 @@ const Taskbar = () => {
           <Dash src={dash} alt="dash" />
           <Name />
         </div>
-        <Toolbar setIsOpen={setIsOpen} isOpen={isOpen} />
+        <Toolbar />
       </TaskBar>
     </>
   );
