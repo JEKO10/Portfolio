@@ -47,4 +47,5 @@ export const Name = styled.button`
 export const Dash = styled.img`
   height: 35px;
   margin: 0 5px;
+  user-select: none;
 `;

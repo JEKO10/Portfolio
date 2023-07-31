@@ -1,16 +1,15 @@
 import React from "react";
 
-import { CloseBtn } from "../../assets/style/Files.style";
+import { CloseBtn, TimeModal } from "../../assets/style/Files.style";
 import { useGlobalContext } from "../../context";
 
 const Time = () => {
   const { isOpen, setIsOpen } = useGlobalContext();
 
   return (
-    <section>
+    <TimeModal>
       <CloseBtn onClick={() => setIsOpen({ ...isOpen, time: false })} />
-      Time
-    </section>
+    </TimeModal>
   );
 };
 

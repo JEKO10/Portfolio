@@ -12,6 +12,7 @@ export const ToolButton = styled.img`
   background: url(${toolbar});
   background-repeat: no-repeat;
   background-size: contain;
+  user-select: none;
   cursor: pointer;
 `;
 
@@ -21,4 +22,6 @@ export const Clock = styled.p`
   left: 75%;
   top: 44%;
   transform: translate(-50%, -50%);
+  user-select: none;
+  cursor: pointer;
 `;
