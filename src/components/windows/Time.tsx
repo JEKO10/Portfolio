@@ -8,7 +8,13 @@ const Time = () => {
 
   return (
     <TimeModal>
-      <CloseBtn onClick={() => setIsOpen({ ...isOpen, time: false })} />
+      <CloseBtn
+        onClick={() => setIsOpen({ ...isOpen, time: false })}
+        height={23}
+        width={23}
+        top={0.35}
+        right={0.45}
+      />
     </TimeModal>
   );
 };
