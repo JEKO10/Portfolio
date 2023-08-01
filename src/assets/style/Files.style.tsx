@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import aboutModal from "../images/aboutModal.png";
 import close from "../images/close.png";
+import recycleBin from "../images/recycleBin.png";
 import time from "../images/timeModal.png";
 
 type CloseBtnProps = {
@@ -29,7 +30,12 @@ export const TimeModal = styled.section`
   width: 576px;
 `;
 
-export const RecycleBinFile = styled.section``;
+export const RecycleBinFile = styled.section`
+  background: url(${recycleBin}) center/cover no-repeat;
+  position: relative;
+  height: 681px;
+  width: 787px;
+`;
 
 export const CloseBtn = styled.button<CloseBtnProps>`
   background: url(${close}) center/contain no-repeat;

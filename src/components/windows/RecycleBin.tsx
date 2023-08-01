@@ -1,16 +1,21 @@
 import React from "react";
 
-import { CloseBtn } from "../../assets/style/Files.style";
+import { CloseBtn, RecycleBinFile } from "../../assets/style/Files.style";
 import { useGlobalContext } from "../../context";
 
 const RecycleBin = () => {
   const { isOpen, setIsOpen } = useGlobalContext();
 
   return (
-    <section>
-      <CloseBtn onClick={() => setIsOpen({ ...isOpen, recycle: false })} />
-      RecycleBin
-    </section>
+    <RecycleBinFile>
+      <CloseBtn
+        onClick={() => setIsOpen({ ...isOpen, recycle: false })}
+        height={30}
+        width={30}
+        top={0.6}
+        right={0.7}
+      />
+    </RecycleBinFile>
   );
 };
 
