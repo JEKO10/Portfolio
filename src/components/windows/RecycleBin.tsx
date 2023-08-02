@@ -8,7 +8,7 @@ const RecycleBin = () => {
   const { isOpen, setIsOpen } = useGlobalContext();
 
   return (
-    <Draggable position={{ x: 500, y: -450 }}>
+    <Draggable defaultPosition={{ x: 500, y: -450 }}>
       <RecycleBinFile>
         <CloseBtn
           onClick={() => setIsOpen({ ...isOpen, recycle: false })}

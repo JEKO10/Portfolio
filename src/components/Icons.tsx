@@ -8,7 +8,7 @@ import { Icon, IconsContainer, RecycleBin } from "../assets/style/Icons.style";
 import { useGlobalContext } from "../context";
 
 const Icons = () => {
-  const { isClicked, setIsClicked, setIsOpen } = useGlobalContext();
+  const { isClicked, setIsClicked, isOpen, setIsOpen } = useGlobalContext();
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   const handleClick = (
@@ -23,10 +23,7 @@ const Icons = () => {
         }));
         break;
       case 2:
-        setIsOpen((prevState) => ({
-          ...prevState,
-          [iconName]: true,
-        }));
+        setIsOpen({ ...isOpen, [iconName]: true });
 
         setIsClicked((prevState) => ({
           ...prevState,

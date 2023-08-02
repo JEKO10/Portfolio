@@ -4,21 +4,21 @@ import clicked from "../images/clicked.png";
 import name from "../images/name.png";
 import startButton from "../images/start.png";
 import taskbar from "../images/taskbar.jpg";
+import { flexMixin } from "./GlobalStyles";
 
 type ButtonProps = {
   isClicked: boolean;
 };
 
 export const TaskBar = styled.section`
+  background-image: url(${taskbar});
+  ${flexMixin({ justify: "space-between", align: "flex-end" })}
   position: absolute;
   bottom: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  padding: 0 10px;
   height: 45px;
   width: 100%;
-  background-image: url(${taskbar});
+  padding: 0 10px;
+  z-index: 10;
 `;
 
 export const Start = styled.button<ButtonProps>`

@@ -8,7 +8,7 @@ const Time = () => {
   const { isOpen, setIsOpen } = useGlobalContext();
 
   return (
-    <Draggable position={{ x: 800, y: -430 }}>
+    <Draggable defaultPosition={{ x: 800, y: -400 }}>
       <TimeModal>
         <CloseBtn
           onClick={() => setIsOpen({ ...isOpen, time: false })}
