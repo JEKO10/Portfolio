@@ -8,14 +8,26 @@ import Time from "./windows/Time";
 import Work from "./windows/Work";
 
 const Files = () => {
-  const { isOpen } = useGlobalContext();
+  const { isOpen, lastClicked } = useGlobalContext();
 
   return (
     <section>
-      {isOpen.about && <About />}
+      {isOpen.about && (
+        <About
+          style={{
+            zIndex: lastClicked === "about" ? 2 : 1,
+          }}
+        />
+      )}
       {isOpen.contact && <Contact />}
       {isOpen.work && <Work />}
-      {isOpen.recycle && <RecycleBin />}
+      {isOpen.recycle && (
+        <RecycleBin
+          style={{
+            zIndex: lastClicked === "about" ? 2 : 1,
+          }}
+        />
+      )}
       {isOpen.time && <Time />}
     </section>
   );

@@ -19,19 +19,9 @@ export const AboutFile = styled.section`
   width: 975px;
 `;
 
-export const ContactFile = styled.section`
-  background: url(${time}) center/cover no-repeat;
-  position: absolute;
-  height: 486px;
-  width: 576px;
-`;
+export const ContactFile = styled.section``;
 
-export const WorkFile = styled.section`
-  background: url(${time}) center/cover no-repeat;
-  position: absolute;
-  height: 286px;
-  width: 276px;
-`;
+export const WorkFile = styled.section``;
 
 export const TimeModal = styled.section`
   background: url(${time}) center/cover no-repeat;

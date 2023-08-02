@@ -18,6 +18,8 @@ type AppContext = {
   setIsClicked: React.Dispatch<React.SetStateAction<WindowsState>>;
   isOpen: WindowsState;
   setIsOpen: React.Dispatch<React.SetStateAction<WindowsState>>;
+  lastClicked: string;
+  setLastClicked: React.Dispatch<React.SetStateAction<string>>;
 };
 
 const AppContext = createContext<AppContext>({} as AppContext);
@@ -29,6 +31,7 @@ const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
     contact: false,
     recycle: false,
   });
+
   const [isOpen, setIsOpen] = useState<WindowsState>({
     about: false,
     work: false,
@@ -37,8 +40,19 @@ const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
     time: false,
   });
 
+  const [lastClicked, setLastClicked] = useState<string>("");
+
   return (
-    <AppContext.Provider value={{ isClicked, setIsClicked, isOpen, setIsOpen }}>
+    <AppContext.Provider
+      value={{
+        isClicked,
+        setIsClicked,
+        isOpen,
+        setIsOpen,
+        lastClicked,
+        setLastClicked,
+      }}
+    >
       {children}
     </AppContext.Provider>
   );

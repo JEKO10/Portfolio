@@ -8,7 +8,8 @@ import { Icon, IconsContainer, RecycleBin } from "../assets/style/Icons.style";
 import { useGlobalContext } from "../context";
 
 const Icons = () => {
-  const { isClicked, setIsClicked, isOpen, setIsOpen } = useGlobalContext();
+  const { isClicked, setIsClicked, isOpen, setIsOpen, setLastClicked } =
+    useGlobalContext();
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   const handleClick = (
@@ -17,26 +18,21 @@ const Icons = () => {
   ) => {
     switch (event.detail) {
       case 1:
-        setIsClicked((prevState) => ({
-          ...prevState,
-          [iconName]: true,
-        }));
+        setIsClicked({ ...isClicked, [iconName]: true });
+
         break;
       case 2:
         setIsOpen({ ...isOpen, [iconName]: true });
 
-        setIsClicked((prevState) => ({
-          ...prevState,
-          [iconName]: true,
-        }));
+        setIsClicked({ ...isClicked, [iconName]: true });
+
         break;
       default:
-        setIsClicked((prevState) => ({
-          ...prevState,
-          [iconName]: true,
-        }));
+        setIsClicked({ ...isClicked, [iconName]: true });
+
         break;
     }
+    setLastClicked(iconName);
   };
 
   const clickOutside = (e: MouseEvent) => {

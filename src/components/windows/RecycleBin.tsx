@@ -4,12 +4,16 @@ import Draggable from "react-draggable";
 import { CloseBtn, RecycleBinFile } from "../../assets/style/Files.style";
 import { useGlobalContext } from "../../context";
 
-const RecycleBin = () => {
+type RecycleBinProps = {
+  style: React.CSSProperties;
+};
+
+const RecycleBin: React.FC<RecycleBinProps> = ({ style }) => {
   const { isOpen, setIsOpen } = useGlobalContext();
 
   return (
     <Draggable defaultPosition={{ x: 500, y: -450 }}>
-      <RecycleBinFile>
+      <RecycleBinFile style={style}>
         <CloseBtn
           onClick={() => setIsOpen({ ...isOpen, recycle: false })}
           height={30}
