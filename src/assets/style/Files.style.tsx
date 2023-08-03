@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import aboutHandle from "../../assets/images/aboutHandle.png";
+import recycleHandle from "../../assets/images/recycleHandle.png";
 import aboutModal from "../images/aboutModal.png";
 import close from "../images/close.png";
 import recycleBin from "../images/recycleBin.png";
@@ -51,6 +52,15 @@ export const RecycleBinFile = styled.section<FilesProps>`
   height: 681px;
   width: 787px;
   z-index: ${({ lastClicked }) => (lastClicked === "recycle" ? 2 : 1)};
+`;
+
+export const RecycleBinHandle = styled.div`
+  background: url(${recycleHandle}) center/cover no-repeat;
+  height: 36px;
+  width: 774px;
+  position: absolute;
+  top: 0.4rem;
+  left: 0.4rem;
 `;
 
 export const CloseBtn = styled.button<CloseBtnProps>`
