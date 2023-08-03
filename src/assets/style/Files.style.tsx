@@ -5,6 +5,7 @@ import recycleHandle from "../../assets/images/recycleHandle.png";
 import aboutModal from "../images/aboutModal.png";
 import close from "../images/close.png";
 import recycleBin from "../images/recycleBin.png";
+import timeHandle from "../images/timeHandle.png";
 import time from "../images/timeModal.png";
 
 type CloseBtnProps = {
@@ -39,11 +40,21 @@ export const ContactFile = styled.section``;
 
 export const WorkFile = styled.section``;
 
-export const TimeModal = styled.section`
+export const TimeModal = styled.section<FilesProps>`
   background: url(${time}) center/cover no-repeat;
   position: absolute;
   height: 486px;
   width: 576px;
+  z-index: ${({ lastClicked }) => (lastClicked === "time" ? 2 : 1)};
+`;
+
+export const TimeHandle = styled.div`
+  background: url(${timeHandle}) center/cover no-repeat;
+  position: absolute;
+  height: 26px;
+  width: 566px;
+  top: 0.25rem;
+  left: 0.3rem;
 `;
 
 export const RecycleBinFile = styled.section<FilesProps>`
