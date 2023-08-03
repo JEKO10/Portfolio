@@ -12,11 +12,16 @@ type CloseBtnProps = {
   right: number;
 };
 
-export const AboutFile = styled.section`
+type FilesProps = {
+  lastClicked: string;
+};
+
+export const AboutFile = styled.section<FilesProps>`
   background: url(${aboutModal}) center/cover no-repeat;
   position: absolute;
   height: 652px;
   width: 975px;
+  z-index: ${({ lastClicked }) => (lastClicked === "about" ? 2 : 1)};
 `;
 
 export const ContactFile = styled.section``;
@@ -30,11 +35,12 @@ export const TimeModal = styled.section`
   width: 576px;
 `;
 
-export const RecycleBinFile = styled.section`
+export const RecycleBinFile = styled.section<FilesProps>`
   background: url(${recycleBin}) center/cover no-repeat;
   position: absolute;
   height: 681px;
   width: 787px;
+  z-index: ${({ lastClicked }) => (lastClicked === "recycle" ? 2 : 1)};
 `;
 
 export const CloseBtn = styled.button<CloseBtnProps>`

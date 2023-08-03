@@ -8,8 +8,7 @@ import { Icon, IconsContainer, RecycleBin } from "../assets/style/Icons.style";
 import { useGlobalContext } from "../context";
 
 const Icons = () => {
-  const { isClicked, setIsClicked, isOpen, setIsOpen, setLastClicked } =
-    useGlobalContext();
+  const { isClicked, setIsClicked, isOpen, setIsOpen } = useGlobalContext();
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   const handleClick = (
@@ -32,7 +31,6 @@ const Icons = () => {
 
         break;
     }
-    setLastClicked(iconName);
   };
 
   const clickOutside = (e: MouseEvent) => {
