@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+import aboutHandle from "../../assets/images/aboutHandle.png";
 import aboutModal from "../images/aboutModal.png";
 import close from "../images/close.png";
 import recycleBin from "../images/recycleBin.png";
@@ -22,6 +23,15 @@ export const AboutFile = styled.section<FilesProps>`
   height: 652px;
   width: 975px;
   z-index: ${({ lastClicked }) => (lastClicked === "about" ? 2 : 1)};
+`;
+
+export const AboutHandle = styled.div`
+  background: url(${aboutHandle}) center/cover no-repeat;
+  height: 40px;
+  width: 961px;
+  position: absolute;
+  top: 0.4rem;
+  left: 0.4rem;
 `;
 
 export const ContactFile = styled.section``;
