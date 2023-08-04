@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+import aboutMe from "../images/aboutTaskbar.png";
 import clicked from "../images/clicked.png";
 import name from "../images/name.png";
 import startButton from "../images/start.png";
@@ -36,11 +37,17 @@ export const Start = styled.button<ButtonProps>`
 `;
 
 export const Name = styled.button`
+  background: url(${name}) center/contain no-repeat;
   height: 35px;
   width: 163px;
-  background: url(${name});
-  background-repeat: no-repeat;
-  background-size: contain;
+  cursor: pointer;
+  margin-right: 5px;
+`;
+
+export const About = styled.button`
+  background: url(${aboutMe}) center/contain no-repeat;
+  height: 35px;
+  width: 163px;
   cursor: pointer;
 `;
 
