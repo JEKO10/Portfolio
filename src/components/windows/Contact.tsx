@@ -4,10 +4,10 @@ import { CloseBtn, ContactFile } from "../../assets/style/Files.style";
 import { useGlobalContext } from "../../context";
 
 const Contact = () => {
-  const { isOpen, setIsOpen } = useGlobalContext();
+  const { isOpen, setIsOpen, lastClicked, isVisible } = useGlobalContext();
 
   return (
-    <ContactFile>
+    <ContactFile isVisible={isVisible.contact} lastClicked={lastClicked}>
       <CloseBtn
         onClick={() => setIsOpen({ ...isOpen, contact: false })}
         height={30}

@@ -31,7 +31,9 @@ const Toolbar = () => {
   });
 
   return (
-    <ToolbarContainer onClick={() => setIsOpen({ ...isOpen, time: true })}>
+    <ToolbarContainer
+      onClick={() => setIsOpen({ ...isOpen, time: !isOpen.time })}
+    >
       <Dash src={dash} alt="dash" />
       <ToolButton />
       <Clock>{formattedTime}</Clock>

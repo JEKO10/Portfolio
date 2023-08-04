@@ -9,13 +9,15 @@ import {
 import { useGlobalContext } from "../../context";
 
 const About = () => {
-  const { isOpen, setIsOpen, lastClicked, setLastClicked } = useGlobalContext();
+  const { isOpen, setIsOpen, lastClicked, setLastClicked, isVisible } =
+    useGlobalContext();
 
   return (
     <Draggable defaultPosition={{ x: 100, y: -400 }} handle=".handle">
       <AboutFile
         onMouseDownCapture={() => setLastClicked("about")}
         lastClicked={lastClicked}
+        isVisible={isVisible.about}
       >
         <AboutHandle className="handle">
           <CloseBtn

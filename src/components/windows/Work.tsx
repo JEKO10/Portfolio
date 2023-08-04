@@ -4,10 +4,10 @@ import { CloseBtn, WorkFile } from "../../assets/style/Files.style";
 import { useGlobalContext } from "../../context";
 
 const Work = () => {
-  const { isOpen, setIsOpen } = useGlobalContext();
+  const { isOpen, setIsOpen, lastClicked, isVisible } = useGlobalContext();
 
   return (
-    <WorkFile>
+    <WorkFile isVisible={isVisible.work} lastClicked={lastClicked}>
       <CloseBtn
         onClick={() => setIsOpen({ ...isOpen, work: false })}
         height={30}

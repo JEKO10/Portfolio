@@ -9,13 +9,15 @@ import {
 import { useGlobalContext } from "../../context";
 
 const RecycleBin = () => {
-  const { isOpen, setIsOpen, lastClicked, setLastClicked } = useGlobalContext();
+  const { isOpen, setIsOpen, lastClicked, setLastClicked, isVisible } =
+    useGlobalContext();
 
   return (
     <Draggable defaultPosition={{ x: 500, y: -450 }} handle=".handle">
       <RecycleBinFile
         onMouseDownCapture={() => setLastClicked("recycle")}
         lastClicked={lastClicked}
+        isVisible={isVisible.recycle}
       >
         <RecycleBinHandle className="handle">
           <CloseBtn

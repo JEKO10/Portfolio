@@ -17,6 +17,7 @@ type CloseBtnProps = {
 
 type FilesProps = {
   lastClicked: string;
+  isVisible?: boolean;
 };
 
 export const AboutFile = styled.section<FilesProps>`
@@ -24,6 +25,7 @@ export const AboutFile = styled.section<FilesProps>`
   position: absolute;
   height: 652px;
   width: 975px;
+  display: ${({ isVisible }) => (isVisible ? "block" : "none")};
   z-index: ${({ lastClicked }) => (lastClicked === "about" ? 2 : 1)};
 `;
 
@@ -33,9 +35,17 @@ export const AboutHandle = styled.div`
   width: 100%;
 `;
 
-export const ContactFile = styled.section``;
+export const ContactFile = styled.section<FilesProps>`
+  display: ${({ isVisible }) => (isVisible ? "block" : "none")};
+  z-index: ${({ lastClicked }) =>
+    lastClicked === "contact" ? 2 : 1}; // doesnt work
+`;
 
-export const WorkFile = styled.section``;
+export const WorkFile = styled.section<FilesProps>`
+  display: ${({ isVisible }) => (isVisible ? "block" : "none")};
+  z-index: ${({ lastClicked }) =>
+    lastClicked === "work" ? 2 : 1}; // doesnt work
+`;
 
 export const TimeModal = styled.section<FilesProps>`
   background: url(${time}) center/cover no-repeat;
@@ -60,6 +70,7 @@ export const RecycleBinFile = styled.section<FilesProps>`
   height: 681px;
   width: 787px;
   z-index: ${({ lastClicked }) => (lastClicked === "recycle" ? 2 : 1)};
+  display: ${({ isVisible }) => (isVisible ? "block" : "none")};
 `;
 
 export const RecycleBinHandle = styled.div`
