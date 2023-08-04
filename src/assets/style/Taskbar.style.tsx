@@ -2,9 +2,12 @@ import styled from "styled-components";
 
 import aboutMe from "../images/aboutTaskbar.png";
 import clicked from "../images/clicked.png";
+import contact from "../images/contactTaskbar.png";
 import name from "../images/name.png";
+import recycle from "../images/recycleTaskbar.png";
 import startButton from "../images/start.png";
 import taskbar from "../images/taskbar.jpg";
+import work from "../images/workTaskbar.png";
 import { flexMixin } from "./GlobalStyles";
 
 type ButtonProps = {
@@ -40,14 +43,39 @@ export const Name = styled.button`
   background: url(${name}) center/contain no-repeat;
   height: 35px;
   width: 163px;
-  cursor: pointer;
   margin-right: 5px;
+  cursor: pointer;
 `;
 
 export const About = styled.button`
   background: url(${aboutMe}) center/contain no-repeat;
   height: 35px;
   width: 163px;
+  margin-right: 5px;
+  cursor: pointer;
+`;
+
+export const Recycle = styled.button`
+  background: url(${recycle}) center/contain no-repeat;
+  height: 35px;
+  width: 163px;
+  margin-right: 5px;
+  cursor: pointer;
+`;
+
+export const Work = styled.button`
+  background: url(${work}) center/contain no-repeat;
+  height: 35px;
+  width: 163px;
+  margin-right: 5px;
+  cursor: pointer;
+`;
+
+export const Contact = styled.button`
+  background: url(${contact}) center/contain no-repeat;
+  height: 35px;
+  width: 163px;
+  margin-right: 5px;
   cursor: pointer;
 `;
 
