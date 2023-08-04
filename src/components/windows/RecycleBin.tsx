@@ -22,8 +22,8 @@ const RecycleBin = () => {
             onMouseDownCapture={() => setIsOpen({ ...isOpen, recycle: false })}
             height={30}
             width={30}
-            top={0.15}
-            right={0.3}
+            top={0.6}
+            right={0.9}
           />
         </RecycleBinHandle>
       </RecycleBinFile>

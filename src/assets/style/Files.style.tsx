@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-import aboutHandle from "../../assets/images/aboutHandle.png";
-import recycleHandle from "../../assets/images/recycleHandle.png";
+import aboutHandle from "../../assets/images/aboutHandle.jpg";
+import recycleHandle from "../../assets/images/recycleHandle.jpg";
 import aboutModal from "../images/aboutModal.png";
 import close from "../images/close.png";
 import recycleBin from "../images/recycleBin.png";
@@ -29,11 +29,8 @@ export const AboutFile = styled.section<FilesProps>`
 
 export const AboutHandle = styled.div`
   background: url(${aboutHandle}) center/cover no-repeat;
-  height: 40px;
-  width: 961px;
-  position: absolute;
-  top: 0.4rem;
-  left: 0.4rem;
+  height: 50px;
+  width: 100%;
 `;
 
 export const ContactFile = styled.section``;
@@ -67,11 +64,8 @@ export const RecycleBinFile = styled.section<FilesProps>`
 
 export const RecycleBinHandle = styled.div`
   background: url(${recycleHandle}) center/cover no-repeat;
-  height: 36px;
-  width: 774px;
-  position: absolute;
-  top: 0.4rem;
-  left: 0.4rem;
+  height: 44px;
+  width: 787px;
 `;
 
 export const CloseBtn = styled.button<CloseBtnProps>`

@@ -21,9 +21,9 @@ const About = () => {
           <CloseBtn
             onMouseDownCapture={() => setIsOpen({ ...isOpen, about: false })}
             height={32}
-            width={32}
-            top={0.2}
-            right={0.3}
+            width={32.5}
+            top={0.6}
+            right={0.75}
           />
         </AboutHandle>
       </AboutFile>
