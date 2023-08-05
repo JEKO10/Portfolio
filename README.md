@@ -28,4 +28,4 @@ I am an ambitious front-end developer looking for my first job. I have experienc
 
 ## Live preview
 
-[Click for live preview](https://aleksabubanja.netlify.app)
+[Click for live preview](https://aleksa-bubanja.netlify.app)
