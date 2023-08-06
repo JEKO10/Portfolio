@@ -19,11 +19,11 @@ const Time = () => {
       >
         <TimeHandle className="handle">
           <CloseBtn
-            onMouseDownCapture={() => setIsOpen({ ...isOpen, time: false })}
+            onMouseDown={() => setIsOpen({ ...isOpen, time: false })}
             height={22}
             width={22}
-            top={0.15}
-            right={0.15}
+            top={0.35}
+            right={0.5}
           />
         </TimeHandle>
       </TimeModal>

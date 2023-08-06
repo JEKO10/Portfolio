@@ -5,7 +5,7 @@ import recycleHandle from "../../assets/images/recycleHandle.jpg";
 import aboutModal from "../images/aboutModal.png";
 import close from "../images/close.png";
 import recycleBin from "../images/recycleBin.png";
-import timeHandle from "../images/timeHandle.png";
+import timeHandle from "../images/timeHandle.jpg";
 import time from "../images/timeModal.png";
 
 type CloseBtnProps = {
@@ -57,11 +57,8 @@ export const TimeModal = styled.section<FilesProps>`
 
 export const TimeHandle = styled.div`
   background: url(${timeHandle}) center/cover no-repeat;
-  position: absolute;
-  height: 26px;
-  width: 566px;
-  top: 0.25rem;
-  left: 0.3rem;
+  height: 38px;
+  width: 576px;
 `;
 
 export const RecycleBinFile = styled.section<FilesProps>`
