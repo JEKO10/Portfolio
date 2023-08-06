@@ -7,6 +7,7 @@ import close from "../images/close.png";
 import recycleBin from "../images/recycleBin.png";
 import timeHandle from "../images/timeHandle.jpg";
 import time from "../images/timeModal.png";
+import workModal from "../images/workModal.jpg";
 
 type CloseBtnProps = {
   height: number;
@@ -42,9 +43,12 @@ export const ContactFile = styled.section<FilesProps>`
 `;
 
 export const WorkFile = styled.section<FilesProps>`
+  background: url(${workModal}) center/cover no-repeat;
+  position: absolute;
+  height: 759px;
+  width: 878.16px;
   display: ${({ isVisible }) => (isVisible ? "block" : "none")};
-  z-index: ${({ lastClicked }) =>
-    lastClicked === "work" ? 2 : 1}; // doesnt work
+  z-index: ${({ lastClicked }) => (lastClicked === "work" ? 2 : 1)};
 `;
 
 export const TimeModal = styled.section<FilesProps>`
