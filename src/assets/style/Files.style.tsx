@@ -4,10 +4,12 @@ import aboutHandle from "../../assets/images/aboutHandle.jpg";
 import recycleHandle from "../../assets/images/recycleHandle.jpg";
 import aboutModal from "../images/aboutModal.png";
 import close from "../images/close.png";
+import contactHandle from "../images/contactHandle.jpg";
 import contactModal from "../images/contactModal.jpg";
 import recycleBin from "../images/recycleBin.png";
 import timeHandle from "../images/timeHandle.jpg";
 import time from "../images/timeModal.png";
+import workHandle from "../images/workHandle.jpg";
 import workModal from "../images/workModal.jpg";
 
 type CloseBtnProps = {
@@ -46,13 +48,25 @@ export const ContactFile = styled.section<FilesProps>`
   z-index: ${({ lastClicked }) => (lastClicked === "contact" ? 2 : 1)};
 `;
 
+export const ContactHandle = styled.div`
+  background: url(${contactHandle}) center/cover no-repeat;
+  height: 57px;
+  width: 100%;
+`;
+
 export const WorkFile = styled.section<FilesProps>`
   background: url(${workModal}) center/cover no-repeat;
   position: absolute;
   height: 759px;
-  width: 878.16px;
+  width: 878px;
   display: ${({ isVisible }) => (isVisible ? "block" : "none")};
   z-index: ${({ lastClicked }) => (lastClicked === "work" ? 2 : 1)};
+`;
+
+export const WorkHandle = styled.div`
+  background: url(${workHandle}) center/cover no-repeat;
+  height: 48px;
+  width: 100%;
 `;
 
 export const TimeModal = styled.section<FilesProps>`
