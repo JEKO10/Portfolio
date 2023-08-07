@@ -17,9 +17,9 @@ const Work = () => {
       >
         <CloseBtn
           onClick={() => setIsOpen({ ...isOpen, work: false })}
-          height={30}
-          width={30}
-          top={5}
+          height={29}
+          width={29}
+          top={0.75}
           right={0.8}
         />
       </WorkFile>

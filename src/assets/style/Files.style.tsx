@@ -4,6 +4,7 @@ import aboutHandle from "../../assets/images/aboutHandle.jpg";
 import recycleHandle from "../../assets/images/recycleHandle.jpg";
 import aboutModal from "../images/aboutModal.png";
 import close from "../images/close.png";
+import contactModal from "../images/contactModal.jpg";
 import recycleBin from "../images/recycleBin.png";
 import timeHandle from "../images/timeHandle.jpg";
 import time from "../images/timeModal.png";
@@ -37,9 +38,12 @@ export const AboutHandle = styled.div`
 `;
 
 export const ContactFile = styled.section<FilesProps>`
+  background: url(${contactModal}) center/cover no-repeat;
+  position: absolute;
+  height: 620px;
+  width: 998px;
   display: ${({ isVisible }) => (isVisible ? "block" : "none")};
-  z-index: ${({ lastClicked }) =>
-    lastClicked === "contact" ? 2 : 1}; // doesnt work
+  z-index: ${({ lastClicked }) => (lastClicked === "contact" ? 2 : 1)};
 `;
 
 export const WorkFile = styled.section<FilesProps>`
