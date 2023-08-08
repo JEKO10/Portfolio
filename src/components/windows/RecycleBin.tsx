@@ -1,7 +1,9 @@
 import React from "react";
 import Draggable from "react-draggable";
 
+import bookIcon from "../../assets/images/bookIcon.png";
 import {
+  Book,
   CloseBtn,
   RecycleBinFile,
   RecycleBinHandle,
@@ -28,6 +30,7 @@ const RecycleBin = () => {
             right={0.9}
           />
         </RecycleBinHandle>
+        <Book src={bookIcon} alt="bookIcon" />
       </RecycleBinFile>
     </Draggable>
   );

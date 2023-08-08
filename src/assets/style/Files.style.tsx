@@ -98,6 +98,14 @@ export const RecycleBinHandle = styled.div`
   width: 787px;
 `;
 
+export const Book = styled.img`
+  position: absolute;
+  top: 16.4rem;
+  left: 17.7rem;
+  user-select: none;
+  cursor: pointer;
+`;
+
 export const CloseBtn = styled.button<CloseBtnProps>`
   background: url(${close}) center/contain no-repeat;
   height: ${({ height }) => height + "px"};
