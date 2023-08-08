@@ -21,7 +21,7 @@ const Work = () => {
             height={29}
             width={29}
             top={0.75}
-            right={0.8}
+            right={0.7}
           />
         </WorkHandle>
       </WorkFile>

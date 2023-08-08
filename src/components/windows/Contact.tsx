@@ -15,7 +15,7 @@ const Contact = () => {
   return (
     <Draggable defaultPosition={{ x: 300, y: -400 }} handle=".handle">
       <ContactFile
-        onMouseDownCapture={() => setLastClicked("work")}
+        onMouseDownCapture={() => setLastClicked("contact")}
         isVisible={isVisible.contact}
         lastClicked={lastClicked}
       >
