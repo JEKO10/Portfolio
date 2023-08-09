@@ -5,12 +5,19 @@ import {
   CloseBtn,
   ContactFile,
   ContactHandle,
+  MinimizeBtn,
 } from "../../assets/style/Files.style";
 import { useGlobalContext } from "../../context";
 
 const Contact = () => {
-  const { isOpen, setIsOpen, lastClicked, setLastClicked, isVisible } =
-    useGlobalContext();
+  const {
+    isOpen,
+    setIsOpen,
+    lastClicked,
+    setLastClicked,
+    isVisible,
+    setIsVisible,
+  } = useGlobalContext();
 
   return (
     <Draggable defaultPosition={{ x: 300, y: -400 }} handle=".handle">
@@ -20,8 +27,15 @@ const Contact = () => {
         lastClicked={lastClicked}
       >
         <ContactHandle className="handle">
+          <MinimizeBtn
+            onMouseDown={() => setIsVisible({ ...isVisible, contact: false })}
+            height={32}
+            width={34}
+            top={0.85}
+            right={5.5}
+          />
           <CloseBtn
-            onClick={() => setIsOpen({ ...isOpen, contact: false })}
+            onMouseDown={() => setIsOpen({ ...isOpen, contact: false })}
             height={33}
             width={33}
             top={0.8}

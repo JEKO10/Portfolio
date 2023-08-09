@@ -1,18 +1,19 @@
 import styled from "styled-components";
 
-import aboutHandle from "../../assets/images/aboutHandle.jpg";
-import recycleHandle from "../../assets/images/recycleHandle.jpg";
+import aboutHandle from "../images/aboutHandle.jpg";
 import aboutModal from "../images/aboutModal.png";
 import close from "../images/close.png";
 import contactHandle from "../images/contactHandle.jpg";
 import contactModal from "../images/contactModal.jpg";
+import minimize from "../images/minimize.jpg";
 import recycleBin from "../images/recycleBin.png";
+import recycleHandle from "../images/recycleHandle.jpg";
 import timeHandle from "../images/timeHandle.jpg";
 import time from "../images/timeModal.png";
 import workHandle from "../images/workHandle.jpg";
 import workModal from "../images/workModal.jpg";
 
-type CloseBtnProps = {
+type ControlBtnProps = {
   height: number;
   width: number;
   top: number;
@@ -106,7 +107,17 @@ export const Book = styled.img`
   cursor: pointer;
 `;
 
-export const CloseBtn = styled.button<CloseBtnProps>`
+export const MinimizeBtn = styled.button<ControlBtnProps>`
+  background: url(${minimize}) center/contain no-repeat;
+  height: ${({ height }) => height + "px"};
+  width: ${({ width }) => width + "px"};
+  position: absolute;
+  top: ${({ top }) => top + "rem"};
+  right: ${({ right }) => right + "rem"};
+  cursor: pointer;
+`;
+
+export const CloseBtn = styled.button<ControlBtnProps>`
   background: url(${close}) center/contain no-repeat;
   height: ${({ height }) => height + "px"};
   width: ${({ width }) => width + "px"};

@@ -5,14 +5,21 @@ import bookIcon from "../../assets/images/bookIcon.png";
 import {
   Book,
   CloseBtn,
+  MinimizeBtn,
   RecycleBinFile,
   RecycleBinHandle,
 } from "../../assets/style/Files.style";
 import { useGlobalContext } from "../../context";
 
 const RecycleBin = () => {
-  const { isOpen, setIsOpen, lastClicked, setLastClicked, isVisible } =
-    useGlobalContext();
+  const {
+    isOpen,
+    setIsOpen,
+    lastClicked,
+    setLastClicked,
+    isVisible,
+    setIsVisible,
+  } = useGlobalContext();
 
   return (
     <Draggable defaultPosition={{ x: 500, y: -450 }} handle=".handle">
@@ -22,8 +29,15 @@ const RecycleBin = () => {
         isVisible={isVisible.recycle}
       >
         <RecycleBinHandle className="handle">
+          <MinimizeBtn
+            onMouseDown={() => setIsVisible({ ...isVisible, recycle: false })}
+            height={31}
+            width={28}
+            top={0.55}
+            right={5}
+          />
           <CloseBtn
-            onMouseDownCapture={() => setIsOpen({ ...isOpen, recycle: false })}
+            onMouseDown={() => setIsOpen({ ...isOpen, recycle: false })}
             height={30}
             width={30}
             top={0.6}

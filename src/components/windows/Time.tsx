@@ -3,6 +3,7 @@ import Draggable from "react-draggable";
 
 import {
   CloseBtn,
+  MinimizeBtn,
   TimeHandle,
   TimeModal,
 } from "../../assets/style/Files.style";
@@ -18,6 +19,13 @@ const Time = () => {
         lastClicked={lastClicked}
       >
         <TimeHandle className="handle">
+          <MinimizeBtn
+            onMouseDown={() => setIsOpen({ ...isOpen, time: false })}
+            height={19}
+            width={20}
+            top={0.43}
+            right={3.4}
+          />
           <CloseBtn
             onMouseDown={() => setIsOpen({ ...isOpen, time: false })}
             height={22}

@@ -12,7 +12,14 @@ import { Icon, IconsContainer, RecycleBin } from "../assets/style/Icons.style";
 import { useGlobalContext } from "../context";
 
 const Icons = () => {
-  const { isClicked, setIsClicked, isOpen, setIsOpen } = useGlobalContext();
+  const {
+    isClicked,
+    setIsClicked,
+    isOpen,
+    setIsOpen,
+    isVisible,
+    setIsVisible,
+  } = useGlobalContext();
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   const handleClick = (
@@ -26,7 +33,7 @@ const Icons = () => {
         break;
       case 2:
         setIsOpen({ ...isOpen, [iconName]: true });
-
+        setIsVisible({ ...isVisible, [iconName]: true });
         setIsClicked({ ...isClicked, [iconName]: true });
 
         break;
