@@ -7,6 +7,7 @@ import close from "../images/close.png";
 import contactHandle from "../images/contactHandle.jpg";
 import contactModal from "../images/contactModal.jpg";
 import minimize from "../images/minimize.jpg";
+import okBtn from "../images/okBtn.jpg";
 import recycleBin from "../images/recycleBin.png";
 import recycleHandle from "../images/recycleHandle.jpg";
 import timeHandle from "../images/timeHandle.jpg";
@@ -125,6 +126,16 @@ export const CloseBtn = styled.button<ControlBtnProps>`
   position: absolute;
   top: ${({ top }) => top + "rem"};
   right: ${({ right }) => right + "rem"};
+  cursor: pointer;
+`;
+
+export const OkButton = styled.button`
+  background: url(${okBtn}) center/contain no-repeat;
+  height: 33px;
+  width: 107px;
+  position: absolute;
+  bottom: 0.9rem;
+  right: 15.25rem;
   cursor: pointer;
 `;
 

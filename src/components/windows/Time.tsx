@@ -5,6 +5,7 @@ import {
   CancelBtn,
   CloseBtn,
   MinimizeBtn,
+  OkButton,
   TimeHandle,
   TimeModal,
 } from "../../assets/style/Files.style";
@@ -35,6 +36,7 @@ const Time = () => {
             right={0.5}
           />
         </TimeHandle>
+        <OkButton onMouseDown={() => setIsOpen({ ...isOpen, time: false })} />
         <CancelBtn onMouseDown={() => setIsOpen({ ...isOpen, time: false })} />
       </TimeModal>
     </Draggable>
