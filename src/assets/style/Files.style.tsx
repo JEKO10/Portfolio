@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import aboutHandle from "../images/aboutHandle.jpg";
 import aboutModal from "../images/aboutModal.png";
+import cancel from "../images/cancel.jpg";
 import close from "../images/close.png";
 import contactHandle from "../images/contactHandle.jpg";
 import contactModal from "../images/contactModal.jpg";
@@ -124,5 +125,15 @@ export const CloseBtn = styled.button<ControlBtnProps>`
   position: absolute;
   top: ${({ top }) => top + "rem"};
   right: ${({ right }) => right + "rem"};
+  cursor: pointer;
+`;
+
+export const CancelBtn = styled.button`
+  background: url(${cancel}) center/contain no-repeat;
+  height: 33px;
+  width: 107px;
+  position: absolute;
+  bottom: 0.9rem;
+  right: 8rem;
   cursor: pointer;
 `;

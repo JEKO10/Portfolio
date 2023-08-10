@@ -2,6 +2,7 @@ import React from "react";
 import Draggable from "react-draggable";
 
 import {
+  CancelBtn,
   CloseBtn,
   MinimizeBtn,
   TimeHandle,
@@ -34,6 +35,7 @@ const Time = () => {
             right={0.5}
           />
         </TimeHandle>
+        <CancelBtn onMouseDown={() => setIsOpen({ ...isOpen, time: false })} />
       </TimeModal>
     </Draggable>
   );
