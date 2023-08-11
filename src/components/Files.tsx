@@ -1,5 +1,6 @@
 import React from "react";
 
+import Book from "../components/windows/Book";
 import { useGlobalContext } from "../context";
 import About from "./windows/About";
 import Contact from "./windows/Contact";
@@ -16,6 +17,7 @@ const Files = () => {
       {isOpen.contact && <Contact />}
       {isOpen.work && <Work />}
       {isOpen.recycle && <RecycleBin />}
+      {isOpen.book && <Book />}
       {isOpen.time && <Time />}
     </section>
   );

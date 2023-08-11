@@ -11,6 +11,7 @@ type WindowsState = {
   contact: boolean;
   recycle: boolean;
   time?: boolean;
+  book: boolean;
 };
 
 type AppContext = {
@@ -32,6 +33,7 @@ const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
     work: false,
     contact: false,
     recycle: false,
+    book: false,
   });
 
   const [isOpen, setIsOpen] = useState<WindowsState>({
@@ -40,6 +42,7 @@ const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
     contact: false,
     recycle: false,
     time: false,
+    book: false,
   });
 
   const [lastClicked, setLastClicked] = useState<string>("");
@@ -49,6 +52,7 @@ const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
     work: true,
     contact: true,
     recycle: true,
+    book: false,
   });
 
   return (

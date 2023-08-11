@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import cancel from "../images/buttons/cancel.jpg";
 import close from "../images/buttons/close.png";
@@ -10,6 +10,7 @@ import recycleHandle from "../images/handles/recycleHandle.jpg";
 import timeHandle from "../images/handles/timeHandle.jpg";
 import workHandle from "../images/handles/workHandle.jpg";
 import aboutModal from "../images/modals/aboutModal.png";
+import book from "../images/modals/bookModal.jpg";
 import contactModal from "../images/modals/contactModal.jpg";
 import recycleBin from "../images/modals/recycleBin.png";
 import time from "../images/modals/timeModal.png";
@@ -25,6 +26,12 @@ type ControlBtnProps = {
 type FilesProps = {
   lastClicked: string;
   isVisible?: boolean;
+};
+
+type BookProps = {
+  iconName: string;
+  clickedIcon: string;
+  isClicked: boolean;
 };
 
 export const AboutFile = styled.section<FilesProps>`
@@ -101,11 +108,29 @@ export const RecycleBinHandle = styled.div`
   width: 787px;
 `;
 
-export const Book = styled.img`
+export const BookFile = styled.section<FilesProps>`
+  background: url(${book}) center/cover no-repeat;
+  position: absolute;
+  height: 652px;
+  width: 975px;
+  z-index: ${({ lastClicked }) => (lastClicked === "book" ? 2 : 1)};
+  display: ${({ isVisible }) => (isVisible ? "block" : "none")};
+`;
+
+export const Book = styled.button<BookProps>`
+  height: 126px;
+  width: 100px;
   position: absolute;
   top: 16.4rem;
   left: 17.7rem;
-  user-select: none;
+  ${({ isClicked, iconName, clickedIcon }) =>
+    isClicked
+      ? css`
+          background: url(${clickedIcon}) center/contain no-repeat;
+        `
+      : css`
+          background: url(${iconName}) center/contain no-repeat;
+        `};
   cursor: pointer;
 `;
 

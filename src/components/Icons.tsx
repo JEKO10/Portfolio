@@ -51,6 +51,7 @@ const Icons = () => {
         work: false,
         contact: false,
         recycle: false,
+        book: false,
       });
     }
   };

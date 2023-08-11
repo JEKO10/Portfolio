@@ -1,7 +1,8 @@
 import React from "react";
 import Draggable from "react-draggable";
 
-import bookIcon from "../../assets/images/icons/bookIcon.png";
+import aboutClicked from "../../assets/images/icons/aboutClicked.png";
+import book from "../../assets/images/icons/bookIcon.png";
 import {
   Book,
   CloseBtn,
@@ -19,7 +20,30 @@ const RecycleBin = () => {
     setLastClicked,
     isVisible,
     setIsVisible,
+    isClicked,
+    setIsClicked,
   } = useGlobalContext();
+
+  const handleClick = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    switch (event.detail) {
+      case 1:
+        setIsClicked({ ...isClicked, book: true });
+
+        break;
+      case 2:
+        setIsOpen({ ...isOpen, book: true });
+        setIsVisible({ ...isVisible, book: true });
+        setIsClicked({ ...isClicked, book: true });
+
+        break;
+      default:
+        setIsClicked({ ...isClicked, book: true });
+
+        break;
+    }
+  };
 
   return (
     <Draggable defaultPosition={{ x: 500, y: -450 }} handle=".handle">
@@ -44,7 +68,12 @@ const RecycleBin = () => {
             right={0.9}
           />
         </RecycleBinHandle>
-        <Book src={bookIcon} alt="bookIcon" />
+        <Book
+          iconName={book}
+          clickedIcon={aboutClicked}
+          isClicked={isClicked.book}
+          onClick={(event) => handleClick(event)}
+        />
       </RecycleBinFile>
     </Draggable>
   );
