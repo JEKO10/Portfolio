@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import dash from "../assets/images/dash.jpg";
+import dash from "../assets/images/other/dash.jpg";
 import { Dash } from "../assets/style/Taskbar.style";
 import {
   Clock,

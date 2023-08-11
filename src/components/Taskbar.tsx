@@ -1,6 +1,6 @@
 import React from "react";
 
-import dash from "../assets/images/dash.jpg";
+import dash from "../assets/images/other/dash.jpg";
 import {
   About,
   Contact,

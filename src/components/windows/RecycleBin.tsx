@@ -1,7 +1,7 @@
 import React from "react";
 import Draggable from "react-draggable";
 
-import bookIcon from "../../assets/images/bookIcon.png";
+import bookIcon from "../../assets/images/icons/bookIcon.png";
 import {
   Book,
   CloseBtn,

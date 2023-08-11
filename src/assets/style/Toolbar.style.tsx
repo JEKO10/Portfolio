@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import toolbar from "../images/toolbar.png";
+import toolbar from "../images/buttons/toolbar.png";
 
 export const ToolbarContainer = styled.div`
   position: relative;

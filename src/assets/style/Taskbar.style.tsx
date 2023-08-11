@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-import aboutMe from "../images/aboutTaskbar.png";
-import clicked from "../images/clicked.png";
-import contact from "../images/contactTaskbar.png";
-import name from "../images/name.png";
-import recycle from "../images/recycleTaskbar.png";
-import startButton from "../images/start.png";
-import taskbar from "../images/taskbar.jpg";
-import work from "../images/workTaskbar.png";
+import aboutMe from "../images/buttons/aboutTaskbar.png";
+import clicked from "../images/buttons/clicked.png";
+import contact from "../images/buttons/contactTaskbar.png";
+import name from "../images/buttons/name.png";
+import recycle from "../images/buttons/recycleTaskbar.png";
+import startButton from "../images/buttons/start.png";
+import work from "../images/buttons/workTaskbar.png";
+import taskbar from "../images/other/taskbar.jpg";
 import { flexMixin } from "./GlobalStyles";
 
 type ButtonProps = {

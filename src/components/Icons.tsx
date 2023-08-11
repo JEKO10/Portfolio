@@ -1,13 +1,13 @@
 import React, { useEffect, useRef } from "react";
 
-import about from "../assets/images/about.png";
-import aboutClicked from "../assets/images/aboutClicked.png";
-import contact from "../assets/images/contact.png";
-import contactClicked from "../assets/images/contactClicked.png";
-import recycle from "../assets/images/recycle.png";
-import recycleClicked from "../assets/images/recycleClicked.png";
-import work from "../assets/images/work.png";
-import workClicked from "../assets/images/workClicked.png";
+import about from "../assets/images/icons/about.png";
+import aboutClicked from "../assets/images/icons/aboutClicked.png";
+import contact from "../assets/images/icons/contact.png";
+import contactClicked from "../assets/images/icons/contactClicked.png";
+import recycle from "../assets/images/icons/recycle.png";
+import recycleClicked from "../assets/images/icons/recycleClicked.png";
+import work from "../assets/images/icons/work.png";
+import workClicked from "../assets/images/icons/workClicked.png";
 import { Icon, IconsContainer, RecycleBin } from "../assets/style/Icons.style";
 import { useGlobalContext } from "../context";
 

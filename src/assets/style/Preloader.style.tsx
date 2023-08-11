@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import preloaderImg from "../images/preloader.jpg";
+import preloaderImg from "../images/other/preloader.jpg";
 
 export const LoaderContainer = styled.div`
   height: 100vh;

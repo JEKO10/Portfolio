@@ -1,19 +1,19 @@
 import styled from "styled-components";
 
-import aboutHandle from "../images/aboutHandle.jpg";
-import aboutModal from "../images/aboutModal.png";
-import cancel from "../images/cancel.jpg";
-import close from "../images/close.png";
-import contactHandle from "../images/contactHandle.jpg";
-import contactModal from "../images/contactModal.jpg";
-import minimize from "../images/minimize.jpg";
-import okBtn from "../images/okBtn.jpg";
-import recycleBin from "../images/recycleBin.png";
-import recycleHandle from "../images/recycleHandle.jpg";
-import timeHandle from "../images/timeHandle.jpg";
-import time from "../images/timeModal.png";
-import workHandle from "../images/workHandle.jpg";
-import workModal from "../images/workModal.jpg";
+import cancel from "../images/buttons/cancel.jpg";
+import close from "../images/buttons/close.png";
+import minimize from "../images/buttons/minimize.jpg";
+import okBtn from "../images/buttons/okBtn.jpg";
+import aboutHandle from "../images/handles/aboutHandle.jpg";
+import contactHandle from "../images/handles/contactHandle.jpg";
+import recycleHandle from "../images/handles/recycleHandle.jpg";
+import timeHandle from "../images/handles/timeHandle.jpg";
+import workHandle from "../images/handles/workHandle.jpg";
+import aboutModal from "../images/modals/aboutModal.png";
+import contactModal from "../images/modals/contactModal.jpg";
+import recycleBin from "../images/modals/recycleBin.png";
+import time from "../images/modals/timeModal.png";
+import workModal from "../images/modals/workModal.jpg";
 
 type ControlBtnProps = {
   height: number;
