@@ -32,14 +32,14 @@ const Work = () => {
             height={27}
             width={29}
             top={0.8}
-            right={4.7}
+            right={4.6}
           />
           <CloseBtn
             onMouseDown={() => setIsOpen({ ...isOpen, work: false })}
-            height={29}
-            width={29}
-            top={0.75}
-            right={0.7}
+            height={30}
+            width={30}
+            top={0.7}
+            right={0.68}
           />
         </WorkHandle>
       </WorkFile>

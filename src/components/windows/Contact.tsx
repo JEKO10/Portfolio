@@ -32,14 +32,14 @@ const Contact = () => {
             height={32}
             width={34}
             top={0.85}
-            right={5.5}
+            right={5.4}
           />
           <CloseBtn
             onMouseDown={() => setIsOpen({ ...isOpen, contact: false })}
-            height={33}
-            width={33}
-            top={0.8}
-            right={0.85}
+            height={35}
+            width={34}
+            top={0.75}
+            right={0.9}
           />
         </ContactHandle>
       </ContactFile>

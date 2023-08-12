@@ -24,9 +24,9 @@ const Time = () => {
           <MinimizeBtn
             onMouseDown={() => setIsOpen({ ...isOpen, time: false })}
             height={19}
-            width={20}
+            width={21}
             top={0.43}
-            right={3.4}
+            right={3.3}
           />
           <CloseBtn
             onMouseDown={() => setIsOpen({ ...isOpen, time: false })}

@@ -44,6 +44,16 @@ const Icons = () => {
     }
   };
 
+  const handleIconKeyDown = (
+    event: React.KeyboardEvent<HTMLButtonElement>,
+    iconName: string
+  ) => {
+    if (event.key === "Enter") {
+      setIsOpen({ ...isOpen, [iconName]: true });
+      setIsVisible({ ...isVisible, [iconName]: true });
+    }
+  };
+
   const clickOutside = (e: MouseEvent) => {
     if (!buttonRef.current?.contains(e.target as Node)) {
       setIsClicked({
@@ -68,6 +78,7 @@ const Icons = () => {
           clickedIcon={aboutClicked}
           isClicked={isClicked.about}
           onClick={(event) => handleClick(event, "about")}
+          onKeyDown={(event) => handleIconKeyDown(event, "about")}
           ref={buttonRef}
         />
         <Icon
@@ -75,6 +86,7 @@ const Icons = () => {
           clickedIcon={workClicked}
           isClicked={isClicked.work}
           onClick={(event) => handleClick(event, "work")}
+          onKeyDown={(event) => handleIconKeyDown(event, "work")}
           ref={buttonRef}
         />
         <Icon
@@ -82,6 +94,7 @@ const Icons = () => {
           clickedIcon={contactClicked}
           isClicked={isClicked.contact}
           onClick={(event) => handleClick(event, "contact")}
+          onKeyDown={(event) => handleIconKeyDown(event, "contact")}
           ref={buttonRef}
         />
       </IconsContainer>
@@ -90,6 +103,7 @@ const Icons = () => {
         clickedIcon={recycleClicked}
         isClicked={isClicked.recycle}
         onClick={(event) => handleClick(event, "recycle")}
+        onKeyDown={(event) => handleIconKeyDown(event, "recycle")}
         ref={buttonRef}
       />
     </>
