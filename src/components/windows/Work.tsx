@@ -28,14 +28,14 @@ const Work = () => {
       >
         <WorkHandle className="handle">
           <MinimizeBtn
-            onMouseDown={() => setIsVisible({ ...isVisible, work: false })}
+            onMouseUp={() => setIsVisible({ ...isVisible, work: false })}
             height={27}
             width={29}
             top={0.8}
             right={4.6}
           />
           <CloseBtn
-            onMouseDown={() => setIsOpen({ ...isOpen, work: false })}
+            onMouseUp={() => setIsOpen({ ...isOpen, work: false })}
             height={30}
             width={30}
             top={0.7}

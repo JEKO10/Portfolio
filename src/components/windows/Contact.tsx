@@ -28,14 +28,14 @@ const Contact = () => {
       >
         <ContactHandle className="handle">
           <MinimizeBtn
-            onMouseDown={() => setIsVisible({ ...isVisible, contact: false })}
+            onMouseUp={() => setIsVisible({ ...isVisible, contact: false })}
             height={32}
             width={34}
             top={0.85}
             right={5.4}
           />
           <CloseBtn
-            onMouseDown={() => setIsOpen({ ...isOpen, contact: false })}
+            onMouseUp={() => setIsOpen({ ...isOpen, contact: false })}
             height={35}
             width={34}
             top={0.75}

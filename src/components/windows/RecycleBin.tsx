@@ -54,14 +54,14 @@ const RecycleBin = () => {
       >
         <RecycleBinHandle className="handle">
           <MinimizeBtn
-            onMouseDown={() => setIsVisible({ ...isVisible, recycle: false })}
+            onMouseUp={() => setIsVisible({ ...isVisible, recycle: false })}
             height={31}
             width={28}
             top={0.55}
             right={5}
           />
           <CloseBtn
-            onMouseDown={() => setIsOpen({ ...isOpen, recycle: false })}
+            onMouseUp={() => setIsOpen({ ...isOpen, recycle: false })}
             height={30}
             width={30}
             top={0.6}

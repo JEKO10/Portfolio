@@ -41,14 +41,14 @@ const Time = () => {
       >
         <TimeHandle className="handle">
           <MinimizeBtn
-            onMouseDown={() => setIsOpen({ ...isOpen, time: false })}
+            onMouseUp={() => setIsOpen({ ...isOpen, time: false })}
             height={19}
             width={21}
             top={0.43}
             right={3.3}
           />
           <CloseBtn
-            onMouseDown={() => setIsOpen({ ...isOpen, time: false })}
+            onMouseUp={() => setIsOpen({ ...isOpen, time: false })}
             height={22}
             width={22}
             top={0.35}
@@ -56,8 +56,8 @@ const Time = () => {
           />
           <DigitalClock>{formattedTime}</DigitalClock>
         </TimeHandle>
-        <OkButton onMouseDown={() => setIsOpen({ ...isOpen, time: false })} />
-        <CancelBtn onMouseDown={() => setIsOpen({ ...isOpen, time: false })} />
+        <OkButton onMouseUp={() => setIsOpen({ ...isOpen, time: false })} />
+        <CancelBtn onMouseUp={() => setIsOpen({ ...isOpen, time: false })} />
       </TimeModal>
     </Draggable>
   );

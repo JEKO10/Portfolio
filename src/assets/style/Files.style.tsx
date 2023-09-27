@@ -36,7 +36,7 @@ type BookProps = {
 
 export const AboutFile = styled.section<FilesProps>`
   background: url(${aboutModal}) center/cover no-repeat;
-  position: absolute;
+  position: relative;
   height: 652px;
   width: 975px;
   display: ${({ isVisible }) => (isVisible ? "block" : "none")};
