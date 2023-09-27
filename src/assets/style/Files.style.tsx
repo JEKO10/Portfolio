@@ -13,7 +13,7 @@ import aboutModal from "../images/modals/aboutModal.png";
 import book from "../images/modals/bookModal.jpg";
 import contactModal from "../images/modals/contactModal.jpg";
 import recycleBin from "../images/modals/recycleBin.png";
-import time from "../images/modals/timeModal.png";
+import time from "../images/modals/timeModal.jpg";
 import workModal from "../images/modals/workModal.jpg";
 
 type ControlBtnProps = {
@@ -81,7 +81,7 @@ export const WorkHandle = styled.div`
 
 export const TimeModal = styled.section<FilesProps>`
   background: url(${time}) center/cover no-repeat;
-  position: absolute;
+  position: relative;
   height: 486px;
   width: 576px;
   z-index: ${({ lastClicked }) => (lastClicked === "time" ? 2 : 1)};

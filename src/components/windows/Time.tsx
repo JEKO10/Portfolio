@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Draggable from "react-draggable";
 
+import { DigitalClock } from "../../assets/style/Clock.style";
 import {
   CancelBtn,
   CloseBtn,
@@ -12,7 +13,25 @@ import {
 import { useGlobalContext } from "../../context";
 
 const Time = () => {
+  const [time, setTime] = useState(new Date());
   const { isOpen, setIsOpen, lastClicked, setLastClicked } = useGlobalContext();
+
+  useEffect(() => {
+    const intervalID = setInterval(() => {
+      setTime(new Date());
+    }, 1000);
+
+    return () => {
+      clearInterval(intervalID);
+    };
+  }, []);
+
+  const formattedTime = time.toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true,
+  });
 
   return (
     <Draggable defaultPosition={{ x: 800, y: -400 }} handle=".handle">
@@ -35,6 +54,7 @@ const Time = () => {
             top={0.35}
             right={0.5}
           />
+          <DigitalClock>{formattedTime}</DigitalClock>
         </TimeHandle>
         <OkButton onMouseDown={() => setIsOpen({ ...isOpen, time: false })} />
         <CancelBtn onMouseDown={() => setIsOpen({ ...isOpen, time: false })} />
