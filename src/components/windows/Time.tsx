@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import Draggable from "react-draggable";
 
-import { DigitalClock } from "../../assets/style/Clock.style";
+import {
+  ClockHandle,
+  ClockModal,
+  DigitalClock,
+} from "../../assets/style/Clock.style";
 import {
   CancelBtn,
   CloseBtn,
   MinimizeBtn,
   OkButton,
-  TimeHandle,
-  TimeModal,
 } from "../../assets/style/Files.style";
 import { useGlobalContext } from "../../context";
 
@@ -35,11 +37,11 @@ const Time = () => {
 
   return (
     <Draggable defaultPosition={{ x: 800, y: -400 }} handle=".handle">
-      <TimeModal
+      <ClockModal
         onMouseDownCapture={() => setLastClicked("time")}
         lastClicked={lastClicked}
       >
-        <TimeHandle className="handle">
+        <ClockHandle className="handle">
           <MinimizeBtn
             onMouseUp={() => setIsOpen({ ...isOpen, time: false })}
             height={19}
@@ -55,10 +57,10 @@ const Time = () => {
             right={0.5}
           />
           <DigitalClock>{formattedTime}</DigitalClock>
-        </TimeHandle>
+        </ClockHandle>
         <OkButton onMouseUp={() => setIsOpen({ ...isOpen, time: false })} />
         <CancelBtn onMouseUp={() => setIsOpen({ ...isOpen, time: false })} />
-      </TimeModal>
+      </ClockModal>
     </Draggable>
   );
 };

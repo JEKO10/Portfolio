@@ -3,13 +3,12 @@ import Draggable from "react-draggable";
 
 import aboutClicked from "../../assets/images/icons/aboutClicked.png";
 import book from "../../assets/images/icons/bookIcon.png";
+import { Book } from "../../assets/style/Book.style";
+import { CloseBtn, MinimizeBtn } from "../../assets/style/Files.style";
 import {
-  Book,
-  CloseBtn,
-  MinimizeBtn,
   RecycleBinFile,
   RecycleBinHandle,
-} from "../../assets/style/Files.style";
+} from "../../assets/style/RecycleBin.style";
 import { useGlobalContext } from "../../context";
 
 const RecycleBin = () => {

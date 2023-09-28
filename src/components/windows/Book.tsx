@@ -1,6 +1,6 @@
 import React from "react";
 
-import { BookFile } from "../../assets/style/Files.style";
+import { BookFile } from "../../assets/style/Book.style";
 import { useGlobalContext } from "../../context";
 
 const Book = () => {

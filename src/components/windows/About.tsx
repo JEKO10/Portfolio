@@ -1,13 +1,12 @@
 import React from "react";
 import Draggable from "react-draggable";
 
-import { AboutMeText } from "../../assets/style/AboutFile.style";
 import {
   AboutFile,
   AboutHandle,
-  CloseBtn,
-  MinimizeBtn,
-} from "../../assets/style/Files.style";
+  AboutMeText,
+} from "../../assets/style/About.style";
+import { CloseBtn, MinimizeBtn } from "../../assets/style/Files.style";
 import { useGlobalContext } from "../../context";
 
 const About = () => {

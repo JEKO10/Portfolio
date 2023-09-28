@@ -1,12 +1,8 @@
 import React from "react";
 import Draggable from "react-draggable";
 
-import {
-  CloseBtn,
-  ContactFile,
-  ContactHandle,
-  MinimizeBtn,
-} from "../../assets/style/Files.style";
+import { ContactFile, ContactHandle } from "../../assets/style/Contact.style";
+import { CloseBtn, MinimizeBtn } from "../../assets/style/Files.style";
 import { useGlobalContext } from "../../context";
 
 const Contact = () => {

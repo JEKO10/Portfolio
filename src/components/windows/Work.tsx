@@ -1,12 +1,8 @@
 import React from "react";
 import Draggable from "react-draggable";
 
-import {
-  CloseBtn,
-  MinimizeBtn,
-  WorkFile,
-  WorkHandle,
-} from "../../assets/style/Files.style";
+import { CloseBtn, MinimizeBtn } from "../../assets/style/Files.style";
+import { WorkFile, WorkHandle } from "../../assets/style/Work.style";
 import { useGlobalContext } from "../../context";
 
 const Work = () => {
