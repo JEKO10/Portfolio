@@ -5,6 +5,7 @@ import { useGlobalContext } from "../context";
 import About from "./windows/About";
 import Contact from "./windows/Contact";
 import RecycleBin from "./windows/RecycleBin";
+import StartMenu from "./windows/StartMenu";
 import Time from "./windows/Time";
 import Work from "./windows/Work";
 
@@ -19,6 +20,8 @@ const Files = () => {
       {isOpen.recycle && <RecycleBin />}
       {isOpen.book && <Book />}
       {isOpen.time && <Time />}
+      {/* {isOpen.start && <StartMenu />} */}
+      <StartMenu />
     </section>
   );
 };

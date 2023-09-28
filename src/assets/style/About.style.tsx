@@ -10,7 +10,7 @@ type FilesProps = {
 
 export const AboutFile = styled.section<FilesProps>`
   background: url(${aboutModal}) center/cover no-repeat;
-  position: relative;
+  position: absolute;
   height: 652px;
   width: 975px;
   display: ${({ isVisible }) => (isVisible ? "block" : "none")};
