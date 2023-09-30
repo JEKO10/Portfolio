@@ -9,12 +9,14 @@ type FilesProps = {
 };
 
 export const AboutFile = styled.section<FilesProps>`
-  background: url(${aboutModal}) center/cover no-repeat;
+  background: url(${aboutModal}) center/contain no-repeat;
   position: absolute;
   height: 652px;
   width: 975px;
   display: ${({ isVisible }) => (isVisible ? "block" : "none")};
   z-index: ${({ lastClicked }) => (lastClicked === "about" ? 2 : 1)};
+  /* resize: both;
+  overflow: auto; */
 `;
 
 export const AboutHandle = styled.div`
