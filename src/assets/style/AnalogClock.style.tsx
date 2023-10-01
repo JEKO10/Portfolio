@@ -1,49 +1,58 @@
 import styled from "styled-components";
 
-export const ClockWrapper = styled.section`
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
 export const Clock = styled.div`
-  height: 181px;
-  width: 181px;
-  max-width: 500px;
-  margin: 0 auto;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
-  position: relative;
-  background: url("../images/other/clock.png") center/contain no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  text-align: center;
+  background: url("/src/assets/images/other/clock.png") center/cover no-repeat;
 
-  > * {
-    transform-origin: 0%;
-    background-color: rgb(0, 0, 0);
-    transform: translate(-50%, -50%) rotate(-90deg);
+  &::after {
+    background: #aaa;
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #fff;
   }
 `;
 
-export const Seconds = styled.div`
-  height: 7.5px;
-  width: 62.5px;
-  background: url("../assets/images/other/seconds.png") center/contain no-repeat;
-  top: 52%;
-  left: 52%;
+export const Hours = styled.div`
+  position: absolute;
+  width: 6px;
+  height: 60px;
+  background: url("/src/assets/images/other/hours.png") center/cover no-repeat;
+  top: 30%;
+  left: 49%;
+  transform-origin: bottom;
 `;
 
 export const Minutes = styled.div`
-  height: 55px;
-  width: 77px;
-  background: url("../assets/images/other/minutes.png") center/contain no-repeat;
-  top: 42%;
-  left: 58%;
+  position: absolute;
+  width: 4px;
+  height: 80px;
+  background: url("/src/assets/images/other/minutes.png") center/cover no-repeat;
+  top: 22.5%;
+  left: 49%;
+  transform-origin: bottom;
 `;
 
-export const Hours = styled.div`
-  height: 35px;
-  width: 55px;
-  background: url("../assets/images/other/hours.png") center/contain no-repeat;
-  top: 47%;
-  left: 54%;
+export const Seconds = styled.div`
+  position: absolute;
+  width: 2px;
+  height: 118px;
+  background: url("/src/assets/images/other/seconds.png") center/cover no-repeat;
+  top: 10.5%;
+  left: 50%;
+  transform-origin: bottom;
 `;
