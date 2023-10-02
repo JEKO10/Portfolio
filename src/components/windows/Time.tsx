@@ -13,6 +13,7 @@ import {
   OkButton,
 } from "../../assets/style/Files.style";
 import { useGlobalContext } from "../../context";
+import AnalogClock from "../AnalogClock";
 
 const Time = () => {
   const [time, setTime] = useState(new Date());
@@ -60,6 +61,7 @@ const Time = () => {
         </ClockHandle>
         <OkButton onMouseUp={() => setIsOpen({ ...isOpen, time: false })} />
         <CancelBtn onMouseUp={() => setIsOpen({ ...isOpen, time: false })} />
+        <AnalogClock />
       </ClockModal>
     </Draggable>
   );

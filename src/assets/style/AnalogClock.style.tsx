@@ -5,8 +5,8 @@ export const Clock = styled.div`
   height: 181px;
   border-radius: 50%;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 42%;
+  left: 73%;
   transform: translate(-50%, -50%);
   font-size: 24px;
   text-align: center;
