@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Clock = styled.div`
-  width: 300px;
-  height: 300px;
+  width: 181px;
+  height: 181px;
   border-radius: 50%;
   position: absolute;
   top: 50%;
@@ -13,46 +13,47 @@ export const Clock = styled.div`
   background: url("/src/assets/images/other/clock.png") center/cover no-repeat;
 
   &::after {
-    background: #aaa;
+    background: #ff0000;
     content: "";
-    width: 12px;
-    height: 12px;
+    width: 5px;
+    height: 5px;
     border-radius: 50%;
     position: absolute;
     z-index: 2;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 2px solid #fff;
   }
 `;
 
 export const Hours = styled.div`
   position: absolute;
-  width: 6px;
-  height: 60px;
-  background: url("/src/assets/images/other/hours.png") center/cover no-repeat;
-  top: 30%;
-  left: 49%;
+  width: 75px;
+  height: 55px;
+  background: url("/src/assets/images/other/bigNeedle.png") center/contain
+    no-repeat;
+  top: 19%;
+  left: 30%;
   transform-origin: bottom;
 `;
 
 export const Minutes = styled.div`
   position: absolute;
-  width: 4px;
-  height: 80px;
-  background: url("/src/assets/images/other/minutes.png") center/cover no-repeat;
-  top: 22.5%;
-  left: 49%;
+  width: 75px;
+  height: 70px;
+  background: url("/src/assets/images/other/bigNeedle.png") center/contain
+    no-repeat;
+  top: 12.5%;
+  left: 29%;
   transform-origin: bottom;
 `;
 
 export const Seconds = styled.div`
   position: absolute;
   width: 2px;
-  height: 118px;
+  height: 75px;
   background: url("/src/assets/images/other/seconds.png") center/cover no-repeat;
-  top: 10.5%;
-  left: 50%;
+  top: 8.5%;
+  left: 49.5%;
   transform-origin: bottom;
 `;
