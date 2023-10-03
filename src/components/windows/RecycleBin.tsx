@@ -51,22 +51,21 @@ const RecycleBin = () => {
         lastClicked={lastClicked}
         isVisible={isVisible.recycle}
       >
-        <RecycleBinHandle className="handle">
-          <MinimizeBtn
-            onMouseUp={() => setIsVisible({ ...isVisible, recycle: false })}
-            height={31}
-            width={28}
-            top={0.55}
-            right={5}
-          />
-          <CloseBtn
-            onMouseUp={() => setIsOpen({ ...isOpen, recycle: false })}
-            height={30}
-            width={30}
-            top={0.6}
-            right={0.9}
-          />
-        </RecycleBinHandle>
+        <RecycleBinHandle className="handle" />
+        <MinimizeBtn
+          onMouseUp={() => setIsVisible({ ...isVisible, recycle: false })}
+          height={31}
+          width={28}
+          top={0.55}
+          right={5}
+        />
+        <CloseBtn
+          onMouseUp={() => setIsOpen({ ...isOpen, recycle: false })}
+          height={30}
+          width={30}
+          top={0.6}
+          right={0.9}
+        />
         <Book
           iconName={book}
           clickedIcon={aboutClicked}

@@ -42,23 +42,22 @@ const Time = () => {
         onMouseDownCapture={() => setLastClicked("time")}
         lastClicked={lastClicked}
       >
-        <ClockHandle className="handle">
-          <MinimizeBtn
-            onMouseUp={() => setIsOpen({ ...isOpen, time: false })}
-            height={19}
-            width={21}
-            top={0.43}
-            right={3.3}
-          />
-          <CloseBtn
-            onMouseUp={() => setIsOpen({ ...isOpen, time: false })}
-            height={22}
-            width={22}
-            top={0.35}
-            right={0.5}
-          />
-          <DigitalClock>{formattedTime}</DigitalClock>
-        </ClockHandle>
+        <ClockHandle className="handle" />
+        <MinimizeBtn
+          onMouseUp={() => setIsOpen({ ...isOpen, time: false })}
+          height={19}
+          width={21}
+          top={0.43}
+          right={3.3}
+        />
+        <CloseBtn
+          onMouseUp={() => setIsOpen({ ...isOpen, time: false })}
+          height={22}
+          width={22}
+          top={0.35}
+          right={0.5}
+        />
+        <DigitalClock>{formattedTime}</DigitalClock>
         <OkButton onMouseUp={() => setIsOpen({ ...isOpen, time: false })} />
         <CancelBtn onMouseUp={() => setIsOpen({ ...isOpen, time: false })} />
         <AnalogClock />

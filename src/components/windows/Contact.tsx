@@ -22,22 +22,21 @@ const Contact = () => {
         isVisible={isVisible.contact}
         lastClicked={lastClicked}
       >
-        <ContactHandle className="handle">
-          <MinimizeBtn
-            onMouseUp={() => setIsVisible({ ...isVisible, contact: false })}
-            height={32}
-            width={34}
-            top={0.85}
-            right={5.4}
-          />
-          <CloseBtn
-            onMouseUp={() => setIsOpen({ ...isOpen, contact: false })}
-            height={35}
-            width={34}
-            top={0.75}
-            right={0.9}
-          />
-        </ContactHandle>
+        <ContactHandle className="handle" />
+        <MinimizeBtn
+          onMouseUp={() => setIsVisible({ ...isVisible, contact: false })}
+          height={32}
+          width={34}
+          top={0.85}
+          right={5.4}
+        />
+        <CloseBtn
+          onMouseUp={() => setIsOpen({ ...isOpen, contact: false })}
+          height={35}
+          width={34}
+          top={0.75}
+          right={0.9}
+        />
       </ContactFile>
     </Draggable>
   );
