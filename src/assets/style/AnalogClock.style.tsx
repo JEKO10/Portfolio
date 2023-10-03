@@ -15,14 +15,19 @@ export const Clock = styled.div`
   &::after {
     background: #ff0000;
     content: "";
-    width: 5px;
-    height: 5px;
+    width: 4px;
+    height: 4px;
     border-radius: 50%;
     position: absolute;
     z-index: 2;
     top: 50%;
     left: 50%;
+    z-index: 5;
     transform: translate(-50%, -50%);
+  }
+
+  > * {
+    transform-origin: 51% 80%;
   }
 `;
 
@@ -32,9 +37,8 @@ export const Hours = styled.div`
   height: 55px;
   background: url("/src/assets/images/other/bigNeedle.png") center/contain
     no-repeat;
-  top: 19%;
-  left: 30%;
-  transform-origin: bottom;
+  top: 26%;
+  left: 28.5%;
 `;
 
 export const Minutes = styled.div`
@@ -43,9 +47,9 @@ export const Minutes = styled.div`
   height: 70px;
   background: url("/src/assets/images/other/bigNeedle.png") center/contain
     no-repeat;
-  top: 12.5%;
+  top: 19.5%;
   left: 29%;
-  transform-origin: bottom;
+  z-index: 2;
 `;
 
 export const Seconds = styled.div`
