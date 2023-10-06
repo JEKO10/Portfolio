@@ -11,22 +11,20 @@ import { useGlobalContext } from "../context";
 const Home = () => {
   const [mouseDown, setMouseDown] = useState(false);
   const [isRectangleVisible, setRectangleVisible] = useState(false);
-  const [rectanglePosition, setRectanglePosition] = useState({ x: 0, y: 0 });
-  const [rectangleSize, setRectangleSize] = useState({ width: 0, height: 0 });
+  const [startPosition, setStartPosition] = useState({ x: 0, y: 0 });
+  const [endPosition, setEndPosition] = useState({ x: 0, y: 0 });
 
   const { isClicked, setIsClicked } = useGlobalContext();
 
   const handleMouseDown = (e: React.MouseEvent<HTMLElement>) => {
     setMouseDown(true);
     setRectangleVisible(true);
-    setRectanglePosition({ x: e.clientX, y: e.clientY });
+    setStartPosition({ x: e.clientX, y: e.clientY });
+    setEndPosition({ x: e.clientX, y: e.clientY });
   };
 
-  const handleMouseUp = (e: React.MouseEvent<HTMLElement>) => {
+  const handleMouseUp = () => {
     setMouseDown(false);
-    const width = e.clientX - rectanglePosition.x;
-    const height = e.clientY - rectanglePosition.y;
-    setRectangleSize({ width, height });
     setRectangleVisible(false);
   };
 
@@ -34,10 +32,7 @@ const Home = () => {
     if (mouseDown) {
       const target = e.target;
 
-      const width = e.clientX - rectanglePosition.x;
-      const height = e.clientY - rectanglePosition.y;
-
-      setRectangleSize({ width, height });
+      setEndPosition({ x: e.clientX, y: e.clientY });
 
       if (
         target instanceof HTMLElement &&
@@ -67,12 +62,12 @@ const Home = () => {
         <div
           style={{
             position: "absolute",
-            border: "2px solid gray",
+            border: "2px solid black",
             pointerEvents: "none",
-            top: `${rectanglePosition.y}px`,
-            left: `${rectanglePosition.x}px`,
-            width: `${Math.abs(rectangleSize.width)}px`,
-            height: `${Math.abs(rectangleSize.height)}px`,
+            top: `${Math.min(startPosition.y, endPosition.y)}px`,
+            left: `${Math.min(startPosition.x, endPosition.x)}px`,
+            width: `${Math.abs(endPosition.x - startPosition.x)}px`,
+            height: `${Math.abs(endPosition.y - startPosition.y)}px`,
           }}
         ></div>
       )}
