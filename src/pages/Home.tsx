@@ -28,8 +28,6 @@ const Home = () => {
   const handleMouseUp = () => {
     setMouseDown(false);
     setRectangleVisible(false);
-
-    setIsClicked(isClicked);
   };
 
   const handleMouseDown = (e: React.MouseEvent<HTMLElement>) => {
@@ -61,6 +59,12 @@ const Home = () => {
         contact: {
           y: 395,
           x: 30,
+          height: 140,
+          width: 116,
+        },
+        recycle: {
+          y: 729,
+          x: 1774,
           height: 140,
           width: 116,
         },
