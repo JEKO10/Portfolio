@@ -8,6 +8,15 @@ import Icons from "../components/Icons";
 import Taskbar from "../components/Taskbar";
 import { useGlobalContext } from "../context";
 
+type IconsType = {
+  [key: string]: {
+    y: number;
+    x: number;
+    height: number;
+    width: number;
+  };
+};
+
 const Home = () => {
   const [mouseDown, setMouseDown] = useState(false);
   const [isRectangleVisible, setRectangleVisible] = useState(false);
@@ -16,39 +25,70 @@ const Home = () => {
 
   const { isClicked, setIsClicked } = useGlobalContext();
 
+  const handleMouseUp = () => {
+    setMouseDown(false);
+    setRectangleVisible(false);
+
+    setIsClicked(isClicked);
+  };
+
   const handleMouseDown = (e: React.MouseEvent<HTMLElement>) => {
+    e.preventDefault();
+
     setMouseDown(true);
     setRectangleVisible(true);
     setStartPosition({ x: e.clientX, y: e.clientY });
     setEndPosition({ x: e.clientX, y: e.clientY });
   };
 
-  const handleMouseUp = () => {
-    setMouseDown(false);
-    setRectangleVisible(false);
-  };
-
   const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
     if (mouseDown) {
-      const target = e.target;
-
       setEndPosition({ x: e.clientX, y: e.clientY });
 
-      if (
-        target instanceof HTMLElement &&
-        target.tagName.toLowerCase() === "button"
-      ) {
-        if (target.classList.contains("llyCgC")) {
-          setIsClicked({ ...isClicked, about: true });
-          // target.style.background = `url(${aboutClicked}) center/contain no-repeat`;
-        } else if (target.classList.contains("faIjsa")) {
-          setIsClicked({ ...isClicked, work: true });
-          // target.style.background = `url(${workClicked}) center/contain no-repeat`;
-        } else if (target.classList.contains("jwftwX")) {
-          setIsClicked({ ...isClicked, contact: true });
-          // target.style.background = `url(${contactClicked}) center/contain no-repeat`;
+      const icons: IconsType = {
+        about: {
+          y: 35,
+          x: 30,
+          height: 140,
+          width: 116,
+        },
+        work: {
+          y: 215,
+          x: 30,
+          height: 140,
+          width: 116,
+        },
+        contact: {
+          y: 395,
+          x: 30,
+          height: 140,
+          width: 116,
+        },
+      };
+
+      const rectangle = {
+        x: Math.min(startPosition.x, endPosition.x),
+        y: Math.min(startPosition.y, endPosition.y),
+        width: Math.abs(endPosition.x - startPosition.x),
+        height: Math.abs(endPosition.y - startPosition.y),
+      };
+
+      const selectedIcons: { [key: string]: boolean } = {};
+
+      for (const iconKey in icons) {
+        const icon = icons[iconKey];
+        const isIntersecting =
+          icon.x < rectangle.x + rectangle.width &&
+          icon.x + icon.width > rectangle.x &&
+          icon.y < rectangle.y + rectangle.height &&
+          icon.y + icon.height > rectangle.y;
+
+        if (isIntersecting) {
+          selectedIcons[iconKey] = true;
         }
       }
+
+      setIsClicked({ ...isClicked, ...selectedIcons });
     }
   };
 
@@ -62,7 +102,7 @@ const Home = () => {
         <div
           style={{
             position: "absolute",
-            border: "2px solid black",
+            border: "2px solid gray",
             pointerEvents: "none",
             top: `${Math.min(startPosition.y, endPosition.y)}px`,
             left: `${Math.min(startPosition.x, endPosition.x)}px`,
@@ -79,16 +119,25 @@ const Home = () => {
 };
 
 export default Home;
+// target.style.background = `url(${aboutClicked}) center/contain no-repeat`;
 
-//  if (target.classList.contains("llyCgC")) {
-//    target.style.background =
-//      "url(/src/assets/images/icons/aboutClicked.png) center/contain no-repeat";
-//  }
-//  if (target.classList.contains("faIjsa")) {
-//    target.style.background =
-//      "url(/src/assets/images/icons/workClicked.png) center/contain no-repeat";
-//  }
-//  if (target.classList.contains("jwftwX")) {
-//    target.style.background =
-//      "url(/src/assets/images/icons/contactClicked.png) center/contain no-repeat";
-//  }
+// const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+//   if (mouseDown) {
+//     const target = e.target;
+
+//     setEndPosition({ x: e.clientX, y: e.clientY });
+
+//     if (
+//       target instanceof HTMLElement &&
+//       target.tagName.toLowerCase() === "button"
+//     ) {
+//       if (target.classList.contains("llyCgC")) {
+//         setIsClicked({ ...isClicked, about: true });
+//       } else if (target.classList.contains("faIjsa")) {
+//         setIsClicked({ ...isClicked, work: true });
+//       } else if (target.classList.contains("jwftwX")) {
+//         setIsClicked({ ...isClicked, contact: true });
+//       }
+//     }
+//   }
+// };

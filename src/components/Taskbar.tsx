@@ -19,7 +19,7 @@ const Taskbar = () => {
 
   return (
     <>
-      <TaskBar style={{ pointerEvents: "none" }}>
+      <TaskBar>
         <div>
           <StartButton />
           <Dash src={dash} alt="dash" />
