@@ -77,7 +77,7 @@ const Icons = () => {
           iconName={about}
           clickedIcon={aboutClicked}
           isClicked={isClicked.about}
-          onClick={(event) => handleClick(event, "about")}
+          onMouseDown={(event) => handleClick(event, "about")}
           onKeyDown={(event) => handleIconKeyDown(event, "about")}
           ref={buttonRef}
         />
@@ -85,7 +85,7 @@ const Icons = () => {
           iconName={work}
           clickedIcon={workClicked}
           isClicked={isClicked.work}
-          onClick={(event) => handleClick(event, "work")}
+          onMouseDown={(event) => handleClick(event, "work")}
           onKeyDown={(event) => handleIconKeyDown(event, "work")}
           ref={buttonRef}
         />
@@ -93,7 +93,7 @@ const Icons = () => {
           iconName={contact}
           clickedIcon={contactClicked}
           isClicked={isClicked.contact}
-          onClick={(event) => handleClick(event, "contact")}
+          onMouseDown={(event) => handleClick(event, "contact")}
           onKeyDown={(event) => handleIconKeyDown(event, "contact")}
           ref={buttonRef}
         />
@@ -102,7 +102,7 @@ const Icons = () => {
         iconName={recycle}
         clickedIcon={recycleClicked}
         isClicked={isClicked.recycle}
-        onClick={(event) => handleClick(event, "recycle")}
+        onMouseDown={(event) => handleClick(event, "recycle")}
         onKeyDown={(event) => handleIconKeyDown(event, "recycle")}
         ref={buttonRef}
       />
