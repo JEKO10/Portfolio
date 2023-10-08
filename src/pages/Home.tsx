@@ -25,6 +25,33 @@ const Home = () => {
 
   const { isClicked, setIsClicked } = useGlobalContext();
 
+  const icons: IconsType = {
+    about: {
+      x: 30,
+      y: 35,
+      height: 140,
+      width: 116,
+    },
+    work: {
+      x: 30,
+      y: 215,
+      height: 140,
+      width: 116,
+    },
+    contact: {
+      x: 30,
+      y: 395,
+      height: 140,
+      width: 116,
+    },
+    recycle: {
+      x: 1774,
+      y: 729,
+      height: 140,
+      width: 116,
+    },
+  };
+
   const handleMouseUp = () => {
     setMouseDown(false);
     setRectangleVisible(false);
@@ -33,42 +60,32 @@ const Home = () => {
   const handleMouseDown = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
 
+    const clickX = e.clientX;
+    const clickY = e.clientY;
+
+    for (const iconKey in icons) {
+      const icon = icons[iconKey];
+
+      const isInsideIcon =
+        clickX >= icon.x &&
+        clickX <= icon.x + icon.width &&
+        clickY >= icon.y &&
+        clickY <= icon.y + icon.height;
+
+      if (isInsideIcon) {
+        return;
+      }
+    }
+
     setMouseDown(true);
     setRectangleVisible(true);
-    setStartPosition({ x: e.clientX, y: e.clientY });
-    setEndPosition({ x: e.clientX, y: e.clientY });
+    setStartPosition({ x: clickX, y: clickY });
+    setEndPosition({ x: clickX, y: clickY });
   };
 
   const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
     if (mouseDown) {
       setEndPosition({ x: e.clientX, y: e.clientY });
-
-      const icons: IconsType = {
-        about: {
-          y: 35,
-          x: 30,
-          height: 140,
-          width: 116,
-        },
-        work: {
-          y: 215,
-          x: 30,
-          height: 140,
-          width: 116,
-        },
-        contact: {
-          y: 395,
-          x: 30,
-          height: 140,
-          width: 116,
-        },
-        recycle: {
-          y: 729,
-          x: 1774,
-          height: 140,
-          width: 116,
-        },
-      };
 
       const rectangle = {
         x: Math.min(startPosition.x, endPosition.x),
@@ -81,6 +98,7 @@ const Home = () => {
 
       for (const iconKey in icons) {
         const icon = icons[iconKey];
+
         const isIntersecting =
           icon.x < rectangle.x + rectangle.width &&
           icon.x + icon.width > rectangle.x &&
@@ -89,6 +107,8 @@ const Home = () => {
 
         if (isIntersecting) {
           selectedIcons[iconKey] = true;
+        } else {
+          selectedIcons[iconKey] = false;
         }
       }
 
@@ -123,25 +143,3 @@ const Home = () => {
 };
 
 export default Home;
-// target.style.background = `url(${aboutClicked}) center/contain no-repeat`;
-
-// const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
-//   if (mouseDown) {
-//     const target = e.target;
-
-//     setEndPosition({ x: e.clientX, y: e.clientY });
-
-//     if (
-//       target instanceof HTMLElement &&
-//       target.tagName.toLowerCase() === "button"
-//     ) {
-//       if (target.classList.contains("llyCgC")) {
-//         setIsClicked({ ...isClicked, about: true });
-//       } else if (target.classList.contains("faIjsa")) {
-//         setIsClicked({ ...isClicked, work: true });
-//       } else if (target.classList.contains("jwftwX")) {
-//         setIsClicked({ ...isClicked, contact: true });
-//       }
-//     }
-//   }
-// };
