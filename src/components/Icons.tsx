@@ -67,7 +67,7 @@ const Icons = () => {
   };
 
   useEffect(() => {
-    document.addEventListener("click", clickOutside, true);
+    document.addEventListener("mousedown", clickOutside, true);
   }, []);
 
   return (
