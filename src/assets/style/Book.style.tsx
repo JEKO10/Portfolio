@@ -36,5 +36,5 @@ export const Book = styled.button<BookProps>`
       : css`
           background: url(${iconName}) center/contain no-repeat;
         `};
-  cursor: pointer;
+  cursor: not-allowed;
 `;

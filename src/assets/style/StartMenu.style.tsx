@@ -13,4 +13,9 @@ export const StartContainer = styled.section<StartContainerPosition>`
   transform: ${({ position }) =>
     position ? `translateY(-34px)` : `translateY(500px)`};
   transition: transform 500ms ease;
+
+  img {
+    width: 249px;
+    cursor: pointer;
+  }
 `;
