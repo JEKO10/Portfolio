@@ -8,14 +8,31 @@ type StartContainerPosition = {
 
 export const StartContainer = styled.section<StartContainerPosition>`
   background: url(${start}) center/contain no-repeat;
-  height: 350px;
-  width: 250px;
+  /* background: #c0c0c0; */
+  height: 475px;
+  width: 337px;
   transform: ${({ position }) =>
-    position ? `translateY(-34px)` : `translateY(500px)`};
+    position ? `translateY(-170px)` : `translateY(500px)`};
   transition: transform 500ms ease;
+  position: relative;
 
   img {
-    width: 249px;
+    height: 91px;
+    width: 337px;
     cursor: pointer;
+    /* position: absolute;
+    left: 0;
+    margin-left: 0.1rem; */
+
+    &:first-of-type {
+      height: 104px;
+    }
   }
+`;
+
+export const StartDash = styled.img`
+  height: 6px !important;
+  width: 294px !important;
+  display: block;
+  margin: 0 auto;
 `;

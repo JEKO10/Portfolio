@@ -5,7 +5,8 @@ import Contact from "../../assets/images/buttons/contactStart.jpg";
 import Recycle from "../../assets/images/buttons/recycleStart.jpg";
 import ShutDown from "../../assets/images/buttons/shutDown.jpg";
 import Work from "../../assets/images/buttons/workStart.jpg";
-import { StartContainer } from "../../assets/style/StartMenu.style";
+import Dash from "../../assets/images/other/startDash.jpg";
+import { StartContainer, StartDash } from "../../assets/style/StartMenu.style";
 import { useGlobalContext } from "../../context";
 
 const StartMenu: React.FC = () => {
@@ -17,6 +18,7 @@ const StartMenu: React.FC = () => {
       <img src={Work} alt="Work" />
       <img src={Contact} alt="Contact" />
       <img src={Recycle} alt="Recycle" />
+      <StartDash src={Dash} alt="StartDash" />
       <img src={ShutDown} alt="ShutDown" />
     </StartContainer>
   );
