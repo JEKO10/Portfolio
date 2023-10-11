@@ -11,7 +11,7 @@ import taskbar from "../images/other/taskbar.jpg";
 import { flexMixin } from "./GlobalStyles";
 
 type ButtonProps = {
-  isClicked: boolean | undefined;
+  isOpen: boolean | undefined;
 };
 
 export const TaskBar = styled.section`
@@ -28,8 +28,8 @@ export const TaskBar = styled.section`
 export const Start = styled.button<ButtonProps>`
   height: 35px;
   width: 82px;
-  background: ${({ isClicked }) =>
-    isClicked
+  background: ${({ isOpen }) =>
+    isOpen
       ? `
      url(${clicked})
   `
