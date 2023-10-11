@@ -10,7 +10,7 @@ const StartButton = () => {
 
   return (
     <Start
-      isClicked={isClicked}
+      isClicked={isOpen.start}
       onMouseDown={() => {
         setIsClicked(!isClicked);
         setIsOpen({ ...isOpen, start: !isOpen.start });

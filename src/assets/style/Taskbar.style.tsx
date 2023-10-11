@@ -11,7 +11,7 @@ import taskbar from "../images/other/taskbar.jpg";
 import { flexMixin } from "./GlobalStyles";
 
 type ButtonProps = {
-  isClicked: boolean;
+  isClicked: boolean | undefined;
 };
 
 export const TaskBar = styled.section`

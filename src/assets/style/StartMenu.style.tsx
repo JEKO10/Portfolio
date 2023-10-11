@@ -15,6 +15,7 @@ export const StartContainer = styled.section<StartContainerPosition>`
     position ? `translateY(-170px)` : `translateY(500px)`};
   transition: transform 500ms ease;
   position: relative;
+  z-index: 10;
 
   img {
     height: 91px;
