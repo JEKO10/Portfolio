@@ -12,9 +12,11 @@
 
 ## Project task
 
-I am an ambitious front-end developer looking for my first job. I have experience working with HTML, CSS(Sass), JavaScript, React, JQuery, Typescript, and Redux. I also started using eslint for best syntax practices and styling and Styled Components for styling React components easier.
+I am an ambitious front-end developer looking for my first job. I have experience working with HTML, CSS(Sass), JavaScript, React, JQuery, Typescript, Redux, and Jest. I also started using eslint for best syntax practices and styling and Styled Components for styling React components easier.
 
 ## Project overview
+
+I am building a Windows 98 simulator as my portfolio. There are going to be About Me, Work, Contact, and Recycle Bin files. 
 
 ## Built with
 
