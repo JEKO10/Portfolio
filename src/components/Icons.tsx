@@ -28,7 +28,15 @@ const Icons = () => {
   ) => {
     switch (event.detail) {
       case 1:
-        setIsClicked({ ...isClicked, [iconName]: true });
+        setIsClicked((prevIsClicked) => {
+          const updatedIsClicked = { ...prevIsClicked };
+
+          Object.keys(updatedIsClicked).forEach((key) => {
+            updatedIsClicked[key] = key === iconName;
+          });
+
+          return updatedIsClicked;
+        });
 
         break;
       case 2:
