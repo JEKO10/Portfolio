@@ -44,7 +44,6 @@ const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
     recycle: false,
     time: false,
     book: false,
-    start: false,
   });
 
   const [lastClicked, setLastClicked] = useState<string>("");
@@ -55,6 +54,7 @@ const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
     contact: true,
     recycle: true,
     book: false,
+    start: false,
   });
 
   return (
