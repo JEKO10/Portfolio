@@ -24,6 +24,10 @@ type AppContext = {
   setLastClicked: React.Dispatch<React.SetStateAction<string>>;
   isVisible: WindowsState;
   setIsVisible: React.Dispatch<React.SetStateAction<WindowsState>>;
+  isShutDown: boolean;
+  setIsShutDown: React.Dispatch<React.SetStateAction<boolean>>;
+  isLoading: boolean;
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const AppContext = createContext<AppContext>({} as AppContext);
@@ -57,6 +61,9 @@ const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
     start: false,
   });
 
+  const [isShutDown, setIsShutDown] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
     <AppContext.Provider
       value={{
@@ -68,6 +75,10 @@ const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
         setLastClicked,
         isVisible,
         setIsVisible,
+        isShutDown,
+        setIsShutDown,
+        isLoading,
+        setIsLoading,
       }}
     >
       {children}

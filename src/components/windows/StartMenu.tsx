@@ -10,7 +10,8 @@ import { StartContainer, StartDash } from "../../assets/style/StartMenu.style";
 import { useGlobalContext } from "../../context";
 
 const StartMenu: React.FC = () => {
-  const { isOpen, setIsOpen, setIsVisible, isVisible } = useGlobalContext();
+  const { isOpen, setIsOpen, setIsVisible, isVisible, setIsShutDown } =
+    useGlobalContext();
 
   return (
     <StartContainer position={isOpen.start}>
@@ -47,7 +48,7 @@ const StartMenu: React.FC = () => {
         }}
       />
       <StartDash src={Dash} alt="StartDash" />
-      <img src={ShutDown} alt="ShutDown" />
+      <img src={ShutDown} alt="ShutDown" onClick={() => setIsShutDown(true)} />
     </StartContainer>
   );
 };
