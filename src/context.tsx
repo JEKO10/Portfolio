@@ -5,7 +5,7 @@ import React, {
   useState,
 } from "react";
 
-type WindowsState = {
+export type WindowsState = {
   about: boolean;
   work: boolean;
   contact: boolean;
