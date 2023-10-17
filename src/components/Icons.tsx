@@ -37,6 +37,7 @@ const Icons = () => {
 
           return updatedIsClicked;
         });
+        setIsOpen({ ...isOpen, start: false });
 
         break;
       case 2:

@@ -12,7 +12,7 @@ export const StartContainer = styled.section<StartContainerPosition>`
   height: 475px;
   width: 337px;
   transform: ${({ position }) =>
-    position ? `translateY(-290px)` : `translateY(500px)`};
+    position ? `translateY(-80.8%)` : `translateY(55%)`};
   transition: transform 500ms ease;
   position: relative;
   z-index: 10;
