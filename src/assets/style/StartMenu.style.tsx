@@ -8,13 +8,13 @@ type StartContainerPosition = {
 
 export const StartContainer = styled.section<StartContainerPosition>`
   background: url(${start}) center/contain no-repeat;
-  /* background: #c0c0c0; */
   height: 475px;
   width: 337px;
   transform: ${({ position }) =>
-    position ? `translateY(-80.8%)` : `translateY(55%)`};
+    position ? "translateY(0)" : "translateY(110%)"};
   transition: transform 500ms ease;
-  position: relative;
+  position: absolute;
+  bottom: 3.4rem;
   z-index: 10;
 
   img {
