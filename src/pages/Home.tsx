@@ -46,7 +46,7 @@ const Home = () => {
     },
     recycle: {
       x: 1390,
-      y: 288,
+      y: 615,
       height: 140,
       width: 116,
     },

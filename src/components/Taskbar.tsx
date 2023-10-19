@@ -15,7 +15,7 @@ import StartButton from "./StartButton";
 import Toolbar from "./Toolbar";
 
 const Taskbar = () => {
-  const { isOpen, isVisible, setIsVisible } = useGlobalContext();
+  const { isOpen, isVisible, setIsVisible, setIsOpen } = useGlobalContext();
 
   return (
     <>
@@ -23,7 +23,7 @@ const Taskbar = () => {
         <div>
           <StartButton />
           <Dash src={dash} alt="dash" />
-          <Name />
+          <Name onClick={() => setIsOpen({ ...isOpen, about: true })} />
           {isOpen.about && (
             <About
               onClick={() =>

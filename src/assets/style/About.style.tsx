@@ -11,11 +11,20 @@ type FilesProps = {
 export const AboutFile = styled.section<FilesProps>`
   background: url(${aboutModal}) center/contain no-repeat;
   position: absolute;
-  height: 652px;
   width: 975px;
-  display: ${({ isVisible }) => (isVisible ? "block" : "none")};
+
+  height: ${({ isVisible }) => (isVisible ? "652px" : "0")};
+  opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
   z-index: ${({ lastClicked }) => (lastClicked === "about" ? 2 : 1)};
-  /* resize: both;
+  top: ${({ isVisible }) => (isVisible ? "initial" : "155%")};
+  right: ${({ isVisible }) => (isVisible ? "initial" : "40%")};
+
+  transition: height 0.3s ease, opacity 0.3s ease, top 0.3s ease,
+    right 0.3s ease;
+
+  /* display: ${({ isVisible }) => (isVisible ? "block" : "none")};
+   height: 652px; 
+   resize: both;
   overflow: auto; */
 `;
 
