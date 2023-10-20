@@ -50,6 +50,7 @@ const RecycleBin = () => {
         onMouseDownCapture={() => setLastClicked("recycle")}
         lastClicked={lastClicked}
         isVisible={isVisible.recycle}
+        className="file"
       >
         <RecycleBinHandle className="handle" isVisible={isVisible.recycle} />
         <MinimizeBtn

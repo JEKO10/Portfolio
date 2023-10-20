@@ -41,6 +41,7 @@ const Time = () => {
       <ClockModal
         onMouseDownCapture={() => setLastClicked("time")}
         lastClicked={lastClicked}
+        className="file"
       >
         <ClockHandle className="handle" />
         <MinimizeBtn

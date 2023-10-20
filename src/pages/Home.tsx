@@ -63,6 +63,15 @@ const Home = () => {
     const clickX = e.clientX;
     const clickY = e.clientY;
 
+    const file = document.querySelector(".file");
+    const taskbar = document.querySelector(".taskbar");
+    const isInsideHandle = file && file.contains(e.target as Node);
+    const isInsideTaskbar = taskbar && taskbar.contains(e.target as Node);
+
+    if (isInsideHandle || isInsideTaskbar) {
+      return;
+    }
+
     for (const iconKey in icons) {
       const icon = icons[iconKey];
 
@@ -121,6 +130,7 @@ const Home = () => {
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
       onMouseMove={handleMouseMove}
+      style={{ height: "100vh" }}
     >
       {isRectangleVisible && (
         <div

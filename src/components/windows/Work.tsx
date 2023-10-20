@@ -21,6 +21,7 @@ const Work = () => {
         onMouseDownCapture={() => setLastClicked("work")}
         isVisible={isVisible.work}
         lastClicked={lastClicked}
+        className="file"
       >
         <WorkHandle className="handle" isVisible={isVisible.work} />
         <MinimizeBtn

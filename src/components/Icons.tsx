@@ -86,19 +86,6 @@ const Icons = () => {
 
   useEffect(() => {
     document.addEventListener("mousedown", clickOutside, true);
-
-    const aboutElement = document.querySelector("#about");
-    if (aboutElement !== null) {
-      console.log(
-        "Y:" + window.scrollY + aboutElement.getBoundingClientRect().top
-      );
-
-      console.log(
-        "X:" + window.scrollX + aboutElement.getBoundingClientRect().left
-      );
-    } else {
-      console.log("Element with ID 'about' not found");
-    }
   }, []);
 
   return (
@@ -136,7 +123,6 @@ const Icons = () => {
         onMouseDown={(event) => handleClick(event, "recycle")}
         onKeyDown={(event) => handleIconKeyDown(event, "recycle")}
         ref={buttonRef}
-        id="about"
       />
     </>
   );

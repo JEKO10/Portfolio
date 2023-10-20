@@ -21,6 +21,7 @@ const Contact = () => {
         onMouseDownCapture={() => setLastClicked("contact")}
         isVisible={isVisible.contact}
         lastClicked={lastClicked}
+        className="file"
       >
         <ContactHandle className="handle" isVisible={isVisible.contact} />
         <MinimizeBtn

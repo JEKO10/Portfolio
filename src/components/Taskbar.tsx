@@ -19,7 +19,7 @@ const Taskbar = () => {
 
   return (
     <>
-      <TaskBar>
+      <TaskBar className="taskbar">
         <div>
           <StartButton />
           <Dash src={dash} alt="dash" />
