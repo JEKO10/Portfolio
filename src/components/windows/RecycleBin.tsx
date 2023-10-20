@@ -51,7 +51,7 @@ const RecycleBin = () => {
         lastClicked={lastClicked}
         isVisible={isVisible.recycle}
       >
-        <RecycleBinHandle className="handle" />
+        <RecycleBinHandle className="handle" isVisible={isVisible.recycle} />
         <MinimizeBtn
           onMouseUp={() => setIsVisible({ ...isVisible, recycle: false })}
           height={31}

@@ -14,7 +14,7 @@ const StartMenu: React.FC = () => {
     useGlobalContext();
 
   return (
-    <StartContainer position={isOpen.start}>
+    <StartContainer isOpen={isOpen.start}>
       <img
         src={About}
         alt="About"

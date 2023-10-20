@@ -22,7 +22,7 @@ const Contact = () => {
         isVisible={isVisible.contact}
         lastClicked={lastClicked}
       >
-        <ContactHandle className="handle" />
+        <ContactHandle className="handle" isVisible={isVisible.contact} />
         <MinimizeBtn
           onMouseUp={() => setIsVisible({ ...isVisible, contact: false })}
           height={32}

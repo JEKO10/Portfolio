@@ -26,7 +26,7 @@ const About = () => {
         lastClicked={lastClicked}
         isVisible={isVisible.about}
       >
-        <AboutHandle className="handle" />
+        <AboutHandle className="handle" isVisible={isVisible.about} />
         <MinimizeBtn
           onMouseUp={() => setIsVisible({ ...isVisible, about: false })}
           height={28}

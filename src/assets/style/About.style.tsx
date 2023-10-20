@@ -4,34 +4,34 @@ import aboutHandle from "../images/handles/aboutHandle.jpg";
 import aboutModal from "../images/modals/aboutModal.png";
 
 type FilesProps = {
-  lastClicked: string;
-  isVisible?: boolean;
+  lastClicked?: string;
+  isVisible: boolean;
 };
 
 export const AboutFile = styled.section<FilesProps>`
-  background: url(${aboutModal}) center/contain no-repeat;
+  background: ${({ isVisible }) =>
+    isVisible ? `url(${aboutModal}) center/contain no-repeat` : "none"};
   position: absolute;
+  height: 652px;
   width: 975px;
 
-  height: ${({ isVisible }) => (isVisible ? "652px" : "0")};
-  opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
+  > *:not(.handle) {
+    display: ${({ isVisible }) => (isVisible ? "block" : "none")};
+  }
   z-index: ${({ lastClicked }) => (lastClicked === "about" ? 2 : 1)};
-  top: ${({ isVisible }) => (isVisible ? "initial" : "155%")};
-  right: ${({ isVisible }) => (isVisible ? "initial" : "40%")};
 
-  transition: height 0.3s ease, opacity 0.3s ease, top 0.3s ease,
-    right 0.3s ease;
-
-  /* display: ${({ isVisible }) => (isVisible ? "block" : "none")};
-   height: 652px; 
-   resize: both;
+  /*resize: both;
   overflow: auto; */
 `;
 
-export const AboutHandle = styled.div`
-  background: url(${aboutHandle}) center/cover no-repeat;
+export const AboutHandle = styled.div<FilesProps>`
+  background: url(${aboutHandle}) left/cover no-repeat;
   height: 50px;
-  width: 100%;
+  width: ${({ isVisible }) => (isVisible ? "100%" : "17%")};
+
+  transform: ${({ isVisible }) =>
+    isVisible ? "translate(0, 0)" : "translate(0, 2000%)"};
+  transition: transform 200ms linear, width 100ms linear;
 `;
 
 export const AboutMeText = styled.p`

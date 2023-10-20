@@ -22,7 +22,7 @@ const Work = () => {
         isVisible={isVisible.work}
         lastClicked={lastClicked}
       >
-        <WorkHandle className="handle" />
+        <WorkHandle className="handle" isVisible={isVisible.work} />
         <MinimizeBtn
           onMouseUp={() => setIsVisible({ ...isVisible, work: false })}
           height={27}

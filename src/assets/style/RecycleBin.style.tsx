@@ -4,21 +4,29 @@ import recycleHandle from "../images/handles/recycleHandle.jpg";
 import recycleBin from "../images/modals/recycleBin.png";
 
 type FilesProps = {
-  lastClicked: string;
-  isVisible?: boolean;
+  lastClicked?: string;
+  isVisible: boolean;
 };
 
 export const RecycleBinFile = styled.section<FilesProps>`
-  background: url(${recycleBin}) center/cover no-repeat;
+  background: ${({ isVisible }) =>
+    isVisible ? `url(${recycleBin}) center/contain no-repeat` : "none"};
   position: absolute;
   height: 681px;
   width: 787px;
-  z-index: ${({ lastClicked }) => (lastClicked === "recycle" ? 2 : 1)};
-  display: ${({ isVisible }) => (isVisible ? "block" : "none")};
+
+  > *:not(.handle) {
+    display: ${({ isVisible }) => (isVisible ? "block" : "none")};
+  }
+  z-index: ${({ lastClicked }) => (lastClicked === "about" ? 2 : 1)};
 `;
 
-export const RecycleBinHandle = styled.div`
-  background: url(${recycleHandle}) center/cover no-repeat;
+export const RecycleBinHandle = styled.div<FilesProps>`
+  background: url(${recycleHandle}) left/cover no-repeat;
   height: 44px;
-  width: 787px;
+  width: ${({ isVisible }) => (isVisible ? "100%" : "23%")};
+
+  transform: ${({ isVisible }) =>
+    isVisible ? "translate(0, 0)" : "translate(0, 2000%)"};
+  transition: transform 200ms linear, width 100ms linear;
 `;
