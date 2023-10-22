@@ -11,7 +11,7 @@ export const StartContainer = styled.section<StartContainerPosition>`
   background: url(${start}) center/contain no-repeat;
   height: 475px;
   width: 337px;
-  padding: 6px 6.22px 8px 3.5px;
+  padding: 6px 6.21px 8px 3.5px;
   transform: ${({ isOpen }) => (isOpen ? "translateY(0)" : "translateY(110%)")};
   transition: transform 500ms ease;
   position: absolute;
