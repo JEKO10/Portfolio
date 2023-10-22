@@ -22,6 +22,7 @@ const StartMenu: React.FC = () => {
         }}
       >
         <img src={About} alt="AboutStart" />
+        <p>About Me</p>
       </article>
       <article
         onClick={() => {
@@ -30,6 +31,7 @@ const StartMenu: React.FC = () => {
         }}
       >
         <img src={Work} alt="WorkStart" />
+        <p>My Work</p>
       </article>
       <article
         onClick={() => {
@@ -38,6 +40,7 @@ const StartMenu: React.FC = () => {
         }}
       >
         <img src={Contact} alt="ContactStart" />
+        <p>Contact</p>
       </article>
       <article
         onClick={() => {
@@ -46,46 +49,13 @@ const StartMenu: React.FC = () => {
         }}
       >
         <img src={Recycle} alt="RecycleStart" />
+        <p>Recycle Bin</p>
       </article>
       <img src={Dash} alt="StartDash" />
       <article onClick={() => setIsShutDown(true)}>
         <img src={ShutDown} alt="ShutDownStart" />
+        <p>Shut Down</p>
       </article>
-
-      {/* <img
-        src={About}
-        alt="About"
-        onClick={() => {
-          setIsOpen({ ...isOpen, about: true, start: false });
-          setIsVisible({ ...isVisible, about: true });
-        }}
-      />
-      <img
-        src={Work}
-        alt="Work"
-        onClick={() => {
-          setIsOpen({ ...isOpen, work: true, start: false });
-          setIsVisible({ ...isVisible, work: true });
-        }}
-      />
-      <img
-        src={Contact}
-        alt="Contact"
-        onClick={() => {
-          setIsOpen({ ...isOpen, contact: true, start: false });
-          setIsVisible({ ...isVisible, contact: true });
-        }}
-      />
-      <img
-        src={Recycle}
-        alt="Recycle"
-        onClick={() => {
-          setIsOpen({ ...isOpen, recycle: true, start: false });
-          setIsVisible({ ...isVisible, recycle: true });
-        }}
-      />
-      <StartDash src={Dash} alt="StartDash" />
-      <img src={ShutDown} alt="ShutDown" onClick={() => setIsShutDown(true)} /> */}
     </StartContainer>
   );
 };
