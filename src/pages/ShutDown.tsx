@@ -29,9 +29,7 @@ const ShutDown = () => {
             book: false,
           });
         }}
-      >
-        Turn on
-      </button>
+      />
     </ShutDownSection>
   );
 };
