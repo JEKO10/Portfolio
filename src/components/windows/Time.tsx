@@ -37,7 +37,11 @@ const Time = () => {
   });
 
   return (
-    <Draggable defaultPosition={{ x: 800, y: -400 }} handle=".handle">
+    <Draggable
+      defaultPosition={{ x: 800, y: -400 }}
+      handle=".handle"
+      bounds=".home"
+    >
       <ClockModal
         onMouseDownCapture={() => setLastClicked("time")}
         lastClicked={lastClicked}

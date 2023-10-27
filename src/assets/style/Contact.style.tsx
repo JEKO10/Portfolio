@@ -18,7 +18,7 @@ export const ContactFile = styled.section<FilesProps>`
   > *:not(.handle) {
     display: ${({ isVisible }) => (isVisible ? "block" : "none")};
   }
-  z-index: ${({ lastClicked }) => (lastClicked === "about" ? 2 : 1)};
+  z-index: ${({ lastClicked }) => (lastClicked === "contact" ? 2 : 1)};
 `;
 
 export const ContactHandle = styled.div<FilesProps>`

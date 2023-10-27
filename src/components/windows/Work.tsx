@@ -16,7 +16,11 @@ const Work = () => {
   } = useGlobalContext();
 
   return (
-    <Draggable defaultPosition={{ x: 100, y: -400 }} handle=".handle">
+    <Draggable
+      defaultPosition={{ x: 100, y: -400 }}
+      handle=".handle"
+      bounds="body"
+    >
       <WorkFile
         onMouseDownCapture={() => setLastClicked("work")}
         isVisible={isVisible.work}

@@ -1,5 +1,5 @@
 import React from "react";
-import { createGlobalStyle, css } from "styled-components";
+import styled, { createGlobalStyle, css } from "styled-components";
 
 interface IFlexMixin {
   justify:
@@ -38,8 +38,13 @@ export const GlobalStyles = React.memo(
       background-color: #008080;
       overflow: hidden;
       font-family: "w95fa", sans-serif;
-      height: 100vh;
+      height: 155vh;
       width: 150vw;
     }
   `}`
 );
+
+export const HomePage = styled.section`
+  height: 95vh;
+  width: 100vw;
+`;

@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 
-// import aboutClicked from "../assets/images/icons/aboutClicked.png";
-// import contactClicked from "../assets/images/icons/contactClicked.png";
-// import workClicked from "../assets/images/icons/workClicked.png";
+import { HomePage } from "../assets/style/GlobalStyles";
 import Files from "../components/Files";
 import Icons from "../components/Icons";
 import Taskbar from "../components/Taskbar";
@@ -126,11 +124,11 @@ const Home = () => {
   };
 
   return (
-    <section
+    <HomePage
+      className="home"
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
       onMouseMove={handleMouseMove}
-      style={{ height: "100vh" }}
     >
       {isRectangleVisible && (
         <div
@@ -148,7 +146,7 @@ const Home = () => {
       <Icons />
       <Files />
       <Taskbar />
-    </section>
+    </HomePage>
   );
 };
 

@@ -16,7 +16,11 @@ const Contact = () => {
   } = useGlobalContext();
 
   return (
-    <Draggable defaultPosition={{ x: 300, y: -400 }} handle=".handle">
+    <Draggable
+      defaultPosition={{ x: 300, y: -400 }}
+      handle=".handle"
+      bounds="body"
+    >
       <ContactFile
         onMouseDownCapture={() => setLastClicked("contact")}
         isVisible={isVisible.contact}
