@@ -10,8 +10,22 @@ import { StartContainer } from "../../assets/style/StartMenu.style";
 import { useGlobalContext } from "../../context";
 
 const StartMenu: React.FC = () => {
-  const { isOpen, setIsOpen, setIsVisible, isVisible, setIsShutDown } =
-    useGlobalContext();
+  const {
+    isOpen,
+    setIsOpen,
+    setIsVisible,
+    isVisible,
+    setIsShutDown,
+    setIsShuttingDown,
+  } = useGlobalContext();
+
+  const handleShutDown = () => {
+    setIsShuttingDown(true);
+
+    setTimeout(() => {
+      setIsShutDown(true);
+    }, 2000);
+  };
 
   return (
     <StartContainer isOpen={isOpen.start}>
@@ -52,7 +66,7 @@ const StartMenu: React.FC = () => {
         <p>Recycle Bin</p>
       </article>
       <img src={Dash} alt="StartDash" />
-      <article onClick={() => setIsShutDown(true)}>
+      <article onClick={handleShutDown}>
         <img src={ShutDown} alt="ShutDownStart" />
         <p>Shut Down</p>
       </article>

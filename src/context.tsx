@@ -28,6 +28,8 @@ type AppContext = {
   setIsShutDown: React.Dispatch<React.SetStateAction<boolean>>;
   isLoading: boolean;
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  isShuttingDown: boolean;
+  setIsShuttingDown: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const AppContext = createContext<AppContext>({} as AppContext);
@@ -61,8 +63,9 @@ const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
     start: false,
   });
 
-  const [isShutDown, setIsShutDown] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [isShuttingDown, setIsShuttingDown] = useState(false);
+  const [isShutDown, setIsShutDown] = useState(false);
 
   return (
     <AppContext.Provider
@@ -79,6 +82,8 @@ const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
         setIsShutDown,
         isLoading,
         setIsLoading,
+        isShuttingDown,
+        setIsShuttingDown,
       }}
     >
       {children}

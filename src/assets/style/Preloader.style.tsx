@@ -31,6 +31,18 @@ export const Loader = styled.div`
   }
 `;
 
+export const ShuttingDownScreen = styled.section`
+  p {
+    font-size: 2rem;
+    color: #163394;
+    font-weight: 700;
+    position: absolute;
+    bottom: 4rem;
+    left: 50%;
+    transform: translate(-50%);
+  }
+`;
+
 // export const Bios = styled.img`
 //   height: 100vh;
 //   width: 100vw;

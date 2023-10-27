@@ -2,13 +2,15 @@ import React, { useEffect } from "react";
 
 import GlobalFonts from "./assets/fonts/fonts";
 import { GlobalStyles } from "./assets/style/GlobalStyles";
-import { Preloader } from "./components/Preloader";
 import { useGlobalContext } from "./context";
 import Home from "./pages/Home";
+import { Preloader } from "./pages/Preloader";
 import ShutDown from "./pages/ShutDown";
+import { ShuttingDown } from "./pages/ShuttingDown";
 
 function App() {
-  const { isShutDown, isLoading, setIsLoading } = useGlobalContext();
+  const { isShutDown, isLoading, setIsLoading, isShuttingDown } =
+    useGlobalContext();
 
   useEffect(() => {
     setIsLoading(true);
@@ -24,12 +26,10 @@ function App() {
       <GlobalFonts />
       {isLoading ? (
         <Preloader />
-      ) : <Home /> ? (
-        isShutDown ? (
-          <ShutDown />
-        ) : (
-          <Home />
-        )
+      ) : isShuttingDown && !isShutDown ? (
+        <ShuttingDown />
+      ) : isShutDown ? (
+        <ShutDown />
       ) : (
         <Home />
       )}

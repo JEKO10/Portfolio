@@ -4,7 +4,8 @@ import { ShutDownSection } from "../assets/style/ShutDown.style";
 import { useGlobalContext } from "../context";
 
 const ShutDown = () => {
-  const { setIsShutDown, setIsLoading, setIsOpen } = useGlobalContext();
+  const { setIsShutDown, setIsLoading, setIsOpen, setIsShuttingDown } =
+    useGlobalContext();
 
   const handleLoader = () => {
     setIsLoading(true);
@@ -18,6 +19,7 @@ const ShutDown = () => {
     <ShutDownSection>
       <button
         onClick={() => {
+          setIsShuttingDown(false);
           setIsShutDown(false);
           handleLoader();
           setIsOpen({
