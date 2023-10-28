@@ -9,6 +9,17 @@ export const LoaderContainer = styled.div`
   background-image: url(${preloaderImg});
   background-size: cover;
   background-repeat: no-repeat;
+
+  p {
+    font-size: 2rem;
+    color: #163394;
+    font-weight: 700;
+    position: absolute;
+    bottom: 4rem;
+    left: 50%;
+    transform: translate(-50%);
+    user-select: none;
+  }
 `;
 
 export const Loader = styled.div`
@@ -28,18 +39,6 @@ export const Loader = styled.div`
     100% {
       background-position-x: 512px;
     }
-  }
-`;
-
-export const ShuttingDownScreen = styled.section`
-  p {
-    font-size: 2rem;
-    color: #163394;
-    font-weight: 700;
-    position: absolute;
-    bottom: 4rem;
-    left: 50%;
-    transform: translate(-50%);
   }
 `;
 

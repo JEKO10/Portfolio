@@ -24,7 +24,7 @@ const StartMenu: React.FC = () => {
 
     setTimeout(() => {
       setIsShutDown(true);
-    }, 2000);
+    }, 3000);
   };
 
   return (

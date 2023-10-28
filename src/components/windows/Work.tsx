@@ -17,7 +17,7 @@ const Work = () => {
 
   return (
     <Draggable
-      defaultPosition={{ x: 100, y: -400 }}
+      defaultPosition={{ x: 100, y: -430 }}
       handle=".handle"
       bounds="body"
     >

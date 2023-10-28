@@ -9,7 +9,7 @@ import recycleClicked from "../assets/images/icons/recycleClicked.png";
 import work from "../assets/images/icons/work.png";
 import workClicked from "../assets/images/icons/workClicked.png";
 import { Icon, IconsContainer, RecycleBin } from "../assets/style/Icons.style";
-import { useGlobalContext, WindowsState } from "../context";
+import { useGlobalContext } from "../context";
 
 const Icons = () => {
   const {
@@ -26,28 +26,21 @@ const Icons = () => {
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
     iconName: string
   ) => {
-    const iconPropertyMap: { [key: string]: keyof WindowsState } = {
-      about: "about",
-      work: "work",
-      contact: "contact",
-      recycle: "recycle",
-      time: "time",
-      book: "book",
-      start: "start",
-    };
-
     switch (event.detail) {
       case 1:
-        setIsClicked((prevIsClicked) => {
-          const updatedIsClicked: WindowsState = { ...prevIsClicked };
-
-          updatedIsClicked[iconPropertyMap[iconName]] = true;
-
-          return updatedIsClicked;
+        setIsClicked({
+          about: false,
+          work: false,
+          contact: false,
+          recycle: false,
+          book: false,
         });
+        setIsClicked((prevState) => ({
+          ...prevState,
+          [iconName]: true,
+        }));
 
         setIsOpen({ ...isOpen, start: false });
-
         break;
       case 2:
         setIsOpen({ ...isOpen, [iconName]: true });

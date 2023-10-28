@@ -1,18 +1,14 @@
 import React from "react";
 
-import {
-  Loader,
-  LoaderContainer,
-  ShuttingDownScreen,
-} from "../assets/style/Preloader.style";
+import { Loader, LoaderContainer } from "../assets/style/Preloader.style";
 
 export const ShuttingDown = () => {
   return (
-    <ShuttingDownScreen>
+    <section>
       <LoaderContainer>
         <Loader />
         <p>Windows is shutting down.</p>
       </LoaderContainer>
-    </ShuttingDownScreen>
+    </section>
   );
 };
