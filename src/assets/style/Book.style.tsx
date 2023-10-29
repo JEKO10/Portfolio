@@ -1,10 +1,11 @@
 import styled, { css } from "styled-components";
 
+import bookHandle from "../images/handles/bookHandle.jpg";
 import book from "../images/modals/bookModal.jpg";
 
 type FilesProps = {
-  lastClicked: string;
-  isVisible?: boolean;
+  lastClicked?: string;
+  isVisible: boolean;
 };
 
 type BookProps = {
@@ -37,4 +38,15 @@ export const Book = styled.button<BookProps>`
           background: url(${iconName}) center/contain no-repeat;
         `};
   cursor: pointer;
+`;
+
+export const BookHandle = styled.div<FilesProps>`
+  background: url(${bookHandle}) left/contain no-repeat;
+  height: 50px;
+  /* width: ${({ isVisible }) => (isVisible ? "100%" : "17%")}; */
+  width: 975px;
+
+  transform: ${({ isVisible }) =>
+    isVisible ? "translate(0, 0)" : "translate(0, 2000%)"};
+  transition: transform 200ms linear, width 100ms linear;
 `;

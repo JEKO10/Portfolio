@@ -1,7 +1,7 @@
 import React from "react";
 import Draggable from "react-draggable";
 
-import { BookFile } from "../../assets/style/Book.style";
+import { BookFile, BookHandle } from "../../assets/style/Book.style";
 import { CloseBtn, MinimizeBtn } from "../../assets/style/Files.style";
 import { useGlobalContext } from "../../context";
 
@@ -16,13 +16,18 @@ const Book = () => {
   } = useGlobalContext();
 
   return (
-    <Draggable defaultPosition={{ x: 100, y: -400 }} bounds="body">
+    <Draggable
+      defaultPosition={{ x: 100, y: -400 }}
+      handle=".handle"
+      bounds="body"
+    >
       <BookFile
         onMouseDownCapture={() => setLastClicked("book")}
         lastClicked={lastClicked}
         isVisible={isVisible.book}
         className="file"
       >
+        <BookHandle className="handle" isVisible={isVisible.book} />
         <MinimizeBtn
           onMouseUp={() => setIsVisible({ ...isVisible, book: false })}
           height={28}

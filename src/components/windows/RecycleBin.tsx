@@ -1,7 +1,7 @@
 import React from "react";
 import Draggable from "react-draggable";
 
-import aboutClicked from "../../assets/images/icons/aboutClicked.png";
+import bookClicked from "../../assets/images/icons/bookClicked.png";
 import book from "../../assets/images/icons/bookIcon.png";
 import { Book } from "../../assets/style/Book.style";
 import { CloseBtn, MinimizeBtn } from "../../assets/style/Files.style";
@@ -73,9 +73,9 @@ const RecycleBin = () => {
         />
         <Book
           iconName={book}
-          clickedIcon={aboutClicked}
+          clickedIcon={bookClicked}
           isClicked={isClicked.book}
-          onClick={(event) => handleClick(event)}
+          onMouseDown={(event) => handleClick(event)}
         />
       </RecycleBinFile>
     </Draggable>
