@@ -9,24 +9,17 @@ type FilesProps = {
 };
 
 export const RecycleBinFile = styled.section<FilesProps>`
-  background: ${({ isVisible }) =>
-    isVisible ? `url(${recycleBin}) center/contain no-repeat` : "none"};
+  background: url(${recycleBin}) center/contain no-repeat;
   position: absolute;
   height: 681px;
   width: 787px;
 
-  > *:not(.handle) {
-    display: ${({ isVisible }) => (isVisible ? "block" : "none")};
-  }
+  display: ${({ isVisible }) => (isVisible ? "block" : "none")};
   z-index: ${({ lastClicked }) => (lastClicked === "about" ? 2 : 1)};
 `;
 
 export const RecycleBinHandle = styled.div<FilesProps>`
   background: url(${recycleHandle}) left/cover no-repeat;
   height: 44px;
-  width: ${({ isVisible }) => (isVisible ? "100%" : "23%")};
-
-  transform: ${({ isVisible }) =>
-    isVisible ? "translate(0, 0)" : "translate(0, 2000%)"};
-  transition: transform 200ms linear, width 100ms linear;
+  width: 100%;
 `;

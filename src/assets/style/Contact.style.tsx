@@ -9,24 +9,17 @@ type FilesProps = {
 };
 
 export const ContactFile = styled.section<FilesProps>`
-  background: ${({ isVisible }) =>
-    isVisible ? `url(${contactModal}) center/contain no-repeat` : "none"};
+  background: url(${contactModal}) center/contain no-repeat;
   position: absolute;
   height: 620px;
   width: 998px;
 
-  > *:not(.handle) {
-    display: ${({ isVisible }) => (isVisible ? "block" : "none")};
-  }
+  display: ${({ isVisible }) => (isVisible ? "block" : "none")};
   z-index: ${({ lastClicked }) => (lastClicked === "contact" ? 2 : 1)};
 `;
 
 export const ContactHandle = styled.div<FilesProps>`
-  background: url(${contactHandle}) left/cover no-repeat;
+  background: url(${contactHandle}) center/cover no-repeat;
   height: 57px;
-  width: ${({ isVisible }) => (isVisible ? "100%" : "17%")};
-
-  transform: ${({ isVisible }) =>
-    isVisible ? "translate(0, 0)" : "translate(0, 2000%)"};
-  transition: transform 200ms linear, width 100ms linear;
+  width: 100%;
 `;

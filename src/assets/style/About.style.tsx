@@ -9,15 +9,12 @@ type FilesProps = {
 };
 
 export const AboutFile = styled.section<FilesProps>`
-  background: ${({ isVisible }) =>
-    isVisible ? `url(${aboutModal}) center/contain no-repeat` : "none"};
+  background: url(${aboutModal}) center/contain no-repeat;
   position: absolute;
   height: 652px;
   width: 975px;
 
-  > *:not(.handle) {
-    display: ${({ isVisible }) => (isVisible ? "block" : "none")};
-  }
+  display: ${({ isVisible }) => (isVisible ? "block" : "none")};
   z-index: ${({ lastClicked }) => (lastClicked === "about" ? 2 : 1)};
 
   /*resize: both;
@@ -25,13 +22,9 @@ export const AboutFile = styled.section<FilesProps>`
 `;
 
 export const AboutHandle = styled.div<FilesProps>`
-  background: url(${aboutHandle}) left/cover no-repeat;
+  background: url(${aboutHandle}) center/contain no-repeat;
   height: 50px;
-  width: ${({ isVisible }) => (isVisible ? "100%" : "17%")};
-
-  transform: ${({ isVisible }) =>
-    isVisible ? "translate(0, 0)" : "translate(0, 2000%)"};
-  transition: transform 200ms linear, width 100ms linear;
+  width: 975px;
 `;
 
 export const AboutMeText = styled.p`

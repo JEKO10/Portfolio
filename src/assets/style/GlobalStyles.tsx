@@ -39,7 +39,7 @@ export const GlobalStyles = React.memo(
       overflow: hidden;
       font-family: "w95fa", sans-serif;
       height: 155vh;
-      width: 150vw;
+      width: 130vw;
     }
   `}`
 );
