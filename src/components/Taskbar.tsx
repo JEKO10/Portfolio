@@ -3,6 +3,7 @@ import React from "react";
 import dash from "../assets/images/other/dash.jpg";
 import {
   About,
+  Book,
   Contact,
   Dash,
   Name,
@@ -42,6 +43,13 @@ const Taskbar = () => {
             <Contact
               onClick={() =>
                 setIsVisible({ ...isVisible, contact: !isVisible.contact })
+              }
+            />
+          )}
+          {isOpen.book && (
+            <Book
+              onClick={() =>
+                setIsVisible({ ...isVisible, book: !isVisible.book })
               }
             />
           )}

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import aboutMe from "../images/buttons/aboutTaskbar.png";
+import book from "../images/buttons/bookTaskbar.jpg";
 import clicked from "../images/buttons/clicked.png";
 import contact from "../images/buttons/contactTaskbar.png";
 import name from "../images/buttons/name.png";
@@ -55,14 +56,6 @@ export const About = styled.button`
   cursor: pointer;
 `;
 
-export const Recycle = styled.button`
-  background: url(${recycle}) center/contain no-repeat;
-  height: 35px;
-  width: 163px;
-  margin-right: 5px;
-  cursor: pointer;
-`;
-
 export const Work = styled.button`
   background: url(${work}) center/contain no-repeat;
   height: 35px;
@@ -73,6 +66,22 @@ export const Work = styled.button`
 
 export const Contact = styled.button`
   background: url(${contact}) center/contain no-repeat;
+  height: 35px;
+  width: 163px;
+  margin-right: 5px;
+  cursor: pointer;
+`;
+
+export const Book = styled.button`
+  background: url(${book}) center/contain no-repeat;
+  height: 35px;
+  width: 163px;
+  margin-right: 5px;
+  cursor: pointer;
+`;
+
+export const Recycle = styled.button`
+  background: url(${recycle}) center/contain no-repeat;
   height: 35px;
   width: 163px;
   margin-right: 5px;

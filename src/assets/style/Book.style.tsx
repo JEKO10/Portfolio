@@ -19,8 +19,9 @@ export const BookFile = styled.section<FilesProps>`
   position: absolute;
   height: 652px;
   width: 975px;
-  z-index: ${({ lastClicked }) => (lastClicked === "book" ? 2 : 1)};
+
   display: ${({ isVisible }) => (isVisible ? "block" : "none")};
+  z-index: ${({ lastClicked }) => (lastClicked === "book" ? 2 : 1)};
 `;
 
 export const Book = styled.button<BookProps>`
@@ -29,6 +30,7 @@ export const Book = styled.button<BookProps>`
   position: absolute;
   top: 16.4rem;
   left: 17.7rem;
+
   ${({ isClicked, iconName, clickedIcon }) =>
     isClicked
       ? css`
@@ -43,10 +45,5 @@ export const Book = styled.button<BookProps>`
 export const BookHandle = styled.div<FilesProps>`
   background: url(${bookHandle}) left/contain no-repeat;
   height: 50px;
-  /* width: ${({ isVisible }) => (isVisible ? "100%" : "17%")}; */
   width: 975px;
-
-  transform: ${({ isVisible }) =>
-    isVisible ? "translate(0, 0)" : "translate(0, 2000%)"};
-  transition: transform 200ms linear, width 100ms linear;
 `;
