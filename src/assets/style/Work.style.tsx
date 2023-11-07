@@ -21,6 +21,9 @@ export const WorkFile = styled.section<FilesProps>`
 
 export const WorkHandle = styled.div<FilesProps>`
   background: url(${workHandle}) center/cover no-repeat;
-  height: 48px;
-  width: 100%;
+  height: 45px;
+  width: 99.99%;
+  max-width: 878px;
+  margin: 0 auto;
+  cursor: grab;
 `;

@@ -60,16 +60,16 @@ const RecycleBin = () => {
         <MinimizeBtn
           onMouseUp={() => setIsVisible({ ...isVisible, recycle: false })}
           height={31}
-          width={28}
-          top={0.55}
-          right={5}
+          width={28.5}
+          top={0.6}
+          right={5.03}
         />
         <CloseBtn
           onMouseUp={() => setIsOpen({ ...isOpen, recycle: false })}
           height={30}
           width={30}
           top={0.6}
-          right={0.9}
+          right={0.95}
         />
         <Book
           iconName={book}

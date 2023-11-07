@@ -52,7 +52,7 @@ const Time = () => {
           onMouseUp={() => setIsOpen({ ...isOpen, time: false })}
           height={19}
           width={21}
-          top={0.43}
+          top={0.42}
           right={3.3}
         />
         <CloseBtn
@@ -60,7 +60,7 @@ const Time = () => {
           height={22}
           width={22}
           top={0.35}
-          right={0.5}
+          right={0.55}
         />
         <DigitalClock>{formattedTime}</DigitalClock>
         <OkButton onMouseUp={() => setIsOpen({ ...isOpen, time: false })} />

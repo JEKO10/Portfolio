@@ -22,9 +22,12 @@ export const AboutFile = styled.section<FilesProps>`
 `;
 
 export const AboutHandle = styled.div<FilesProps>`
-  background: url(${aboutHandle}) center/contain no-repeat;
+  background: url(${aboutHandle}) center/cover no-repeat;
   height: 50px;
-  width: 975px;
+  width: 100%;
+  max-width: 975px;
+  margin: 0 auto;
+  cursor: grab;
 `;
 
 export const AboutMeText = styled.p`

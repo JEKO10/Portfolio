@@ -19,7 +19,10 @@ export const RecycleBinFile = styled.section<FilesProps>`
 `;
 
 export const RecycleBinHandle = styled.div<FilesProps>`
-  background: url(${recycleHandle}) left/cover no-repeat;
+  background: url(${recycleHandle}) center/cover no-repeat;
   height: 44px;
-  width: 100%;
+  width: 98.5%;
+  max-width: 787px;
+  margin: 0 auto;
+  cursor: grab;
 `;
