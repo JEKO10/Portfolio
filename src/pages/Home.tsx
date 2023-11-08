@@ -61,12 +61,11 @@ const Home = () => {
     const clickX = e.clientX;
     const clickY = e.clientY;
 
-    const handle = document.querySelector(".handle");
-    const isExcluded =
-      e.target instanceof HTMLElement && e.target.dataset.noSelect === "true"; // Check for the custom data attribute
-    const isInsideHandle = handle && handle.contains(e.target as Node);
+    const isInsideElement = (e.target as HTMLElement).closest(
+      "[data-no-select='true']"
+    );
 
-    if (isExcluded || isInsideHandle) {
+    if (isInsideElement) {
       return;
     }
 

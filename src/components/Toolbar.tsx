@@ -32,15 +32,11 @@ const Toolbar = () => {
 
   return (
     <ToolbarContainer>
-      <Dash src={dash} alt="dash" data-no-select="true" />
+      <Dash src={dash} alt="dash" />
       <ToolButton
         onClick={() => setIsOpen({ ...isOpen, time: !isOpen.time })}
-        data-no-select="true"
       />
-      <Clock
-        onClick={() => setIsOpen({ ...isOpen, time: !isOpen.time })}
-        data-no-select="true"
-      >
+      <Clock onClick={() => setIsOpen({ ...isOpen, time: !isOpen.time })}>
         {formattedTime}
       </Clock>
     </ToolbarContainer>
