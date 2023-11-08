@@ -22,4 +22,5 @@ export const ContactHandle = styled.div<FilesProps>`
   background: url(${contactHandle}) center/cover no-repeat;
   height: 57px;
   width: 100%;
+  cursor: grab;
 `;

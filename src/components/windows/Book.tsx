@@ -25,7 +25,7 @@ const Book = () => {
         onMouseDownCapture={() => setLastClicked("book")}
         lastClicked={lastClicked}
         isVisible={isVisible.book}
-        className="file"
+        data-no-select="true"
       >
         <BookHandle className="handle" isVisible={isVisible.book} />
         <MinimizeBtn

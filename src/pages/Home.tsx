@@ -61,12 +61,12 @@ const Home = () => {
     const clickX = e.clientX;
     const clickY = e.clientY;
 
-    const file = document.querySelector(".file");
-    const taskbar = document.querySelector(".taskbar");
-    const isInsideHandle = file && file.contains(e.target as Node);
-    const isInsideTaskbar = taskbar && taskbar.contains(e.target as Node);
+    const handle = document.querySelector(".handle");
+    const isExcluded =
+      e.target instanceof HTMLElement && e.target.dataset.noSelect === "true"; // Check for the custom data attribute
+    const isInsideHandle = handle && handle.contains(e.target as Node);
 
-    if (isInsideHandle || isInsideTaskbar) {
+    if (isExcluded || isInsideHandle) {
       return;
     }
 

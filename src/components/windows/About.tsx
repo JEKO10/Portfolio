@@ -29,7 +29,7 @@ const About = () => {
         onMouseDownCapture={() => setLastClicked("about")}
         lastClicked={lastClicked}
         isVisible={isVisible.about}
-        className="file"
+        data-no-select="true"
       >
         <AboutHandle className="handle" isVisible={isVisible.about} />
         <MinimizeBtn

@@ -12,6 +12,7 @@ const StartButton = () => {
       onMouseDown={() => {
         setIsOpen({ ...isOpen, start: !isOpen.start });
       }}
+      data-no-select="true"
     />
   );
 };

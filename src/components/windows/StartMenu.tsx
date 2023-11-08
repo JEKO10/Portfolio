@@ -28,7 +28,7 @@ const StartMenu: React.FC = () => {
   };
 
   return (
-    <StartContainer isOpen={isOpen.start}>
+    <StartContainer isOpen={isOpen.start} data-no-select="true">
       <article
         onClick={() => {
           setIsOpen({ ...isOpen, about: true, start: false });

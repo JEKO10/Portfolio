@@ -45,7 +45,7 @@ const Time = () => {
       <ClockModal
         onMouseDownCapture={() => setLastClicked("time")}
         lastClicked={lastClicked}
-        className="file"
+        data-no-select="true"
       >
         <ClockHandle className="handle" />
         <MinimizeBtn
@@ -62,9 +62,15 @@ const Time = () => {
           top={0.35}
           right={0.55}
         />
-        <DigitalClock>{formattedTime}</DigitalClock>
-        <OkButton onMouseUp={() => setIsOpen({ ...isOpen, time: false })} />
-        <CancelBtn onMouseUp={() => setIsOpen({ ...isOpen, time: false })} />
+        <DigitalClock data-no-select="true">{formattedTime}</DigitalClock>
+        <OkButton
+          onMouseUp={() => setIsOpen({ ...isOpen, time: false })}
+          data-no-select="true"
+        />
+        <CancelBtn
+          onMouseUp={() => setIsOpen({ ...isOpen, time: false })}
+          data-no-select="true"
+        />
         <AnalogClock />
       </ClockModal>
     </Draggable>

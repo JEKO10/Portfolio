@@ -45,5 +45,6 @@ export const Book = styled.button<BookProps>`
 export const BookHandle = styled.div<FilesProps>`
   background: url(${bookHandle}) left/contain no-repeat;
   height: 50px;
-  width: 975px;
+  width: 100%;
+  cursor: grab;
 `;

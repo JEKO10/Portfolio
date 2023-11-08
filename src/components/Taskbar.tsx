@@ -20,16 +20,20 @@ const Taskbar = () => {
 
   return (
     <>
-      <TaskBar className="taskbar">
+      <TaskBar data-no-select="true">
         <div>
           <StartButton />
-          <Dash src={dash} alt="dash" />
-          <Name onClick={() => setIsOpen({ ...isOpen, about: true })} />
+          <Dash src={dash} alt="dash" data-no-select="true" />
+          <Name
+            onClick={() => setIsOpen({ ...isOpen, about: true })}
+            data-no-select="true"
+          />
           {isOpen.about && (
             <About
               onClick={() =>
                 setIsVisible({ ...isVisible, about: !isVisible.about })
               }
+              data-no-select="true"
             />
           )}
           {isOpen.work && (
@@ -37,6 +41,7 @@ const Taskbar = () => {
               onClick={() =>
                 setIsVisible({ ...isVisible, work: !isVisible.work })
               }
+              data-no-select="true"
             />
           )}
           {isOpen.contact && (
@@ -44,6 +49,7 @@ const Taskbar = () => {
               onClick={() =>
                 setIsVisible({ ...isVisible, contact: !isVisible.contact })
               }
+              data-no-select="true"
             />
           )}
           {isOpen.book && (
@@ -51,6 +57,7 @@ const Taskbar = () => {
               onClick={() =>
                 setIsVisible({ ...isVisible, book: !isVisible.book })
               }
+              data-no-select="true"
             />
           )}
           {isOpen.recycle && (
@@ -58,6 +65,7 @@ const Taskbar = () => {
               onClick={() =>
                 setIsVisible({ ...isVisible, recycle: !isVisible.recycle })
               }
+              data-no-select="true"
             />
           )}
         </div>

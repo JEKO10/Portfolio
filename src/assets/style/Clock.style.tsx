@@ -19,7 +19,8 @@ export const ClockModal = styled.section<FilesProps>`
 export const ClockHandle = styled.div`
   background: url(${timeHandle}) center/cover no-repeat;
   height: 38px;
-  width: 576px;
+  width: 100%;
+  cursor: grab;
 `;
 
 export const DigitalClock = styled.p`
