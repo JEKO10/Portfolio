@@ -6,7 +6,11 @@ import {
   AboutHandle,
   AboutMeText,
 } from "../../assets/style/About.style";
-import { CloseBtn, MinimizeBtn } from "../../assets/style/Files.style";
+import {
+  CloseBtn,
+  MaximizeBtn,
+  MinimizeBtn,
+} from "../../assets/style/Files.style";
 import { useGlobalContext } from "../../context";
 
 const About = () => {
@@ -21,7 +25,7 @@ const About = () => {
 
   return (
     <Draggable
-      defaultPosition={{ x: 100, y: -500 }}
+      defaultPosition={{ x: 200, y: -500 }}
       handle=".handle"
       bounds="body"
     >
@@ -39,6 +43,7 @@ const About = () => {
           top={0.75}
           right={5.1}
         />
+        <MaximizeBtn height={30} width={34} top={0.68} right={3.05} />
         <CloseBtn
           onMouseUp={() => setIsOpen({ ...isOpen, about: false })}
           height={32}

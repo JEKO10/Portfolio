@@ -2,7 +2,11 @@ import React from "react";
 import Draggable from "react-draggable";
 
 import { ContactFile, ContactHandle } from "../../assets/style/Contact.style";
-import { CloseBtn, MinimizeBtn } from "../../assets/style/Files.style";
+import {
+  CloseBtn,
+  MaximizeBtn,
+  MinimizeBtn,
+} from "../../assets/style/Files.style";
 import { useGlobalContext } from "../../context";
 
 const Contact = () => {
@@ -35,6 +39,7 @@ const Contact = () => {
           top={0.85}
           right={5.4}
         />
+        <MaximizeBtn height={32} width={36} top={0.85} right={3.2} />
         <CloseBtn
           onMouseUp={() => setIsOpen({ ...isOpen, contact: false })}
           height={35}

@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import cancel from "../images/buttons/cancel.jpg";
 import close from "../images/buttons/close.png";
+import maximize from "../images/buttons/maximize.jpg";
 import minimize from "../images/buttons/minimize.jpg";
 import okBtn from "../images/buttons/okBtn.jpg";
 
@@ -14,6 +15,16 @@ type ControlBtnProps = {
 
 export const MinimizeBtn = styled.button<ControlBtnProps>`
   background: url(${minimize}) center/contain no-repeat;
+  height: ${({ height }) => height + "px"};
+  width: ${({ width }) => width + "px"};
+  position: absolute;
+  top: ${({ top }) => top + "rem"};
+  right: ${({ right }) => right + "rem"};
+  cursor: pointer;
+`;
+
+export const MaximizeBtn = styled.button<ControlBtnProps>`
+  background: url(${maximize}) center/contain no-repeat;
   height: ${({ height }) => height + "px"};
   width: ${({ width }) => width + "px"};
   position: absolute;
