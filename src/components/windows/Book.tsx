@@ -2,7 +2,11 @@ import React from "react";
 import Draggable from "react-draggable";
 
 import { BookFile, BookHandle } from "../../assets/style/Book.style";
-import { CloseBtn, MinimizeBtn } from "../../assets/style/Files.style";
+import {
+  CloseBtn,
+  MaximizeBtn,
+  MinimizeBtn,
+} from "../../assets/style/Files.style";
 import { useGlobalContext } from "../../context";
 
 const Book = () => {
@@ -35,6 +39,7 @@ const Book = () => {
           top={0.75}
           right={5.1}
         />
+        <MaximizeBtn height={30} width={34} top={0.68} right={3.05} />
         <CloseBtn
           onMouseUp={() => setIsOpen({ ...isOpen, book: false })}
           height={32}

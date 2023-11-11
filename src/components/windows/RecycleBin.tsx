@@ -4,7 +4,11 @@ import Draggable from "react-draggable";
 import bookClicked from "../../assets/images/icons/bookClicked.png";
 import book from "../../assets/images/icons/bookIcon.png";
 import { Book } from "../../assets/style/Book.style";
-import { CloseBtn, MinimizeBtn } from "../../assets/style/Files.style";
+import {
+  CloseBtn,
+  MaximizeBtn,
+  MinimizeBtn,
+} from "../../assets/style/Files.style";
 import {
   RecycleBinFile,
   RecycleBinHandle,
@@ -62,8 +66,9 @@ const RecycleBin = () => {
           height={31}
           width={28.5}
           top={0.6}
-          right={5.03}
+          right={5.04}
         />
+        <MaximizeBtn height={31} width={31} top={0.55} right={3.08} />
         <CloseBtn
           onMouseUp={() => setIsOpen({ ...isOpen, recycle: false })}
           height={30}

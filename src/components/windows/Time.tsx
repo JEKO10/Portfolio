@@ -9,6 +9,7 @@ import {
 import {
   CancelBtn,
   CloseBtn,
+  MaximizeBtn,
   MinimizeBtn,
   OkButton,
 } from "../../assets/style/Files.style";
@@ -55,11 +56,12 @@ const Time = () => {
           top={0.42}
           right={3.3}
         />
+        <MaximizeBtn height={21.5} width={22.5} top={0.35} right={2} />
         <CloseBtn
           onMouseUp={() => setIsOpen({ ...isOpen, time: false })}
           height={22}
           width={22}
-          top={0.35}
+          top={0.3}
           right={0.55}
         />
         <DigitalClock>{formattedTime}</DigitalClock>
