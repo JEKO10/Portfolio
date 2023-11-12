@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+import cancelButton from "../images/buttons/contactCancel.jpg";
 import contactHandle from "../images/handles/contactHandle.jpg";
 import contactModal from "../images/modals/contactModal.jpg";
 import inputBg from "../images/other/input.jpg";
@@ -41,4 +42,14 @@ export const ContactInput = styled.input<InputProps>`
   width: 544px;
   outline: none;
   padding: 0 10px;
+`;
+
+export const CancelButton = styled.button`
+  background: url(${cancelButton}) center/cover no-repeat;
+  height: 56px;
+  width: 178px;
+  position: absolute;
+  right: 2.15rem;
+  bottom: 1.7rem;
+  cursor: pointer;
 `;

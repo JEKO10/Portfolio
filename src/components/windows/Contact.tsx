@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Draggable from "react-draggable";
 
 import {
+  CancelButton,
   ContactFile,
   ContactHandle,
   ContactInput,
@@ -28,7 +29,7 @@ const Contact = () => {
 
   return (
     <Draggable
-      defaultPosition={{ x: 300, y: -400 }}
+      defaultPosition={{ x: 300, y: -500 }}
       handle=".handle"
       bounds="body"
     >
@@ -73,6 +74,9 @@ const Contact = () => {
             setEmail(e.currentTarget.value);
           }}
           autoComplete="off"
+        />
+        <CancelButton
+          onClick={() => setIsOpen({ ...isOpen, contact: false })}
         />
       </ContactFile>
     </Draggable>
