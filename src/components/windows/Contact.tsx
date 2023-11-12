@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Draggable from "react-draggable";
 
-import { ContactFile, ContactHandle } from "../../assets/style/Contact.style";
+import {
+  ContactFile,
+  ContactHandle,
+  ContactInput,
+} from "../../assets/style/Contact.style";
 import {
   CloseBtn,
   MaximizeBtn,
@@ -18,6 +22,9 @@ const Contact = () => {
     isVisible,
     setIsVisible,
   } = useGlobalContext();
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
 
   return (
     <Draggable
@@ -46,6 +53,26 @@ const Contact = () => {
           width={34}
           top={0.75}
           right={0.9}
+        />
+        <ContactInput
+          bottom={6.2}
+          type="text"
+          name="name"
+          value={name}
+          onChange={(e) => {
+            setName(e.currentTarget.value);
+          }}
+          autoComplete="off"
+        />
+        <ContactInput
+          bottom={1.8}
+          type="email"
+          name="email"
+          value={email}
+          onChange={(e) => {
+            setEmail(e.currentTarget.value);
+          }}
+          autoComplete="off"
         />
       </ContactFile>
     </Draggable>

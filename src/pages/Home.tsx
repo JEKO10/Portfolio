@@ -56,8 +56,6 @@ const Home = () => {
   };
 
   const handleMouseDown = (e: React.MouseEvent<HTMLElement>) => {
-    e.preventDefault();
-
     const clickX = e.clientX;
     const clickY = e.clientY;
 
@@ -82,6 +80,8 @@ const Home = () => {
         return;
       }
     }
+
+    e.preventDefault();
 
     setMouseDown(true);
     setRectangleVisible(true);
