@@ -25,6 +25,8 @@ export const flexMixin = ({ justify, align }: IFlexMixin) => css`
   align-items: ${align};
 `;
 
+export const primaryFont = "w95fa, sans-serif";
+
 export const GlobalStyles = React.memo(
   createGlobalStyle`${css`
     * {
@@ -37,7 +39,7 @@ export const GlobalStyles = React.memo(
     body {
       background-color: #008080;
       overflow: hidden;
-      font-family: "w95fa", sans-serif;
+      font-family: ${primaryFont};
       height: 155vh;
       width: 130vw;
     }

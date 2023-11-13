@@ -4,6 +4,8 @@ import cancelButton from "../images/buttons/contactCancel.jpg";
 import contactHandle from "../images/handles/contactHandle.jpg";
 import contactModal from "../images/modals/contactModal.jpg";
 import inputBg from "../images/other/input.jpg";
+import textareaBg from "../images/other/textArea.jpg";
+import { primaryFont } from "./GlobalStyles";
 
 type FilesProps = {
   lastClicked?: string;
@@ -31,10 +33,24 @@ export const ContactHandle = styled.div<FilesProps>`
   cursor: grab;
 `;
 
+export const ContactTextarea = styled.textarea`
+  background: url(${textareaBg}) center/cover no-repeat;
+  font-size: 2rem;
+  height: 320px;
+  width: 950px;
+  font-family: ${primaryFont};
+  resize: none;
+  position: absolute;
+  left: 1.5rem;
+  top: 8.2rem;
+  outline: none;
+  padding: 15px;
+`;
+
 export const ContactInput = styled.input<InputProps>`
   background: url(${inputBg}) center/cover no-repeat;
   font-size: 2rem;
-  font-family: "w95fa", sans-serif;
+  font-family: ${primaryFont};
   position: absolute;
   left: 12.45rem;
   bottom: ${({ bottom }) => bottom + "rem"};

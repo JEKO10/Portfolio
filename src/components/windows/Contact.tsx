@@ -6,6 +6,7 @@ import {
   ContactFile,
   ContactHandle,
   ContactInput,
+  ContactTextarea,
 } from "../../assets/style/Contact.style";
 import {
   CloseBtn,
@@ -55,29 +56,34 @@ const Contact = () => {
           top={0.75}
           right={0.9}
         />
-        <ContactInput
-          bottom={6.2}
-          type="text"
-          name="name"
-          value={name}
-          onChange={(e) => {
-            setName(e.currentTarget.value);
-          }}
-          autoComplete="off"
-        />
-        <ContactInput
-          bottom={1.8}
-          type="email"
-          name="email"
-          value={email}
-          onChange={(e) => {
-            setEmail(e.currentTarget.value);
-          }}
-          autoComplete="off"
-        />
-        <CancelButton
-          onClick={() => setIsOpen({ ...isOpen, contact: false })}
-        />
+        <article>
+          <ContactTextarea name="message" />
+          <ContactInput
+            bottom={6.2}
+            type="text"
+            name="name"
+            value={name}
+            onChange={(e) => {
+              setName(e.currentTarget.value);
+            }}
+            autoComplete="off"
+          />
+          <ContactInput
+            bottom={1.8}
+            type="email"
+            name="email"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.currentTarget.value);
+            }}
+            autoComplete="off"
+          />
+          <div>
+            <CancelButton
+              onClick={() => setIsOpen({ ...isOpen, contact: false })}
+            />
+          </div>
+        </article>
       </ContactFile>
     </Draggable>
   );
