@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import cancelButton from "../images/buttons/contactCancel.jpg";
+import sendButton from "../images/buttons/send.jpg";
 import contactHandle from "../images/handles/contactHandle.jpg";
 import contactModal from "../images/modals/contactModal.jpg";
 import inputBg from "../images/other/input.jpg";
@@ -67,5 +68,15 @@ export const CancelButton = styled.button`
   position: absolute;
   right: 2.15rem;
   bottom: 1.7rem;
+  cursor: pointer;
+`;
+
+export const SendButton = styled.button`
+  background: url(${sendButton}) center/cover no-repeat;
+  height: 56px;
+  width: 178px;
+  position: absolute;
+  right: 2.15rem;
+  bottom: 5.85rem;
   cursor: pointer;
 `;

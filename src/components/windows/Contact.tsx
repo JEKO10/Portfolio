@@ -7,6 +7,7 @@ import {
   ContactHandle,
   ContactInput,
   ContactTextarea,
+  SendButton,
 } from "../../assets/style/Contact.style";
 import {
   CloseBtn,
@@ -82,6 +83,7 @@ const Contact = () => {
             <CancelButton
               onClick={() => setIsOpen({ ...isOpen, contact: false })}
             />
+            <SendButton type="submit" />
           </div>
         </article>
       </ContactFile>
