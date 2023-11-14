@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import Draggable from "react-draggable";
 
+import cancelButton from "../../assets/images/buttons/contactCancel.jpg";
+import sendButton from "../../assets/images/buttons/send.jpg";
 import {
-  CancelButton,
+  ContactButton,
   ContactFile,
   ContactHandle,
   ContactInput,
   ContactTextarea,
-  SendButton,
 } from "../../assets/style/Contact.style";
 import {
   CloseBtn,
@@ -80,10 +81,16 @@ const Contact = () => {
             autoComplete="off"
           />
           <div>
-            <CancelButton
+            <ContactButton
+              type="submit"
+              bottom={5.85}
+              background={sendButton}
+            />
+            <ContactButton
+              bottom={1.7}
+              background={cancelButton}
               onClick={() => setIsOpen({ ...isOpen, contact: false })}
             />
-            <SendButton type="submit" />
           </div>
         </article>
       </ContactFile>
