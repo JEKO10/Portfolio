@@ -1,11 +1,17 @@
 import styled from "styled-components";
 
 import workHandle from "../images/handles/workHandle.jpg";
+import project from "../images/icons/project.png";
 import workModal from "../images/modals/workModal.jpg";
 
 type FilesProps = {
   lastClicked?: string;
   isVisible: boolean;
+};
+
+type ProjectProps = {
+  top: number;
+  left: number;
 };
 
 export const WorkFile = styled.section<FilesProps>`
@@ -26,4 +32,14 @@ export const WorkHandle = styled.div<FilesProps>`
   max-width: 878px;
   margin: 0 auto;
   cursor: grab;
+`;
+
+export const Project = styled.button<ProjectProps>`
+  background: url(${project}) center/cover no-repeat;
+  height: 100px;
+  width: 100px;
+  cursor: pointer;
+  position: absolute;
+  top: ${({ top }) => top + "rem"};
+  left: ${({ left }) => left + "rem"};
 `;

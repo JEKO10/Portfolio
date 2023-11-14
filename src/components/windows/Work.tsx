@@ -6,7 +6,7 @@ import {
   MaximizeBtn,
   MinimizeBtn,
 } from "../../assets/style/Files.style";
-import { WorkFile, WorkHandle } from "../../assets/style/Work.style";
+import { Project, WorkFile, WorkHandle } from "../../assets/style/Work.style";
 import { useGlobalContext } from "../../context";
 
 const Work = () => {
@@ -47,6 +47,12 @@ const Work = () => {
           top={0.6}
           right={0.68}
         />
+        <article>
+          <Project top={17} left={21.25} />
+          <Project top={17} left={34.4} />
+          <Project top={29.6} left={21.25} />
+          <Project top={29.6} left={34.4} />
+        </article>
       </WorkFile>
     </Draggable>
   );
