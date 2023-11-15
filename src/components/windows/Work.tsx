@@ -48,10 +48,22 @@ const Work = () => {
           right={0.68}
         />
         <article>
-          <Project top={17} left={21.25} />
-          <Project top={17} left={34.4} />
-          <Project top={29.6} left={21.25} />
-          <Project top={29.6} left={34.4} />
+          <Project top={17} left={21.25}>
+            <button />
+            <p>WalkMate.doc</p>
+          </Project>
+          <Project top={17} left={34.4}>
+            <button />
+            <p>Moviexd.doc</p>
+          </Project>
+          <Project top={29.6} left={21.25}>
+            <button />
+            <p>Travel advisor.doc</p>
+          </Project>
+          <Project top={29.6} left={34.4}>
+            <button />
+            <p>Basket report.doc</p>
+          </Project>
         </article>
       </WorkFile>
     </Draggable>
