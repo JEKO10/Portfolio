@@ -1,9 +1,7 @@
 import styled from "styled-components";
 
 import workHandle from "../images/handles/workHandle.jpg";
-import project from "../images/icons/project.png";
 import workModal from "../images/modals/workModal.jpg";
-import { primaryFont } from "./GlobalStyles";
 
 type FilesProps = {
   lastClicked?: string;
@@ -11,6 +9,7 @@ type FilesProps = {
 };
 
 type ProjectProps = {
+  project: string;
   top: number;
   left: number;
 };
@@ -35,25 +34,12 @@ export const WorkHandle = styled.div<FilesProps>`
   cursor: grab;
 `;
 
-export const Project = styled.div<ProjectProps>`
-  background: none;
+export const Project = styled.button<ProjectProps>`
+  background: ${({ project }) => `url(${project}) center/cover no-repeat`};
+  height: 127px;
+  width: 127px;
+  cursor: pointer;
   position: absolute;
   top: ${({ top }) => top + "rem"};
   left: ${({ left }) => left + "rem"};
-
-  button {
-    background: url(${project}) center/cover no-repeat;
-    height: 100px;
-    width: 100px;
-    cursor: pointer;
-  }
-
-  p {
-    position: absolute;
-    top: 6.6rem;
-    left: -0.8rem;
-    font-family: ${primaryFont};
-    font-size: 1.3rem;
-    letter-spacing: 0.6px;
-  }
 `;

@@ -1,6 +1,10 @@
 import React from "react";
 import Draggable from "react-draggable";
 
+import basket from "../../assets/images/icons/Basket.png";
+import moviexd from "../../assets/images/icons/Moviexd.png";
+import travel from "../../assets/images/icons/Travel.png";
+import walkmate from "../../assets/images/icons/Walkmate.png";
 import {
   CloseBtn,
   MaximizeBtn,
@@ -48,22 +52,15 @@ const Work = () => {
           right={0.68}
         />
         <article>
-          <Project top={17} left={21.25}>
-            <button />
-            <p>WalkMate.doc</p>
-          </Project>
-          <Project top={17} left={34.4}>
-            <button />
-            <p>Moviexd.doc</p>
-          </Project>
-          <Project top={29.6} left={21.25}>
-            <button />
-            <p>Travel advisor.doc</p>
-          </Project>
-          <Project top={29.6} left={34.4}>
-            <button />
-            <p>Basket report.doc</p>
-          </Project>
+          <Project top={17} left={20.5} project={walkmate} />
+          <Project
+            top={17}
+            left={34.1}
+            project={moviexd}
+            style={{ width: "109px" }}
+          />
+          <Project top={29.6} left={20.5} project={travel} />
+          <Project top={29.6} left={33.5} project={basket} />
         </article>
       </WorkFile>
     </Draggable>
