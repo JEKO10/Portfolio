@@ -52,15 +52,25 @@ const Work = () => {
           right={0.68}
         />
         <article>
-          <Project top={17} left={20.5} project={walkmate} />
+          <Project top={17.5} left={20.5} project={walkmate} />
           <Project
-            top={17}
-            left={34.1}
+            top={17.5}
+            left={37}
             project={moviexd}
-            style={{ width: "109px" }}
+            style={{ width: "135px" }}
           />
-          <Project top={29.6} left={20.5} project={travel} />
-          <Project top={29.6} left={33.5} project={basket} />
+          <Project
+            top={30}
+            left={19.5}
+            project={travel}
+            style={{ width: "202px" }}
+          />
+          <Project
+            top={30}
+            left={35.3}
+            project={basket}
+            style={{ width: "192px" }}
+          />
         </article>
       </WorkFile>
     </Draggable>

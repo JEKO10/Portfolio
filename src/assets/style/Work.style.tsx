@@ -36,8 +36,8 @@ export const WorkHandle = styled.div<FilesProps>`
 
 export const Project = styled.button<ProjectProps>`
   background: ${({ project }) => `url(${project}) center/cover no-repeat`};
-  height: 127px;
-  width: 127px;
+  height: 144px;
+  width: 158px;
   cursor: pointer;
   position: absolute;
   top: ${({ top }) => top + "rem"};
