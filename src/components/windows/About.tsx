@@ -54,13 +54,21 @@ const About = () => {
         <AboutMeText>
           I started playing with computers for as long as I can remember. I
           always loved to play games and I kept wondering how to make my own. I
-          started with basic programming, through game development, to the web
-          development. Since then I haven’t stopped learning web development. I
-          have a passion for building awesome websites and functional web
-          applications. I am a quick learner and fully committed to growing my
-          skills. Additionally, I am always willing to keep learning new
-          technologies. When I’m not coding, I play basketball or football,
-          watch movies, or play video games.
+          started with basic programming, ventured into game development, and
+          eventually delved into web development. Since then, I haven`t stopped
+          learning and growing in the field of web development.
+          <br />
+          I have a passion for creating awesome websites and functional web
+          applications. I am a quick learner and fully committed to honing my
+          skills. I code every day, demonstrating my eagerness to learn and
+          improve continuously. I`m not only proficient but also respectful of
+          others` time, ensuring I won`t interrupt your senior much. I am always
+          open to assimilating new technologies into my skill set.
+          <br />
+          When I`m not coding, you can find me on the basketball or football
+          court, watching movies, or immersed in video games. I bring a blend of
+          enthusiasm, dedication, and a collaborative spirit to any coding
+          environment.
         </AboutMeText>
       </AboutFile>
     </Draggable>

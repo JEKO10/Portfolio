@@ -34,8 +34,8 @@ export const AboutMeText = styled.p`
   position: absolute;
   top: 95px;
   left: 25px;
-  font-size: 2rem;
-  line-height: 50px;
+  font-size: 1.5rem;
+  line-height: 40px;
   font-weight: 500;
   padding-right: 80px;
   pointer-events: none;
