@@ -29,6 +29,19 @@ const Contact = () => {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const submitHandle = () => {
+    setName("");
+    setEmail("");
+    setMessage(
+      "Thank you so much for reaching out! :) \n\nI'll get back to you as soon as possible! :)"
+    );
+
+    setTimeout(() => {
+      setMessage("");
+    }, 3000);
+  };
 
   return (
     <Draggable
@@ -59,7 +72,13 @@ const Contact = () => {
           right={0.9}
         />
         <article>
-          <ContactTextarea name="message" />
+          <ContactTextarea
+            name="message"
+            value={message}
+            onChange={(e) => {
+              setMessage(e.currentTarget.value);
+            }}
+          />
           <ContactInput
             bottom={6.2}
             type="text"
@@ -85,6 +104,7 @@ const Contact = () => {
               type="submit"
               bottom={5.85}
               background={sendButton}
+              onClick={submitHandle}
             />
             <ContactButton
               bottom={1.7}
