@@ -31,16 +31,18 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const submitHandle = () => {
-    setName("");
-    setEmail("");
-    setMessage(
-      "Thank you so much for reaching out! :) \n\nI'll get back to you as soon as possible! :)"
-    );
+  const handleSubmit = () => {
+    if (name !== "" && email !== "" && message !== "") {
+      setName("");
+      setEmail("");
+      setMessage(
+        "Thank you so much for reaching out! :) \n\nI'll get back to you as soon as possible! :)"
+      );
 
-    setTimeout(() => {
-      setMessage("");
-    }, 3000);
+      setTimeout(() => {
+        setMessage("");
+      }, 3000);
+    }
   };
 
   return (
@@ -104,7 +106,7 @@ const Contact = () => {
               type="submit"
               bottom={5.85}
               background={sendButton}
-              onClick={submitHandle}
+              onClick={handleSubmit}
             />
             <ContactButton
               bottom={1.7}

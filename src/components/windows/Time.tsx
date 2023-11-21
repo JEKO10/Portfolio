@@ -5,6 +5,8 @@ import {
   ClockHandle,
   ClockModal,
   DigitalClock,
+  Month,
+  Year,
 } from "../../assets/style/Clock.style";
 import {
   CancelBtn,
@@ -64,10 +66,18 @@ const Time = () => {
           top={0.3}
           right={0.55}
         />
-        <DigitalClock>{formattedTime}</DigitalClock>
-        <OkButton onMouseUp={() => setIsOpen({ ...isOpen, time: false })} />
-        <CancelBtn onMouseUp={() => setIsOpen({ ...isOpen, time: false })} />
-        <AnalogClock />
+        <article>
+          <Month>November</Month>
+          <Year>2023</Year>
+        </article>
+        <article>
+          <AnalogClock />
+          <DigitalClock>{formattedTime}</DigitalClock>
+        </article>
+        <div>
+          <CancelBtn onMouseUp={() => setIsOpen({ ...isOpen, time: false })} />
+          <OkButton onMouseUp={() => setIsOpen({ ...isOpen, time: false })} />
+        </div>
       </ClockModal>
     </Draggable>
   );

@@ -31,3 +31,17 @@ export const DigitalClock = styled.p`
   pointer-events: none;
   letter-spacing: 1px;
 `;
+
+export const Year = styled.p`
+  position: absolute;
+  top: 7.25rem;
+  left: 10.7rem;
+  font-size: 1.3rem;
+`;
+
+export const Month = styled.p`
+  position: absolute;
+  top: 7.35rem;
+  left: 3rem;
+  font-size: 1.1rem;
+`;
