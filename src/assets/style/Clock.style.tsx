@@ -37,6 +37,7 @@ export const Year = styled.p`
   top: 7.25rem;
   left: 10.7rem;
   font-size: 1.3rem;
+  user-select: none;
 `;
 
 export const Month = styled.p`
@@ -44,4 +45,11 @@ export const Month = styled.p`
   top: 7.35rem;
   left: 3rem;
   font-size: 1.1rem;
+  user-select: none;
+`;
+
+export const TimeZone = styled.p`
+  position: absolute;
+  bottom: 4.9rem;
+  left: 9.5rem;
 `;

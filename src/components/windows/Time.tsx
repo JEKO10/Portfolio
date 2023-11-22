@@ -6,6 +6,7 @@ import {
   ClockModal,
   DigitalClock,
   Month,
+  TimeZone,
   Year,
 } from "../../assets/style/Clock.style";
 import {
@@ -21,6 +22,22 @@ import AnalogClock from "../AnalogClock";
 const Time = () => {
   const [time, setTime] = useState(new Date());
   const { isOpen, setIsOpen, lastClicked, setLastClicked } = useGlobalContext();
+  const month = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  const full = time.toLocaleDateString(undefined, { timeZoneName: "long" });
 
   useEffect(() => {
     const intervalID = setInterval(() => {
@@ -67,8 +84,9 @@ const Time = () => {
           right={0.55}
         />
         <article>
-          <Month>November</Month>
+          <Month>{month[time.getMonth()]}</Month>
           <Year>2023</Year>
+          <TimeZone>{full.slice(11)}</TimeZone>
         </article>
         <article>
           <AnalogClock />
