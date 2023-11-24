@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Draggable from "react-draggable";
 
 import basket from "../../assets/images/icons/Basket.png";
+import basketClicked from "../../assets/images/icons/basketClicked.png";
 import moviexd from "../../assets/images/icons/Moviexd.png";
+import moviexdClicked from "../../assets/images/icons/moviexdClicked.png";
 import travel from "../../assets/images/icons/Travel.png";
+import travelClicked from "../../assets/images/icons/travelClicked.png";
+import walkmateClicked from "../../assets/images/icons/walkClicked.png";
 import walkmate from "../../assets/images/icons/Walkmate.png";
 import {
   CloseBtn,
@@ -22,6 +26,12 @@ const Work = () => {
     isVisible,
     setIsVisible,
   } = useGlobalContext();
+  const [isClicked, setIsClicked] = useState({
+    walkmate: false,
+    moviexd: false,
+    travel: false,
+    basket: false,
+  });
 
   return (
     <Draggable
@@ -52,24 +62,41 @@ const Work = () => {
           right={0.68}
         />
         <article>
-          <Project top={17.5} left={20.5} project={walkmate} />
           <Project
+            project={walkmate}
+            clickedIcon={walkmateClicked}
+            top={17.5}
+            left={20.5}
+            width={158}
+            isClicked={isClicked.walkmate}
+            onClick={() => setIsClicked({ ...isClicked, walkmate: true })}
+          />
+          <Project
+            project={moviexd}
+            clickedIcon={moviexdClicked}
             top={17.5}
             left={37}
-            project={moviexd}
-            style={{ width: "135px" }}
+            width={135}
+            isClicked={isClicked.moviexd}
+            onClick={() => setIsClicked({ ...isClicked, moviexd: true })}
           />
           <Project
+            project={travel}
+            clickedIcon={travelClicked}
             top={30}
             left={19.5}
-            project={travel}
-            style={{ width: "202px" }}
+            width={202}
+            isClicked={isClicked.travel}
+            onClick={() => setIsClicked({ ...isClicked, travel: true })}
           />
           <Project
+            project={basket}
+            clickedIcon={basketClicked}
             top={30}
             left={35.3}
-            project={basket}
-            style={{ width: "192px" }}
+            width={192}
+            isClicked={isClicked.basket}
+            onClick={() => setIsClicked({ ...isClicked, basket: true })}
           />
         </article>
       </WorkFile>

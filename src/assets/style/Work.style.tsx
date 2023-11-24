@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import workHandle from "../images/handles/workHandle.jpg";
 import workModal from "../images/modals/workModal.jpg";
@@ -10,8 +10,11 @@ type FilesProps = {
 
 type ProjectProps = {
   project: string;
+  clickedIcon: string;
   top: number;
   left: number;
+  width: number;
+  isClicked: boolean;
 };
 
 export const WorkFile = styled.section<FilesProps>`
@@ -35,9 +38,16 @@ export const WorkHandle = styled.div<FilesProps>`
 `;
 
 export const Project = styled.button<ProjectProps>`
-  background: ${({ project }) => `url(${project}) center/cover no-repeat`};
-  height: 144px;
-  width: 158px;
+  ${({ isClicked, project, clickedIcon }) =>
+    isClicked
+      ? css`
+          background: url(${clickedIcon}) center/cover no-repeat;
+        `
+      : css`
+          background: url(${project}) center/cover no-repeat;
+        `};
+  height: 133px;
+  width: ${({ width }) => width + "px"};
   cursor: pointer;
   position: absolute;
   top: ${({ top }) => top + "rem"};
