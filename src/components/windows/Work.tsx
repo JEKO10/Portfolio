@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Draggable from "react-draggable";
 
 import basket from "../../assets/images/icons/Basket.png";
@@ -26,12 +26,42 @@ const Work = () => {
     isVisible,
     setIsVisible,
   } = useGlobalContext();
+  const projectRef = useRef<HTMLButtonElement>(null);
+
   const [isClicked, setIsClicked] = useState({
     walkmate: false,
     moviexd: false,
     travel: false,
     basket: false,
   });
+
+  const handleClick = (iconName: string) => {
+    setIsClicked({
+      walkmate: false,
+      moviexd: false,
+      travel: false,
+      basket: false,
+    });
+    setIsClicked((prevState) => ({
+      ...prevState,
+      [iconName]: true,
+    }));
+  };
+
+  const clickOutside = (e: MouseEvent) => {
+    if (!projectRef.current?.contains(e.target as Node)) {
+      setIsClicked({
+        walkmate: false,
+        moviexd: false,
+        travel: false,
+        basket: false,
+      });
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", clickOutside, true);
+  }, []);
 
   return (
     <Draggable
@@ -69,7 +99,8 @@ const Work = () => {
             left={20.5}
             width={158}
             isClicked={isClicked.walkmate}
-            onClick={() => setIsClicked({ ...isClicked, walkmate: true })}
+            onClick={() => handleClick("walkmate")}
+            ref={projectRef}
           />
           <Project
             project={moviexd}
@@ -78,7 +109,8 @@ const Work = () => {
             left={37}
             width={135}
             isClicked={isClicked.moviexd}
-            onClick={() => setIsClicked({ ...isClicked, moviexd: true })}
+            onClick={() => handleClick("moviexd")}
+            ref={projectRef}
           />
           <Project
             project={travel}
@@ -87,7 +119,8 @@ const Work = () => {
             left={19.5}
             width={202}
             isClicked={isClicked.travel}
-            onClick={() => setIsClicked({ ...isClicked, travel: true })}
+            onClick={() => handleClick("travel")}
+            ref={projectRef}
           />
           <Project
             project={basket}
@@ -96,7 +129,8 @@ const Work = () => {
             left={35.3}
             width={192}
             isClicked={isClicked.basket}
-            onClick={() => setIsClicked({ ...isClicked, basket: true })}
+            onClick={() => handleClick("basket")}
+            ref={projectRef}
           />
         </article>
       </WorkFile>
