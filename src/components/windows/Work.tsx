@@ -100,6 +100,9 @@ const Work = () => {
             width={158}
             isClicked={isClicked.walkmate}
             onClick={() => handleClick("walkmate")}
+            onDoubleClick={() =>
+              window.open("https://github.com/JEKO10/WalkMate", "_blank")
+            }
             ref={projectRef}
           />
           <Project
@@ -110,6 +113,9 @@ const Work = () => {
             width={135}
             isClicked={isClicked.moviexd}
             onClick={() => handleClick("moviexd")}
+            onDoubleClick={() =>
+              window.open("https://github.com/JEKO10/Moviexd", "_blank")
+            }
             ref={projectRef}
           />
           <Project
@@ -120,6 +126,9 @@ const Work = () => {
             width={202}
             isClicked={isClicked.travel}
             onClick={() => handleClick("travel")}
+            onDoubleClick={() =>
+              window.open("https://github.com/JEKO10/Travel-advisor", "_blank")
+            }
             ref={projectRef}
           />
           <Project
@@ -130,6 +139,9 @@ const Work = () => {
             width={192}
             isClicked={isClicked.basket}
             onClick={() => handleClick("basket")}
+            onDoubleClick={() =>
+              window.open("https://github.com/JEKO10/BasketReport", "_blank")
+            }
             ref={projectRef}
           />
         </article>
