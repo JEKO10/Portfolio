@@ -63,6 +63,15 @@ const Work = () => {
     document.addEventListener("click", clickOutside, true);
   }, []);
 
+  const handleKeyDown = (
+    event: React.KeyboardEvent<HTMLButtonElement>,
+    link: string
+  ) => {
+    if (event.key === "Enter") {
+      window.open(link, "_blank");
+    }
+  };
+
   return (
     <Draggable
       defaultPosition={{ x: 100, y: -430 }}
@@ -103,6 +112,10 @@ const Work = () => {
             onDoubleClick={() =>
               window.open("https://github.com/JEKO10/WalkMate", "_blank")
             }
+            onKeyDown={(event) =>
+              handleKeyDown(event, "https://github.com/JEKO10/WalkMate")
+            }
+            tabIndex={0}
             ref={projectRef}
           />
           <Project
@@ -116,6 +129,10 @@ const Work = () => {
             onDoubleClick={() =>
               window.open("https://github.com/JEKO10/Moviexd", "_blank")
             }
+            onKeyDown={(event) =>
+              handleKeyDown(event, "https://github.com/JEKO10/Moviexd")
+            }
+            tabIndex={0}
             ref={projectRef}
           />
           <Project
@@ -129,6 +146,10 @@ const Work = () => {
             onDoubleClick={() =>
               window.open("https://github.com/JEKO10/Travel-advisor", "_blank")
             }
+            onKeyDown={(event) =>
+              handleKeyDown(event, "https://github.com/JEKO10/Travel-advisor")
+            }
+            tabIndex={0}
             ref={projectRef}
           />
           <Project
@@ -142,6 +163,10 @@ const Work = () => {
             onDoubleClick={() =>
               window.open("https://github.com/JEKO10/BasketReport", "_blank")
             }
+            onKeyDown={(event) =>
+              handleKeyDown(event, "https://github.com/JEKO10/BasketReport")
+            }
+            tabIndex={0}
             ref={projectRef}
           />
         </article>
