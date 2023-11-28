@@ -48,6 +48,15 @@ const Work = () => {
     }));
   };
 
+  const handleKeyDown = (
+    event: React.KeyboardEvent<HTMLButtonElement>,
+    link: string
+  ) => {
+    if (event.key === "Enter") {
+      window.open(link, "_blank");
+    }
+  };
+
   const clickOutside = (e: MouseEvent) => {
     if (!projectRef.current?.contains(e.target as Node)) {
       setIsClicked({
@@ -62,15 +71,6 @@ const Work = () => {
   useEffect(() => {
     document.addEventListener("click", clickOutside, true);
   }, []);
-
-  const handleKeyDown = (
-    event: React.KeyboardEvent<HTMLButtonElement>,
-    link: string
-  ) => {
-    if (event.key === "Enter") {
-      window.open(link, "_blank");
-    }
-  };
 
   return (
     <Draggable

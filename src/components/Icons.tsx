@@ -55,16 +55,6 @@ const Icons = () => {
     }
   };
 
-  const handleIconKeyDown = (
-    event: React.KeyboardEvent<HTMLButtonElement>,
-    iconName: string
-  ) => {
-    if (event.key === "Enter") {
-      setIsOpen({ ...isOpen, [iconName]: true });
-      setIsVisible({ ...isVisible, [iconName]: true });
-    }
-  };
-
   const clickOutside = (e: MouseEvent) => {
     if (!buttonRef.current?.contains(e.target as Node)) {
       setIsClicked({
@@ -79,20 +69,17 @@ const Icons = () => {
 
   useEffect(() => {
     document.addEventListener("mousedown", clickOutside, true);
-
-    const aboutElement = document.querySelector("#about");
-    if (aboutElement !== null) {
-      console.log(
-        "Y:" + window.scrollY + aboutElement.getBoundingClientRect().top
-      );
-
-      console.log(
-        "X:" + window.scrollX + aboutElement.getBoundingClientRect().left
-      );
-    } else {
-      console.log("Element with ID 'about' not found");
-    }
   }, []);
+
+  const handleKeyDown = (
+    event: React.KeyboardEvent<HTMLButtonElement>,
+    iconName: string
+  ) => {
+    if (event.key === "Enter") {
+      setIsOpen({ ...isOpen, [iconName]: true });
+      setIsVisible({ ...isVisible, [iconName]: true });
+    }
+  };
 
   return (
     <>
@@ -102,7 +89,8 @@ const Icons = () => {
           clickedIcon={aboutClicked}
           isClicked={isClicked.about}
           onMouseDown={(event) => handleClick(event, "about")}
-          onKeyDown={(event) => handleIconKeyDown(event, "about")}
+          onKeyDown={(event) => handleKeyDown(event, "about")}
+          tabIndex={0}
           ref={buttonRef}
         />
         <Icon
@@ -110,7 +98,8 @@ const Icons = () => {
           clickedIcon={workClicked}
           isClicked={isClicked.work}
           onMouseDown={(event) => handleClick(event, "work")}
-          onKeyDown={(event) => handleIconKeyDown(event, "work")}
+          onKeyDown={(event) => handleKeyDown(event, "work")}
+          tabIndex={0}
           ref={buttonRef}
         />
         <Icon
@@ -118,7 +107,8 @@ const Icons = () => {
           clickedIcon={contactClicked}
           isClicked={isClicked.contact}
           onMouseDown={(event) => handleClick(event, "contact")}
-          onKeyDown={(event) => handleIconKeyDown(event, "contact")}
+          onKeyDown={(event) => handleKeyDown(event, "contact")}
+          tabIndex={0}
           ref={buttonRef}
         />
       </IconsContainer>
@@ -127,9 +117,9 @@ const Icons = () => {
         clickedIcon={recycleClicked}
         isClicked={isClicked.recycle}
         onMouseDown={(event) => handleClick(event, "recycle")}
-        onKeyDown={(event) => handleIconKeyDown(event, "recycle")}
+        onKeyDown={(event) => handleKeyDown(event, "recycle")}
+        tabIndex={0}
         ref={buttonRef}
-        id="about"
       />
     </>
   );
