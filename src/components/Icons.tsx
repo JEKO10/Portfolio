@@ -55,22 +55,6 @@ const Icons = () => {
     }
   };
 
-  const clickOutside = (e: MouseEvent) => {
-    if (!buttonRef.current?.contains(e.target as Node)) {
-      setIsClicked({
-        about: false,
-        work: false,
-        contact: false,
-        recycle: false,
-        book: false,
-      });
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("mousedown", clickOutside, true);
-  }, []);
-
   const handleKeyDown = (
     event: React.KeyboardEvent<HTMLButtonElement>,
     iconName: string
@@ -80,6 +64,26 @@ const Icons = () => {
       setIsVisible({ ...isVisible, [iconName]: true });
     }
   };
+
+  useEffect(() => {
+    const clickOutside = (e: MouseEvent) => {
+      if (!buttonRef.current?.contains(e.target as Node)) {
+        setIsClicked({
+          about: false,
+          work: false,
+          contact: false,
+          recycle: false,
+          book: false,
+        });
+      }
+    };
+
+    document.addEventListener("mousedown", clickOutside, true);
+
+    return () => {
+      document.removeEventListener("mousedown", clickOutside, true);
+    };
+  }, []);
 
   return (
     <>
