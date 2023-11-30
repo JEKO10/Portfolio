@@ -40,25 +40,37 @@ const Contact = () => {
     const templateId = import.meta.env.VITE_APP_TEMPLATE_ID;
     const publicKey = import.meta.env.VITE_APP_PUBLIC_KEY;
 
-    if (form.current && serviceId && templateId && publicKey) {
+    if (
+      form.current &&
+      serviceId &&
+      templateId &&
+      publicKey &&
+      name &&
+      email &&
+      message
+    ) {
       emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
         () => {
-          if (name !== "" && email !== "" && message !== "") {
-            setName("");
-            setEmail("");
-            setMessage(
-              "Thank you so much for reaching out! :) \n\nI'll get back to you as soon as possible! :)"
-            );
+          setName("");
+          setEmail("");
+          setMessage(
+            "Thank you so much for reaching out! :) \n\nI'll get back to you as soon as possible! :)"
+          );
 
-            setTimeout(() => {
-              setMessage("");
-            }, 3000);
-          }
+          setTimeout(() => {
+            setMessage("");
+          }, 3000);
         },
         (error) => {
           console.log(error.text);
         }
       );
+    }
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter") {
+      sendEmail(e);
     }
   };
 
@@ -90,7 +102,7 @@ const Contact = () => {
           top={0.75}
           right={0.9}
         />
-        <form ref={form} onSubmit={sendEmail}>
+        <form ref={form} onSubmit={sendEmail} onKeyPress={handleKeyPress}>
           <ContactTextarea
             name="message"
             value={message}
