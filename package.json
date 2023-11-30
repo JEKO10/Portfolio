@@ -11,6 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "eslint-config-prettier": "^8.8.0",
     "prettier": "^2.8.7",
     "react": "^18.2.0",
@@ -19,6 +20,7 @@
     "styled-components": "^5.3.9"
   },
   "devDependencies": {
+    "@types/node": "^20.10.1",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@types/react-resizable": "^3.0.5",

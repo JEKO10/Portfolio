@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
+import React, { useRef, useState } from "react";
 import Draggable from "react-draggable";
 
 import cancelButton from "../../assets/images/buttons/contactCancel.jpg";
@@ -26,22 +27,38 @@ const Contact = () => {
     isVisible,
     setIsVisible,
   } = useGlobalContext();
+  const form = useRef<HTMLFormElement>(null);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = () => {
-    if (name !== "" && email !== "" && message !== "") {
-      setName("");
-      setEmail("");
-      setMessage(
-        "Thank you so much for reaching out! :) \n\nI'll get back to you as soon as possible! :)"
-      );
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
 
-      setTimeout(() => {
-        setMessage("");
-      }, 3000);
+    const serviceId = import.meta.env.VITE_APP_SERVICE_ID;
+    const templateId = import.meta.env.VITE_APP_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_APP_PUBLIC_KEY;
+
+    if (form.current && serviceId && templateId && publicKey) {
+      emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
+        () => {
+          if (name !== "" && email !== "" && message !== "") {
+            setName("");
+            setEmail("");
+            setMessage(
+              "Thank you so much for reaching out! :) \n\nI'll get back to you as soon as possible! :)"
+            );
+
+            setTimeout(() => {
+              setMessage("");
+            }, 3000);
+          }
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
     }
   };
 
@@ -73,7 +90,7 @@ const Contact = () => {
           top={0.75}
           right={0.9}
         />
-        <article>
+        <form ref={form} onSubmit={sendEmail}>
           <ContactTextarea
             name="message"
             value={message}
@@ -84,7 +101,7 @@ const Contact = () => {
           <ContactInput
             bottom={6.2}
             type="text"
-            name="name"
+            name="from_name"
             value={name}
             onChange={(e) => {
               setName(e.currentTarget.value);
@@ -94,27 +111,25 @@ const Contact = () => {
           <ContactInput
             bottom={1.8}
             type="email"
-            name="email"
+            name="email_id"
             value={email}
             onChange={(e) => {
               setEmail(e.currentTarget.value);
             }}
             autoComplete="off"
           />
-          <div>
-            <ContactButton
-              type="submit"
-              bottom={5.85}
-              background={sendButton}
-              onClick={handleSubmit}
-            />
-            <ContactButton
-              bottom={1.7}
-              background={cancelButton}
-              onClick={() => setIsOpen({ ...isOpen, contact: false })}
-            />
-          </div>
-        </article>
+          <ContactButton
+            type="submit"
+            bottom={5.85}
+            background={sendButton}
+            value="Send"
+          />
+        </form>
+        <ContactButton
+          bottom={1.7}
+          background={cancelButton}
+          onClick={() => setIsOpen({ ...isOpen, contact: false })}
+        />
       </ContactFile>
     </Draggable>
   );
