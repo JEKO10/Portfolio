@@ -2,6 +2,10 @@ import styled from "styled-components";
 
 import aboutHandle from "../images/handles/aboutHandle.jpg";
 import aboutModal from "../images/modals/aboutModal.png";
+import scroll from "../images/other/scroll.jpg";
+import scrollArrowDown from "../images/other/scrollArrowDown.jpg";
+import scrollArrowUp from "../images/other/scrollArrowUp.jpg";
+import scrollHandle from "../images/other/scrollHandle.jpg";
 
 type FilesProps = {
   lastClicked?: string;
@@ -44,5 +48,31 @@ export const AboutMeText = styled.article`
     font-weight: 500;
     padding-right: 80px;
     margin-bottom: 0.8rem;
+  }
+
+  ::-webkit-scrollbar {
+    width: 42px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: url(${scroll}) center/cover no-repeat;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #000;
+  }
+
+  ::-webkit-scrollbar-button:single-button {
+    display: block;
+    height: 44px;
+    width: 42px;
+  }
+
+  ::-webkit-scrollbar-button:single-button:vertical:decrement {
+    background: url(${scrollArrowUp}) center/cover no-repeat;
+  }
+
+  ::-webkit-scrollbar-button:single-button:vertical:increment {
+    background: url(${scrollArrowDown}) center/cover no-repeat;
   }
 `;
