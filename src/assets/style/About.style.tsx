@@ -13,6 +13,7 @@ export const AboutFile = styled.section<FilesProps>`
   position: absolute;
   height: 652px;
   width: 975px;
+  overflow: hidden;
 
   display: ${({ isVisible }) => (isVisible ? "block" : "none")};
   z-index: ${({ lastClicked }) => (lastClicked === "about" ? 2 : 1)};
@@ -30,13 +31,18 @@ export const AboutHandle = styled.div<FilesProps>`
   cursor: grab;
 `;
 
-export const AboutMeText = styled.p`
+export const AboutMeText = styled.article`
   position: absolute;
-  top: 95px;
   left: 25px;
-  font-size: 1.5rem;
-  line-height: 40px;
-  font-weight: 500;
-  padding-right: 80px;
-  pointer-events: none;
+  top: 95px;
+  max-height: 500px;
+  overflow: auto;
+
+  p {
+    font-size: 1.5rem;
+    line-height: 40px;
+    font-weight: 500;
+    padding-right: 80px;
+    margin-bottom: 0.8rem;
+  }
 `;

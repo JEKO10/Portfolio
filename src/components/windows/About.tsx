@@ -52,23 +52,33 @@ const About = () => {
           right={0.75}
         />
         <AboutMeText>
-          I started playing with computers for as long as I can remember. I
-          always loved to play games and I kept wondering how to make my own. I
-          started with basic programming, ventured into game development, and
-          eventually delved into web development. Since then, I haven`t stopped
-          learning and growing in the field of web development.
-          <br />
-          I have a passion for creating awesome websites and functional web
-          applications. I am a quick learner and fully committed to honing my
-          skills. I code every day, demonstrating my eagerness to learn and
-          improve continuously. I`m not only proficient but also respectful of
-          others` time, ensuring I won`t interrupt your senior much. I am always
-          open to assimilating new technologies into my skill set.
-          <br />
-          When I`m not coding, you can find me on the basketball or football
-          court, watching movies, or immersed in video games. I bring a blend of
-          enthusiasm, dedication, and a collaborative spirit to any coding
-          environment.
+          <p>
+            From my earliest memories, computers have been my playground. What
+            began as a fascination with gaming evolved into a passion for
+            crafting digital experiences. Starting with the foundations of
+            programming, I soon found myself immersed in game development and
+            eventually navigating the vast world of web development.
+          </p>
+          <p>
+            A quick learner and committed coder, I embrace each day as an
+            opportunity for growth. Beyond proficiency, I value collaboration
+            and respect for others` time—working seamlessly with senior
+            developers.
+          </p>
+          <p>
+            Every day is a new opportunity to learn and grow, and I seize it
+            with both hands. My commitment to honing my skills is unwavering—I
+            code daily, driven by the excitement of continuous improvement.
+            Proficiency is just the beginning; I value your time and work
+            harmoniously with senior developers.
+          </p>
+          <p>
+            Beyond the screen, you`ll find me on the basketball or football
+            court, exploring the latest movies, or immersing myself in the world
+            of video games. This blend of enthusiasm, dedication, and a
+            collaborative spirit defines my approach to coding. Let`s build
+            something amazing together!
+          </p>
         </AboutMeText>
       </AboutFile>
     </Draggable>
