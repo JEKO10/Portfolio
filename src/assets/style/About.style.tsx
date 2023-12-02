@@ -39,40 +39,45 @@ export const AboutMeText = styled.article`
   position: absolute;
   left: 25px;
   top: 95px;
-  max-height: 500px;
+  max-height: 515px;
   overflow: auto;
 
   p {
     font-size: 1.5rem;
     line-height: 40px;
     font-weight: 500;
-    padding-right: 80px;
+    padding-right: 20px;
     margin-bottom: 0.8rem;
+    user-select: none;
   }
 
   ::-webkit-scrollbar {
-    width: 42px;
+    width: 58px;
   }
 
   ::-webkit-scrollbar-track {
-    background: url(${scroll}) center/cover no-repeat;
+    background: url(${scroll}) center/contain no-repeat;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #000;
+    background: url(${scrollHandle}) center/contain no-repeat;
+    cursor: pointer;
   }
 
   ::-webkit-scrollbar-button:single-button {
     display: block;
-    height: 44px;
-    width: 42px;
+    height: 35px;
+    width: 37px;
+    cursor: pointer;
   }
 
   ::-webkit-scrollbar-button:single-button:vertical:decrement {
-    background: url(${scrollArrowUp}) center/cover no-repeat;
+    background: url(${scrollArrowUp}) center/contain no-repeat;
+    cursor: pointer;
   }
 
   ::-webkit-scrollbar-button:single-button:vertical:increment {
-    background: url(${scrollArrowDown}) center/cover no-repeat;
+    background: url(${scrollArrowDown}) center/contain no-repeat;
+    cursor: pointer;
   }
 `;
