@@ -38,8 +38,9 @@ export const AboutHandle = styled.div<FilesProps>`
 export const AboutMeText = styled.article`
   position: absolute;
   left: 25px;
-  top: 95px;
-  max-height: 515px;
+  top: 88px;
+  padding-top: 5px;
+  max-height: 520px;
   overflow: auto;
 
   p {
@@ -52,7 +53,7 @@ export const AboutMeText = styled.article`
   }
 
   ::-webkit-scrollbar {
-    width: 58px;
+    width: 59px;
   }
 
   ::-webkit-scrollbar-track {
@@ -61,23 +62,19 @@ export const AboutMeText = styled.article`
 
   ::-webkit-scrollbar-thumb {
     background: url(${scrollHandle}) center/contain no-repeat;
-    cursor: pointer;
   }
 
   ::-webkit-scrollbar-button:single-button {
     display: block;
     height: 35px;
     width: 37px;
-    cursor: pointer;
   }
 
   ::-webkit-scrollbar-button:single-button:vertical:decrement {
     background: url(${scrollArrowUp}) center/contain no-repeat;
-    cursor: pointer;
   }
 
   ::-webkit-scrollbar-button:single-button:vertical:increment {
     background: url(${scrollArrowDown}) center/contain no-repeat;
-    cursor: pointer;
   }
 `;
