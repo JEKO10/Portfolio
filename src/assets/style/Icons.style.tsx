@@ -25,6 +25,7 @@ export const Icon = styled.button<IconName>`
       : css`
           background: url(${iconName}) center/contain no-repeat;
         `};
+
   margin: 20px 15px;
   cursor: pointer;
 `;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Draggable from "react-draggable";
 
 import {
@@ -22,6 +22,7 @@ const About = () => {
     isVisible,
     setIsVisible,
   } = useGlobalContext();
+  const [controlBtnClicked, setControlBtnClicked] = useState(false);
 
   return (
     <Draggable
@@ -37,19 +38,35 @@ const About = () => {
       >
         <AboutHandle className="handle" isVisible={isVisible.about} />
         <MinimizeBtn
-          onMouseUp={() => setIsVisible({ ...isVisible, about: false })}
+          onMouseDown={() => setControlBtnClicked(true)}
+          onMouseUp={() => () => {
+            setIsVisible({ ...isVisible, about: false });
+            setControlBtnClicked(false);
+          }}
           height={28}
           width={32}
           top={0.75}
           right={5.1}
+          isOpen={controlBtnClicked}
         />
-        <MaximizeBtn height={30} width={34} top={0.68} right={3.05} />
+        <MaximizeBtn
+          onMouseDown={() => setControlBtnClicked(true)}
+          onMouseUp={() => setControlBtnClicked(false)}
+          height={30}
+          width={34}
+          top={0.68}
+          right={3.05}
+          isOpen={controlBtnClicked}
+        />
         <CloseBtn
-          onMouseUp={() => setIsOpen({ ...isOpen, about: false })}
+          onClick={() => setIsOpen({ ...isOpen, about: false })}
+          onMouseDown={() => setControlBtnClicked(true)}
+          onMouseUp={() => setControlBtnClicked(false)}
           height={32}
           width={32.5}
           top={0.6}
           right={0.75}
+          isOpen={controlBtnClicked}
         />
         <AboutMeText>
           <p>
