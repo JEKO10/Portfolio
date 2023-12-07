@@ -20,8 +20,11 @@ import { useGlobalContext } from "../../context";
 import AnalogClock from "../AnalogClock";
 
 const Time = () => {
-  const [time, setTime] = useState(new Date());
   const { isOpen, setIsOpen, lastClicked, setLastClicked } = useGlobalContext();
+
+  const [time, setTime] = useState(new Date());
+  const [okBtnClicked, setOkBtnClicked] = useState(false);
+
   const month = [
     "January",
     "February",
@@ -93,8 +96,22 @@ const Time = () => {
           <DigitalClock>{formattedTime}</DigitalClock>
         </article>
         <div>
-          <CancelBtn onMouseUp={() => setIsOpen({ ...isOpen, time: false })} />
-          <OkButton onMouseUp={() => setIsOpen({ ...isOpen, time: false })} />
+          <CancelBtn
+            onMouseDown={() => setOkBtnClicked(true)}
+            onMouseUp={() => {
+              setIsOpen({ ...isOpen, time: false });
+              setOkBtnClicked(false);
+            }}
+            isClicked={okBtnClicked}
+          />
+          <OkButton
+            onMouseDown={() => setOkBtnClicked(true)}
+            onMouseUp={() => {
+              setIsOpen({ ...isOpen, time: false });
+              setOkBtnClicked(false);
+            }}
+            isClicked={okBtnClicked}
+          />
         </div>
       </ClockModal>
     </Draggable>

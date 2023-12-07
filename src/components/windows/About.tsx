@@ -47,7 +47,7 @@ const About = () => {
           width={32}
           top={0.75}
           right={5.1}
-          isOpen={controlBtnClicked}
+          isClicked={controlBtnClicked}
         />
         <MaximizeBtn
           onMouseDown={() => setControlBtnClicked(true)}
@@ -56,7 +56,7 @@ const About = () => {
           width={34}
           top={0.68}
           right={3.05}
-          isOpen={controlBtnClicked}
+          isClicked={controlBtnClicked}
         />
         <CloseBtn
           onClick={() => setIsOpen({ ...isOpen, about: false })}
@@ -66,7 +66,7 @@ const About = () => {
           width={32.5}
           top={0.6}
           right={0.75}
-          isOpen={controlBtnClicked}
+          isClicked={controlBtnClicked}
         />
         <AboutMeText>
           <p>

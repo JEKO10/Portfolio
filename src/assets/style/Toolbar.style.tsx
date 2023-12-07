@@ -4,7 +4,7 @@ import toolbar from "../images/buttons/toolbar.png";
 import toolbarClicked from "../images/buttons/toolbarClicked.jpg";
 
 type ToolButtonProps = {
-  isOpen: boolean;
+  isClicked: boolean;
 };
 
 export const ToolbarContainer = styled.div`
@@ -12,8 +12,8 @@ export const ToolbarContainer = styled.div`
 `;
 
 export const ToolButton = styled.img<ToolButtonProps>`
-  background: ${({ isOpen }) =>
-    isOpen
+  background: ${({ isClicked }) =>
+    isClicked
       ? `url(${toolbarClicked}) center/cover no-repeat`
       : `url(${toolbar}) center/contain no-repeat`};
   height: 36px;
@@ -28,7 +28,7 @@ export const Clock = styled.p<ToolButtonProps>`
   font-size: 1.4rem;
   position: absolute;
   left: 75%;
-  top: ${({ isOpen }) => (isOpen ? `46%` : ` 44%`)};
+  top: ${({ isClicked }) => (isClicked ? `46%` : ` 44%`)};
   transform: translate(-50%, -50%);
   user-select: none;
   cursor: pointer;
