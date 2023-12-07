@@ -10,9 +10,10 @@ import {
 import { useGlobalContext } from "../context";
 
 const Toolbar = () => {
-  const [time, setTime] = useState(new Date());
-
   const { setIsOpen, isOpen } = useGlobalContext();
+
+  const [time, setTime] = useState(new Date());
+  const [clockBtnClicked, setClockBtnClicked] = useState(false);
 
   useEffect(() => {
     const intervalID = setInterval(() => {
@@ -34,9 +35,15 @@ const Toolbar = () => {
     <ToolbarContainer>
       <Dash src={dash} alt="dash" />
       <ToolButton
+        onMouseDown={() => setClockBtnClicked(true)}
+        onMouseUp={() => setClockBtnClicked(false)}
         onClick={() => setIsOpen({ ...isOpen, time: !isOpen.time })}
+        isOpen={clockBtnClicked}
       />
-      <Clock onClick={() => setIsOpen({ ...isOpen, time: !isOpen.time })}>
+      <Clock
+        onClick={() => setIsOpen({ ...isOpen, time: !isOpen.time })}
+        isOpen={clockBtnClicked}
+      >
         {formattedTime}
       </Clock>
     </ToolbarContainer>
