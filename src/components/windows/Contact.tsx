@@ -32,6 +32,7 @@ const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [sendBtnClicked, setSendBtnClicked] = useState(false);
 
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
@@ -135,12 +136,18 @@ const Contact = () => {
             bottom={5.85}
             background={sendButton}
             value="Send"
+            onMouseDown={() => setSendBtnClicked(true)}
+            onMouseUp={() => setSendBtnClicked(false)}
+            isClicked={sendBtnClicked}
           />
         </form>
         <ContactButton
           bottom={1.7}
           background={cancelButton}
           onClick={() => setIsOpen({ ...isOpen, contact: false })}
+          onMouseDown={() => setSendBtnClicked(true)}
+          onMouseUp={() => setSendBtnClicked(false)}
+          isClicked={sendBtnClicked}
         />
       </ContactFile>
     </Draggable>
