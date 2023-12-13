@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import dash from "../assets/images/other/dash.jpg";
 import {
@@ -18,13 +18,23 @@ import Toolbar from "./Toolbar";
 const Taskbar = () => {
   const { isOpen, isVisible, setIsVisible, setIsOpen } = useGlobalContext();
 
+  const [nameBtnClicked, setNameBtnClicked] = useState(false);
+
   return (
     <>
       <TaskBar data-no-select="true">
         <div>
           <StartButton />
           <Dash src={dash} alt="dash" />
-          <Name onClick={() => setIsOpen({ ...isOpen, about: true })} />
+          <Name
+            onMouseDown={() => setNameBtnClicked(true)}
+            onMouseUp={() => setNameBtnClicked(false)}
+            onClick={() => {
+              setIsOpen({ ...isOpen, about: !isOpen.about });
+              setIsVisible({ ...isVisible, about: true });
+            }}
+            isClicked={nameBtnClicked}
+          />
           {isOpen.about && (
             <About
               onClick={() =>
