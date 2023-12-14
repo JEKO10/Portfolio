@@ -69,10 +69,10 @@ export const ContactInput = styled.input<InputProps>`
 export const ContactButton = styled.button<ButtonProps>`
   background: ${({ isClicked, background }) =>
     isClicked
-      ? `url(${sendClicked}) center/cover no-repeat`
-      : `url(${background}) center/cover no-repeat`};
-  height: 56px;
-  width: 178px;
+      ? `url(${sendClicked}) center/contain no-repeat`
+      : `url(${background}) center/contain no-repeat`};
+  height: ${({ isClicked }) => (isClicked ? `29px` : `56px`)};
+  width: ${({ isClicked }) => (isClicked ? `107px` : `178px`)};
   position: absolute;
   right: 2.15rem;
   bottom: ${({ bottom }) => bottom + "rem"};
