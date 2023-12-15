@@ -1,14 +1,17 @@
 import styled from "styled-components";
 
 import aboutMe from "../images/buttons/aboutTaskbar.png";
+import aboutMeClicked from "../images/buttons/aboutTaskbarClicked.jpg";
 import book from "../images/buttons/bookTaskbar.jpg";
-import clicked from "../images/buttons/clicked.png";
 import contact from "../images/buttons/contactTaskbar.png";
+import contactClicked from "../images/buttons/contactTaskbarClicked.jpg";
 import name from "../images/buttons/name.png";
 import nameClicked from "../images/buttons/nameClicked.jpg";
 import recycle from "../images/buttons/recycleTaskbar.png";
 import startButton from "../images/buttons/start.png";
+import startClicked from "../images/buttons/startClicked.png";
 import work from "../images/buttons/workTaskbar.png";
+import workClicked from "../images/buttons/workTaskbarClicked.jpg";
 import taskbar from "../images/other/taskbar.jpg";
 import { flexMixin } from "./GlobalStyles";
 
@@ -34,7 +37,7 @@ export const Start = styled.button<ButtonProps>`
   background: ${({ isOpen }) =>
     isOpen
       ? `
-     url(${clicked})
+     url(${startClicked})
   `
       : `url(${startButton})`};
   background-repeat: no-repeat;
@@ -53,31 +56,40 @@ export const Name = styled.button<ButtonProps>`
   cursor: pointer;
 `;
 
-export const About = styled.button`
-  background: url(${aboutMe}) center/contain no-repeat;
+export const About = styled.button<ButtonProps>`
+  background: ${({ isClicked }) =>
+    isClicked
+      ? `url(${aboutMeClicked}) center/contain no-repeat`
+      : `url(${aboutMe}) center/contain no-repeat`};
   height: 35px;
   width: 163px;
   margin-right: 5px;
   cursor: pointer;
 `;
 
-export const Work = styled.button`
-  background: url(${work}) center/contain no-repeat;
+export const Work = styled.button<ButtonProps>`
+  background: ${({ isClicked }) =>
+    isClicked
+      ? `url(${workClicked}) center/contain no-repeat`
+      : `url(${work}) center/contain no-repeat`};
   height: 35px;
   width: 163px;
   margin-right: 5px;
   cursor: pointer;
 `;
 
-export const Contact = styled.button`
-  background: url(${contact}) center/contain no-repeat;
+export const Contact = styled.button<ButtonProps>`
+  background: ${({ isClicked }) =>
+    isClicked
+      ? `url(${contactClicked}) center/contain no-repeat`
+      : `url(${contact}) center/contain no-repeat`};
   height: 35px;
   width: 163px;
   margin-right: 5px;
   cursor: pointer;
 `;
 
-export const Book = styled.button`
+export const Book = styled.button<ButtonProps>`
   background: url(${book}) center/contain no-repeat;
   height: 35px;
   width: 163px;
@@ -85,7 +97,7 @@ export const Book = styled.button`
   cursor: pointer;
 `;
 
-export const Recycle = styled.button`
+export const Recycle = styled.button<ButtonProps>`
   background: url(${recycle}) center/contain no-repeat;
   height: 35px;
   width: 163px;

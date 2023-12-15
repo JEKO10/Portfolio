@@ -37,37 +37,52 @@ const Taskbar = () => {
           />
           {isOpen.about && (
             <About
+              onMouseDown={() => setNameBtnClicked(true)}
+              onMouseUp={() => setNameBtnClicked(false)}
               onClick={() =>
                 setIsVisible({ ...isVisible, about: !isVisible.about })
               }
+              isClicked={nameBtnClicked}
             />
           )}
           {isOpen.work && (
             <Work
+              onMouseDown={() => setNameBtnClicked(true)}
+              onMouseUp={() => setNameBtnClicked(false)}
               onClick={() =>
                 setIsVisible({ ...isVisible, work: !isVisible.work })
               }
+              isClicked={nameBtnClicked}
             />
           )}
           {isOpen.contact && (
             <Contact
+              onMouseDown={() => setNameBtnClicked(true)}
+              onMouseUp={() => setNameBtnClicked(false)}
               onClick={() =>
                 setIsVisible({ ...isVisible, contact: !isVisible.contact })
               }
+              isClicked={nameBtnClicked}
             />
           )}
           {isOpen.book && (
             <Book
+              onMouseDown={() => setNameBtnClicked(true)}
+              onMouseUp={() => setNameBtnClicked(false)}
               onClick={() =>
                 setIsVisible({ ...isVisible, book: !isVisible.book })
               }
+              isClicked={nameBtnClicked}
             />
           )}
           {isOpen.recycle && (
             <Recycle
+              onMouseDown={() => setNameBtnClicked(true)}
+              onMouseUp={() => setNameBtnClicked(false)}
               onClick={() =>
                 setIsVisible({ ...isVisible, recycle: !isVisible.recycle })
               }
+              isClicked={nameBtnClicked}
             />
           )}
         </div>
