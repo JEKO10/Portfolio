@@ -15,7 +15,7 @@ export const RecycleBinFile = styled.section<FilesProps>`
   width: 787px;
 
   display: ${({ isVisible }) => (isVisible ? "block" : "none")};
-  z-index: ${({ lastClicked }) => (lastClicked === "about" ? 2 : 1)};
+  z-index: ${({ lastClicked }) => (lastClicked === "recycle" ? 2 : 1)};
 `;
 
 export const RecycleBinHandle = styled.div<FilesProps>`

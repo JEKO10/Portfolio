@@ -49,7 +49,6 @@ export const AboutMeText = styled.article`
     font-weight: 500;
     padding-right: 20px;
     margin-bottom: 0.8rem;
-    user-select: none;
   }
 
   ::-webkit-scrollbar {

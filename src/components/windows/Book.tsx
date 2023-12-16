@@ -1,7 +1,7 @@
 import React from "react";
 import Draggable from "react-draggable";
 
-import { BookFile, BookHandle } from "../../assets/style/Book.style";
+import { BookFile, BookHandle, BookText } from "../../assets/style/Book.style";
 import {
   CloseBtn,
   MaximizeBtn,
@@ -47,6 +47,19 @@ const Book = () => {
           top={0.6}
           right={0.75}
         />
+        <article>
+          <BookText>Site Design and Development: </BookText>
+          <BookText>
+            - Co-Design and Development: Aleksa Bubanja - aleksa3b@gmail.com
+          </BookText>
+          <BookText>- Design: Tadija Bubanja - tadija3b@gmail.com</BookText>
+          <BookText>
+            Special thanks to Tadija Bubanja for the visually appealing design
+            elements that enhance the user experience, and to Aleksa Bubanja for
+            the collaborative efforts in bringing the design to life through
+            development.
+          </BookText>
+        </article>
       </BookFile>
     </Draggable>
   );

@@ -22,6 +22,12 @@ export const BookFile = styled.section<FilesProps>`
 
   display: ${({ isVisible }) => (isVisible ? "block" : "none")};
   z-index: ${({ lastClicked }) => (lastClicked === "book" ? 2 : 1)};
+
+  article {
+    position: absolute;
+    top: 100px;
+    left: 30px;
+  }
 `;
 
 export const Book = styled.button<BookProps>`
@@ -47,4 +53,12 @@ export const BookHandle = styled.div<FilesProps>`
   height: 50px;
   width: 100%;
   cursor: grab;
+`;
+
+export const BookText = styled.p`
+  font-size: 1.5rem;
+  line-height: 40px;
+  font-weight: 500;
+  padding-right: 80px;
+  margin-bottom: 0.5rem;
 `;
