@@ -3,11 +3,11 @@ import styled from "styled-components";
 import cancel from "../images/buttons/cancel.jpg";
 import cancelClicked from "../images/buttons/cancleClicked.jpg";
 import close from "../images/buttons/close.png";
-import clicked from "../images/buttons/closeClicked.png";
+import closeClicked from "../images/buttons/closeClicked.jpg";
 import maximize from "../images/buttons/maximize.jpg";
-import maximizeClicked from "../images/buttons/maximizeClicked.png";
+import maximizeClicked from "../images/buttons/maximizeClicked.jpg";
 import minimize from "../images/buttons/minimize.jpg";
-import minimizeClicked from "../images/buttons/minimizeClicked.png";
+import minimizeClicked from "../images/buttons/minimizeClicked.jpg";
 import okBtn from "../images/buttons/okBtn.jpg";
 import okBtnClicked from "../images/buttons/okBtnClicked.jpg";
 
@@ -26,16 +26,14 @@ type OkBtnProps = {
 export const MinimizeBtn = styled.button<ControlBtnProps>`
   background: ${({ isClicked }) =>
     isClicked
-      ? `url(${minimizeClicked}) center/contain no-repeat`
-      : `url(${minimize}) center/contain no-repeat`};
+      ? `url(${minimizeClicked}) center/cover no-repeat`
+      : `url(${minimize}) center/cover no-repeat`};
   height: ${({ height }) => height + "px"};
   width: ${({ width }) => width + "px"};
   position: absolute;
   top: ${({ top }) => top + "rem"};
   right: ${({ right }) => right + "rem"};
   cursor: pointer;
-  transition: background 200ms ease;
-  transition: background 200ms ease;
 `;
 
 export const MaximizeBtn = styled.button<ControlBtnProps>`
@@ -49,13 +47,12 @@ export const MaximizeBtn = styled.button<ControlBtnProps>`
   top: ${({ top }) => top + "rem"};
   right: ${({ right }) => right + "rem"};
   cursor: pointer;
-  transition: background 200ms ease;
 `;
 
 export const CloseBtn = styled.button<ControlBtnProps>`
   background: ${({ isClicked }) =>
     isClicked
-      ? `url(${clicked}) center/cover no-repeat`
+      ? `url(${closeClicked}) center/contain no-repeat`
       : `url(${close}) center/contain no-repeat`};
   height: ${({ height }) => height + "px"};
   width: ${({ width }) => width + "px"};
@@ -63,7 +60,6 @@ export const CloseBtn = styled.button<ControlBtnProps>`
   top: ${({ top }) => top + "rem"};
   right: ${({ right }) => right + "rem"};
   cursor: pointer;
-  transition: background 200ms ease;
 `;
 
 export const OkButton = styled.button<OkBtnProps>`

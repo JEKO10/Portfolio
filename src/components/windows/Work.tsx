@@ -27,6 +27,7 @@ const Work = () => {
     setIsVisible,
   } = useGlobalContext();
   const projectRef = useRef<HTMLButtonElement>(null);
+  const [controlBtnClicked, setControlBtnClicked] = useState(false);
 
   const [isClicked, setIsClicked] = useState({
     walkmate: false,
@@ -86,11 +87,18 @@ const Work = () => {
       >
         <WorkHandle className="handle" isVisible={isVisible.work} />
         <MinimizeBtn
-          onMouseUp={() => setIsVisible({ ...isVisible, work: false })}
           height={27}
           width={29}
           top={0.7}
           right={4.7}
+          onMouseDown={() => {
+            setControlBtnClicked(true);
+          }}
+          onClick={() => {
+            setIsVisible({ ...isVisible, work: false });
+            setControlBtnClicked(false);
+          }}
+          isClicked={controlBtnClicked}
         />
         <MaximizeBtn height={28} width={32} top={0.68} right={2.78} />
         <CloseBtn

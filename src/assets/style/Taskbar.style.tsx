@@ -10,7 +10,7 @@ import nameClicked from "../images/buttons/nameClicked.jpg";
 import recycle from "../images/buttons/recycleTaskbar.png";
 import startButton from "../images/buttons/start.png";
 import startClicked from "../images/buttons/startClicked.png";
-import work from "../images/buttons/workTaskbar.png";
+import work from "../images/buttons/workTaskbar.jpg";
 import workClicked from "../images/buttons/workTaskbarClicked.jpg";
 import taskbar from "../images/other/taskbar.jpg";
 import { flexMixin } from "./GlobalStyles";

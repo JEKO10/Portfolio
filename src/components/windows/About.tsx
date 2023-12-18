@@ -22,7 +22,9 @@ const About = () => {
     isVisible,
     setIsVisible,
   } = useGlobalContext();
-  const [controlBtnClicked, setControlBtnClicked] = useState(false);
+  const [minimizeBtnClicked, setMinimizeBtnClicked] = useState(false);
+  const [maximizeBtnClicked, setMaximizeBtnClicked] = useState(false);
+  const [closeBtnClicked, setCloseBtnClicked] = useState(false);
 
   return (
     <Draggable
@@ -38,35 +40,37 @@ const About = () => {
       >
         <AboutHandle className="handle" isVisible={isVisible.about} />
         <MinimizeBtn
-          onMouseDown={() => setControlBtnClicked(true)}
-          onMouseUp={() => () => {
+          onMouseDown={() => {
+            setMinimizeBtnClicked(true);
+          }}
+          onClick={() => {
             setIsVisible({ ...isVisible, about: false });
-            setControlBtnClicked(false);
+            setMinimizeBtnClicked(false);
           }}
           height={28}
-          width={32}
+          width={32.5}
           top={0.75}
           right={5.1}
-          isClicked={controlBtnClicked}
+          isClicked={minimizeBtnClicked}
         />
         <MaximizeBtn
-          onMouseDown={() => setControlBtnClicked(true)}
-          onMouseUp={() => setControlBtnClicked(false)}
+          onMouseDown={() => setMaximizeBtnClicked(true)}
+          onMouseUp={() => setMaximizeBtnClicked(false)}
           height={30}
           width={34}
           top={0.68}
           right={3.05}
-          isClicked={controlBtnClicked}
+          isClicked={maximizeBtnClicked}
         />
         <CloseBtn
           onClick={() => setIsOpen({ ...isOpen, about: false })}
-          onMouseDown={() => setControlBtnClicked(true)}
-          onMouseUp={() => setControlBtnClicked(false)}
+          onMouseDown={() => setCloseBtnClicked(true)}
+          onMouseUp={() => setCloseBtnClicked(false)}
           height={32}
           width={32.5}
           top={0.6}
           right={0.75}
-          isClicked={controlBtnClicked}
+          isClicked={closeBtnClicked}
         />
         <AboutMeText>
           <p>

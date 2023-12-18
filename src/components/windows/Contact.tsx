@@ -28,6 +28,7 @@ const Contact = () => {
     setIsVisible,
   } = useGlobalContext();
   const form = useRef<HTMLFormElement>(null);
+  const [controlBtnClicked, setControlBtnClicked] = useState(false);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -89,11 +90,18 @@ const Contact = () => {
       >
         <ContactHandle className="handle" isVisible={isVisible.contact} />
         <MinimizeBtn
-          onMouseUp={() => setIsVisible({ ...isVisible, contact: false })}
           height={32}
           width={34}
           top={0.85}
           right={5.4}
+          onMouseDown={() => {
+            setControlBtnClicked(true);
+          }}
+          onClick={() => {
+            setIsVisible({ ...isVisible, contact: false });
+            setControlBtnClicked(false);
+          }}
+          isClicked={controlBtnClicked}
         />
         <MaximizeBtn height={32} width={36} top={0.85} right={3.2} />
         <CloseBtn
