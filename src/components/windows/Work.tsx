@@ -15,7 +15,8 @@ import {
   MinimizeBtn,
 } from "../../assets/style/Files.style";
 import { Project, WorkFile, WorkHandle } from "../../assets/style/Work.style";
-import { useGlobalContext } from "../../context";
+import { useGlobalContext } from "../../utils/context";
+import useWindowControls from "../../utils/useWindowControls";
 
 const Work = () => {
   const {
@@ -26,8 +27,15 @@ const Work = () => {
     isVisible,
     setIsVisible,
   } = useGlobalContext();
+
+  const {
+    minimizeBtnClicked,
+    maximizeBtnClicked,
+    closeBtnClicked,
+    onMouseDownControl,
+    onClickControl,
+  } = useWindowControls();
   const projectRef = useRef<HTMLButtonElement>(null);
-  const [controlBtnClicked, setControlBtnClicked] = useState(false);
 
   const [isClicked, setIsClicked] = useState({
     walkmate: false,
@@ -87,26 +95,37 @@ const Work = () => {
       >
         <WorkHandle className="handle" isVisible={isVisible.work} />
         <MinimizeBtn
+          onMouseDown={() => onMouseDownControl("min")}
+          onClick={() => {
+            onClickControl("min");
+            setIsVisible({ ...isVisible, work: false });
+          }}
           height={27}
           width={29}
           top={0.7}
           right={4.7}
-          onMouseDown={() => {
-            setControlBtnClicked(true);
-          }}
-          onClick={() => {
-            setIsVisible({ ...isVisible, work: false });
-            setControlBtnClicked(false);
-          }}
-          isClicked={controlBtnClicked}
+          isClicked={minimizeBtnClicked}
         />
-        <MaximizeBtn height={28} width={32} top={0.68} right={2.78} />
+        <MaximizeBtn
+          onMouseDown={() => onMouseDownControl("max")}
+          onClick={() => onClickControl("max")}
+          height={28}
+          width={32}
+          top={0.68}
+          right={2.78}
+          isClicked={maximizeBtnClicked}
+        />
         <CloseBtn
-          onMouseUp={() => setIsOpen({ ...isOpen, work: false })}
+          onMouseDown={() => onMouseDownControl("close")}
+          onClick={() => {
+            onClickControl("close");
+            setIsOpen({ ...isOpen, work: false });
+          }}
           height={30}
           width={30}
           top={0.6}
           right={0.68}
+          isClicked={closeBtnClicked}
         />
         <article>
           <Project

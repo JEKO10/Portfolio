@@ -7,7 +7,7 @@ import ShutDown from "../../assets/images/buttons/shutDown.png";
 import Work from "../../assets/images/buttons/workStart.png";
 import Dash from "../../assets/images/other/startDash.jpg";
 import { StartContainer } from "../../assets/style/StartMenu.style";
-import { useGlobalContext } from "../../context";
+import { useGlobalContext } from "../../utils/context";
 
 const StartMenu: React.FC = () => {
   const {

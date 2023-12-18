@@ -7,7 +7,7 @@ import {
   MaximizeBtn,
   MinimizeBtn,
 } from "../../assets/style/Files.style";
-import { useGlobalContext } from "../../context";
+import { useGlobalContext } from "../../utils/context";
 
 const Book = () => {
   const {

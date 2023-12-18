@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Start } from "../assets/style/Taskbar.style";
-import { useGlobalContext } from "../context";
+import { useGlobalContext } from "../utils/context";
 
 const StartButton = () => {
   const { setIsOpen, isOpen } = useGlobalContext();

@@ -16,7 +16,7 @@ import {
   MinimizeBtn,
   OkButton,
 } from "../../assets/style/Files.style";
-import { useGlobalContext } from "../../context";
+import { useGlobalContext } from "../../utils/context";
 import AnalogClock from "../AnalogClock";
 
 const Time = () => {

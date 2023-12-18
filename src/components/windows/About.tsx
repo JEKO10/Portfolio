@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Draggable from "react-draggable";
 
 import {
@@ -11,7 +11,8 @@ import {
   MaximizeBtn,
   MinimizeBtn,
 } from "../../assets/style/Files.style";
-import { useGlobalContext } from "../../context";
+import { useGlobalContext } from "../../utils/context";
+import useWindowControls from "../../utils/useWindowControls";
 
 const About = () => {
   const {
@@ -22,9 +23,14 @@ const About = () => {
     isVisible,
     setIsVisible,
   } = useGlobalContext();
-  const [minimizeBtnClicked, setMinimizeBtnClicked] = useState(false);
-  const [maximizeBtnClicked, setMaximizeBtnClicked] = useState(false);
-  const [closeBtnClicked, setCloseBtnClicked] = useState(false);
+
+  const {
+    minimizeBtnClicked,
+    maximizeBtnClicked,
+    closeBtnClicked,
+    onMouseDownControl,
+    onClickControl,
+  } = useWindowControls();
 
   return (
     <Draggable
@@ -40,12 +46,10 @@ const About = () => {
       >
         <AboutHandle className="handle" isVisible={isVisible.about} />
         <MinimizeBtn
-          onMouseDown={() => {
-            setMinimizeBtnClicked(true);
-          }}
+          onMouseDown={() => onMouseDownControl("min")}
           onClick={() => {
+            onClickControl("min");
             setIsVisible({ ...isVisible, about: false });
-            setMinimizeBtnClicked(false);
           }}
           height={28}
           width={32.5}
@@ -54,8 +58,8 @@ const About = () => {
           isClicked={minimizeBtnClicked}
         />
         <MaximizeBtn
-          onMouseDown={() => setMaximizeBtnClicked(true)}
-          onMouseUp={() => setMaximizeBtnClicked(false)}
+          onMouseDown={() => onMouseDownControl("max")}
+          onClick={() => onClickControl("max")}
           height={30}
           width={34}
           top={0.68}
@@ -63,9 +67,11 @@ const About = () => {
           isClicked={maximizeBtnClicked}
         />
         <CloseBtn
-          onClick={() => setIsOpen({ ...isOpen, about: false })}
-          onMouseDown={() => setCloseBtnClicked(true)}
-          onMouseUp={() => setCloseBtnClicked(false)}
+          onMouseDown={() => onMouseDownControl("close")}
+          onClick={() => {
+            onClickControl("close");
+            setIsOpen({ ...isOpen, about: false });
+          }}
           height={32}
           width={32.5}
           top={0.6}

@@ -13,7 +13,7 @@ import {
   RecycleBinFile,
   RecycleBinHandle,
 } from "../../assets/style/RecycleBin.style";
-import { useGlobalContext } from "../../context";
+import { useGlobalContext } from "../../utils/context";
 
 const RecycleBin = () => {
   const {

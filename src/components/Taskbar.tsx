@@ -11,7 +11,7 @@ import {
   TaskBar,
   Work,
 } from "../assets/style/Taskbar.style";
-import { useGlobalContext } from "../context";
+import { useGlobalContext } from "../utils/context";
 import StartButton from "./StartButton";
 import Toolbar from "./Toolbar";
 

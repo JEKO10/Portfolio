@@ -1,7 +1,7 @@
 import React from "react";
 
 import Book from "../components/windows/Book";
-import { useGlobalContext } from "../context";
+import { useGlobalContext } from "../utils/context";
 import About from "./windows/About";
 import Contact from "./windows/Contact";
 import RecycleBin from "./windows/RecycleBin";

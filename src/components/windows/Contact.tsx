@@ -16,7 +16,8 @@ import {
   MaximizeBtn,
   MinimizeBtn,
 } from "../../assets/style/Files.style";
-import { useGlobalContext } from "../../context";
+import { useGlobalContext } from "../../utils/context";
+import useWindowControls from "../../utils/useWindowControls";
 
 const Contact = () => {
   const {
@@ -27,8 +28,15 @@ const Contact = () => {
     isVisible,
     setIsVisible,
   } = useGlobalContext();
+
+  const {
+    minimizeBtnClicked,
+    maximizeBtnClicked,
+    closeBtnClicked,
+    onMouseDownControl,
+    onClickControl,
+  } = useWindowControls();
   const form = useRef<HTMLFormElement>(null);
-  const [controlBtnClicked, setControlBtnClicked] = useState(false);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -90,26 +98,37 @@ const Contact = () => {
       >
         <ContactHandle className="handle" isVisible={isVisible.contact} />
         <MinimizeBtn
+          onMouseDown={() => onMouseDownControl("min")}
+          onClick={() => {
+            onClickControl("min");
+            setIsVisible({ ...isVisible, contact: false });
+          }}
           height={32}
           width={34}
           top={0.85}
           right={5.4}
-          onMouseDown={() => {
-            setControlBtnClicked(true);
-          }}
-          onClick={() => {
-            setIsVisible({ ...isVisible, contact: false });
-            setControlBtnClicked(false);
-          }}
-          isClicked={controlBtnClicked}
+          isClicked={minimizeBtnClicked}
         />
-        <MaximizeBtn height={32} width={36} top={0.85} right={3.2} />
+        <MaximizeBtn
+          onMouseDown={() => onMouseDownControl("max")}
+          onClick={() => onClickControl("max")}
+          height={32}
+          width={36}
+          top={0.85}
+          right={3.2}
+          isClicked={maximizeBtnClicked}
+        />
         <CloseBtn
-          onMouseUp={() => setIsOpen({ ...isOpen, contact: false })}
+          onMouseDown={() => onMouseDownControl("close")}
+          onClick={() => {
+            onClickControl("close");
+            setIsOpen({ ...isOpen, contact: false });
+          }}
           height={35}
           width={34}
           top={0.75}
           right={0.9}
+          isClicked={closeBtnClicked}
         />
         <form ref={form} onSubmit={sendEmail} onKeyPress={handleKeyPress}>
           <ContactTextarea

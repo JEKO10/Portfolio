@@ -1,7 +1,7 @@
 import React from "react";
 
 import { ShutDownSection } from "../assets/style/ShutDown.style";
-import { useGlobalContext } from "../context";
+import { useGlobalContext } from "../utils/context";
 
 const ShutDown = () => {
   const { setIsShutDown, setIsLoading, setIsOpen, setIsShuttingDown } =

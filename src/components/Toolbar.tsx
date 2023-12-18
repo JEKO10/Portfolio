@@ -7,7 +7,7 @@ import {
   ToolbarContainer,
   ToolButton,
 } from "../assets/style/Toolbar.style";
-import { useGlobalContext } from "../context";
+import { useGlobalContext } from "../utils/context";
 
 const Toolbar = () => {
   const { setIsOpen, isOpen } = useGlobalContext();

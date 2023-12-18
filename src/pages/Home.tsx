@@ -4,7 +4,7 @@ import { HomePage } from "../assets/style/GlobalStyles";
 import Files from "../components/Files";
 import Icons from "../components/Icons";
 import Taskbar from "../components/Taskbar";
-import { useGlobalContext } from "../context";
+import { useGlobalContext } from "../utils/context";
 
 type IconsType = {
   [key: string]: {

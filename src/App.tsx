@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 import GlobalFonts from "./assets/fonts/fonts";
 import { GlobalStyles } from "./assets/style/GlobalStyles";
-import { useGlobalContext } from "./context";
+import { useGlobalContext } from "./utils/context";
 import Home from "./pages/Home";
 import { Preloader } from "./pages/Preloader";
 import ShutDown from "./pages/ShutDown";

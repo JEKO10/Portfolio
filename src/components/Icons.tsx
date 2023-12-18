@@ -9,7 +9,7 @@ import recycleClicked from "../assets/images/icons/recycleClicked.png";
 import work from "../assets/images/icons/work.png";
 import workClicked from "../assets/images/icons/workClicked.png";
 import { Icon, IconsContainer, RecycleBin } from "../assets/style/Icons.style";
-import { useGlobalContext } from "../context";
+import { useGlobalContext } from "../utils/context";
 
 const Icons = () => {
   const {
