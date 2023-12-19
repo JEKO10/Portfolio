@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import cancel from "../images/buttons/cancel.jpg";
-import cancelClicked from "../images/buttons/cancleClicked.jpg";
+import cancelClicked from "../images/buttons/cancelClicked.jpg";
 import close from "../images/buttons/close.png";
 import closeClicked from "../images/buttons/closeClicked.jpg";
 import maximize from "../images/buttons/maximize.jpg";

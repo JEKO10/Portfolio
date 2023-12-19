@@ -2,8 +2,10 @@ import emailjs from "@emailjs/browser";
 import React, { useRef, useState } from "react";
 import Draggable from "react-draggable";
 
+import cancelClicked from "../../assets/images/buttons/cancelClicked.jpg";
 import cancelButton from "../../assets/images/buttons/contactCancel.jpg";
 import sendButton from "../../assets/images/buttons/send.jpg";
+import sendClicked from "../../assets/images/buttons/sendClicked.jpg";
 import {
   ContactButton,
   ContactFile,
@@ -41,7 +43,10 @@ const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [sendBtnClicked, setSendBtnClicked] = useState(false);
+  const [isContactBtnClicked, setIsContactBtnClicked] = useState({
+    send: false,
+    cancel: false,
+  });
 
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
@@ -162,19 +167,35 @@ const Contact = () => {
             type="submit"
             bottom={5.85}
             background={sendButton}
+            clickedBackground={sendClicked}
             value="Send"
-            onMouseDown={() => setSendBtnClicked(true)}
-            onMouseUp={() => setSendBtnClicked(false)}
-            isClicked={sendBtnClicked}
+            onMouseDown={() =>
+              setIsContactBtnClicked({ ...isContactBtnClicked, send: true })
+            }
+            onClick={() => {
+              setIsContactBtnClicked({
+                ...isContactBtnClicked,
+                send: false,
+              });
+            }}
+            isClicked={isContactBtnClicked.send}
           />
         </form>
         <ContactButton
           bottom={1.7}
           background={cancelButton}
-          onClick={() => setIsOpen({ ...isOpen, contact: false })}
-          onMouseDown={() => setSendBtnClicked(true)}
-          onMouseUp={() => setSendBtnClicked(false)}
-          isClicked={sendBtnClicked}
+          clickedBackground={cancelClicked}
+          onMouseDown={() =>
+            setIsContactBtnClicked({ ...isContactBtnClicked, cancel: true })
+          }
+          onClick={() => {
+            setIsContactBtnClicked({
+              ...isContactBtnClicked,
+              cancel: false,
+            });
+            setIsOpen({ ...isOpen, contact: false });
+          }}
+          isClicked={isContactBtnClicked.cancel}
         />
       </ContactFile>
     </Draggable>

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-import sendClicked from "../images/buttons/sendClicked.jpg";
 import contactHandle from "../images/handles/contactHandle.jpg";
 import contactModal from "../images/modals/contactModal.jpg";
 import inputBg from "../images/other/input.jpg";
@@ -18,6 +17,7 @@ type InputProps = {
 
 type ButtonProps = {
   background: string;
+  clickedBackground: string;
   bottom: number;
   isClicked: boolean;
 };
@@ -67,12 +67,12 @@ export const ContactInput = styled.input<InputProps>`
 `;
 
 export const ContactButton = styled.button<ButtonProps>`
-  background: ${({ isClicked, background }) =>
+  background: ${({ isClicked, background, clickedBackground }) =>
     isClicked
-      ? `url(${sendClicked}) center/contain no-repeat`
+      ? `url(${clickedBackground}) center/contain no-repeat`
       : `url(${background}) center/contain no-repeat`};
-  height: ${({ isClicked }) => (isClicked ? `29px` : `56px`)};
-  width: ${({ isClicked }) => (isClicked ? `107px` : `178px`)};
+  height: 56px;
+  width: 178px;
   position: absolute;
   right: 2.15rem;
   bottom: ${({ bottom }) => bottom + "rem"};
