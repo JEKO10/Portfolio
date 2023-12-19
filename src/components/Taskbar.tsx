@@ -16,9 +16,16 @@ import StartButton from "./StartButton";
 import Toolbar from "./Toolbar";
 
 const Taskbar = () => {
-  const { isOpen, isVisible, setIsVisible, setIsOpen } = useGlobalContext();
+  const { isOpen, isVisible, setIsVisible } = useGlobalContext();
 
-  const [nameBtnClicked, setNameBtnClicked] = useState(false);
+  const [taskbarBtnClicked, setTaskbarBtnClicked] = useState({
+    about: false,
+    work: false,
+    contact: false,
+    recycle: false,
+    book: false,
+    name: false,
+  });
 
   return (
     <>
@@ -27,62 +34,91 @@ const Taskbar = () => {
           <StartButton />
           <Dash src={dash} alt="dash" />
           <Name
-            onMouseDown={() => setNameBtnClicked(true)}
-            onMouseUp={() => setNameBtnClicked(false)}
+            onMouseDown={() =>
+              setTaskbarBtnClicked({ ...taskbarBtnClicked, name: true })
+            }
             onClick={() => {
-              setIsOpen({ ...isOpen, about: !isOpen.about });
+              setTaskbarBtnClicked({
+                ...taskbarBtnClicked,
+                name: false,
+              });
               setIsVisible({ ...isVisible, about: true });
             }}
-            isClicked={nameBtnClicked}
+            isClicked={taskbarBtnClicked.name}
           />
           {isOpen.about && (
             <About
-              onMouseDown={() => setNameBtnClicked(true)}
-              onMouseUp={() => setNameBtnClicked(false)}
-              onClick={() =>
-                setIsVisible({ ...isVisible, about: !isVisible.about })
+              onMouseDown={() =>
+                setTaskbarBtnClicked({ ...taskbarBtnClicked, about: true })
               }
-              isClicked={nameBtnClicked}
+              onClick={() => {
+                setTaskbarBtnClicked({
+                  ...taskbarBtnClicked,
+                  about: false,
+                });
+                setIsVisible({ ...isVisible, about: !isVisible.about });
+              }}
+              isClicked={taskbarBtnClicked.about}
             />
           )}
           {isOpen.work && (
             <Work
-              onMouseDown={() => setNameBtnClicked(true)}
-              onMouseUp={() => setNameBtnClicked(false)}
-              onClick={() =>
-                setIsVisible({ ...isVisible, work: !isVisible.work })
+              onMouseDown={() =>
+                setTaskbarBtnClicked({ ...taskbarBtnClicked, work: true })
               }
-              isClicked={nameBtnClicked}
+              onClick={() => {
+                setTaskbarBtnClicked({
+                  ...taskbarBtnClicked,
+                  work: false,
+                });
+                setIsVisible({ ...isVisible, work: !isVisible.work });
+              }}
+              isClicked={taskbarBtnClicked.work}
             />
           )}
           {isOpen.contact && (
             <Contact
-              onMouseDown={() => setNameBtnClicked(true)}
-              onMouseUp={() => setNameBtnClicked(false)}
-              onClick={() =>
-                setIsVisible({ ...isVisible, contact: !isVisible.contact })
+              onMouseDown={() =>
+                setTaskbarBtnClicked({ ...taskbarBtnClicked, contact: true })
               }
-              isClicked={nameBtnClicked}
+              onClick={() => {
+                setTaskbarBtnClicked({
+                  ...taskbarBtnClicked,
+                  contact: false,
+                });
+                setIsVisible({ ...isVisible, contact: !isVisible.contact });
+              }}
+              isClicked={taskbarBtnClicked.contact}
             />
           )}
           {isOpen.book && (
             <Book
-              onMouseDown={() => setNameBtnClicked(true)}
-              onMouseUp={() => setNameBtnClicked(false)}
-              onClick={() =>
-                setIsVisible({ ...isVisible, book: !isVisible.book })
+              onMouseDown={() =>
+                setTaskbarBtnClicked({ ...taskbarBtnClicked, book: true })
               }
-              isClicked={nameBtnClicked}
+              onClick={() => {
+                setTaskbarBtnClicked({
+                  ...taskbarBtnClicked,
+                  book: false,
+                });
+                setIsVisible({ ...isVisible, book: !isVisible.book });
+              }}
+              isClicked={taskbarBtnClicked.book}
             />
           )}
           {isOpen.recycle && (
             <Recycle
-              onMouseDown={() => setNameBtnClicked(true)}
-              onMouseUp={() => setNameBtnClicked(false)}
-              onClick={() =>
-                setIsVisible({ ...isVisible, recycle: !isVisible.recycle })
+              onMouseDown={() =>
+                setTaskbarBtnClicked({ ...taskbarBtnClicked, recycle: true })
               }
-              isClicked={nameBtnClicked}
+              onClick={() => {
+                setTaskbarBtnClicked({
+                  ...taskbarBtnClicked,
+                  recycle: false,
+                });
+                setIsVisible({ ...isVisible, recycle: !isVisible.recycle });
+              }}
+              isClicked={taskbarBtnClicked.recycle}
             />
           )}
         </div>

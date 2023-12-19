@@ -7,6 +7,7 @@ import contact from "../images/buttons/contactTaskbar.png";
 import contactClicked from "../images/buttons/contactTaskbarClicked.jpg";
 import name from "../images/buttons/name.png";
 import nameClicked from "../images/buttons/nameClicked.jpg";
+import recycleClicked from "../images/buttons/recycleClicked.jpg";
 import recycle from "../images/buttons/recycleTaskbar.png";
 import startButton from "../images/buttons/start.png";
 import startClicked from "../images/buttons/startClicked.png";
@@ -98,7 +99,10 @@ export const Book = styled.button<ButtonProps>`
 `;
 
 export const Recycle = styled.button<ButtonProps>`
-  background: url(${recycle}) center/contain no-repeat;
+  background: ${({ isClicked }) =>
+    isClicked
+      ? `url(${recycleClicked}) center/contain no-repeat`
+      : `url(${recycle}) center/contain no-repeat`};
   height: 35px;
   width: 163px;
   margin-right: 5px;
