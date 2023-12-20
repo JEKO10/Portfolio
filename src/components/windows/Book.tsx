@@ -8,6 +8,7 @@ import {
   MinimizeBtn,
 } from "../../assets/style/Files.style";
 import { useGlobalContext } from "../../utils/context";
+import useWindowControls from "../../utils/useWindowControls";
 
 const Book = () => {
   const {
@@ -18,6 +19,14 @@ const Book = () => {
     setLastClicked,
     setIsVisible,
   } = useGlobalContext();
+
+  const {
+    minimizeBtnClicked,
+    maximizeBtnClicked,
+    closeBtnClicked,
+    onMouseDownControl,
+    onClickControl,
+  } = useWindowControls();
 
   return (
     <Draggable
@@ -33,19 +42,37 @@ const Book = () => {
       >
         <BookHandle className="handle" isVisible={isVisible.book} />
         <MinimizeBtn
-          onMouseUp={() => setIsVisible({ ...isVisible, book: false })}
+          onMouseDown={() => onMouseDownControl("min")}
+          onClick={() => {
+            onClickControl("min");
+            setIsVisible({ ...isVisible, book: false });
+          }}
           height={28}
           width={32}
           top={0.75}
           right={5.1}
+          isClicked={minimizeBtnClicked}
         />
-        <MaximizeBtn height={30} width={34} top={0.68} right={3.05} />
+        <MaximizeBtn
+          onMouseDown={() => onMouseDownControl("max")}
+          onClick={() => onClickControl("max")}
+          height={30}
+          width={34}
+          top={0.68}
+          right={3.05}
+          isClicked={maximizeBtnClicked}
+        />
         <CloseBtn
-          onMouseUp={() => setIsOpen({ ...isOpen, book: false })}
+          onMouseDown={() => onMouseDownControl("close")}
+          onClick={() => {
+            onClickControl("close");
+            setIsOpen({ ...isOpen, book: false });
+          }}
           height={32}
           width={32.5}
           top={0.6}
           right={0.75}
+          isClicked={closeBtnClicked}
         />
         <article>
           <BookText>Site Design and Development: </BookText>

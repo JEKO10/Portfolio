@@ -14,6 +14,7 @@ import {
   RecycleBinHandle,
 } from "../../assets/style/RecycleBin.style";
 import { useGlobalContext } from "../../utils/context";
+import useWindowControls from "../../utils/useWindowControls";
 
 const RecycleBin = () => {
   const {
@@ -26,6 +27,14 @@ const RecycleBin = () => {
     isClicked,
     setIsClicked,
   } = useGlobalContext();
+
+  const {
+    minimizeBtnClicked,
+    maximizeBtnClicked,
+    closeBtnClicked,
+    onMouseDownControl,
+    onClickControl,
+  } = useWindowControls();
 
   const handleClick = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -62,19 +71,37 @@ const RecycleBin = () => {
       >
         <RecycleBinHandle className="handle" isVisible={isVisible.recycle} />
         <MinimizeBtn
-          onMouseUp={() => setIsVisible({ ...isVisible, recycle: false })}
+          onMouseDown={() => onMouseDownControl("min")}
+          onClick={() => {
+            onClickControl("min");
+            setIsVisible({ ...isVisible, recycle: false });
+          }}
           height={25}
           width={28.5}
           top={0.75}
           right={5.04}
+          isClicked={minimizeBtnClicked}
         />
-        <MaximizeBtn height={31} width={31} top={0.55} right={3.08} />
+        <MaximizeBtn
+          onMouseDown={() => onMouseDownControl("max")}
+          onClick={() => onClickControl("max")}
+          height={31}
+          width={31}
+          top={0.55}
+          right={3.08}
+          isClicked={maximizeBtnClicked}
+        />
         <CloseBtn
-          onMouseUp={() => setIsOpen({ ...isOpen, recycle: false })}
+          onMouseDown={() => onMouseDownControl("close")}
+          onClick={() => {
+            onClickControl("close");
+            setIsOpen({ ...isOpen, recycle: false });
+          }}
           height={30}
           width={30}
           top={0.6}
           right={0.95}
+          isClicked={closeBtnClicked}
         />
         <Book
           iconName={book}
