@@ -17,10 +17,19 @@ import {
   OkButton,
 } from "../../assets/style/Files.style";
 import { useGlobalContext } from "../../utils/context";
+import useWindowControls from "../../utils/useWindowControls";
 import AnalogClock from "../AnalogClock";
 
 const Time = () => {
   const { isOpen, setIsOpen, lastClicked, setLastClicked } = useGlobalContext();
+
+  const {
+    minimizeBtnClicked,
+    maximizeBtnClicked,
+    closeBtnClicked,
+    onMouseDownControl,
+    onClickControl,
+  } = useWindowControls();
 
   const [time, setTime] = useState(new Date());
   const [timeBtnClicked, setTimeBtnClicked] = useState({
@@ -75,19 +84,37 @@ const Time = () => {
       >
         <ClockHandle className="handle" />
         <MinimizeBtn
-          onMouseUp={() => setIsOpen({ ...isOpen, time: false })}
+          onMouseDown={() => onMouseDownControl("min")}
+          onClick={() => {
+            onClickControl("min");
+            setIsOpen({ ...isOpen, time: false });
+          }}
           height={19}
           width={21}
           top={0.42}
           right={3.3}
+          isClicked={minimizeBtnClicked}
         />
-        <MaximizeBtn height={21.5} width={22.5} top={0.35} right={2} />
+        <MaximizeBtn
+          onMouseDown={() => onMouseDownControl("max")}
+          onClick={() => onClickControl("max")}
+          height={21.5}
+          width={22.5}
+          top={0.35}
+          right={2}
+          isClicked={maximizeBtnClicked}
+        />
         <CloseBtn
-          onMouseUp={() => setIsOpen({ ...isOpen, time: false })}
+          onMouseDown={() => onMouseDownControl("close")}
+          onClick={() => {
+            onClickControl("close");
+            setIsOpen({ ...isOpen, time: false });
+          }}
           height={22}
           width={22}
           top={0.3}
           right={0.55}
+          isClicked={closeBtnClicked}
         />
         <article>
           <Month>{month[time.getMonth()]}</Month>

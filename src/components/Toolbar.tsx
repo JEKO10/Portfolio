@@ -41,6 +41,8 @@ const Toolbar = () => {
         isClicked={clockBtnClicked}
       />
       <Clock
+        onMouseDown={() => setClockBtnClicked(true)}
+        onMouseUp={() => setClockBtnClicked(false)}
         onClick={() => setIsOpen({ ...isOpen, time: !isOpen.time })}
         isClicked={clockBtnClicked}
       >
