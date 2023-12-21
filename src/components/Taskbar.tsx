@@ -16,7 +16,7 @@ import StartButton from "./StartButton";
 import Toolbar from "./Toolbar";
 
 const Taskbar = () => {
-  const { isOpen, isVisible, setIsVisible } = useGlobalContext();
+  const { isOpen, isVisible, setIsVisible, setIsOpen } = useGlobalContext();
 
   const [taskbarBtnClicked, setTaskbarBtnClicked] = useState({
     about: false,
@@ -42,7 +42,7 @@ const Taskbar = () => {
                 ...taskbarBtnClicked,
                 name: false,
               });
-              setIsVisible({ ...isVisible, about: true });
+              setIsOpen({ ...isOpen, about: true });
             }}
             isClicked={taskbarBtnClicked.name}
           />

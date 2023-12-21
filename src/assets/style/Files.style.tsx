@@ -67,11 +67,11 @@ export const OkButton = styled.button<OkBtnProps>`
     isClicked
       ? `url(${okBtnClicked}) center/contain no-repeat`
       : `url(${okBtn}) center/contain no-repeat`};
-  height: 33px;
-  width: 107px;
+  height: 35px;
+  width: 108px;
   position: absolute;
-  bottom: 0.9rem;
-  right: 15.25rem;
+  bottom: 0.8rem;
+  right: 15.2rem;
   cursor: pointer;
 `;
 
@@ -80,10 +80,10 @@ export const CancelBtn = styled.button<OkBtnProps>`
     isClicked
       ? `url(${cancelClicked}) center/contain no-repeat`
       : `url(${cancel}) center/contain no-repeat`};
-  height: 33px;
-  width: 107px;
+  height: 35px;
+  width: 108px;
   position: absolute;
-  bottom: 0.9rem;
+  bottom: 0.8rem;
   right: 8rem;
   cursor: pointer;
 `;

@@ -2,8 +2,8 @@ import emailjs from "@emailjs/browser";
 import React, { useRef, useState } from "react";
 import Draggable from "react-draggable";
 
-import cancelClicked from "../../assets/images/buttons/cancelClicked.jpg";
 import cancelButton from "../../assets/images/buttons/contactCancel.jpg";
+import cancelClicked from "../../assets/images/buttons/contactCancelClicked.jpg";
 import sendButton from "../../assets/images/buttons/send.jpg";
 import sendClicked from "../../assets/images/buttons/sendClicked.jpg";
 import {

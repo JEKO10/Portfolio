@@ -23,7 +23,10 @@ const Time = () => {
   const { isOpen, setIsOpen, lastClicked, setLastClicked } = useGlobalContext();
 
   const [time, setTime] = useState(new Date());
-  const [okBtnClicked, setOkBtnClicked] = useState(false);
+  const [timeBtnClicked, setTimeBtnClicked] = useState({
+    okBtn: false,
+    cancelBtn: false,
+  });
 
   const month = [
     "January",
@@ -97,20 +100,30 @@ const Time = () => {
         </article>
         <div>
           <CancelBtn
-            onMouseDown={() => setOkBtnClicked(true)}
-            onMouseUp={() => {
+            onMouseDown={() =>
+              setTimeBtnClicked({ ...timeBtnClicked, okBtn: true })
+            }
+            onClick={() => {
+              setTimeBtnClicked({
+                ...timeBtnClicked,
+                okBtn: false,
+              });
               setIsOpen({ ...isOpen, time: false });
-              setOkBtnClicked(false);
             }}
-            isClicked={okBtnClicked}
+            isClicked={timeBtnClicked.okBtn}
           />
           <OkButton
-            onMouseDown={() => setOkBtnClicked(true)}
+            onMouseDown={() =>
+              setTimeBtnClicked({ ...timeBtnClicked, cancelBtn: true })
+            }
             onMouseUp={() => {
+              setTimeBtnClicked({
+                ...timeBtnClicked,
+                cancelBtn: false,
+              });
               setIsOpen({ ...isOpen, time: false });
-              setOkBtnClicked(false);
             }}
-            isClicked={okBtnClicked}
+            isClicked={timeBtnClicked.cancelBtn}
           />
         </div>
       </ClockModal>
