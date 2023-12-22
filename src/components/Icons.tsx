@@ -55,13 +55,14 @@ const Icons = () => {
     }
   };
 
-  const handleKeyDown = (
-    event: React.KeyboardEvent<HTMLButtonElement>,
-    iconName: string
-  ) => {
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
     if (event.key === "Enter") {
-      setIsOpen({ ...isOpen, [iconName]: true });
-      setIsVisible({ ...isVisible, [iconName]: true });
+      Object.keys(isClicked).forEach((icon) => {
+        if (isClicked[icon] === true) {
+          setIsOpen((prev) => ({ ...prev, [icon]: true }));
+          setIsVisible((prev) => ({ ...prev, [icon]: true }));
+        }
+      });
     }
   };
 
@@ -93,7 +94,7 @@ const Icons = () => {
           clickedIcon={aboutClicked}
           isClicked={isClicked.about}
           onMouseDown={(event) => handleClick(event, "about")}
-          onKeyDown={(event) => handleKeyDown(event, "about")}
+          onKeyDown={(event) => handleKeyDown(event)}
           tabIndex={0}
           ref={buttonRef}
         />
@@ -102,7 +103,7 @@ const Icons = () => {
           clickedIcon={workClicked}
           isClicked={isClicked.work}
           onMouseDown={(event) => handleClick(event, "work")}
-          onKeyDown={(event) => handleKeyDown(event, "work")}
+          onKeyDown={(event) => handleKeyDown(event)}
           tabIndex={0}
           ref={buttonRef}
         />
@@ -111,7 +112,7 @@ const Icons = () => {
           clickedIcon={contactClicked}
           isClicked={isClicked.contact}
           onMouseDown={(event) => handleClick(event, "contact")}
-          onKeyDown={(event) => handleKeyDown(event, "contact")}
+          onKeyDown={(event) => handleKeyDown(event)}
           tabIndex={0}
           ref={buttonRef}
         />
@@ -121,7 +122,7 @@ const Icons = () => {
         clickedIcon={recycleClicked}
         isClicked={isClicked.recycle}
         onMouseDown={(event) => handleClick(event, "recycle")}
-        onKeyDown={(event) => handleKeyDown(event, "recycle")}
+        onKeyDown={(event) => handleKeyDown(event)}
         tabIndex={0}
         ref={buttonRef}
       />

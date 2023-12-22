@@ -13,6 +13,7 @@ export type WindowsState = {
   time?: boolean;
   book: boolean;
   start?: boolean;
+  [key: string]: boolean | undefined;
 };
 
 type AppContext = {
