@@ -1,6 +1,9 @@
 import React from "react";
 import Draggable from "react-draggable";
 
+import close from "../../assets/images/buttons/close.png";
+import maximize from "../../assets/images/buttons/maximize.png";
+import minimize from "../../assets/images/buttons/minimize.jpg";
 import {
   AboutFile,
   AboutHandle,
@@ -44,40 +47,45 @@ const About = () => {
         isVisible={isVisible.about}
         data-no-select="true"
       >
-        <AboutHandle className="handle" isVisible={isVisible.about} />
-        <MinimizeBtn
-          onMouseDown={() => onMouseDownControl("min")}
-          onClick={() => {
-            onClickControl("min");
-            setIsVisible({ ...isVisible, about: false });
-          }}
-          height={22}
-          width={25}
-          top={0.95}
-          right={5.35}
-          isClicked={minimizeBtnClicked}
-        />
-        <MaximizeBtn
-          onMouseDown={() => onMouseDownControl("max")}
-          onClick={() => onClickControl("max")}
-          height={22}
-          width={25}
-          top={0.95}
-          right={3.25}
-          isClicked={maximizeBtnClicked}
-        />
-        <CloseBtn
-          onMouseDown={() => onMouseDownControl("close")}
-          onClick={() => {
-            onClickControl("close");
-            setIsOpen({ ...isOpen, about: false });
-          }}
-          height={22}
-          width={25}
-          top={0.95}
-          right={1}
-          isClicked={closeBtnClicked}
-        />
+        <AboutHandle className="handle" isVisible={isVisible.about}>
+          <div>
+            <div>
+              <MinimizeBtn
+                onMouseDown={() => onMouseDownControl("min")}
+                onClick={() => {
+                  onClickControl("min");
+                  setIsVisible({ ...isVisible, about: false });
+                }}
+                height={22}
+                width={25}
+                isClicked={minimizeBtnClicked}
+              >
+                <img src={minimize} alt="minimize" />
+              </MinimizeBtn>
+              <MaximizeBtn
+                onMouseDown={() => onMouseDownControl("max")}
+                onClick={() => onClickControl("max")}
+                height={22}
+                width={25}
+                isClicked={maximizeBtnClicked}
+              >
+                <img src={maximize} alt="maximize" />
+              </MaximizeBtn>
+            </div>
+            <CloseBtn
+              onMouseDown={() => onMouseDownControl("close")}
+              onClick={() => {
+                onClickControl("close");
+                setIsOpen({ ...isOpen, about: false });
+              }}
+              height={22}
+              width={25}
+              isClicked={closeBtnClicked}
+            >
+              <img src={close} alt="close" />
+            </CloseBtn>
+          </div>
+        </AboutHandle>
         <AboutMeText>
           <p>
             From my earliest memories, computers have been my playground. What

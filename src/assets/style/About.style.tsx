@@ -6,6 +6,7 @@ import scroll from "../images/other/scroll.jpg";
 import scrollArrowDown from "../images/other/scrollArrowDown.jpg";
 import scrollArrowUp from "../images/other/scrollArrowUp.jpg";
 import scrollHandle from "../images/other/scrollHandle.jpg";
+import { flexMixin } from "./GlobalStyles";
 
 type FilesProps = {
   lastClicked?: string;
@@ -26,13 +27,32 @@ export const AboutFile = styled.section<FilesProps>`
   overflow: auto; */
 `;
 
-export const AboutHandle = styled.div<FilesProps>`
+export const AboutHandle = styled.article<FilesProps>`
+  ${flexMixin({ justify: "flex-end", align: "center" })};
   background: url(${aboutHandle}) center/cover no-repeat;
   height: 50px;
   width: 100%;
   max-width: 975px;
   margin: 0 auto;
   cursor: grab;
+  padding: 0 15px;
+
+  > div {
+    margin-top: 3px;
+    ${flexMixin({ justify: "center", align: "center" })};
+
+    button {
+      margin-left: 0.5rem;
+    }
+
+    > div {
+      ${flexMixin({ justify: "center", align: "center" })};
+
+      button {
+        margin: 0 0.3rem;
+      }
+    }
+  }
 `;
 
 export const AboutMeText = styled.article`
