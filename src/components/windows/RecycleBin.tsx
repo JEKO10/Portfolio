@@ -76,19 +76,19 @@ const RecycleBin = () => {
             onClickControl("min");
             setIsVisible({ ...isVisible, recycle: false });
           }}
-          height={25}
-          width={28.5}
-          top={0.75}
-          right={5.04}
+          height={22}
+          width={25}
+          top={0.85}
+          right={5.15}
           isClicked={minimizeBtnClicked}
         />
         <MaximizeBtn
           onMouseDown={() => onMouseDownControl("max")}
           onClick={() => onClickControl("max")}
-          height={31}
-          width={31}
-          top={0.55}
-          right={3.08}
+          height={22}
+          width={25}
+          top={0.85}
+          right={3.25}
           isClicked={maximizeBtnClicked}
         />
         <CloseBtn
@@ -97,10 +97,10 @@ const RecycleBin = () => {
             onClickControl("close");
             setIsOpen({ ...isOpen, recycle: false });
           }}
-          height={30}
-          width={30}
-          top={0.6}
-          right={0.95}
+          height={22}
+          width={25}
+          top={0.85}
+          right={1.1}
           isClicked={closeBtnClicked}
         />
         <Book

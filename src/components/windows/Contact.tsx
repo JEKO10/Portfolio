@@ -108,19 +108,19 @@ const Contact = () => {
             onClickControl("min");
             setIsVisible({ ...isVisible, contact: false });
           }}
-          height={32}
-          width={34}
-          top={0.85}
-          right={5.4}
+          height={26}
+          width={29}
+          top={1}
+          right={5.6}
           isClicked={minimizeBtnClicked}
         />
         <MaximizeBtn
           onMouseDown={() => onMouseDownControl("max")}
           onClick={() => onClickControl("max")}
-          height={32}
-          width={36}
-          top={0.85}
-          right={3.2}
+          height={26}
+          width={29}
+          top={1}
+          right={3.4}
           isClicked={maximizeBtnClicked}
         />
         <CloseBtn
@@ -129,10 +129,10 @@ const Contact = () => {
             onClickControl("close");
             setIsOpen({ ...isOpen, contact: false });
           }}
-          height={35}
-          width={34}
-          top={0.75}
-          right={0.9}
+          height={26}
+          width={29}
+          top={1}
+          right={1}
           isClicked={closeBtnClicked}
         />
         <form ref={form} onSubmit={sendEmail} onKeyPress={handleKeyPress}>

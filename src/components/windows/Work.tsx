@@ -100,19 +100,19 @@ const Work = () => {
             onClickControl("min");
             setIsVisible({ ...isVisible, work: false });
           }}
-          height={27}
-          width={29}
-          top={0.7}
+          height={20.5}
+          width={24}
+          top={0.9}
           right={4.7}
           isClicked={minimizeBtnClicked}
         />
         <MaximizeBtn
           onMouseDown={() => onMouseDownControl("max")}
           onClick={() => onClickControl("max")}
-          height={28}
-          width={32}
-          top={0.68}
-          right={2.78}
+          height={20.5}
+          width={24}
+          top={0.9}
+          right={2.9}
           isClicked={maximizeBtnClicked}
         />
         <CloseBtn
@@ -121,10 +121,10 @@ const Work = () => {
             onClickControl("close");
             setIsOpen({ ...isOpen, work: false });
           }}
-          height={30}
-          width={30}
-          top={0.6}
-          right={0.68}
+          height={20.5}
+          width={24}
+          top={0.9}
+          right={0.9}
           isClicked={closeBtnClicked}
         />
         <article>

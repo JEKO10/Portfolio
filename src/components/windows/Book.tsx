@@ -47,19 +47,19 @@ const Book = () => {
             onClickControl("min");
             setIsVisible({ ...isVisible, book: false });
           }}
-          height={28}
-          width={32}
-          top={0.75}
-          right={5.1}
+          height={22}
+          width={25}
+          top={0.95}
+          right={5.35}
           isClicked={minimizeBtnClicked}
         />
         <MaximizeBtn
           onMouseDown={() => onMouseDownControl("max")}
           onClick={() => onClickControl("max")}
-          height={30}
-          width={34}
-          top={0.68}
-          right={3.05}
+          height={22}
+          width={25}
+          top={0.95}
+          right={3.25}
           isClicked={maximizeBtnClicked}
         />
         <CloseBtn
@@ -68,10 +68,10 @@ const Book = () => {
             onClickControl("close");
             setIsOpen({ ...isOpen, book: false });
           }}
-          height={32}
-          width={32.5}
-          top={0.6}
-          right={0.75}
+          height={22}
+          width={25}
+          top={0.95}
+          right={1}
           isClicked={closeBtnClicked}
         />
         <article>

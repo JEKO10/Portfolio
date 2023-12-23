@@ -2,12 +2,9 @@ import styled from "styled-components";
 
 import cancel from "../images/buttons/cancel.jpg";
 import cancelClicked from "../images/buttons/cancelClicked.jpg";
-import close from "../images/buttons/close.png";
-import closeClicked from "../images/buttons/closeClicked.jpg";
-import maximize from "../images/buttons/maximize.jpg";
-import maximizeClicked from "../images/buttons/maximizeClicked.jpg";
-import minimize from "../images/buttons/minimize.jpg";
-import minimizeClicked from "../images/buttons/minimizeClicked.jpg";
+// import close from "../images/buttons/close.png";
+// import maximize from "../images/buttons/maximize.png";
+// import minimize from "../images/buttons/minimize.jpg";
 import okBtn from "../images/buttons/okBtn.jpg";
 import okBtnClicked from "../images/buttons/okBtnClicked.jpg";
 
@@ -24,10 +21,11 @@ type OkBtnProps = {
 };
 
 export const MinimizeBtn = styled.button<ControlBtnProps>`
-  background: ${({ isClicked }) =>
-    isClicked
-      ? `url(${minimizeClicked}) center/cover no-repeat`
-      : `url(${minimize}) center/cover no-repeat`};
+  background: none;
+  box-shadow: ${({ isClicked }) =>
+    !isClicked
+      ? `-2px -2px #e0dede, -2px 0 #e0dede, 0 -2px #e0dede, -4px -4px white, -4px 0 white, 0 -4px white, 2px 2px #818181, 0 2px #818181, 2px 0 #818181,  2px -2px #e0dede, -2px 2px #818181, -4px 2px white, -4px 4px black, 4px 4px black, 4px 0 black, 0 4px black, 2px -4px white, 4px -4px black;`
+      : `-2px -2px #818181, -2px 0 #818181, 0 -2px #818181, -4px -4px black, -4px 0 black, 0 -4px black, 2px 2px #e0dede, 0 2px #e0dede, 2px 0 #e0dede,  2px -2px #818181, -2px 2px #e0dede, -4px 2px black, -4px 4px white, 4px 4px white, 4px 0 white, 0 4px white, 2px -4px black, 4px -4px white;`};
   height: ${({ height }) => height + "px"};
   width: ${({ width }) => width + "px"};
   position: absolute;
@@ -37,10 +35,11 @@ export const MinimizeBtn = styled.button<ControlBtnProps>`
 `;
 
 export const MaximizeBtn = styled.button<ControlBtnProps>`
-  background: ${({ isClicked }) =>
-    isClicked
-      ? `url(${maximizeClicked}) center/contain no-repeat`
-      : `url(${maximize}) center/contain no-repeat`};
+  background: none;
+  box-shadow: ${({ isClicked }) =>
+    !isClicked
+      ? `-2px -2px #e0dede, -2px 0 #e0dede, 0 -2px #e0dede, -4px -4px white, -4px 0 white, 0 -4px white, 2px 2px #818181, 0 2px #818181, 2px 0 #818181,  2px -2px #e0dede, -2px 2px #818181, -4px 2px white, -4px 4px black, 4px 4px black, 4px 0 black, 0 4px black, 2px -4px white, 4px -4px black;`
+      : `-2px -2px #818181, -2px 0 #818181, 0 -2px #818181, -4px -4px black, -4px 0 black, 0 -4px black, 2px 2px #e0dede, 0 2px #e0dede, 2px 0 #e0dede,  2px -2px #818181, -2px 2px #e0dede, -4px 2px black, -4px 4px white, 4px 4px white, 4px 0 white, 0 4px white, 2px -4px black, 4px -4px white;`};
   height: ${({ height }) => height + "px"};
   width: ${({ width }) => width + "px"};
   position: absolute;
@@ -50,10 +49,11 @@ export const MaximizeBtn = styled.button<ControlBtnProps>`
 `;
 
 export const CloseBtn = styled.button<ControlBtnProps>`
-  background: ${({ isClicked }) =>
-    isClicked
-      ? `url(${closeClicked}) center/contain no-repeat`
-      : `url(${close}) center/contain no-repeat`};
+  background: none;
+  box-shadow: ${({ isClicked }) =>
+    !isClicked
+      ? `-2px -2px #e0dede, -2px 0 #e0dede, 0 -2px #e0dede, -4px -4px white, -4px 0 white, 0 -4px white, 2px 2px #818181, 0 2px #818181, 2px 0 #818181,  2px -2px #e0dede, -2px 2px #818181, -4px 2px white, -4px 4px black, 4px 4px black, 4px 0 black, 0 4px black, 2px -4px white, 4px -4px black;`
+      : `-2px -2px #818181, -2px 0 #818181, 0 -2px #818181, -4px -4px black, -4px 0 black, 0 -4px black, 2px 2px #e0dede, 0 2px #e0dede, 2px 0 #e0dede,  2px -2px #818181, -2px 2px #e0dede, -4px 2px black, -4px 4px white, 4px 4px white, 4px 0 white, 0 4px white, 2px -4px black, 4px -4px white;`};
   height: ${({ height }) => height + "px"};
   width: ${({ width }) => width + "px"};
   position: absolute;

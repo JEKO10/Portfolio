@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import aboutHandle from "../images/handles/aboutHandle.jpg";
-import aboutModal from "../images/modals/aboutModal.png";
+import aboutModal from "../images/modals/aboutModal.jpg";
 import scroll from "../images/other/scroll.jpg";
 import scrollArrowDown from "../images/other/scrollArrowDown.jpg";
 import scrollArrowUp from "../images/other/scrollArrowUp.jpg";
