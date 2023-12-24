@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import aboutMe from "../assets/images/buttons/aboutTaskbar.png";
+import nameImg from "../assets/images/buttons/name.png";
 import dash from "../assets/images/other/dash.jpg";
 import {
   About,
@@ -30,7 +32,7 @@ const Taskbar = () => {
   return (
     <>
       <TaskBar data-no-select="true">
-        <div>
+        <article>
           <StartButton />
           <Dash src={dash} alt="dash" />
           <Name
@@ -45,7 +47,9 @@ const Taskbar = () => {
               setIsOpen({ ...isOpen, about: true });
             }}
             isClicked={taskbarBtnClicked.name}
-          />
+          >
+            <img src={nameImg} alt="nameImg" />
+          </Name>
           {isOpen.about && (
             <About
               onMouseDown={() =>
@@ -59,7 +63,9 @@ const Taskbar = () => {
                 setIsVisible({ ...isVisible, about: !isVisible.about });
               }}
               isClicked={taskbarBtnClicked.about}
-            />
+            >
+              <img src={aboutMe} alt="aboutMe" />
+            </About>
           )}
           {isOpen.work && (
             <Work
@@ -121,7 +127,7 @@ const Taskbar = () => {
               isClicked={taskbarBtnClicked.recycle}
             />
           )}
-        </div>
+        </article>
         <Toolbar />
       </TaskBar>
     </>
