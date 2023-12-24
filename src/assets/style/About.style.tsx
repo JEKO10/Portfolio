@@ -34,8 +34,8 @@ export const AboutHandle = styled.article<FilesProps>`
   width: 100%;
   max-width: 975px;
   margin: 0 auto;
-  cursor: grab;
   padding: 0 15px;
+  cursor: grab;
 
   > div {
     margin-top: 3px;

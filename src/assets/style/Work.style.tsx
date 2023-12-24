@@ -2,6 +2,7 @@ import styled, { css } from "styled-components";
 
 import workHandle from "../images/handles/workHandle.jpg";
 import workModal from "../images/modals/workModal.jpg";
+import { flexMixin } from "./GlobalStyles";
 
 type FilesProps = {
   lastClicked?: string;
@@ -29,12 +30,31 @@ export const WorkFile = styled.section<FilesProps>`
 `;
 
 export const WorkHandle = styled.div<FilesProps>`
-  background: url(${workHandle}) center/cover no-repeat;
-  height: 45px;
-  width: 99.99%;
+  ${flexMixin({ justify: "flex-end", align: "center" })};
+  background: url(${workHandle}) center/contain no-repeat;
+  height: 48px;
+  width: 100%;
   max-width: 878px;
   margin: 0 auto;
+  padding: 0 15px;
   cursor: grab;
+
+  > div {
+    margin-top: 7px;
+    ${flexMixin({ justify: "center", align: "center" })};
+
+    button {
+      margin-left: 0.5rem;
+    }
+
+    > div {
+      ${flexMixin({ justify: "center", align: "center" })};
+
+      button {
+        margin: 0 0.3rem;
+      }
+    }
+  }
 `;
 
 export const Project = styled.button<ProjectProps>`

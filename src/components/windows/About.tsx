@@ -1,45 +1,23 @@
 import React from "react";
 import Draggable from "react-draggable";
 
-import close from "../../assets/images/buttons/close.png";
-import maximize from "../../assets/images/buttons/maximize.png";
-import minimize from "../../assets/images/buttons/minimize.jpg";
 import {
   AboutFile,
   AboutHandle,
   AboutMeText,
 } from "../../assets/style/About.style";
-import {
-  CloseBtn,
-  MaximizeBtn,
-  MinimizeBtn,
-} from "../../assets/style/Files.style";
 import { useGlobalContext } from "../../utils/context";
-import useWindowControls from "../../utils/useWindowControls";
+import ControlBtns from "./ControlBtns";
 
 const About = () => {
-  const {
-    isOpen,
-    setIsOpen,
-    lastClicked,
-    setLastClicked,
-    isVisible,
-    setIsVisible,
-  } = useGlobalContext();
-
-  const {
-    minimizeBtnClicked,
-    maximizeBtnClicked,
-    closeBtnClicked,
-    onMouseDownControl,
-    onClickControl,
-  } = useWindowControls();
+  const { lastClicked, setLastClicked, isVisible } = useGlobalContext();
 
   return (
     <Draggable
       defaultPosition={{ x: 200, y: -500 }}
       handle=".handle"
       bounds="body"
+      cancel=".handle *"
     >
       <AboutFile
         onMouseDownCapture={() => setLastClicked("about")}
@@ -48,43 +26,7 @@ const About = () => {
         data-no-select="true"
       >
         <AboutHandle className="handle" isVisible={isVisible.about}>
-          <div>
-            <div>
-              <MinimizeBtn
-                onMouseDown={() => onMouseDownControl("min")}
-                onClick={() => {
-                  onClickControl("min");
-                  setIsVisible({ ...isVisible, about: false });
-                }}
-                height={22}
-                width={25}
-                isClicked={minimizeBtnClicked}
-              >
-                <img src={minimize} alt="minimize" />
-              </MinimizeBtn>
-              <MaximizeBtn
-                onMouseDown={() => onMouseDownControl("max")}
-                onClick={() => onClickControl("max")}
-                height={22}
-                width={25}
-                isClicked={maximizeBtnClicked}
-              >
-                <img src={maximize} alt="maximize" />
-              </MaximizeBtn>
-            </div>
-            <CloseBtn
-              onMouseDown={() => onMouseDownControl("close")}
-              onClick={() => {
-                onClickControl("close");
-                setIsOpen({ ...isOpen, about: false });
-              }}
-              height={22}
-              width={25}
-              isClicked={closeBtnClicked}
-            >
-              <img src={close} alt="close" />
-            </CloseBtn>
-          </div>
+          <ControlBtns iconName="about" />
         </AboutHandle>
         <AboutMeText>
           <p>

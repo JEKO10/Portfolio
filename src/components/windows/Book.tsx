@@ -2,37 +2,18 @@ import React from "react";
 import Draggable from "react-draggable";
 
 import { BookFile, BookHandle, BookText } from "../../assets/style/Book.style";
-import {
-  CloseBtn,
-  MaximizeBtn,
-  MinimizeBtn,
-} from "../../assets/style/Files.style";
 import { useGlobalContext } from "../../utils/context";
-import useWindowControls from "../../utils/useWindowControls";
+import ControlBtns from "./ControlBtns";
 
 const Book = () => {
-  const {
-    isOpen,
-    setIsOpen,
-    lastClicked,
-    isVisible,
-    setLastClicked,
-    setIsVisible,
-  } = useGlobalContext();
-
-  const {
-    minimizeBtnClicked,
-    maximizeBtnClicked,
-    closeBtnClicked,
-    onMouseDownControl,
-    onClickControl,
-  } = useWindowControls();
+  const { lastClicked, isVisible, setLastClicked } = useGlobalContext();
 
   return (
     <Draggable
       defaultPosition={{ x: 100, y: -400 }}
       handle=".handle"
       bounds="body"
+      cancel=".handle *"
     >
       <BookFile
         onMouseDownCapture={() => setLastClicked("book")}
@@ -40,40 +21,9 @@ const Book = () => {
         isVisible={isVisible.book}
         data-no-select="true"
       >
-        <BookHandle className="handle" isVisible={isVisible.book} />
-        <MinimizeBtn
-          onMouseDown={() => onMouseDownControl("min")}
-          onClick={() => {
-            onClickControl("min");
-            setIsVisible({ ...isVisible, book: false });
-          }}
-          height={22}
-          width={25}
-          top={0.95}
-          right={5.35}
-          isClicked={minimizeBtnClicked}
-        />
-        <MaximizeBtn
-          onMouseDown={() => onMouseDownControl("max")}
-          onClick={() => onClickControl("max")}
-          height={22}
-          width={25}
-          top={0.95}
-          right={3.25}
-          isClicked={maximizeBtnClicked}
-        />
-        <CloseBtn
-          onMouseDown={() => onMouseDownControl("close")}
-          onClick={() => {
-            onClickControl("close");
-            setIsOpen({ ...isOpen, book: false });
-          }}
-          height={22}
-          width={25}
-          top={0.95}
-          right={1}
-          isClicked={closeBtnClicked}
-        />
+        <BookHandle className="handle" isVisible={isVisible.book}>
+          <ControlBtns iconName="book" />
+        </BookHandle>
         <article>
           <BookText>Site Design and Development: </BookText>
           <BookText>

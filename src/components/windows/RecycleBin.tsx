@@ -5,16 +5,11 @@ import bookClicked from "../../assets/images/icons/bookClicked.png";
 import book from "../../assets/images/icons/bookIcon.png";
 import { Book } from "../../assets/style/Book.style";
 import {
-  CloseBtn,
-  MaximizeBtn,
-  MinimizeBtn,
-} from "../../assets/style/Files.style";
-import {
   RecycleBinFile,
   RecycleBinHandle,
 } from "../../assets/style/RecycleBin.style";
 import { useGlobalContext } from "../../utils/context";
-import useWindowControls from "../../utils/useWindowControls";
+import ControlBtns from "./ControlBtns";
 
 const RecycleBin = () => {
   const {
@@ -27,14 +22,6 @@ const RecycleBin = () => {
     isClicked,
     setIsClicked,
   } = useGlobalContext();
-
-  const {
-    minimizeBtnClicked,
-    maximizeBtnClicked,
-    closeBtnClicked,
-    onMouseDownControl,
-    onClickControl,
-  } = useWindowControls();
 
   const handleClick = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -62,6 +49,7 @@ const RecycleBin = () => {
       defaultPosition={{ x: 500, y: -450 }}
       handle=".handle"
       bounds="body"
+      cancel=".handle *"
     >
       <RecycleBinFile
         onMouseDownCapture={() => setLastClicked("recycle")}
@@ -69,40 +57,9 @@ const RecycleBin = () => {
         isVisible={isVisible.recycle}
         data-no-select="true"
       >
-        <RecycleBinHandle className="handle" isVisible={isVisible.recycle} />
-        <MinimizeBtn
-          onMouseDown={() => onMouseDownControl("min")}
-          onClick={() => {
-            onClickControl("min");
-            setIsVisible({ ...isVisible, recycle: false });
-          }}
-          height={22}
-          width={25}
-          top={0.85}
-          right={5.15}
-          isClicked={minimizeBtnClicked}
-        />
-        <MaximizeBtn
-          onMouseDown={() => onMouseDownControl("max")}
-          onClick={() => onClickControl("max")}
-          height={22}
-          width={25}
-          top={0.85}
-          right={3.25}
-          isClicked={maximizeBtnClicked}
-        />
-        <CloseBtn
-          onMouseDown={() => onMouseDownControl("close")}
-          onClick={() => {
-            onClickControl("close");
-            setIsOpen({ ...isOpen, recycle: false });
-          }}
-          height={22}
-          width={25}
-          top={0.85}
-          right={1.1}
-          isClicked={closeBtnClicked}
-        />
+        <RecycleBinHandle className="handle" isVisible={isVisible.recycle}>
+          <ControlBtns iconName="recycle" />
+        </RecycleBinHandle>
         <Book
           iconName={book}
           clickedIcon={bookClicked}

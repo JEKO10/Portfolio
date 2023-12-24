@@ -2,6 +2,7 @@ import styled, { css } from "styled-components";
 
 import bookHandle from "../images/handles/bookHandle.jpg";
 import book from "../images/modals/bookModal.jpg";
+import { flexMixin } from "./GlobalStyles";
 
 type FilesProps = {
   lastClicked?: string;
@@ -49,10 +50,29 @@ export const Book = styled.button<BookProps>`
 `;
 
 export const BookHandle = styled.div<FilesProps>`
-  background: url(${bookHandle}) left/contain no-repeat;
+  ${flexMixin({ justify: "flex-end", align: "center" })};
+  background: url(${bookHandle}) center/contain no-repeat;
   height: 50px;
   width: 100%;
+  padding: 0 15px;
   cursor: grab;
+
+  > div {
+    margin-top: 3px;
+    ${flexMixin({ justify: "center", align: "center" })};
+
+    button {
+      margin-left: 0.5rem;
+    }
+
+    > div {
+      ${flexMixin({ justify: "center", align: "center" })};
+
+      button {
+        margin: 0 0.3rem;
+      }
+    }
+  }
 `;
 
 export const BookText = styled.p`

@@ -6,26 +6,19 @@ import okBtn from "../images/buttons/okBtn.jpg";
 import okBtnClicked from "../images/buttons/okBtnClicked.jpg";
 import { flexMixin } from "./GlobalStyles";
 
-type ControlBtnProps = {
-  height: number;
-  width: number;
-  top: number;
-  right: number;
+type BtnProps = {
   isClicked?: boolean;
 };
 
-type OkBtnProps = {
-  isClicked: boolean;
-};
-
-export const MinimizeBtn = styled.button<ControlBtnProps>`
+export const MinimizeBtn = styled.button<BtnProps>`
+  background-color: #c0c0c0;
   ${flexMixin({ justify: "flex-start", align: "flex-end" })};
   box-shadow: ${({ isClicked }) =>
     !isClicked
       ? `-2px -2px #e0dede, -2px 0 #e0dede, 0 -2px #e0dede, -4px -4px white, -4px 0 white, 0 -4px white, 2px 2px #818181, 0 2px #818181, 2px 0 #818181,  2px -2px #e0dede, -2px 2px #818181, -4px 2px white, -4px 4px black, 4px 4px black, 4px 0 black, 0 4px black, 2px -4px white, 4px -4px black;`
       : `-2px -2px #818181, -2px 0 #818181, 0 -2px #818181, -4px -4px black, -4px 0 black, 0 -4px black, 2px 2px #e0dede, 0 2px #e0dede, 2px 0 #e0dede,  2px -2px #818181, -2px 2px #e0dede, -4px 2px black, -4px 4px white, 4px 4px white, 4px 0 white, 0 4px white, 2px -4px black, 4px -4px white;`};
-  height: ${({ height }) => height + "px"};
-  width: ${({ width }) => width + "px"};
+  height: 22px;
+  width: 25px;
   cursor: pointer;
 
   img {
@@ -35,14 +28,15 @@ export const MinimizeBtn = styled.button<ControlBtnProps>`
   }
 `;
 
-export const MaximizeBtn = styled.button<ControlBtnProps>`
+export const MaximizeBtn = styled.button<BtnProps>`
+  background-color: #c0c0c0;
   ${flexMixin({ justify: "center", align: "center" })};
   box-shadow: ${({ isClicked }) =>
     !isClicked
       ? `-2px -2px #e0dede, -2px 0 #e0dede, 0 -2px #e0dede, -4px -4px white, -4px 0 white, 0 -4px white, 2px 2px #818181, 0 2px #818181, 2px 0 #818181,  2px -2px #e0dede, -2px 2px #818181, -4px 2px white, -4px 4px black, 4px 4px black, 4px 0 black, 0 4px black, 2px -4px white, 4px -4px black;`
       : `-2px -2px #818181, -2px 0 #818181, 0 -2px #818181, -4px -4px black, -4px 0 black, 0 -4px black, 2px 2px #e0dede, 0 2px #e0dede, 2px 0 #e0dede,  2px -2px #818181, -2px 2px #e0dede, -4px 2px black, -4px 4px white, 4px 4px white, 4px 0 white, 0 4px white, 2px -4px black, 4px -4px white;`};
-  height: ${({ height }) => height + "px"};
-  width: ${({ width }) => width + "px"};
+  height: 22px;
+  width: 25px;
   cursor: pointer;
 
   img {
@@ -51,14 +45,15 @@ export const MaximizeBtn = styled.button<ControlBtnProps>`
   }
 `;
 
-export const CloseBtn = styled.button<ControlBtnProps>`
+export const CloseBtn = styled.button<BtnProps>`
+  background-color: #c0c0c0;
   ${flexMixin({ justify: "center", align: "center" })};
   box-shadow: ${({ isClicked }) =>
     !isClicked
       ? `-2px -2px #e0dede, -2px 0 #e0dede, 0 -2px #e0dede, -4px -4px white, -4px 0 white, 0 -4px white, 2px 2px #818181, 0 2px #818181, 2px 0 #818181,  2px -2px #e0dede, -2px 2px #818181, -4px 2px white, -4px 4px black, 4px 4px black, 4px 0 black, 0 4px black, 2px -4px white, 4px -4px black;`
       : `-2px -2px #818181, -2px 0 #818181, 0 -2px #818181, -4px -4px black, -4px 0 black, 0 -4px black, 2px 2px #e0dede, 0 2px #e0dede, 2px 0 #e0dede,  2px -2px #818181, -2px 2px #e0dede, -4px 2px black, -4px 4px white, 4px 4px white, 4px 0 white, 0 4px white, 2px -4px black, 4px -4px white;`};
-  height: ${({ height }) => height + "px"};
-  width: ${({ width }) => width + "px"};
+  height: 22px;
+  width: 25px;
   cursor: pointer;
 
   img {
@@ -67,7 +62,7 @@ export const CloseBtn = styled.button<ControlBtnProps>`
   }
 `;
 
-export const OkButton = styled.button<OkBtnProps>`
+export const OkButton = styled.button<BtnProps>`
   background: ${({ isClicked }) =>
     isClicked
       ? `url(${okBtnClicked}) center/contain no-repeat`
@@ -80,7 +75,7 @@ export const OkButton = styled.button<OkBtnProps>`
   cursor: pointer;
 `;
 
-export const CancelBtn = styled.button<OkBtnProps>`
+export const CancelBtn = styled.button<BtnProps>`
   background: ${({ isClicked }) =>
     isClicked
       ? `url(${cancelClicked}) center/contain no-repeat`

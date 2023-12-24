@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import recycleHandle from "../images/handles/recycleHandle.jpg";
 import recycleBin from "../images/modals/recycleBin.png";
+import { flexMixin } from "./GlobalStyles";
 
 type FilesProps = {
   lastClicked?: string;
@@ -19,10 +20,29 @@ export const RecycleBinFile = styled.section<FilesProps>`
 `;
 
 export const RecycleBinHandle = styled.div<FilesProps>`
+  ${flexMixin({ justify: "flex-end", align: "center" })};
   background: url(${recycleHandle}) center/cover no-repeat;
   height: 44px;
   width: 98.5%;
   max-width: 787px;
   margin: 0 auto;
+  padding: 0 15px;
   cursor: grab;
+
+  > div {
+    margin-top: 6px;
+    ${flexMixin({ justify: "center", align: "center" })};
+
+    button {
+      margin-left: 0.5rem;
+    }
+
+    > div {
+      ${flexMixin({ justify: "center", align: "center" })};
+
+      button {
+        margin: 0 0.3rem;
+      }
+    }
+  }
 `;

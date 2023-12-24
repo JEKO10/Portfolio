@@ -9,32 +9,13 @@ import travel from "../../assets/images/icons/Travel.png";
 import travelClicked from "../../assets/images/icons/travelClicked.png";
 import walkmateClicked from "../../assets/images/icons/walkClicked.png";
 import walkmate from "../../assets/images/icons/Walkmate.png";
-import {
-  CloseBtn,
-  MaximizeBtn,
-  MinimizeBtn,
-} from "../../assets/style/Files.style";
 import { Project, WorkFile, WorkHandle } from "../../assets/style/Work.style";
 import { useGlobalContext } from "../../utils/context";
-import useWindowControls from "../../utils/useWindowControls";
+import ControlBtns from "./ControlBtns";
 
 const Work = () => {
-  const {
-    isOpen,
-    setIsOpen,
-    lastClicked,
-    setLastClicked,
-    isVisible,
-    setIsVisible,
-  } = useGlobalContext();
+  const { lastClicked, setLastClicked, isVisible } = useGlobalContext();
 
-  const {
-    minimizeBtnClicked,
-    maximizeBtnClicked,
-    closeBtnClicked,
-    onMouseDownControl,
-    onClickControl,
-  } = useWindowControls();
   const projectRef = useRef<HTMLButtonElement>(null);
 
   const [isClicked, setIsClicked] = useState({
@@ -86,6 +67,7 @@ const Work = () => {
       defaultPosition={{ x: 100, y: -430 }}
       handle=".handle"
       bounds="body"
+      cancel=".handle *"
     >
       <WorkFile
         onMouseDownCapture={() => setLastClicked("work")}
@@ -93,40 +75,9 @@ const Work = () => {
         lastClicked={lastClicked}
         data-no-select="true"
       >
-        <WorkHandle className="handle" isVisible={isVisible.work} />
-        <MinimizeBtn
-          onMouseDown={() => onMouseDownControl("min")}
-          onClick={() => {
-            onClickControl("min");
-            setIsVisible({ ...isVisible, work: false });
-          }}
-          height={20.5}
-          width={24}
-          top={0.9}
-          right={4.7}
-          isClicked={minimizeBtnClicked}
-        />
-        <MaximizeBtn
-          onMouseDown={() => onMouseDownControl("max")}
-          onClick={() => onClickControl("max")}
-          height={20.5}
-          width={24}
-          top={0.9}
-          right={2.9}
-          isClicked={maximizeBtnClicked}
-        />
-        <CloseBtn
-          onMouseDown={() => onMouseDownControl("close")}
-          onClick={() => {
-            onClickControl("close");
-            setIsOpen({ ...isOpen, work: false });
-          }}
-          height={20.5}
-          width={24}
-          top={0.9}
-          right={0.9}
-          isClicked={closeBtnClicked}
-        />
+        <WorkHandle className="handle" isVisible={isVisible.work}>
+          <ControlBtns iconName="work" />
+        </WorkHandle>
         <article>
           <Project
             project={walkmate}
