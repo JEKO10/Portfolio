@@ -12,7 +12,6 @@ import {
 import { CancelBtn, OkButton } from "../../assets/style/Files.style";
 import { useGlobalContext } from "../../utils/context";
 import AnalogClock from "../AnalogClock";
-import ControlBtns from "./ControlBtns";
 
 const Time = () => {
   const { isOpen, setIsOpen, lastClicked, setLastClicked } = useGlobalContext();
@@ -68,9 +67,7 @@ const Time = () => {
         lastClicked={lastClicked}
         data-no-select="true"
       >
-        <ClockHandle className="handle">
-          <ControlBtns iconName="time" />
-        </ClockHandle>
+        <ClockHandle className="handle" />
         <article>
           <Month>{month[time.getMonth()]}</Month>
           <Year>2023</Year>

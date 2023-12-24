@@ -29,7 +29,7 @@ export const WorkFile = styled.section<FilesProps>`
   z-index: ${({ lastClicked }) => (lastClicked === "work" ? 2 : 1)};
 `;
 
-export const WorkHandle = styled.div<FilesProps>`
+export const WorkHandle = styled.article<FilesProps>`
   ${flexMixin({ justify: "flex-end", align: "center" })};
   background: url(${workHandle}) center/contain no-repeat;
   height: 48px;
@@ -38,23 +38,6 @@ export const WorkHandle = styled.div<FilesProps>`
   margin: 0 auto;
   padding: 0 15px;
   cursor: grab;
-
-  > div {
-    margin-top: 7px;
-    ${flexMixin({ justify: "center", align: "center" })};
-
-    button {
-      margin-left: 0.5rem;
-    }
-
-    > div {
-      ${flexMixin({ justify: "center", align: "center" })};
-
-      button {
-        margin: 0 0.3rem;
-      }
-    }
-  }
 `;
 
 export const Project = styled.button<ProjectProps>`

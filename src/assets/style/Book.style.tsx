@@ -56,23 +56,6 @@ export const BookHandle = styled.div<FilesProps>`
   width: 100%;
   padding: 0 15px;
   cursor: grab;
-
-  > div {
-    margin-top: 3px;
-    ${flexMixin({ justify: "center", align: "center" })};
-
-    button {
-      margin-left: 0.5rem;
-    }
-
-    > div {
-      ${flexMixin({ justify: "center", align: "center" })};
-
-      button {
-        margin: 0 0.3rem;
-      }
-    }
-  }
 `;
 
 export const BookText = styled.p`

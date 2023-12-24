@@ -19,7 +19,7 @@ export const RecycleBinFile = styled.section<FilesProps>`
   z-index: ${({ lastClicked }) => (lastClicked === "recycle" ? 2 : 1)};
 `;
 
-export const RecycleBinHandle = styled.div<FilesProps>`
+export const RecycleBinHandle = styled.article<FilesProps>`
   ${flexMixin({ justify: "flex-end", align: "center" })};
   background: url(${recycleHandle}) center/cover no-repeat;
   height: 44px;
@@ -28,21 +28,4 @@ export const RecycleBinHandle = styled.div<FilesProps>`
   margin: 0 auto;
   padding: 0 15px;
   cursor: grab;
-
-  > div {
-    margin-top: 6px;
-    ${flexMixin({ justify: "center", align: "center" })};
-
-    button {
-      margin-left: 0.5rem;
-    }
-
-    > div {
-      ${flexMixin({ justify: "center", align: "center" })};
-
-      button {
-        margin: 0 0.3rem;
-      }
-    }
-  }
 `;

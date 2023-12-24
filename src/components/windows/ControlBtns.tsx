@@ -5,6 +5,7 @@ import maximize from "../../assets/images/buttons/maximize.png";
 import minimize from "../../assets/images/buttons/minimize.jpg";
 import {
   CloseBtn,
+  ControlBtnsContainer,
   MaximizeBtn,
   MinimizeBtn,
 } from "../../assets/style/Files.style";
@@ -23,7 +24,7 @@ const ControlBtns = ({ iconName }: { iconName: string }) => {
   } = useWindowControls();
 
   return (
-    <div>
+    <ControlBtnsContainer iconName={iconName}>
       <div>
         <MinimizeBtn
           onMouseDown={() => onMouseDownControl("min")}
@@ -53,7 +54,7 @@ const ControlBtns = ({ iconName }: { iconName: string }) => {
       >
         <img src={close} alt="close" />
       </CloseBtn>
-    </div>
+    </ControlBtnsContainer>
   );
 };
 
