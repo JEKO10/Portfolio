@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 
 import aboutMe from "../assets/images/buttons/aboutTaskbar.png";
+import bookImg from "../assets/images/buttons/bookTaskbar.png";
+import contactImg from "../assets/images/buttons/contactTaskbar.png";
 import nameImg from "../assets/images/buttons/name.png";
+import recycleImg from "../assets/images/buttons/recycleTaskbar.png";
+import workImg from "../assets/images/buttons/workTaskbar.png";
 import dash from "../assets/images/other/dash.jpg";
 import {
   About,
@@ -48,7 +52,7 @@ const Taskbar = () => {
             }}
             isClicked={taskbarBtnClicked.name}
           >
-            <img src={nameImg} alt="nameImg" />
+            <img src={nameImg} alt="name" />
           </Name>
           {isOpen.about && (
             <About
@@ -80,7 +84,9 @@ const Taskbar = () => {
                 setIsVisible({ ...isVisible, work: !isVisible.work });
               }}
               isClicked={taskbarBtnClicked.work}
-            />
+            >
+              <img src={workImg} alt="work" />
+            </Work>
           )}
           {isOpen.contact && (
             <Contact
@@ -95,7 +101,9 @@ const Taskbar = () => {
                 setIsVisible({ ...isVisible, contact: !isVisible.contact });
               }}
               isClicked={taskbarBtnClicked.contact}
-            />
+            >
+              <img src={contactImg} alt="contact" />
+            </Contact>
           )}
           {isOpen.book && (
             <Book
@@ -110,7 +118,9 @@ const Taskbar = () => {
                 setIsVisible({ ...isVisible, book: !isVisible.book });
               }}
               isClicked={taskbarBtnClicked.book}
-            />
+            >
+              <img src={bookImg} alt="book" />
+            </Book>
           )}
           {isOpen.recycle && (
             <Recycle
@@ -125,7 +135,9 @@ const Taskbar = () => {
                 setIsVisible({ ...isVisible, recycle: !isVisible.recycle });
               }}
               isClicked={taskbarBtnClicked.recycle}
-            />
+            >
+              <img src={recycleImg} alt="recycle" />
+            </Recycle>
           )}
         </article>
         <Toolbar />
