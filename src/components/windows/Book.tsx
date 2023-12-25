@@ -3,7 +3,7 @@ import Draggable from "react-draggable";
 
 import { BookFile, BookHandle, BookText } from "../../assets/style/Book.style";
 import { useGlobalContext } from "../../utils/context";
-import ControlBtns from "./ControlBtns";
+import ControlBtns from "../ControlBtns";
 
 const Book = () => {
   const { lastClicked, isVisible, setLastClicked } = useGlobalContext();

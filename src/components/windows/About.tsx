@@ -7,7 +7,7 @@ import {
   AboutMeText,
 } from "../../assets/style/About.style";
 import { useGlobalContext } from "../../utils/context";
-import ControlBtns from "./ControlBtns";
+import ControlBtns from "../ControlBtns";
 
 const About = () => {
   const { lastClicked, setLastClicked, isVisible } = useGlobalContext();

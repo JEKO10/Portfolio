@@ -9,7 +9,7 @@ import {
   RecycleBinHandle,
 } from "../../assets/style/RecycleBin.style";
 import { useGlobalContext } from "../../utils/context";
-import ControlBtns from "./ControlBtns";
+import ControlBtns from "../ControlBtns";
 
 const RecycleBin = () => {
   const {

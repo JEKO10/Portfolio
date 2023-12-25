@@ -1,16 +1,16 @@
 import React from "react";
 
-import close from "../../assets/images/buttons/close.png";
-import maximize from "../../assets/images/buttons/maximize.png";
-import minimize from "../../assets/images/buttons/minimize.jpg";
+import close from "../assets/images/buttons/close.png";
+import maximize from "../assets/images/buttons/maximize.png";
+import minimize from "../assets/images/buttons/minimize.jpg";
 import {
   CloseBtn,
   ControlBtnsContainer,
   MaximizeBtn,
   MinimizeBtn,
-} from "../../assets/style/Files.style";
-import { useGlobalContext } from "../../utils/context";
-import useWindowControls from "../../utils/useWindowControls";
+} from "../assets/style/Files.style";
+import { useGlobalContext } from "../utils/context";
+import useWindowControls from "../utils/useWindowControls";
 
 const ControlBtns = ({ iconName }: { iconName: string }) => {
   const { isOpen, setIsOpen, isVisible, setIsVisible } = useGlobalContext();

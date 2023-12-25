@@ -14,7 +14,7 @@ import {
   ContactTextarea,
 } from "../../assets/style/Contact.style";
 import { useGlobalContext } from "../../utils/context";
-import ControlBtns from "./ControlBtns";
+import ControlBtns from "../ControlBtns";
 
 const Contact = () => {
   const { isOpen, setIsOpen, lastClicked, setLastClicked, isVisible } =

@@ -11,7 +11,7 @@ import walkmateClicked from "../../assets/images/icons/walkClicked.png";
 import walkmate from "../../assets/images/icons/Walkmate.png";
 import { Project, WorkFile, WorkHandle } from "../../assets/style/Work.style";
 import { useGlobalContext } from "../../utils/context";
-import ControlBtns from "./ControlBtns";
+import ControlBtns from "../ControlBtns";
 
 const Work = () => {
   const { lastClicked, setLastClicked, isVisible } = useGlobalContext();
