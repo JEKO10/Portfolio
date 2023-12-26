@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import recycleHandle from "../images/handles/recycleHandle.jpg";
-import recycleBin from "../images/modals/recycleBin.png";
+import recycleBin from "../images/modals/recycleBin.jpg";
 import { flexMixin } from "./GlobalStyles";
 
 type FilesProps = {

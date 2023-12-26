@@ -21,7 +21,7 @@ const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [isContactBtnClicked, setIsContactBtnClicked] = useState({
+  const [isContactElementClicked, setIsContactElementClicked] = useState({
     send: false,
     cancel: false,
   });
@@ -92,58 +92,64 @@ const Contact = () => {
             }}
           />
           <ContactInput
-            bottom={6.2}
             type="text"
             name="from_name"
+            autoComplete="off"
             value={name}
             onChange={(e) => {
               setName(e.currentTarget.value);
             }}
-            autoComplete="off"
+            bottom={6.2}
           />
           <ContactInput
-            bottom={1.8}
             type="email"
             name="email_id"
+            autoComplete="off"
             value={email}
             onChange={(e) => {
               setEmail(e.currentTarget.value);
             }}
-            autoComplete="off"
+            bottom={1.8}
           />
           <ContactButton
             type="submit"
             value="Send"
             onMouseDown={() =>
-              setIsContactBtnClicked({ ...isContactBtnClicked, send: true })
+              setIsContactElementClicked({
+                ...isContactElementClicked,
+                send: true,
+              })
             }
             onClick={() => {
-              setIsContactBtnClicked({
-                ...isContactBtnClicked,
+              setIsContactElementClicked({
+                ...isContactElementClicked,
                 send: false,
               });
             }}
-            isClicked={isContactBtnClicked.send}
-            bottom={6.5}
+            isClicked={isContactElementClicked.send}
+            bottom={6.2}
           >
             Send
           </ContactButton>
         </form>
         <ContactButton
           onMouseDown={() =>
-            setIsContactBtnClicked({ ...isContactBtnClicked, cancel: true })
+            setIsContactElementClicked({
+              ...isContactElementClicked,
+              cancel: true,
+            })
           }
           onClick={() => {
-            setIsContactBtnClicked({
-              ...isContactBtnClicked,
+            setIsContactElementClicked({
+              ...isContactElementClicked,
               cancel: false,
             });
             setIsOpen({ ...isOpen, contact: false });
           }}
-          isClicked={isContactBtnClicked.cancel}
-          bottom={2.1}
+          isClicked={isContactElementClicked.cancel}
+          bottom={1.8}
         >
-          <span>Cancel</span>
+          Cancel
         </ContactButton>
       </ContactFile>
     </Draggable>

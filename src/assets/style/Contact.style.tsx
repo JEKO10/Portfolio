@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 import contactHandle from "../images/handles/contactHandle.jpg";
 import contactModal from "../images/modals/contactModal.jpg";
-import inputBg from "../images/other/input.jpg";
-import textareaBg from "../images/other/textArea.jpg";
 import { flexMixin, primaryFont } from "./GlobalStyles";
 
 type FilesProps = {
@@ -11,13 +9,9 @@ type FilesProps = {
   isVisible: boolean;
 };
 
-type InputProps = {
+type ContactProps = {
   bottom: number;
-};
-
-type ButtonProps = {
-  bottom: number;
-  isClicked: boolean;
+  isClicked?: boolean;
 };
 
 export const ContactFile = styled.section<FilesProps>`
@@ -40,7 +34,14 @@ export const ContactHandle = styled.article<FilesProps>`
 `;
 
 export const ContactTextarea = styled.textarea`
-  background: url(${textareaBg}) center/cover no-repeat;
+  background-color: #fff;
+  box-shadow: -2px -2px 0 0 #818181, -2px 0 0 0 #818181, 0 -2px 0 0 #818181,
+    -4px -4px 0 0 black, -4px 0 0 0 black, 0 -4px 0 0 black, 2px 2px 0 0 #e0dede,
+    0 2px 0 0 #e0dede, 2px 0 0 0 #e0dede, 2px -2px 0 0 #818181,
+    -2px 2px 0 0 #e0dede, -4px 2px 0 0 black, -4px 4px 0 0 white,
+    4px 4px 0 0 white, 4px 0 0 0 white, 0 4px 0 0 white, 2px -4px 0 0 black,
+    4px -4px 0 0 white;
+
   font-size: 2rem;
   height: 320px;
   width: 950px;
@@ -48,33 +49,47 @@ export const ContactTextarea = styled.textarea`
   resize: none;
   position: absolute;
   left: 1.5rem;
-  top: 8.2rem;
+  top: 8.3rem;
   outline: none;
   padding: 15px;
 `;
 
-export const ContactInput = styled.input<InputProps>`
-  background: url(${inputBg}) center/cover no-repeat;
+export const ContactInput = styled.input<ContactProps>`
+  background-color: #d9d9d9;
+  box-shadow: -2px -2px #e0dede, -2px 0 #e0dede, 0 -2px #e0dede, -4px -4px white,
+    -4px 0 white, 0 -4px white, 2px 2px #818181, 0 2px #818181, 2px 0 #818181,
+    2px -2px #e0dede, -2px 2px #818181, -4px 2px white, -4px 4px black,
+    4px 4px black, 4px 0 black, 0 4px black, 2px -4px white, 4px -4px black;
+
   font-size: 2rem;
   font-family: ${primaryFont};
   position: absolute;
-  left: 12.45rem;
+  left: 12.5rem;
   bottom: ${({ bottom }) => bottom + "rem"};
-  height: 47.11px;
+  height: 47px;
   width: 544px;
-  outline: none;
   padding: 0 10px;
+  outline: none;
+
+  &:focus {
+    box-shadow: -2px -2px 0 0 #818181, -2px 0 0 0 #818181, 0 -2px 0 0 #818181,
+      -4px -4px 0 0 black, -4px 0 0 0 black, 0 -4px 0 0 black,
+      2px 2px 0 0 #e0dede, 0 2px 0 0 #e0dede, 2px 0 0 0 #e0dede,
+      2px -2px 0 0 #818181, -2px 2px 0 0 #e0dede, -4px 2px 0 0 black,
+      -4px 4px 0 0 white, 4px 4px 0 0 white, 4px 0 0 0 white, 0 4px 0 0 white,
+      2px -4px 0 0 black, 4px -4px 0 0 white;
+  }
 `;
 
-export const ContactButton = styled.button<ButtonProps>`
-  background-color: #c0c0c0;
+export const ContactButton = styled.button<ContactProps>`
+  background-color: #d9d9d9;
   box-shadow: ${({ isClicked }) =>
     !isClicked
       ? `-2px -2px #e0dede, -2px 0 #e0dede, 0 -2px #e0dede, -4px -4px white, -4px 0 white, 0 -4px white, 2px 2px #818181, 0 2px #818181, 2px 0 #818181,  2px -2px #e0dede, -2px 2px #818181, -4px 2px white, -4px 4px black, 4px 4px black, 4px 0 black, 0 4px black, 2px -4px white, 4px -4px black;`
       : `-2px -2px #818181, -2px 0 #818181, 0 -2px #818181, -4px -4px black, -4px 0 black, 0 -4px black, 2px 2px #e0dede, 0 2px #e0dede, 2px 0 #e0dede,  2px -2px #818181, -2px 2px #e0dede, -4px 2px black, -4px 4px white, 4px 4px white, 4px 0 white, 0 4px white, 2px -4px black, 4px -4px white;`};
-  height: 40px;
+  height: 47px;
   width: 178px;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-family: ${primaryFont};
   position: absolute;
   right: 2.15rem;
