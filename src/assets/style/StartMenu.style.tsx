@@ -41,35 +41,28 @@ export const StartContainer = styled.section<StartContainerPosition>`
 
     img {
       margin-right: 1.8rem;
+      user-select: none;
+      user-drag: none;
     }
 
     p {
       font-size: 1.8rem;
+      user-select: none;
+      user-drag: none;
     }
   }
 
   > img {
     display: block;
     margin: 0 auto;
+    user-select: none;
+    user-drag: none;
   }
 `;
 
-export const StartDash = styled.img`
-  height: 6px !important;
-  width: 294px !important;
-  display: block;
-  margin: 0 auto;
-`;
-
-// img {
-//     height: 91px;
-//     width: 337px;
-//     cursor: pointer;
-//     /* position: absolute;
-//     left: 0;
-//     margin-left: 0.1rem; */
-
-//     &:first-of-type {
-//       height: 104px;
-//     }
-//   }
+// export const StartDash = styled.img`
+//   height: 6px !important;
+//   width: 294px !important;
+//   display: block;
+//   margin: 0 auto;
+// `;

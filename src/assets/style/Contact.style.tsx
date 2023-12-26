@@ -37,7 +37,7 @@ export const ContactHandle = styled.article<FilesProps>`
   background: url(${contactHandle}) center/cover no-repeat;
   height: 57px;
   width: 100%;
-  padding: 0 15px;
+  padding: 0 20px;
   cursor: grab;
 `;
 
