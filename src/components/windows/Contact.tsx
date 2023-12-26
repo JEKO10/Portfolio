@@ -2,10 +2,6 @@ import emailjs from "@emailjs/browser";
 import React, { useRef, useState } from "react";
 import Draggable from "react-draggable";
 
-import cancelButton from "../../assets/images/buttons/contactCancel.jpg";
-import cancelClicked from "../../assets/images/buttons/contactCancelClicked.jpg";
-import sendButton from "../../assets/images/buttons/send.jpg";
-import sendClicked from "../../assets/images/buttons/sendClicked.jpg";
 import {
   ContactButton,
   ContactFile,
@@ -117,9 +113,6 @@ const Contact = () => {
           />
           <ContactButton
             type="submit"
-            bottom={5.85}
-            background={sendButton}
-            clickedBackground={sendClicked}
             value="Send"
             onMouseDown={() =>
               setIsContactBtnClicked({ ...isContactBtnClicked, send: true })
@@ -131,12 +124,12 @@ const Contact = () => {
               });
             }}
             isClicked={isContactBtnClicked.send}
-          />
+            bottom={6.5}
+          >
+            Send
+          </ContactButton>
         </form>
         <ContactButton
-          bottom={1.7}
-          background={cancelButton}
-          clickedBackground={cancelClicked}
           onMouseDown={() =>
             setIsContactBtnClicked({ ...isContactBtnClicked, cancel: true })
           }
@@ -148,7 +141,10 @@ const Contact = () => {
             setIsOpen({ ...isOpen, contact: false });
           }}
           isClicked={isContactBtnClicked.cancel}
-        />
+          bottom={2.1}
+        >
+          <span>Cancel</span>
+        </ContactButton>
       </ContactFile>
     </Draggable>
   );

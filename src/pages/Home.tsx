@@ -21,7 +21,7 @@ const Home = () => {
   const [startPosition, setStartPosition] = useState({ x: 0, y: 0 });
   const [endPosition, setEndPosition] = useState({ x: 0, y: 0 });
 
-  const { isClicked, setIsClicked } = useGlobalContext();
+  const { isClicked, setIsClicked, setIsOpen, isOpen } = useGlobalContext();
 
   const icons: IconsType = {
     about: {
@@ -87,6 +87,7 @@ const Home = () => {
     setRectangleVisible(true);
     setStartPosition({ x: clickX, y: clickY });
     setEndPosition({ x: clickX, y: clickY });
+    setIsOpen({ ...isOpen, start: false });
   };
 
   const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
