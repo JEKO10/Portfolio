@@ -5,7 +5,7 @@ import {
   Hours,
   Minutes,
   Seconds,
-} from "../assets/style/AnalogClock.style";
+} from "../../assets/style/AnalogClock.style";
 
 const AnalogClock = () => {
   const [time, setTime] = useState(new Date());

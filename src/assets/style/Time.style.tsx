@@ -14,7 +14,7 @@ type BtnProps = {
   right: number;
 };
 
-export const ClockModal = styled.section<FilesProps>`
+export const TimeModal = styled.section<FilesProps>`
   background: url(${time}) center/cover no-repeat;
   position: relative;
   height: 486px;
@@ -22,7 +22,7 @@ export const ClockModal = styled.section<FilesProps>`
   z-index: ${({ lastClicked }) => (lastClicked === "time" ? 2 : 1)};
 `;
 
-export const ClockHandle = styled.article`
+export const TimeHandle = styled.article`
   ${flexMixin({ justify: "flex-end", align: "center" })};
   background: url(${timeHandle}) center/cover no-repeat;
   height: 38px;
@@ -66,7 +66,7 @@ export const TimeZone = styled.p`
   left: 9.5rem;
 `;
 
-export const ClockBtn = styled.button<BtnProps>`
+export const TimeBtn = styled.button<BtnProps>`
   background-color: #c0c0c0;
   height: 26px;
   width: 100px;
