@@ -10,7 +10,6 @@ type FilesProps = {
 };
 
 type BtnProps = {
-  isClicked: boolean;
   right: number;
 };
 
@@ -20,6 +19,11 @@ export const TimeModal = styled.section<FilesProps>`
   height: 486px;
   width: 576px;
   z-index: ${({ lastClicked }) => (lastClicked === "time" ? 2 : 1)};
+
+  p {
+    user-select: none;
+    user-drag: none;
+  }
 `;
 
 export const TimeHandle = styled.article`
@@ -46,7 +50,6 @@ export const Year = styled.p`
   left: 10.7rem;
   font-size: 1.3rem;
   user-select: none;
-  user-drag: none;
 `;
 
 export const Month = styled.p`
@@ -55,7 +58,6 @@ export const Month = styled.p`
   left: 3rem;
   font-size: 1.1rem;
   user-select: none;
-  user-drag: none;
 `;
 
 export const TimeZone = styled.p`
@@ -68,6 +70,11 @@ export const TimeZone = styled.p`
 
 export const TimeBtn = styled.button<BtnProps>`
   background-color: #c0c0c0;
+  box-shadow: -2px -2px #e0dede, -2px 0 #e0dede, 0 -2px #e0dede, -4px -4px white,
+    -4px 0 white, 0 -4px white, 2px 2px #818181, 0 2px #818181, 2px 0 #818181,
+    2px -2px #e0dede, -2px 2px #818181, -4px 2px white, -4px 4px black,
+    4px 4px black, 4px 0 black, 0 4px black, 2px -4px white, 4px -4px black;
+
   height: 26px;
   width: 100px;
   font-size: 1.2rem;
@@ -75,9 +82,13 @@ export const TimeBtn = styled.button<BtnProps>`
   position: absolute;
   bottom: 1.1rem;
   right: ${({ right }) => right + "rem"};
-  box-shadow: ${({ isClicked }) =>
-    !isClicked
-      ? `-2px -2px #e0dede, -2px 0 #e0dede, 0 -2px #e0dede, -4px -4px white, -4px 0 white, 0 -4px white, 2px 2px #818181, 0 2px #818181, 2px 0 #818181,  2px -2px #e0dede, -2px 2px #818181, -4px 2px white, -4px 4px black, 4px 4px black, 4px 0 black, 0 4px black, 2px -4px white, 4px -4px black;`
-      : `-2px -2px #818181, -2px 0 #818181, 0 -2px #818181, -4px -4px black, -4px 0 black, 0 -4px black, 2px 2px #e0dede, 0 2px #e0dede, 2px 0 #e0dede,  2px -2px #818181, -2px 2px #e0dede, -4px 2px black, -4px 4px white, 4px 4px white, 4px 0 white, 0 4px white, 2px -4px black, 4px -4px white;`};
   cursor: pointer;
+
+  &:active {
+    box-shadow: -2px -2px #818181, -2px 0 #818181, 0 -2px #818181,
+      -4px -4px black, -4px 0 black, 0 -4px black, 2px 2px #e0dede,
+      0 2px #e0dede, 2px 0 #e0dede, 2px -2px #818181, -2px 2px #e0dede,
+      -4px 2px black, -4px 4px white, 4px 4px white, 4px 0 white, 0 4px white,
+      2px -4px black, 4px -4px white;
+  }
 `;

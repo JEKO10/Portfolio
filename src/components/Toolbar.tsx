@@ -14,7 +14,6 @@ const Toolbar = () => {
   const { setIsOpen, isOpen } = useGlobalContext();
 
   const [time, setTime] = useState(new Date());
-  const [clockBtnClicked, setClockBtnClicked] = useState(false);
 
   useEffect(() => {
     const intervalID = setInterval(() => {
@@ -36,17 +35,12 @@ const Toolbar = () => {
     <ToolbarContainer>
       <Dash src={dash} alt="dash" />
       <ToolButton
-        onMouseDown={() => setClockBtnClicked(true)}
-        onMouseUp={() => setClockBtnClicked(false)}
-        onClick={() => setIsOpen({ ...isOpen, time: !isOpen.time })}
-        isClicked={clockBtnClicked}
+        onClick={() => {
+          setIsOpen({ ...isOpen, time: !isOpen.time });
+        }}
       >
         <img src={toolBtnImg} alt="toolButton" />
-        <Clock
-          onMouseDown={() => setClockBtnClicked(true)}
-          onMouseUp={() => setClockBtnClicked(false)}
-          onClick={() => setIsOpen({ ...isOpen, time: !isOpen.time })}
-        >
+        <Clock onClick={() => setIsOpen({ ...isOpen, time: !isOpen.time })}>
           {formattedTime}
         </Clock>
       </ToolButton>

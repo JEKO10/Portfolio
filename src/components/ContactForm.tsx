@@ -16,10 +16,6 @@ const ContactForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [isContactElementClicked, setIsContactElementClicked] = useState({
-    send: false,
-    cancel: false,
-  });
 
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
@@ -92,42 +88,14 @@ const ContactForm = () => {
           }}
           bottom={1.8}
         />
-        <ContactButton
-          type="submit"
-          value="Send"
-          onMouseDown={() =>
-            setIsContactElementClicked({
-              ...isContactElementClicked,
-              send: true,
-            })
-          }
-          onClick={() => {
-            setIsContactElementClicked({
-              ...isContactElementClicked,
-              send: false,
-            });
-          }}
-          isClicked={isContactElementClicked.send}
-          bottom={6.2}
-        >
+        <ContactButton type="submit" value="Send" bottom={6.2}>
           Send
         </ContactButton>
       </form>
       <ContactButton
-        onMouseDown={() =>
-          setIsContactElementClicked({
-            ...isContactElementClicked,
-            cancel: true,
-          })
-        }
         onClick={() => {
-          setIsContactElementClicked({
-            ...isContactElementClicked,
-            cancel: false,
-          });
           setIsOpen({ ...isOpen, contact: false });
         }}
-        isClicked={isContactElementClicked.cancel}
         bottom={1.8}
       >
         Cancel

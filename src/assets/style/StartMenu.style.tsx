@@ -59,10 +59,3 @@ export const StartContainer = styled.section<StartContainerPosition>`
     user-drag: none;
   }
 `;
-
-// export const StartDash = styled.img`
-//   height: 6px !important;
-//   width: 294px !important;
-//   display: block;
-//   margin: 0 auto;
-// `;

@@ -4,56 +4,32 @@ import close from "../assets/images/buttons/close.png";
 import maximize from "../assets/images/buttons/maximize.png";
 import minimize from "../assets/images/buttons/minimize.jpg";
 import {
-  CloseBtn,
   ControlBtnsContainer,
-  MaximizeBtn,
+  ControlButton,
   MinimizeBtn,
 } from "../assets/style/Files.style";
 import { useGlobalContext } from "../utils/context";
-import useWindowControls from "../utils/useWindowControls";
 
 const ControlBtns = ({ iconName }: { iconName: string }) => {
   const { isOpen, setIsOpen, isVisible, setIsVisible } = useGlobalContext();
-
-  const {
-    minimizeBtnClicked,
-    maximizeBtnClicked,
-    closeBtnClicked,
-    onMouseDownControl,
-    onClickControl,
-  } = useWindowControls();
 
   return (
     <ControlBtnsContainer iconName={iconName}>
       <div>
         <MinimizeBtn
-          onMouseDown={() => onMouseDownControl("min")}
-          onClick={() => {
-            onClickControl("min");
-            setIsVisible({ ...isVisible, [iconName]: false });
-          }}
-          isClicked={minimizeBtnClicked}
+          onClick={() => setIsVisible({ ...isVisible, [iconName]: false })}
         >
           <img src={minimize} alt="minimize" />
         </MinimizeBtn>
-        <MaximizeBtn
-          onMouseDown={() => onMouseDownControl("max")}
-          onClick={() => onClickControl("max")}
-          isClicked={maximizeBtnClicked}
-        >
+        <ControlButton>
           <img src={maximize} alt="maximize" />
-        </MaximizeBtn>
+        </ControlButton>
       </div>
-      <CloseBtn
-        onMouseDown={() => onMouseDownControl("close")}
-        onClick={() => {
-          onClickControl("close");
-          setIsOpen({ ...isOpen, [iconName]: false });
-        }}
-        isClicked={closeBtnClicked}
+      <ControlButton
+        onClick={() => setIsOpen({ ...isOpen, [iconName]: false })}
       >
         <img src={close} alt="close" />
-      </CloseBtn>
+      </ControlButton>
     </ControlBtnsContainer>
   );
 };
