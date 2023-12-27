@@ -12,8 +12,8 @@ type ButtonProps = {
 };
 
 export const TaskBar = styled.section`
-  background-image: url(${taskbar});
   ${flexMixin({ justify: "space-between", align: "flex-end" })}
+  background-image: url(${taskbar});
   position: absolute;
   bottom: 0;
   height: 45px;

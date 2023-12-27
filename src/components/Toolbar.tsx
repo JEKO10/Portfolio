@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 
+import toolBtnImg from "../assets/images/buttons/toolbar.png";
 import dash from "../assets/images/other/dash.jpg";
 import { Dash } from "../assets/style/Taskbar.style";
 import {
@@ -39,15 +40,16 @@ const Toolbar = () => {
         onMouseUp={() => setClockBtnClicked(false)}
         onClick={() => setIsOpen({ ...isOpen, time: !isOpen.time })}
         isClicked={clockBtnClicked}
-      />
-      <Clock
-        onMouseDown={() => setClockBtnClicked(true)}
-        onMouseUp={() => setClockBtnClicked(false)}
-        onClick={() => setIsOpen({ ...isOpen, time: !isOpen.time })}
-        isClicked={clockBtnClicked}
       >
-        {formattedTime}
-      </Clock>
+        <img src={toolBtnImg} alt="toolButton" />
+        <Clock
+          onMouseDown={() => setClockBtnClicked(true)}
+          onMouseUp={() => setClockBtnClicked(false)}
+          onClick={() => setIsOpen({ ...isOpen, time: !isOpen.time })}
+        >
+          {formattedTime}
+        </Clock>
+      </ToolButton>
     </ToolbarContainer>
   );
 };
