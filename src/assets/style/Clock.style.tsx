@@ -2,11 +2,16 @@ import styled from "styled-components";
 
 import timeHandle from "../images/handles/timeHandle.jpg";
 import time from "../images/modals/timeModal.jpg";
-import { flexMixin } from "./GlobalStyles";
+import { flexMixin, primaryFont } from "./GlobalStyles";
 
 type FilesProps = {
   lastClicked: string;
   isVisible?: boolean;
+};
+
+type BtnProps = {
+  isClicked: boolean;
+  right: number;
 };
 
 export const ClockModal = styled.section<FilesProps>`
@@ -41,6 +46,7 @@ export const Year = styled.p`
   left: 10.7rem;
   font-size: 1.3rem;
   user-select: none;
+  user-drag: none;
 `;
 
 export const Month = styled.p`
@@ -49,10 +55,29 @@ export const Month = styled.p`
   left: 3rem;
   font-size: 1.1rem;
   user-select: none;
+  user-drag: none;
 `;
 
 export const TimeZone = styled.p`
+  font-family: ${primaryFont};
+  font-weight: 600;
   position: absolute;
-  bottom: 4.9rem;
+  bottom: 4.95rem;
   left: 9.5rem;
+`;
+
+export const ClockBtn = styled.button<BtnProps>`
+  background-color: #c0c0c0;
+  height: 26px;
+  width: 100px;
+  font-size: 1.2rem;
+  font-family: ${primaryFont};
+  position: absolute;
+  bottom: 1.1rem;
+  right: ${({ right }) => right + "rem"};
+  box-shadow: ${({ isClicked }) =>
+    !isClicked
+      ? `-2px -2px #e0dede, -2px 0 #e0dede, 0 -2px #e0dede, -4px -4px white, -4px 0 white, 0 -4px white, 2px 2px #818181, 0 2px #818181, 2px 0 #818181,  2px -2px #e0dede, -2px 2px #818181, -4px 2px white, -4px 4px black, 4px 4px black, 4px 0 black, 0 4px black, 2px -4px white, 4px -4px black;`
+      : `-2px -2px #818181, -2px 0 #818181, 0 -2px #818181, -4px -4px black, -4px 0 black, 0 -4px black, 2px 2px #e0dede, 0 2px #e0dede, 2px 0 #e0dede,  2px -2px #818181, -2px 2px #e0dede, -4px 2px black, -4px 4px white, 4px 4px white, 4px 0 white, 0 4px white, 2px -4px black, 4px -4px white;`};
+  cursor: pointer;
 `;

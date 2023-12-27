@@ -1,9 +1,5 @@
 import styled from "styled-components";
 
-import cancel from "../images/buttons/cancel.jpg";
-import cancelClicked from "../images/buttons/cancelClicked.jpg";
-import okBtn from "../images/buttons/okBtn.jpg";
-import okBtnClicked from "../images/buttons/okBtnClicked.jpg";
 import { flexMixin } from "./GlobalStyles";
 
 type BtnProps = {
@@ -74,30 +70,4 @@ export const CloseBtn = styled.button<BtnProps>`
     transform: ${({ isClicked }) => (isClicked ? "translate(1px, 1px)" : "")};
     pointer-events: none;
   }
-`;
-
-export const OkButton = styled.button<BtnProps>`
-  background: ${({ isClicked }) =>
-    isClicked
-      ? `url(${okBtnClicked}) center/contain no-repeat`
-      : `url(${okBtn}) center/contain no-repeat`};
-  height: 35px;
-  width: 108px;
-  position: absolute;
-  bottom: 0.8rem;
-  right: 15.2rem;
-  cursor: pointer;
-`;
-
-export const CancelBtn = styled.button<BtnProps>`
-  background: ${({ isClicked }) =>
-    isClicked
-      ? `url(${cancelClicked}) center/contain no-repeat`
-      : `url(${cancel}) center/contain no-repeat`};
-  height: 35px;
-  width: 108px;
-  position: absolute;
-  bottom: 0.8rem;
-  right: 8rem;
-  cursor: pointer;
 `;

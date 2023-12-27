@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Draggable from "react-draggable";
 
 import {
+  ClockBtn,
   ClockHandle,
   ClockModal,
   DigitalClock,
@@ -9,7 +10,6 @@ import {
   TimeZone,
   Year,
 } from "../../assets/style/Clock.style";
-import { CancelBtn, OkButton } from "../../assets/style/Files.style";
 import { useGlobalContext } from "../../utils/context";
 import AnalogClock from "../AnalogClock";
 
@@ -37,7 +37,7 @@ const Time = () => {
     "December",
   ];
 
-  const full = time.toLocaleDateString(undefined, { timeZoneName: "long" });
+  const full = time.toLocaleDateString("en-US", { timeZoneName: "long" });
 
   useEffect(() => {
     const intervalID = setInterval(() => {
@@ -78,11 +78,11 @@ const Time = () => {
           <DigitalClock>{formattedTime}</DigitalClock>
         </article>
         <div>
-          <CancelBtn
+          <ClockBtn
             onMouseDown={() =>
               setTimeBtnClicked({ ...timeBtnClicked, okBtn: true })
             }
-            onClick={() => {
+            onMouseUp={() => {
               setTimeBtnClicked({
                 ...timeBtnClicked,
                 okBtn: false,
@@ -90,12 +90,15 @@ const Time = () => {
               setIsOpen({ ...isOpen, time: false });
             }}
             isClicked={timeBtnClicked.okBtn}
-          />
-          <OkButton
+            right={15.5}
+          >
+            OK
+          </ClockBtn>
+          <ClockBtn
             onMouseDown={() =>
               setTimeBtnClicked({ ...timeBtnClicked, cancelBtn: true })
             }
-            onMouseUp={() => {
+            onClick={() => {
               setTimeBtnClicked({
                 ...timeBtnClicked,
                 cancelBtn: false,
@@ -103,7 +106,10 @@ const Time = () => {
               setIsOpen({ ...isOpen, time: false });
             }}
             isClicked={timeBtnClicked.cancelBtn}
-          />
+            right={8.2}
+          >
+            Cancel
+          </ClockBtn>
         </div>
       </ClockModal>
     </Draggable>

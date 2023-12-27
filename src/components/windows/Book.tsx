@@ -25,16 +25,12 @@ const Book = () => {
           <ControlBtns iconName="book" />
         </BookHandle>
         <article>
-          <BookText>Site Design and Development: </BookText>
-          <BookText>
-            - Co-Design and Development: Aleksa Bubanja - aleksa3b@gmail.com
-          </BookText>
-          <BookText>- Design: Tadija Bubanja - tadija3b@gmail.com</BookText>
+          <BookText>Site Design and Development:</BookText>
+          <BookText>Development: Aleksa Bubanja - aleksa3b@gmail.com</BookText>
+          <BookText>Design: Tadija Bubanja - tadija3b@gmail.com</BookText>
           <BookText>
             Special thanks to Tadija Bubanja for the visually appealing design
-            elements that enhance the user experience, and to Aleksa Bubanja for
-            the collaborative efforts in bringing the design to life through
-            development.
+            elements that enhance the user experience.
           </BookText>
         </article>
       </BookFile>
