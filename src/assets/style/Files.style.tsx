@@ -46,7 +46,8 @@ const controlButtonStyles = css`
   }
 
   img {
-    pointer-events: none;
+    user-select: none;
+    user-drag: none;
   }
 `;
 

@@ -44,6 +44,13 @@ const RecycleBin = () => {
     }
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
+    if (event.key === "Enter") {
+      setIsOpen({ ...isOpen, book: true });
+      setIsVisible({ ...isVisible, book: true });
+    }
+  };
+
   return (
     <Draggable
       defaultPosition={{ x: 500, y: -450 }}
@@ -65,6 +72,7 @@ const RecycleBin = () => {
           clickedIcon={bookClicked}
           isClicked={isClicked.book}
           onMouseDown={(event) => handleClick(event)}
+          onKeyDown={(event) => handleKeyDown(event)}
         />
       </RecycleBinFile>
     </Draggable>

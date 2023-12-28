@@ -20,42 +20,42 @@ export const StartContainer = styled.section<StartContainerPosition>`
   ${flexMixin({ justify: "center", align: "flex-start" })};
   flex-direction: column;
 
-  article {
-    ${flexMixin({ justify: "flex-start", align: "center" })};
-    height: 91px;
-    width: 100%;
-    padding: 20px 25px;
-    transition: all 200ms ease;
-    cursor: pointer;
-
-    & {
-      :hover {
-        background-color: #001358;
-        color: #fff;
-      }
-
-      :last-of-type {
-        padding: 20px 25px 8px;
-      }
-    }
-
-    img {
-      margin-right: 1.8rem;
-      user-select: none;
-      user-drag: none;
-    }
-
-    p {
-      font-size: 1.8rem;
-      user-select: none;
-      user-drag: none;
-    }
-  }
-
   > img {
     display: block;
     margin: 0 auto;
+  }
+
+  img,
+  p {
     user-select: none;
     user-drag: none;
+  }
+`;
+
+export const StartMenuBtn = styled.article`
+  ${flexMixin({ justify: "flex-start", align: "center" })};
+  height: 91px;
+  width: 100%;
+  padding: 20px 25px;
+  transition: all 200ms ease;
+  cursor: pointer;
+
+  & {
+    :hover {
+      background-color: #001358;
+      color: #fff;
+    }
+
+    :last-of-type {
+      padding: 20px 25px 8px;
+    }
+  }
+
+  img {
+    margin-right: 1.8rem;
+  }
+
+  p {
+    font-size: 1.8rem;
   }
 `;

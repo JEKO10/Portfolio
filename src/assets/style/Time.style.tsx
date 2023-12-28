@@ -90,5 +90,7 @@ export const TimeBtn = styled.button<BtnProps>`
       0 2px #e0dede, 2px 0 #e0dede, 2px -2px #818181, -2px 2px #e0dede,
       -4px 2px black, -4px 4px white, 4px 4px white, 4px 0 white, 0 4px white,
       2px -4px black, 4px -4px white;
+
+    transform: translate(1px, 1px);
   }
 `;

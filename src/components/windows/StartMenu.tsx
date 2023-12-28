@@ -6,7 +6,10 @@ import Recycle from "../../assets/images/buttons/recycleStart.png";
 import ShutDown from "../../assets/images/buttons/shutDown.png";
 import Work from "../../assets/images/buttons/workStart.png";
 import Dash from "../../assets/images/other/startDash.jpg";
-import { StartContainer } from "../../assets/style/StartMenu.style";
+import {
+  StartContainer,
+  StartMenuBtn,
+} from "../../assets/style/StartMenu.style";
 import { useGlobalContext } from "../../utils/context";
 
 const StartMenu: React.FC = () => {
@@ -29,7 +32,7 @@ const StartMenu: React.FC = () => {
 
   return (
     <StartContainer isOpen={isOpen.start} data-no-select="true">
-      <article
+      <StartMenuBtn
         onClick={() => {
           setIsOpen({ ...isOpen, about: true, start: false });
           setIsVisible({ ...isVisible, about: true });
@@ -37,8 +40,8 @@ const StartMenu: React.FC = () => {
       >
         <img src={About} alt="AboutStart" />
         <p>About Me</p>
-      </article>
-      <article
+      </StartMenuBtn>
+      <StartMenuBtn
         onClick={() => {
           setIsOpen({ ...isOpen, work: true, start: false });
           setIsVisible({ ...isVisible, work: true });
@@ -46,8 +49,8 @@ const StartMenu: React.FC = () => {
       >
         <img src={Work} alt="WorkStart" />
         <p>My Work</p>
-      </article>
-      <article
+      </StartMenuBtn>
+      <StartMenuBtn
         onClick={() => {
           setIsOpen({ ...isOpen, contact: true, start: false });
           setIsVisible({ ...isVisible, contact: true });
@@ -55,8 +58,8 @@ const StartMenu: React.FC = () => {
       >
         <img src={Contact} alt="ContactStart" />
         <p>Contact</p>
-      </article>
-      <article
+      </StartMenuBtn>
+      <StartMenuBtn
         onClick={() => {
           setIsOpen({ ...isOpen, recycle: true, start: false });
           setIsVisible({ ...isVisible, recycle: true });
@@ -64,12 +67,12 @@ const StartMenu: React.FC = () => {
       >
         <img src={Recycle} alt="RecycleStart" />
         <p>Recycle Bin</p>
-      </article>
+      </StartMenuBtn>
       <img src={Dash} alt="StartDash" />
-      <article onClick={handleShutDown}>
+      <StartMenuBtn onClick={handleShutDown}>
         <img src={ShutDown} alt="ShutDownStart" />
         <p>Shut Down</p>
-      </article>
+      </StartMenuBtn>
     </StartContainer>
   );
 };
