@@ -24,6 +24,7 @@ Beyond the screen, you'll find me on the basketball or football court, exploring
 
 ## Project overview
 
+I made a portfolio based on Windows 98 design and logic in which there are About me, My Work and Contact components, presented like a Windows files.
 
 ## Built with
 
