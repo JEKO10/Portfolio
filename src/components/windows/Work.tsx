@@ -82,8 +82,8 @@ const Work = () => {
           <Project
             project={walkmate}
             clickedIcon={walkmateClicked}
-            top={17.5}
-            left={20.5}
+            top={15}
+            left={18}
             width={158}
             isClicked={isClicked.walkmate}
             onClick={() => handleClick("walkmate")}
@@ -99,8 +99,8 @@ const Work = () => {
           <Project
             project={moviexd}
             clickedIcon={moviexdClicked}
-            top={17.5}
-            left={37}
+            top={15}
+            left={34}
             width={135}
             isClicked={isClicked.moviexd}
             onClick={() => handleClick("moviexd")}
@@ -116,8 +116,8 @@ const Work = () => {
           <Project
             project={travel}
             clickedIcon={travelClicked}
-            top={30}
-            left={19.5}
+            top={26}
+            left={16.5}
             width={202}
             isClicked={isClicked.travel}
             onClick={() => handleClick("travel")}
@@ -133,8 +133,8 @@ const Work = () => {
           <Project
             project={basket}
             clickedIcon={basketClicked}
-            top={30}
-            left={35.3}
+            top={26}
+            left={32}
             width={192}
             isClicked={isClicked.basket}
             onClick={() => handleClick("basket")}

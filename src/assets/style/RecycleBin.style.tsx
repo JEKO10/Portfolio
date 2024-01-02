@@ -11,9 +11,10 @@ type FilesProps = {
 
 export const RecycleBinFile = styled.section<FilesProps>`
   background: url(${recycleBin}) center/contain no-repeat;
+
   position: absolute;
-  height: 681px;
-  width: 787px;
+  height: 652px;
+  width: 755.5px;
 
   display: ${({ isVisible }) => (isVisible ? "block" : "none")};
   z-index: ${({ lastClicked }) => (lastClicked === "recycle" ? 2 : 1)};
@@ -21,10 +22,10 @@ export const RecycleBinFile = styled.section<FilesProps>`
 
 export const RecycleBinHandle = styled.article<FilesProps>`
   ${flexMixin({ justify: "flex-end", align: "center" })};
-  background: url(${recycleHandle}) center/cover no-repeat;
-  height: 44px;
-  width: 98.5%;
-  max-width: 787px;
+  background: url(${recycleHandle}) center/contain no-repeat;
+  height: 43px;
+  width: 100%;
+  max-width: 753px;
   margin: 0 auto;
   padding: 0 15px;
   cursor: grab;

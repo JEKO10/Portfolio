@@ -35,8 +35,8 @@ export const Book = styled.button<BookProps>`
   height: 126px;
   width: 100px;
   position: absolute;
-  top: 16.4rem;
-  left: 17.7rem;
+  top: 15rem;
+  left: 17rem;
 
   ${({ isClicked, iconName, clickedIcon }) =>
     isClicked

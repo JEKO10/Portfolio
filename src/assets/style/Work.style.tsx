@@ -22,8 +22,8 @@ export const WorkFile = styled.section<FilesProps>`
   background: url(${workModal}) center/contain no-repeat;
 
   position: absolute;
-  height: 759px;
-  width: 878px;
+  height: 652px;
+  width: 755.5px;
 
   display: ${({ isVisible }) => (isVisible ? "block" : "none")};
   z-index: ${({ lastClicked }) => (lastClicked === "work" ? 2 : 1)};
@@ -32,9 +32,9 @@ export const WorkFile = styled.section<FilesProps>`
 export const WorkHandle = styled.article<FilesProps>`
   ${flexMixin({ justify: "flex-end", align: "center" })};
   background: url(${workHandle}) center/contain no-repeat;
-  height: 48px;
+  height: 43px;
   width: 100%;
-  max-width: 878px;
+  max-width: 756px;
   margin: 0 auto;
   padding: 0 15px;
   cursor: grab;
