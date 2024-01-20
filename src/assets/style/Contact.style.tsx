@@ -106,3 +106,14 @@ export const ContactButton = styled.button<ContactProps>`
     transform: translate(1px, 1px);
   }
 `;
+
+export const ContactSocials = styled.article`
+  position: absolute;
+  right: 10rem;
+  top: 4rem;
+
+  img {
+    margin-left: 0.5rem;
+    cursor: pointer;
+  }
+`;

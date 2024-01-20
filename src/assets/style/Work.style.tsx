@@ -40,8 +40,8 @@ export const WorkHandle = styled.article<FilesProps>`
   cursor: grab;
 
   button {
-    height: 19px !important;
-    width: 22px !important;
+    height: 19.5px !important;
+    width: 22.5px !important;
   }
 `;
 
