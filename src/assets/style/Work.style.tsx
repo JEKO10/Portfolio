@@ -38,6 +38,11 @@ export const WorkHandle = styled.article<FilesProps>`
   margin: 0 auto;
   padding: 0 15px;
   cursor: grab;
+
+  button {
+    height: 19px !important;
+    width: 22px !important;
+  }
 `;
 
 export const Project = styled.button<ProjectProps>`
