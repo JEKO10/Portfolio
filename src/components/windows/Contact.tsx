@@ -32,8 +32,24 @@ const Contact = () => {
           <ControlBtns iconName="contact" />
         </ContactHandle>
         <ContactSocials>
-          <img src={github} alt="GitHub" />
-          <img src={linkedIn} alt="LinkedIn" />
+          <button>
+            <a
+              href="https://github.com/JEKO10"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={github} alt="GitHub" />
+            </a>
+          </button>
+          <button>
+            <a
+              href="https://linkedin.com/in/aleksa-bubanja"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={linkedIn} alt="LinkedIn" />
+            </a>
+          </button>
         </ContactSocials>
         <ContactForm />
       </ContactFile>
