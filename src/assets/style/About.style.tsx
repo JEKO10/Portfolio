@@ -11,6 +11,7 @@ import { flexMixin } from "./GlobalStyles";
 type FilesProps = {
   lastClicked?: string;
   isVisible: boolean;
+  isLoading?: boolean;
 };
 
 export const AboutFile = styled.section<FilesProps>`
@@ -18,7 +19,9 @@ export const AboutFile = styled.section<FilesProps>`
   position: absolute;
   height: 652px;
   width: 975px;
+
   overflow: hidden;
+  opacity: ${({ isLoading }) => (isLoading ? "0" : "1")};
 
   display: ${({ isVisible }) => (isVisible ? "block" : "none")};
   z-index: ${({ lastClicked }) => (lastClicked === "about" ? 2 : 1)};
@@ -79,4 +82,12 @@ export const AboutMeText = styled.article`
   ::-webkit-scrollbar-button:single-button:vertical:increment {
     background: url(${scrollArrowDown}) center/contain no-repeat;
   }
+`;
+
+export const FileLoader = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
 `;
