@@ -28,26 +28,26 @@ const Home = () => {
       x: 30,
       y: 35,
       height: 140,
-      width: 116,
+      width: 116
     },
     work: {
       x: 30,
       y: 215,
       height: 140,
-      width: 116,
+      width: 116
     },
     contact: {
       x: 30,
       y: 395,
       height: 140,
-      width: 116,
+      width: 116
     },
     recycle: {
       x: 1390,
-      y: 605,
-      height: 120,
-      width: 116,
-    },
+      y: 513,
+      height: 140,
+      width: 116
+    }
   };
 
   const handleMouseUp = () => {
@@ -98,7 +98,7 @@ const Home = () => {
         x: Math.min(startPosition.x, endPosition.x),
         y: Math.min(startPosition.y, endPosition.y),
         width: Math.abs(endPosition.x - startPosition.x),
-        height: Math.abs(endPosition.y - startPosition.y),
+        height: Math.abs(endPosition.y - startPosition.y)
       };
 
       const selectedIcons: { [key: string]: boolean } = {};
@@ -139,7 +139,7 @@ const Home = () => {
             top: `${Math.min(startPosition.y, endPosition.y)}px`,
             left: `${Math.min(startPosition.x, endPosition.x)}px`,
             width: `${Math.abs(endPosition.x - startPosition.x)}px`,
-            height: `${Math.abs(endPosition.y - startPosition.y)}px`,
+            height: `${Math.abs(endPosition.y - startPosition.y)}px`
           }}
         ></div>
       )}
