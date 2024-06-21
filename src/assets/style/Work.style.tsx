@@ -32,9 +32,9 @@ export const WorkFile = styled.section<FilesProps>`
 export const WorkHandle = styled.article<FilesProps>`
   ${flexMixin({ justify: "flex-end", align: "center" })};
   background: url(${workHandle}) center/contain no-repeat;
-  height: 43px;
+  height: 42px;
   width: 100%;
-  max-width: 756px;
+  max-width: 755px;
   margin: 0 auto;
   padding: 0 15px;
   cursor: grab;

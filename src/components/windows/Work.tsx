@@ -22,7 +22,7 @@ const Work = () => {
     walkmate: false,
     moviexd: false,
     travel: false,
-    basket: false,
+    basket: false
   });
 
   const handleClick = (iconName: string) => {
@@ -30,11 +30,11 @@ const Work = () => {
       walkmate: false,
       moviexd: false,
       travel: false,
-      basket: false,
+      basket: false
     });
     setIsClicked((prevState) => ({
       ...prevState,
-      [iconName]: true,
+      [iconName]: true
     }));
   };
 
@@ -53,7 +53,7 @@ const Work = () => {
         walkmate: false,
         moviexd: false,
         travel: false,
-        basket: false,
+        basket: false
       });
     }
   };

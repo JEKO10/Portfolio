@@ -6,7 +6,7 @@ import minimize from "../assets/images/buttons/minimize.jpg";
 import {
   ControlBtnsContainer,
   ControlButton,
-  MinimizeBtn,
+  MinimizeBtn
 } from "../assets/style/Files.style";
 import { useGlobalContext } from "../utils/context";
 
@@ -17,15 +17,17 @@ const ControlBtns = ({ iconName }: { iconName: string }) => {
     <ControlBtnsContainer iconName={iconName}>
       <div>
         <MinimizeBtn
+          iconName={iconName}
           onClick={() => setIsVisible({ ...isVisible, [iconName]: false })}
         >
           <img src={minimize} alt="minimize" />
         </MinimizeBtn>
-        <ControlButton>
+        <ControlButton iconName={iconName}>
           <img src={maximize} alt="maximize" />
         </ControlButton>
       </div>
       <ControlButton
+        iconName={iconName}
         onClick={() => setIsOpen({ ...isOpen, [iconName]: false })}
       >
         <img src={close} alt="close" />
