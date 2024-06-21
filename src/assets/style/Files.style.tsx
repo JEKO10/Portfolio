@@ -8,8 +8,11 @@ type BtnContainer = {
 
 export const ControlBtnsContainer = styled.div<BtnContainer>`
   margin-top: ${({ iconName }) =>
-    iconName === "recycle" ? "6px" : iconName === "work" ? "5px" : "3px"};
+    iconName === "recycle" || iconName === "work" ? "6px" : "3px"};
   ${flexMixin({ justify: "center", align: "center" })};
+
+  margin-top: ${({ iconName }) =>
+    iconName === "recycle" || iconName === "work" ? "5px" : "3px"};
 
   > div {
     ${flexMixin({ justify: "center", align: "center" })};

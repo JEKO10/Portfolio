@@ -20,6 +20,11 @@ export const LoaderContainer = styled.div`
     transform: translate(-50%);
     user-select: none;
   }
+
+  @media (max-width: 1200px) {
+    background-position: -100px;
+    background-size: 120% 100%;
+  }
 `;
 
 export const Loader = styled.div`

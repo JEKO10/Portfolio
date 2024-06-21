@@ -13,9 +13,11 @@ const ContactForm = () => {
 
   const form = useRef<HTMLFormElement>(null);
 
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [userInfo, setUserInfo] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,20 +31,25 @@ const ContactForm = () => {
       serviceId &&
       templateId &&
       publicKey &&
-      name &&
-      email &&
-      message
+      userInfo.name &&
+      userInfo.email &&
+      userInfo.message
     ) {
       emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
         () => {
-          setName("");
-          setEmail("");
-          setMessage(
-            "Thank you so much for reaching out! :) \n\nI'll get back to you as soon as possible! :)"
-          );
+          setUserInfo({ ...userInfo, name: "" });
+          setUserInfo({ ...userInfo, email: "" });
+          setUserInfo({
+            ...userInfo,
+            message:
+              "Thank you so much for reaching out! :) \n\nI'll get back to you as soon as possible! :)",
+          });
 
           setTimeout(() => {
-            setMessage("");
+            setUserInfo({
+              ...userInfo,
+              message: "",
+            });
           }, 3000);
         },
         (error) => {
@@ -63,18 +70,18 @@ const ContactForm = () => {
       <form ref={form} onSubmit={sendEmail} onKeyPress={handleKeyPress}>
         <ContactTextarea
           name="message"
-          value={message}
+          value={userInfo.message}
           onChange={(e) => {
-            setMessage(e.currentTarget.value);
+            setUserInfo({ ...userInfo, message: e.currentTarget.value });
           }}
         />
         <ContactInput
           type="text"
           name="from_name"
           autoComplete="off"
-          value={name}
+          value={userInfo.name}
           onChange={(e) => {
-            setName(e.currentTarget.value);
+            setUserInfo({ ...userInfo, name: e.currentTarget.value });
           }}
           bottom={6.2}
         />
@@ -82,9 +89,12 @@ const ContactForm = () => {
           type="email"
           name="email_id"
           autoComplete="off"
-          value={email}
+          value={userInfo.email}
           onChange={(e) => {
-            setEmail(e.currentTarget.value);
+            setUserInfo({
+              ...userInfo,
+              email: e.currentTarget.value,
+            });
           }}
           bottom={1.8}
         />

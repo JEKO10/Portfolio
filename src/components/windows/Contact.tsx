@@ -1,7 +1,13 @@
 import React from "react";
 import Draggable from "react-draggable";
 
-import { ContactFile, ContactHandle } from "../../assets/style/Contact.style";
+import github from "../../assets/images/buttons/github.svg";
+import linkedIn from "../../assets/images/buttons/linkedIn.svg";
+import {
+  ContactFile,
+  ContactHandle,
+  ContactSocials,
+} from "../../assets/style/Contact.style";
 import { useGlobalContext } from "../../utils/context";
 import ContactForm from "../ContactForm";
 import ControlBtns from "../ControlBtns";
@@ -25,6 +31,26 @@ const Contact = () => {
         <ContactHandle className="handle" isVisible={isVisible.contact}>
           <ControlBtns iconName="contact" />
         </ContactHandle>
+        <ContactSocials>
+          <button>
+            <a
+              href="https://github.com/JEKO10"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={github} alt="GitHub" />
+            </a>
+          </button>
+          <button>
+            <a
+              href="https://linkedin.com/in/aleksa-bubanja"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={linkedIn} alt="LinkedIn" />
+            </a>
+          </button>
+        </ContactSocials>
         <ContactForm />
       </ContactFile>
     </Draggable>
