@@ -1,16 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Draggable from "react-draggable";
 
+import loader from "../../assets/images/other/loading.png";
 import {
   AboutFile,
   AboutHandle,
-  AboutMeText,
+  AboutMeText
 } from "../../assets/style/About.style";
 import { useGlobalContext } from "../../utils/context";
 import ControlBtns from "../ControlBtns";
 
 const About = () => {
   const { lastClicked, setLastClicked, isVisible } = useGlobalContext();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
+
+  if (isLoading) {
+    return <img src={loader} alt="loader" />;
+  }
 
   return (
     <Draggable
