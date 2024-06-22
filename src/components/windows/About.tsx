@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Draggable from "react-draggable";
 
-import loader from "../../assets/images/other/loading.png";
 import {
   AboutFile,
   AboutHandle,
-  AboutMeText,
-  FileLoader
+  AboutMeText
 } from "../../assets/style/About.style";
 import { useGlobalContext } from "../../utils/context";
 import ControlBtns from "../ControlBtns";
+import FileLoader from "../../utils/FileLoader";
 
 const About = () => {
   const { lastClicked, setLastClicked, isVisible } = useGlobalContext();
@@ -18,16 +17,12 @@ const About = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 3000);
 
     return () => {
       clearTimeout(timer);
     };
   }, []);
-
-  if (isLoading) {
-    return <img src={loader} alt="loader" />;
-  }
 
   return (
     <>
@@ -78,7 +73,7 @@ const About = () => {
           </AboutMeText>
         </AboutFile>
       </Draggable>
-      <FileLoader />
+      {isLoading && <FileLoader top={30} left={25} />}
     </>
   );
 };

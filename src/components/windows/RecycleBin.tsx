@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Draggable from "react-draggable";
 
 import bookClicked from "../../assets/images/icons/bookClicked.png";
@@ -6,10 +6,11 @@ import book from "../../assets/images/icons/bookIcon.png";
 import { Book } from "../../assets/style/Book.style";
 import {
   RecycleBinFile,
-  RecycleBinHandle,
+  RecycleBinHandle
 } from "../../assets/style/RecycleBin.style";
 import { useGlobalContext } from "../../utils/context";
 import ControlBtns from "../ControlBtns";
+import FileLoader from "../../utils/FileLoader";
 
 const RecycleBin = () => {
   const {
@@ -20,8 +21,9 @@ const RecycleBin = () => {
     isVisible,
     setIsVisible,
     isClicked,
-    setIsClicked,
+    setIsClicked
   } = useGlobalContext();
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleClick = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -51,31 +53,45 @@ const RecycleBin = () => {
     }
   };
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 43000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
+
   return (
-    <Draggable
-      defaultPosition={{ x: 500, y: -450 }}
-      handle=".handle"
-      bounds="body"
-      cancel=".handle *"
-    >
-      <RecycleBinFile
-        onMouseDownCapture={() => setLastClicked("recycle")}
-        lastClicked={lastClicked}
-        isVisible={isVisible.recycle}
-        data-no-select="true"
+    <>
+      <Draggable
+        defaultPosition={{ x: 500, y: -450 }}
+        handle=".handle"
+        bounds="body"
+        cancel=".handle *"
       >
-        <RecycleBinHandle className="handle" isVisible={isVisible.recycle}>
-          <ControlBtns iconName="recycle" />
-        </RecycleBinHandle>
-        <Book
-          iconName={book}
-          clickedIcon={bookClicked}
-          isClicked={isClicked.book}
-          onMouseDown={(event) => handleClick(event)}
-          onKeyDown={(event) => handleKeyDown(event)}
-        />
-      </RecycleBinFile>
-    </Draggable>
+        <RecycleBinFile
+          onMouseDownCapture={() => setLastClicked("recycle")}
+          isLoading={isLoading}
+          lastClicked={lastClicked}
+          isVisible={isVisible.recycle}
+          data-no-select="true"
+        >
+          <RecycleBinHandle className="handle" isVisible={isVisible.recycle}>
+            <ControlBtns iconName="recycle" />
+          </RecycleBinHandle>
+          <Book
+            iconName={book}
+            clickedIcon={bookClicked}
+            isClicked={isClicked.book}
+            onMouseDown={(event) => handleClick(event)}
+            onKeyDown={(event) => handleKeyDown(event)}
+          />
+        </RecycleBinFile>
+      </Draggable>
+      {isLoading && <FileLoader top={95} left={113} />}
+    </>
   );
 };
 

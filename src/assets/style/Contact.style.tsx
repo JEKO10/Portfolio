@@ -7,6 +7,7 @@ import { flexMixin, primaryFont } from "./GlobalStyles";
 type FilesProps = {
   lastClicked?: string;
   isVisible: boolean;
+  isLoading?: boolean;
 };
 
 type ContactProps = {
@@ -18,6 +19,8 @@ export const ContactFile = styled.section<FilesProps>`
   position: absolute;
   height: 620px;
   width: 998px;
+
+  visibility: ${({ isLoading }) => (isLoading ? "hidden" : "visible")};
 
   display: ${({ isVisible }) => (isVisible ? "block" : "none")};
   z-index: ${({ lastClicked }) => (lastClicked === "contact" ? 2 : 1)};
@@ -34,11 +37,24 @@ export const ContactHandle = styled.article<FilesProps>`
 
 export const ContactTextarea = styled.textarea`
   background-color: #fff;
-  box-shadow: -2px -2px 0 0 #818181, -2px 0 0 0 #818181, 0 -2px 0 0 #818181,
-    -4px -4px 0 0 black, -4px 0 0 0 black, 0 -4px 0 0 black, 2px 2px 0 0 #e0dede,
-    0 2px 0 0 #e0dede, 2px 0 0 0 #e0dede, 2px -2px 0 0 #818181,
-    -2px 2px 0 0 #e0dede, -4px 2px 0 0 black, -4px 4px 0 0 white,
-    4px 4px 0 0 white, 4px 0 0 0 white, 0 4px 0 0 white, 2px -4px 0 0 black,
+  box-shadow:
+    -2px -2px 0 0 #818181,
+    -2px 0 0 0 #818181,
+    0 -2px 0 0 #818181,
+    -4px -4px 0 0 black,
+    -4px 0 0 0 black,
+    0 -4px 0 0 black,
+    2px 2px 0 0 #e0dede,
+    0 2px 0 0 #e0dede,
+    2px 0 0 0 #e0dede,
+    2px -2px 0 0 #818181,
+    -2px 2px 0 0 #e0dede,
+    -4px 2px 0 0 black,
+    -4px 4px 0 0 white,
+    4px 4px 0 0 white,
+    4px 0 0 0 white,
+    0 4px 0 0 white,
+    2px -4px 0 0 black,
     4px -4px 0 0 white;
 
   font-size: 2rem;
@@ -55,10 +71,25 @@ export const ContactTextarea = styled.textarea`
 
 export const ContactInput = styled.input<ContactProps>`
   background-color: #d9d9d9;
-  box-shadow: -2px -2px #e0dede, -2px 0 #e0dede, 0 -2px #e0dede, -4px -4px white,
-    -4px 0 white, 0 -4px white, 2px 2px #818181, 0 2px #818181, 2px 0 #818181,
-    2px -2px #e0dede, -2px 2px #818181, -4px 2px white, -4px 4px black,
-    4px 4px black, 4px 0 black, 0 4px black, 2px -4px white, 4px -4px black;
+  box-shadow:
+    -2px -2px #e0dede,
+    -2px 0 #e0dede,
+    0 -2px #e0dede,
+    -4px -4px white,
+    -4px 0 white,
+    0 -4px white,
+    2px 2px #818181,
+    0 2px #818181,
+    2px 0 #818181,
+    2px -2px #e0dede,
+    -2px 2px #818181,
+    -4px 2px white,
+    -4px 4px black,
+    4px 4px black,
+    4px 0 black,
+    0 4px black,
+    2px -4px white,
+    4px -4px black;
 
   font-size: 2rem;
   font-family: ${primaryFont};
@@ -71,21 +102,49 @@ export const ContactInput = styled.input<ContactProps>`
   outline: none;
 
   &:focus {
-    box-shadow: -2px -2px 0 0 #818181, -2px 0 0 0 #818181, 0 -2px 0 0 #818181,
-      -4px -4px 0 0 black, -4px 0 0 0 black, 0 -4px 0 0 black,
-      2px 2px 0 0 #e0dede, 0 2px 0 0 #e0dede, 2px 0 0 0 #e0dede,
-      2px -2px 0 0 #818181, -2px 2px 0 0 #e0dede, -4px 2px 0 0 black,
-      -4px 4px 0 0 white, 4px 4px 0 0 white, 4px 0 0 0 white, 0 4px 0 0 white,
-      2px -4px 0 0 black, 4px -4px 0 0 white;
+    box-shadow:
+      -2px -2px 0 0 #818181,
+      -2px 0 0 0 #818181,
+      0 -2px 0 0 #818181,
+      -4px -4px 0 0 black,
+      -4px 0 0 0 black,
+      0 -4px 0 0 black,
+      2px 2px 0 0 #e0dede,
+      0 2px 0 0 #e0dede,
+      2px 0 0 0 #e0dede,
+      2px -2px 0 0 #818181,
+      -2px 2px 0 0 #e0dede,
+      -4px 2px 0 0 black,
+      -4px 4px 0 0 white,
+      4px 4px 0 0 white,
+      4px 0 0 0 white,
+      0 4px 0 0 white,
+      2px -4px 0 0 black,
+      4px -4px 0 0 white;
   }
 `;
 
 export const ContactButton = styled.button<ContactProps>`
   background-color: #d9d9d9;
-  box-shadow: -2px -2px #e0dede, -2px 0 #e0dede, 0 -2px #e0dede, -4px -4px white,
-    -4px 0 white, 0 -4px white, 2px 2px #818181, 0 2px #818181, 2px 0 #818181,
-    2px -2px #e0dede, -2px 2px #818181, -4px 2px white, -4px 4px black,
-    4px 4px black, 4px 0 black, 0 4px black, 2px -4px white, 4px -4px black;
+  box-shadow:
+    -2px -2px #e0dede,
+    -2px 0 #e0dede,
+    0 -2px #e0dede,
+    -4px -4px white,
+    -4px 0 white,
+    0 -4px white,
+    2px 2px #818181,
+    0 2px #818181,
+    2px 0 #818181,
+    2px -2px #e0dede,
+    -2px 2px #818181,
+    -4px 2px white,
+    -4px 4px black,
+    4px 4px black,
+    4px 0 black,
+    0 4px black,
+    2px -4px white,
+    4px -4px black;
 
   height: 47px;
   width: 178px;
@@ -97,11 +156,25 @@ export const ContactButton = styled.button<ContactProps>`
   cursor: pointer;
 
   &:active {
-    box-shadow: -2px -2px #818181, -2px 0 #818181, 0 -2px #818181,
-      -4px -4px black, -4px 0 black, 0 -4px black, 2px 2px #e0dede,
-      0 2px #e0dede, 2px 0 #e0dede, 2px -2px #818181, -2px 2px #e0dede,
-      -4px 2px black, -4px 4px white, 4px 4px white, 4px 0 white, 0 4px white,
-      2px -4px black, 4px -4px white;
+    box-shadow:
+      -2px -2px #818181,
+      -2px 0 #818181,
+      0 -2px #818181,
+      -4px -4px black,
+      -4px 0 black,
+      0 -4px black,
+      2px 2px #e0dede,
+      0 2px #e0dede,
+      2px 0 #e0dede,
+      2px -2px #818181,
+      -2px 2px #e0dede,
+      -4px 2px black,
+      -4px 4px white,
+      4px 4px white,
+      4px 0 white,
+      0 4px white,
+      2px -4px black,
+      4px -4px white;
 
     transform: translate(1px, 1px);
   }
@@ -119,18 +192,46 @@ export const ContactSocials = styled.article`
     margin-left: 1rem;
     cursor: pointer;
 
-    box-shadow: -2px -2px #e0dede, -2px 0 #e0dede, 0 -2px #e0dede,
-      -4px -4px white, -4px 0 white, 0 -4px white, 2px 2px #818181,
-      0 2px #818181, 2px 0 #818181, 2px -2px #e0dede, -2px 2px #818181,
-      -4px 2px white, -4px 4px black, 4px 4px black, 4px 0 black, 0 4px black,
-      2px -4px white, 4px -4px black;
+    box-shadow:
+      -2px -2px #e0dede,
+      -2px 0 #e0dede,
+      0 -2px #e0dede,
+      -4px -4px white,
+      -4px 0 white,
+      0 -4px white,
+      2px 2px #818181,
+      0 2px #818181,
+      2px 0 #818181,
+      2px -2px #e0dede,
+      -2px 2px #818181,
+      -4px 2px white,
+      -4px 4px black,
+      4px 4px black,
+      4px 0 black,
+      0 4px black,
+      2px -4px white,
+      4px -4px black;
 
     &:active {
-      box-shadow: -2px -2px #818181, -2px 0 #818181, 0 -2px #818181,
-        -4px -4px black, -4px 0 black, 0 -4px black, 2px 2px #e0dede,
-        0 2px #e0dede, 2px 0 #e0dede, 2px -2px #818181, -2px 2px #e0dede,
-        -4px 2px black, -4px 4px white, 4px 4px white, 4px 0 white, 0 4px white,
-        2px -4px black, 4px -4px white;
+      box-shadow:
+        -2px -2px #818181,
+        -2px 0 #818181,
+        0 -2px #818181,
+        -4px -4px black,
+        -4px 0 black,
+        0 -4px black,
+        2px 2px #e0dede,
+        0 2px #e0dede,
+        2px 0 #e0dede,
+        2px -2px #818181,
+        -2px 2px #e0dede,
+        -4px 2px black,
+        -4px 4px white,
+        4px 4px white,
+        4px 0 white,
+        0 4px white,
+        2px -4px black,
+        4px -4px white;
 
       & img {
         transform: translate(1px, 1px);

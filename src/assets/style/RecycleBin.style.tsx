@@ -7,6 +7,7 @@ import { flexMixin } from "./GlobalStyles";
 type FilesProps = {
   lastClicked?: string;
   isVisible: boolean;
+  isLoading?: boolean;
 };
 
 export const RecycleBinFile = styled.section<FilesProps>`
@@ -15,6 +16,8 @@ export const RecycleBinFile = styled.section<FilesProps>`
   position: absolute;
   height: 652px;
   width: 755.5px;
+
+  visibility: ${({ isLoading }) => (isLoading ? "hidden" : "visible")};
 
   display: ${({ isVisible }) => (isVisible ? "block" : "none")};
   z-index: ${({ lastClicked }) => (lastClicked === "recycle" ? 2 : 1)};

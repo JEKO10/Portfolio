@@ -6,6 +6,11 @@ type BtnContainer = {
   iconName: string;
 };
 
+type FileLoaderProps = {
+  top: number;
+  left: number;
+};
+
 export const ControlBtnsContainer = styled.div<BtnContainer>`
   margin-top: ${({ iconName }) =>
     iconName === "recycle" ? "6px" : iconName === "work" ? "5px" : "3px"};
@@ -97,5 +102,31 @@ export const MinimizeBtn = styled.button<BtnContainer>`
 
   img {
     margin: 0.2rem;
+  }
+`;
+
+// const rotating = keyframes`
+//   from {
+//     transform: rotate(0deg);
+//   }
+
+//   to {
+//     transform: rotate(360deg);
+//   }
+// `;
+
+export const FileLoader = styled.div<FileLoaderProps>`
+  height: 200px;
+  width: 500px;
+
+  position: absolute;
+  top: ${({ top }) => top + "%"};
+  left: ${({ left }) => left + "%"};
+
+  transform: translate(-50%, -50%);
+  z-index: 5;
+
+  img {
+    height: 30px;
   }
 `;

@@ -12,18 +12,18 @@ import walkmate from "../../assets/images/icons/Walkmate.png";
 import { Project, WorkFile, WorkHandle } from "../../assets/style/Work.style";
 import { useGlobalContext } from "../../utils/context";
 import ControlBtns from "../ControlBtns";
+import FileLoader from "../../utils/FileLoader";
 
 const Work = () => {
   const { lastClicked, setLastClicked, isVisible } = useGlobalContext();
-
-  const projectRef = useRef<HTMLButtonElement>(null);
-
   const [isClicked, setIsClicked] = useState({
     walkmate: false,
     moviexd: false,
     travel: false,
     basket: false
   });
+  const [isLoading, setIsLoading] = useState(true);
+  const projectRef = useRef<HTMLButtonElement>(null);
 
   const handleClick = (iconName: string) => {
     setIsClicked({
@@ -62,94 +62,111 @@ const Work = () => {
     document.addEventListener("click", clickOutside, true);
   }, []);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
+
   return (
-    <Draggable
-      defaultPosition={{ x: 100, y: -430 }}
-      handle=".handle"
-      bounds="body"
-      cancel=".handle *"
-    >
-      <WorkFile
-        onMouseDownCapture={() => setLastClicked("work")}
-        isVisible={isVisible.work}
-        lastClicked={lastClicked}
-        data-no-select="true"
+    <>
+      <Draggable
+        defaultPosition={{ x: 100, y: -430 }}
+        handle=".handle"
+        bounds="body"
+        cancel=".handle *"
       >
-        <WorkHandle className="handle" isVisible={isVisible.work}>
-          <ControlBtns iconName="work" />
-        </WorkHandle>
-        <article>
-          <Project
-            project={walkmate}
-            clickedIcon={walkmateClicked}
-            top={15}
-            left={18}
-            width={158}
-            isClicked={isClicked.walkmate}
-            onClick={() => handleClick("walkmate")}
-            onDoubleClick={() =>
-              window.open("https://github.com/JEKO10/WalkMate", "_blank")
-            }
-            onKeyDown={(event) =>
-              handleKeyDown(event, "https://github.com/JEKO10/WalkMate")
-            }
-            tabIndex={0}
-            ref={projectRef}
-          />
-          <Project
-            project={moviexd}
-            clickedIcon={moviexdClicked}
-            top={15}
-            left={34}
-            width={135}
-            isClicked={isClicked.moviexd}
-            onClick={() => handleClick("moviexd")}
-            onDoubleClick={() =>
-              window.open("https://github.com/JEKO10/Moviexd", "_blank")
-            }
-            onKeyDown={(event) =>
-              handleKeyDown(event, "https://github.com/JEKO10/Moviexd")
-            }
-            tabIndex={0}
-            ref={projectRef}
-          />
-          <Project
-            project={travel}
-            clickedIcon={travelClicked}
-            top={26}
-            left={16.5}
-            width={202}
-            isClicked={isClicked.travel}
-            onClick={() => handleClick("travel")}
-            onDoubleClick={() =>
-              window.open("https://github.com/JEKO10/Travel-advisor", "_blank")
-            }
-            onKeyDown={(event) =>
-              handleKeyDown(event, "https://github.com/JEKO10/Travel-advisor")
-            }
-            tabIndex={0}
-            ref={projectRef}
-          />
-          <Project
-            project={basket}
-            clickedIcon={basketClicked}
-            top={26}
-            left={32}
-            width={192}
-            isClicked={isClicked.basket}
-            onClick={() => handleClick("basket")}
-            onDoubleClick={() =>
-              window.open("https://github.com/JEKO10/BasketReport", "_blank")
-            }
-            onKeyDown={(event) =>
-              handleKeyDown(event, "https://github.com/JEKO10/BasketReport")
-            }
-            tabIndex={0}
-            ref={projectRef}
-          />
-        </article>
-      </WorkFile>
-    </Draggable>
+        <WorkFile
+          onMouseDownCapture={() => setLastClicked("work")}
+          isLoading={isLoading}
+          isVisible={isVisible.work}
+          lastClicked={lastClicked}
+          data-no-select="true"
+        >
+          <WorkHandle className="handle" isVisible={isVisible.work}>
+            <ControlBtns iconName="work" />
+          </WorkHandle>
+          <article>
+            <Project
+              project={walkmate}
+              clickedIcon={walkmateClicked}
+              top={15}
+              left={18}
+              width={158}
+              isClicked={isClicked.walkmate}
+              onClick={() => handleClick("walkmate")}
+              onDoubleClick={() =>
+                window.open("https://github.com/JEKO10/WalkMate", "_blank")
+              }
+              onKeyDown={(event) =>
+                handleKeyDown(event, "https://github.com/JEKO10/WalkMate")
+              }
+              tabIndex={0}
+              ref={projectRef}
+            />
+            <Project
+              project={moviexd}
+              clickedIcon={moviexdClicked}
+              top={15}
+              left={34}
+              width={135}
+              isClicked={isClicked.moviexd}
+              onClick={() => handleClick("moviexd")}
+              onDoubleClick={() =>
+                window.open("https://github.com/JEKO10/Moviexd", "_blank")
+              }
+              onKeyDown={(event) =>
+                handleKeyDown(event, "https://github.com/JEKO10/Moviexd")
+              }
+              tabIndex={0}
+              ref={projectRef}
+            />
+            <Project
+              project={travel}
+              clickedIcon={travelClicked}
+              top={26}
+              left={16.5}
+              width={202}
+              isClicked={isClicked.travel}
+              onClick={() => handleClick("travel")}
+              onDoubleClick={() =>
+                window.open(
+                  "https://github.com/JEKO10/Travel-advisor",
+                  "_blank"
+                )
+              }
+              onKeyDown={(event) =>
+                handleKeyDown(event, "https://github.com/JEKO10/Travel-advisor")
+              }
+              tabIndex={0}
+              ref={projectRef}
+            />
+            <Project
+              project={basket}
+              clickedIcon={basketClicked}
+              top={26}
+              left={32}
+              width={192}
+              isClicked={isClicked.basket}
+              onClick={() => handleClick("basket")}
+              onDoubleClick={() =>
+                window.open("https://github.com/JEKO10/BasketReport", "_blank")
+              }
+              onKeyDown={(event) =>
+                handleKeyDown(event, "https://github.com/JEKO10/BasketReport")
+              }
+              tabIndex={0}
+              ref={projectRef}
+            />
+          </article>
+        </WorkFile>
+      </Draggable>
+      {isLoading && <FileLoader top={55} left={25} />}
+    </>
   );
 };
 
