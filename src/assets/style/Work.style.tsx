@@ -1,14 +1,9 @@
 import styled, { css } from "styled-components";
 
+import { FilesProps } from "../../utils/context";
 import workHandle from "../images/handles/workHandle.jpg";
 import workModal from "../images/modals/workModal.jpg";
 import { flexMixin } from "./GlobalStyles";
-
-type FilesProps = {
-  lastClicked?: string;
-  isVisible: boolean;
-  isLoading?: boolean;
-};
 
 type ProjectProps = {
   project: string;

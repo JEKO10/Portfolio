@@ -1,5 +1,6 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
+import { FilesProps } from "../../utils/context";
 import aboutHandle from "../images/handles/aboutHandle.jpg";
 import aboutModal from "../images/modals/aboutModal.jpg";
 import scroll from "../images/other/scroll.jpg";
@@ -7,12 +8,6 @@ import scrollArrowDown from "../images/other/scrollArrowDown.jpg";
 import scrollArrowUp from "../images/other/scrollArrowUp.jpg";
 import scrollHandle from "../images/other/scrollHandle.jpg";
 import { flexMixin } from "./GlobalStyles";
-
-type FilesProps = {
-  lastClicked?: string;
-  isVisible: boolean;
-  isLoading?: boolean;
-};
 
 export const AboutFile = styled.section<FilesProps>`
   background: url(${aboutModal}) center/contain no-repeat;

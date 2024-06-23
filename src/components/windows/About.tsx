@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Draggable from "react-draggable";
 
 import {
@@ -7,22 +7,13 @@ import {
   AboutMeText
 } from "../../assets/style/About.style";
 import { useGlobalContext } from "../../utils/context";
-import ControlBtns from "../ControlBtns";
 import FileLoader from "../../utils/FileLoader";
+import useLoadingTimer from "../../utils/useLoadingTimer";
+import ControlBtns from "../ControlBtns";
 
 const About = () => {
   const { lastClicked, setLastClicked, isVisible } = useGlobalContext();
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
+  const { isLoading } = useLoadingTimer();
 
   return (
     <>

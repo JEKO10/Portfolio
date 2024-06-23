@@ -1,14 +1,9 @@
 import styled from "styled-components";
 
+import { FilesProps } from "../../utils/context";
 import recycleHandle from "../images/handles/recycleHandle.jpg";
 import recycleBin from "../images/modals/recycleBin.jpg";
 import { flexMixin } from "./GlobalStyles";
-
-type FilesProps = {
-  lastClicked?: string;
-  isVisible: boolean;
-  isLoading?: boolean;
-};
 
 export const RecycleBinFile = styled.section<FilesProps>`
   background: url(${recycleBin}) center/contain no-repeat;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Draggable from "react-draggable";
 
 import github from "../../assets/images/buttons/github.svg";
@@ -9,23 +9,14 @@ import {
   ContactSocials
 } from "../../assets/style/Contact.style";
 import { useGlobalContext } from "../../utils/context";
+import FileLoader from "../../utils/FileLoader";
+import useLoadingTimer from "../../utils/useLoadingTimer";
 import ContactForm from "../ContactForm";
 import ControlBtns from "../ControlBtns";
-import FileLoader from "../../utils/FileLoader";
 
 const Contact = () => {
   const { lastClicked, setLastClicked, isVisible } = useGlobalContext();
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
+  const { isLoading } = useLoadingTimer();
 
   return (
     <>
@@ -68,7 +59,7 @@ const Contact = () => {
           <ContactForm />
         </ContactFile>
       </Draggable>
-      {isLoading && <FileLoader top={81.5} left={25} />}
+      {isLoading && <FileLoader top={82} left={25} />}
     </>
   );
 };

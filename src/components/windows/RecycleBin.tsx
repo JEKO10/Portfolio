@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Draggable from "react-draggable";
 
 import bookClicked from "../../assets/images/icons/bookClicked.png";
@@ -9,8 +9,9 @@ import {
   RecycleBinHandle
 } from "../../assets/style/RecycleBin.style";
 import { useGlobalContext } from "../../utils/context";
-import ControlBtns from "../ControlBtns";
 import FileLoader from "../../utils/FileLoader";
+import useLoadingTimer from "../../utils/useLoadingTimer";
+import ControlBtns from "../ControlBtns";
 
 const RecycleBin = () => {
   const {
@@ -23,7 +24,6 @@ const RecycleBin = () => {
     isClicked,
     setIsClicked
   } = useGlobalContext();
-  const [isLoading, setIsLoading] = useState(true);
 
   const handleClick = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -53,15 +53,7 @@ const RecycleBin = () => {
     }
   };
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 43000);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
+  const { isLoading } = useLoadingTimer();
 
   return (
     <>

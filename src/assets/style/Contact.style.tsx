@@ -1,14 +1,9 @@
 import styled from "styled-components";
 
+import { FilesProps } from "../../utils/context";
 import contactHandle from "../images/handles/contactHandle.jpg";
 import contactModal from "../images/modals/contactModal.jpg";
 import { flexMixin, primaryFont } from "./GlobalStyles";
-
-type FilesProps = {
-  lastClicked?: string;
-  isVisible: boolean;
-  isLoading?: boolean;
-};
 
 type ContactProps = {
   bottom: number;

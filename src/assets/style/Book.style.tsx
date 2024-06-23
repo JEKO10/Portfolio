@@ -1,13 +1,9 @@
 import styled, { css } from "styled-components";
 
+import { FilesProps } from "../../utils/context";
 import bookHandle from "../images/handles/bookHandle.jpg";
 import book from "../images/modals/bookModal.jpg";
 import { flexMixin } from "./GlobalStyles";
-
-type FilesProps = {
-  lastClicked?: string;
-  isVisible: boolean;
-};
 
 type BookProps = {
   iconName: string;
@@ -20,6 +16,8 @@ export const BookFile = styled.section<FilesProps>`
   position: absolute;
   height: 652px;
   width: 975px;
+
+  visibility: ${({ isLoading }) => (isLoading ? "hidden" : "visible")};
 
   display: ${({ isVisible }) => (isVisible ? "block" : "none")};
   z-index: ${({ lastClicked }) => (lastClicked === "book" ? 2 : 1)};
