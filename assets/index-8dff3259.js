@@ -586,6 +586,7 @@ I'll get back to you as soon as possible! :)`}),setTimeout(()=>{o({...r,message:
 
   img {
     margin-right: 1.8rem;
+    image-rendering: pixelated;
   }
 
   p {
@@ -791,6 +792,7 @@ I'll get back to you as soon as possible! :)`}),setTimeout(()=>{o({...r,message:
 `,Tl=F.button`
   height: 140px;
   width: 116px;
+
   ${({isClicked:e,iconName:t,clickedIcon:n})=>e?He`
           background: url(${n}) center/contain no-repeat;
         `:He`
