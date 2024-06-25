@@ -7,17 +7,31 @@ type IconProps = {
   iconName?: string;
 };
 
-const iconsSharedStyle = css`
+export const iconsSharedStyle = css`
   img {
     height: 100px;
     width: 100px;
     /* image-rendering: pixelated; */
     margin-bottom: 0.5rem;
+
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
   }
 
   p {
     font-size: 1.875rem;
     color: #fff;
+
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
   }
 `;
 

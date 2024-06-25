@@ -1,9 +1,9 @@
 import React from "react";
 import Draggable from "react-draggable";
 
-import bookClicked from "../../assets/images/icons/bookClicked.png";
-import book from "../../assets/images/icons/bookIcon.png";
+import book from "../../assets/images/icons/book.png";
 import { Book } from "../../assets/style/Book.style";
+import { Selection } from "../../assets/style/Icons.style";
 import {
   RecycleBinFile,
   RecycleBinHandle
@@ -25,9 +25,7 @@ const RecycleBin = () => {
     setIsClicked
   } = useGlobalContext();
 
-  const handleClick = (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => {
+  const handleClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     switch (event.detail) {
       case 1:
         setIsClicked({ ...isClicked, book: true });
@@ -46,7 +44,7 @@ const RecycleBin = () => {
     }
   };
 
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (event.key === "Enter") {
       setIsOpen({ ...isOpen, book: true });
       setIsVisible({ ...isVisible, book: true });
@@ -75,11 +73,14 @@ const RecycleBin = () => {
           </RecycleBinHandle>
           <Book
             iconName={book}
-            clickedIcon={bookClicked}
             isClicked={isClicked.book}
-            onMouseDown={(event) => handleClick(event)}
+            onClick={(event) => handleClick(event)}
             onKeyDown={(event) => handleKeyDown(event)}
-          />
+          >
+            <img src={book} alt="book" />
+            <Selection isClicked={isClicked.book} iconName={book} />
+            <p>???</p>
+          </Book>
         </RecycleBinFile>
       </Draggable>
       {isLoading && <FileLoader top={95} left={113} />}

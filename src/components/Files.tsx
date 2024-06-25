@@ -17,7 +17,7 @@ const Files = () => {
       {isOpen.about && <About />}
       {isOpen.contact && <Contact />}
       {isOpen.work && <Work />}
-      {/* {isOpen.recycle && <RecycleBin />} */}
+      {isOpen.recycle && <RecycleBin />}
       {isOpen.book && <Book />}
       {isOpen.time && <Time />}
       {/* {isOpen.start && <StartMenu />} */}

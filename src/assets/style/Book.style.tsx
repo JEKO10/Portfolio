@@ -1,13 +1,13 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import { FilesProps } from "../../utils/context";
 import bookHandle from "../images/handles/bookHandle.jpg";
 import book from "../images/modals/bookModal.jpg";
 import { flexMixin } from "./GlobalStyles";
+import { iconsSharedStyle } from "./Icons.style";
 
 type BookProps = {
   iconName: string;
-  clickedIcon: string;
   isClicked: boolean;
 };
 
@@ -29,22 +29,21 @@ export const BookFile = styled.section<FilesProps>`
   }
 `;
 
-export const Book = styled.button<BookProps>`
-  height: 126px;
-  width: 100px;
+export const Book = styled.div<BookProps>`
+  ${flexMixin({ justify: "center", align: "center" })};
+  flex-direction: column;
+
   position: absolute;
   top: 15rem;
   left: 17rem;
 
-  ${({ isClicked, iconName, clickedIcon }) =>
-    isClicked
-      ? css`
-          background: url(${clickedIcon}) center/contain no-repeat;
-        `
-      : css`
-          background: url(${iconName}) center/contain no-repeat;
-        `};
   cursor: pointer;
+
+  ${iconsSharedStyle};
+
+  p {
+    color: #000;
+  }
 `;
 
 export const BookHandle = styled.div<FilesProps>`

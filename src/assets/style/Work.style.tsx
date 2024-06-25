@@ -4,15 +4,7 @@ import { FilesProps } from "../../utils/context";
 import workHandle from "../images/handles/workHandle.jpg";
 import workModal from "../images/modals/workModal.jpg";
 import { flexMixin } from "./GlobalStyles";
-
-// type ProjectProps = {
-//   project: string;
-//   clickedIcon: string;
-//   top: number;
-//   left: number;
-//   width: number;
-//   isClicked: boolean;
-// };
+import { iconsSharedStyle } from "./Icons.style";
 
 type ProjectProps = {
   project: string;
@@ -60,28 +52,9 @@ export const Project = styled.div<ProjectProps>`
 
   cursor: pointer;
 
-  img {
-    height: 100px;
-    width: 100px;
-    /* image-rendering: pixelated; */
-    margin-bottom: 0.5rem;
-
-    user-drag: none;
-    -webkit-user-drag: none;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-  }
+  ${iconsSharedStyle}
 
   p {
-    font-size: 1.875rem;
-
-    user-drag: none;
-    -webkit-user-drag: none;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
+    color: #000;
   }
 `;

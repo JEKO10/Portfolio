@@ -52,6 +52,9 @@ export const StartMenuBtn = styled.article`
   }
 
   img {
+    height: 56px;
+    width: 56px;
+
     margin-right: 1.8rem;
     image-rendering: pixelated;
   }
