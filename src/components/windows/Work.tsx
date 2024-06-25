@@ -1,14 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import Draggable from "react-draggable";
 
-import basket from "../../assets/images/icons/Basket.png";
-import basketClicked from "../../assets/images/icons/basketClicked.png";
-import moviexd from "../../assets/images/icons/Moviexd.png";
-import moviexdClicked from "../../assets/images/icons/moviexdClicked.png";
-import travel from "../../assets/images/icons/Travel.png";
-import travelClicked from "../../assets/images/icons/travelClicked.png";
-import walkmateClicked from "../../assets/images/icons/walkClicked.png";
-import walkmate from "../../assets/images/icons/Walkmate.png";
+import project from "../../assets/images/icons/project.png";
+import { Selection } from "../../assets/style/Icons.style";
 import { Project, WorkFile, WorkHandle } from "../../assets/style/Work.style";
 import { useGlobalContext } from "../../utils/context";
 import FileLoader from "../../utils/FileLoader";
@@ -23,7 +17,7 @@ const Work = () => {
     travel: false,
     basket: false
   });
-  const projectRef = useRef<HTMLButtonElement>(null);
+  const projectRef = useRef<HTMLDivElement>(null);
 
   const handleClick = (iconName: string) => {
     setIsClicked({
@@ -39,7 +33,7 @@ const Work = () => {
   };
 
   const handleKeyDown = (
-    event: React.KeyboardEvent<HTMLButtonElement>,
+    event: React.KeyboardEvent<HTMLDivElement>,
     link: string
   ) => {
     if (event.key === "Enter") {
@@ -84,11 +78,9 @@ const Work = () => {
           </WorkHandle>
           <article>
             <Project
-              project={walkmate}
-              clickedIcon={walkmateClicked}
+              project={project}
               top={15}
               left={18}
-              width={158}
               isClicked={isClicked.walkmate}
               onClick={() => handleClick("walkmate")}
               onDoubleClick={() =>
@@ -99,13 +91,15 @@ const Work = () => {
               }
               tabIndex={0}
               ref={projectRef}
-            />
+            >
+              <img src={project} alt="projectWalkmate" />
+              <Selection isClicked={isClicked.walkmate} iconName={project} />
+              <p>WalkMate.doc</p>
+            </Project>
             <Project
-              project={moviexd}
-              clickedIcon={moviexdClicked}
+              project={project}
               top={15}
               left={34}
-              width={135}
               isClicked={isClicked.moviexd}
               onClick={() => handleClick("moviexd")}
               onDoubleClick={() =>
@@ -116,13 +110,15 @@ const Work = () => {
               }
               tabIndex={0}
               ref={projectRef}
-            />
+            >
+              <img src={project} alt="projectMoviexd" />
+              <Selection isClicked={isClicked.moviexd} iconName={project} />
+              <p>Moviexd.doc</p>
+            </Project>
             <Project
-              project={travel}
-              clickedIcon={travelClicked}
+              project={project}
               top={26}
               left={16.5}
-              width={202}
               isClicked={isClicked.travel}
               onClick={() => handleClick("travel")}
               onDoubleClick={() =>
@@ -136,13 +132,15 @@ const Work = () => {
               }
               tabIndex={0}
               ref={projectRef}
-            />
+            >
+              <img src={project} alt="projectTravelAdvisor" />
+              <Selection isClicked={isClicked.travel} iconName={project} />
+              <p>Travel advisor.doc</p>
+            </Project>
             <Project
-              project={basket}
-              clickedIcon={basketClicked}
+              project={project}
               top={26}
               left={32}
-              width={192}
               isClicked={isClicked.basket}
               onClick={() => handleClick("basket")}
               onDoubleClick={() =>
@@ -153,7 +151,11 @@ const Work = () => {
               }
               tabIndex={0}
               ref={projectRef}
-            />
+            >
+              <img src={project} alt="projectBasketReport" />
+              <Selection isClicked={isClicked.basket} iconName={project} />
+              <p>Basket report.doc</p>
+            </Project>
           </article>
         </WorkFile>
       </Draggable>

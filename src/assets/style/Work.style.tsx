@@ -1,17 +1,24 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import { FilesProps } from "../../utils/context";
 import workHandle from "../images/handles/workHandle.jpg";
 import workModal from "../images/modals/workModal.jpg";
 import { flexMixin } from "./GlobalStyles";
 
+// type ProjectProps = {
+//   project: string;
+//   clickedIcon: string;
+//   top: number;
+//   left: number;
+//   width: number;
+//   isClicked: boolean;
+// };
+
 type ProjectProps = {
   project: string;
-  clickedIcon: string;
+  isClicked: boolean;
   top: number;
   left: number;
-  width: number;
-  isClicked: boolean;
 };
 
 export const WorkFile = styled.section<FilesProps>`
@@ -43,19 +50,38 @@ export const WorkHandle = styled.article<FilesProps>`
   }
 `;
 
-export const Project = styled.button<ProjectProps>`
-  ${({ isClicked, project, clickedIcon }) =>
-    isClicked
-      ? css`
-          background: url(${clickedIcon}) center/cover no-repeat;
-        `
-      : css`
-          background: url(${project}) center/cover no-repeat;
-        `};
-  height: 133px;
-  width: ${({ width }) => width + "px"};
-  cursor: pointer;
+export const Project = styled.div<ProjectProps>`
+  ${flexMixin({ justify: "center", align: "center" })};
+  flex-direction: column;
+
   position: absolute;
   top: ${({ top }) => top + "rem"};
   left: ${({ left }) => left + "rem"};
+
+  cursor: pointer;
+
+  img {
+    height: 100px;
+    width: 100px;
+    /* image-rendering: pixelated; */
+    margin-bottom: 0.5rem;
+
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
+
+  p {
+    font-size: 1.875rem;
+
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
 `;
