@@ -8,7 +8,7 @@ import Work from "../../assets/images/buttons/workStart.png";
 import Dash from "../../assets/images/other/startDash.jpg";
 import {
   StartContainer,
-  StartMenuBtn,
+  StartMenuBtn
 } from "../../assets/style/StartMenu.style";
 import { useGlobalContext } from "../../utils/context";
 
@@ -19,7 +19,7 @@ const StartMenu: React.FC = () => {
     setIsVisible,
     isVisible,
     setIsShutDown,
-    setIsShuttingDown,
+    setIsShuttingDown
   } = useGlobalContext();
 
   const handleShutDown = () => {

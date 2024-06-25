@@ -15,7 +15,7 @@ export const LoaderContainer = styled.div`
     color: #163394;
     font-weight: 700;
     position: absolute;
-    bottom: 4rem;
+    bottom: 2rem;
     left: 50%;
     transform: translate(-50%);
     user-select: none;

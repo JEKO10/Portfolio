@@ -1,14 +1,15 @@
 import React, { useEffect, useRef } from "react";
 
-import about from "../assets/images/icons/about.png";
-import aboutClicked from "../assets/images/icons/aboutClicked.png";
-import contact from "../assets/images/icons/contact.png";
-import contactClicked from "../assets/images/icons/contactClicked.png";
-import recycle from "../assets/images/icons/recycle.png";
-import recycleClicked from "../assets/images/icons/recycleClicked.png";
-import work from "../assets/images/icons/work.png";
-import workClicked from "../assets/images/icons/workClicked.png";
-import { Icon, IconsContainer, RecycleBin } from "../assets/style/Icons.style";
+import aboutStart from "../assets/images/buttons/aboutStart.png";
+import contactStart from "../assets/images/buttons/contactStart.png";
+import recycleStart from "../assets/images/buttons/recycleStart.png";
+import workStart from "../assets/images/buttons/workStart.png";
+import {
+  Icon,
+  IconsContainer,
+  RecycleBin,
+  Selection
+} from "../assets/style/Icons.style";
 import { useGlobalContext } from "../utils/context";
 
 const Icons = () => {
@@ -18,12 +19,12 @@ const Icons = () => {
     isOpen,
     setIsOpen,
     isVisible,
-    setIsVisible,
+    setIsVisible
   } = useGlobalContext();
-  const buttonRef = useRef<HTMLButtonElement>(null);
+  const iconRef = useRef<HTMLDivElement>(null);
 
   const handleClick = (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>,
     iconName: string
   ) => {
     switch (event.detail) {
@@ -33,11 +34,11 @@ const Icons = () => {
           work: false,
           contact: false,
           recycle: false,
-          book: false,
+          book: false
         });
         setIsClicked((prevState) => ({
           ...prevState,
-          [iconName]: true,
+          [iconName]: true
         }));
 
         setIsOpen({ ...isOpen, start: false });
@@ -55,7 +56,7 @@ const Icons = () => {
     }
   };
 
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (event.key === "Enter") {
       Object.keys(isClicked).forEach((icon) => {
         if (isClicked[icon] === true) {
@@ -68,13 +69,13 @@ const Icons = () => {
 
   useEffect(() => {
     const clickOutside = (e: MouseEvent) => {
-      if (!buttonRef.current?.contains(e.target as Node)) {
+      if (!iconRef.current?.contains(e.target as Node)) {
         setIsClicked({
           about: false,
           work: false,
           contact: false,
           recycle: false,
-          book: false,
+          book: false
         });
       }
     };
@@ -90,42 +91,50 @@ const Icons = () => {
     <>
       <IconsContainer>
         <Icon
-          iconName={about}
-          clickedIcon={aboutClicked}
           isClicked={isClicked.about}
           onMouseDown={(event) => handleClick(event, "about")}
           onKeyDown={(event) => handleKeyDown(event)}
           tabIndex={0}
-          ref={buttonRef}
-        />
+          ref={iconRef}
+        >
+          <img src={aboutStart} alt="aboutStart" />
+          <Selection isClicked={isClicked.about} iconName={aboutStart} />
+          <p>About Me</p>
+        </Icon>
         <Icon
-          iconName={work}
-          clickedIcon={workClicked}
           isClicked={isClicked.work}
           onMouseDown={(event) => handleClick(event, "work")}
           onKeyDown={(event) => handleKeyDown(event)}
           tabIndex={0}
-          ref={buttonRef}
-        />
+          ref={iconRef}
+        >
+          <img src={workStart} alt="workStart" />
+          <Selection isClicked={isClicked.work} iconName={workStart} />
+          <p>My Work</p>
+        </Icon>
         <Icon
-          iconName={contact}
-          clickedIcon={contactClicked}
           isClicked={isClicked.contact}
           onMouseDown={(event) => handleClick(event, "contact")}
           onKeyDown={(event) => handleKeyDown(event)}
           tabIndex={0}
-          ref={buttonRef}
-        />
+          ref={iconRef}
+        >
+          <img src={contactStart} alt="contactStart" />
+          <Selection isClicked={isClicked.contact} iconName={contactStart} />
+          <p>Contact</p>
+        </Icon>
       </IconsContainer>
       <RecycleBin
-        iconName={recycle}
-        clickedIcon={recycleClicked}
         isClicked={isClicked.recycle}
         onMouseDown={(event) => handleClick(event, "recycle")}
         onKeyDown={(event) => handleKeyDown(event)}
         tabIndex={0}
-        ref={buttonRef}
-      />
+        ref={iconRef}
+      >
+        <img src={recycleStart} alt="recycleStart" />
+        <Selection isClicked={isClicked.recycle} iconName={recycleStart} />
+        <p>Recycle Bin</p>
+      </RecycleBin>
     </>
   );
 };
