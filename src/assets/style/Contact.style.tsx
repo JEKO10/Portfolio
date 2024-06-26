@@ -238,6 +238,7 @@ export const ContactSocials = styled.article`
       width: 100%;
       margin-top: 4px;
       user-select: none;
+      -webkit-user-drag: none;
       user-drag: none;
     }
   }

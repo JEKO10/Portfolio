@@ -29,6 +29,7 @@ export const StartContainer = styled.section<StartContainerPosition>`
   p {
     user-select: none;
     user-drag: none;
+    -webkit-user-drag: none;
   }
 `;
 

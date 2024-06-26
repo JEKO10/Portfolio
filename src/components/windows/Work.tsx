@@ -54,7 +54,7 @@ const Work = () => {
   return (
     <>
       <Draggable
-        defaultPosition={{ x: 100, y: -430 }}
+        defaultPosition={{ x: 300, y: -550 }}
         handle=".handle"
         bounds="body"
         cancel=".handle *"
@@ -75,7 +75,10 @@ const Work = () => {
               top={15}
               left={18}
               isClicked={isClicked.walkmate}
-              onClick={() => handleClick("walkmate")}
+              onMouseDown={(e) => {
+                e.preventDefault();
+                handleClick("walkmate");
+              }}
               onDoubleClick={() =>
                 window.open("https://github.com/JEKO10/WalkMate", "_blank")
               }
@@ -94,7 +97,10 @@ const Work = () => {
               top={15}
               left={34}
               isClicked={isClicked.moviexd}
-              onClick={() => handleClick("moviexd")}
+              onMouseDown={(e) => {
+                e.preventDefault();
+                handleClick("moviexd");
+              }}
               onDoubleClick={() =>
                 window.open("https://github.com/JEKO10/Moviexd", "_blank")
               }
@@ -113,7 +119,10 @@ const Work = () => {
               top={26}
               left={16.5}
               isClicked={isClicked.travel}
-              onClick={() => handleClick("travel")}
+              onMouseDown={(e) => {
+                e.preventDefault();
+                handleClick("travel");
+              }}
               onDoubleClick={() =>
                 window.open(
                   "https://github.com/JEKO10/Travel-advisor",
@@ -135,7 +144,10 @@ const Work = () => {
               top={26}
               left={32}
               isClicked={isClicked.basket}
-              onClick={() => handleClick("basket")}
+              onMouseDown={(e) => {
+                e.preventDefault();
+                handleClick("basket");
+              }}
               onDoubleClick={() =>
                 window.open("https://github.com/JEKO10/BasketReport", "_blank")
               }

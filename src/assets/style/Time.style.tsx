@@ -21,6 +21,7 @@ export const TimeModal = styled.section<FilesProps>`
 
   p {
     user-select: none;
+    -webkit-user-drag: none;
     user-drag: none;
   }
 `;

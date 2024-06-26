@@ -55,6 +55,6 @@ export const Project = styled.div<ProjectProps>`
   ${iconsSharedStyle}
 
   p {
-    color: #000;
+    color: ${({ isClicked }) => (isClicked ? "#fff" : "#000")};
   }
 `;

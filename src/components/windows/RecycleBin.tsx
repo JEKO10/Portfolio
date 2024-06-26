@@ -94,7 +94,7 @@ const RecycleBin = () => {
           </Book>
         </RecycleBinFile>
       </Draggable>
-      {isLoading && <FileLoader top={95} left={113} />}
+      {isLoading && <FileLoader top={94} left={113} />}
     </>
   );
 };

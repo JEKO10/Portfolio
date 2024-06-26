@@ -39,7 +39,7 @@ export const Book = styled.div<BookProps>`
 
   cursor: pointer;
 
-  ${iconsSharedStyle};
+  ${iconsSharedStyle}; /* @TODO: mozda ako ovdje stavim sherd direktno radice */
 
   p {
     color: ${({ isClicked }) => (isClicked ? "#fff" : "#000")};

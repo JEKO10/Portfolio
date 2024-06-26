@@ -83,7 +83,10 @@ const Icons = () => {
       <IconsContainer>
         <Icon
           isClicked={isClicked.about}
-          onMouseDown={(event) => handleClick(event, "about")}
+          onMouseDown={(event) => {
+            event.preventDefault();
+            handleClick(event, "about");
+          }}
           onKeyDown={(event) => handleKeyDown(event)}
           tabIndex={0}
           ref={iconRef}
@@ -94,7 +97,10 @@ const Icons = () => {
         </Icon>
         <Icon
           isClicked={isClicked.work}
-          onMouseDown={(event) => handleClick(event, "work")}
+          onMouseDown={(event) => {
+            event.preventDefault();
+            handleClick(event, "work");
+          }}
           onKeyDown={(event) => handleKeyDown(event)}
           tabIndex={0}
           ref={iconRef}
@@ -105,7 +111,10 @@ const Icons = () => {
         </Icon>
         <Icon
           isClicked={isClicked.contact}
-          onMouseDown={(event) => handleClick(event, "contact")}
+          onMouseDown={(event) => {
+            event.preventDefault();
+            handleClick(event, "contact");
+          }}
           onKeyDown={(event) => handleKeyDown(event)}
           tabIndex={0}
           ref={iconRef}
@@ -117,7 +126,10 @@ const Icons = () => {
       </IconsContainer>
       <RecycleBin
         isClicked={isClicked.recycle}
-        onMouseDown={(event) => handleClick(event, "recycle")}
+        onMouseDown={(event) => {
+          event.preventDefault();
+          handleClick(event, "recycle");
+        }}
         onKeyDown={(event) => handleKeyDown(event)}
         tabIndex={0}
         ref={iconRef}

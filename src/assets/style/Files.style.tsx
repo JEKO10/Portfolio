@@ -134,5 +134,9 @@ export const FileLoader = styled.div<FileLoaderProps>`
         ${rotating} 2s linear infinite
       `};
     height: 30px;
+
+    user-select: none;
+    pointer-events: none;
+    -webkit-user-drag: none;
   }
 `;

@@ -50,6 +50,10 @@ export const AboutMeText = styled.article`
     font-weight: 500;
     padding-right: 20px;
     margin-bottom: 0.8rem;
+
+    user-select: none;
+    pointer-events: none;
+    -webkit-user-drag: none;
     user-drag: none;
   }
 
