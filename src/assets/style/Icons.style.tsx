@@ -7,7 +7,7 @@ type IconProps = {
   iconName?: string;
 };
 
-export const iconsSharedStyle = css`
+export const iconsSharedStyle = css<IconProps>`
   img {
     height: 100px;
     width: 100px;
@@ -25,6 +25,9 @@ export const iconsSharedStyle = css`
   p {
     font-size: 1.875rem;
     color: #fff;
+    background-color: ${({ isClicked }) =>
+      isClicked && "rgba(29, 0, 208, 0.5)"};
+    padding: 0 5px;
 
     user-drag: none;
     -webkit-user-drag: none;
@@ -68,6 +71,7 @@ export const RecycleBin = styled.div<IconProps>`
 export const Selection = styled.div<IconProps>`
   display: ${({ isClicked }) => (isClicked ? "block" : "none")};
   background: #1d00d0;
+  /* background: rgba(29, 0, 208, 0.5); */
   height: 100px;
   width: 100px;
   position: absolute;

@@ -42,7 +42,7 @@ export const Book = styled.div<BookProps>`
   ${iconsSharedStyle};
 
   p {
-    color: #000;
+    color: ${({ isClicked }) => (isClicked ? "#fff" : "#000")};
   }
 `;
 
