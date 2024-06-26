@@ -8,7 +8,7 @@ import {
 } from "../../assets/style/About.style";
 import { useGlobalContext } from "../../utils/context";
 import FileLoader from "../../utils/FileLoader";
-import useLoadingTimer from "../../utils/useLoadingTimer";
+import { useLoadingTimer } from "../../utils/hooks";
 import ControlBtns from "../ControlBtns";
 
 const About = () => {

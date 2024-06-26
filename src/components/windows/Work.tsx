@@ -6,7 +6,7 @@ import { Selection } from "../../assets/style/Icons.style";
 import { Project, WorkFile, WorkHandle } from "../../assets/style/Work.style";
 import { useGlobalContext } from "../../utils/context";
 import FileLoader from "../../utils/FileLoader";
-import useLoadingTimer from "../../utils/useLoadingTimer";
+import { useLoadingTimer, useOutsideClick } from "../../utils/hooks";
 import ControlBtns from "../ControlBtns";
 
 const Work = () => {
@@ -18,6 +18,7 @@ const Work = () => {
     basket: false
   });
   const projectRef = useRef<HTMLDivElement>(null);
+  const { isLoading } = useLoadingTimer();
 
   const handleClick = (iconName: string) => {
     setIsClicked({
@@ -41,22 +42,14 @@ const Work = () => {
     }
   };
 
-  const clickOutside = (e: MouseEvent) => {
-    if (!projectRef.current?.contains(e.target as Node)) {
-      setIsClicked({
-        walkmate: false,
-        moviexd: false,
-        travel: false,
-        basket: false
-      });
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("click", clickOutside, true);
-  }, []);
-
-  const { isLoading } = useLoadingTimer();
+  useOutsideClick(projectRef, () => {
+    setIsClicked({
+      walkmate: false,
+      moviexd: false,
+      travel: false,
+      basket: false
+    });
+  });
 
   return (
     <>

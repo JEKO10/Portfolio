@@ -11,6 +11,7 @@ import {
   Selection
 } from "../assets/style/Icons.style";
 import { useGlobalContext } from "../utils/context";
+import { useOutsideClick } from "../utils/hooks";
 
 const Icons = () => {
   const {
@@ -67,25 +68,15 @@ const Icons = () => {
     }
   };
 
-  useEffect(() => {
-    const clickOutside = (e: MouseEvent) => {
-      if (!iconRef.current?.contains(e.target as Node)) {
-        setIsClicked({
-          about: false,
-          work: false,
-          contact: false,
-          recycle: false,
-          book: false
-        });
-      }
-    };
-
-    document.addEventListener("mousedown", clickOutside, true);
-
-    return () => {
-      document.removeEventListener("mousedown", clickOutside, true);
-    };
-  }, []);
+  useOutsideClick(iconRef, () => {
+    setIsClicked({
+      about: false,
+      work: false,
+      contact: false,
+      recycle: false,
+      book: false
+    });
+  });
 
   return (
     <>

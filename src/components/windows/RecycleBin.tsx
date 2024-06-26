@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Draggable from "react-draggable";
 
 import book from "../../assets/images/icons/book.png";
@@ -10,7 +10,7 @@ import {
 } from "../../assets/style/RecycleBin.style";
 import { useGlobalContext } from "../../utils/context";
 import FileLoader from "../../utils/FileLoader";
-import useLoadingTimer from "../../utils/useLoadingTimer";
+import { useLoadingTimer, useOutsideClick } from "../../utils/hooks";
 import ControlBtns from "../ControlBtns";
 
 const RecycleBin = () => {
@@ -24,6 +24,8 @@ const RecycleBin = () => {
     isClicked,
     setIsClicked
   } = useGlobalContext();
+  const bookRef = useRef<HTMLDivElement>(null);
+  const { isLoading } = useLoadingTimer();
 
   const handleClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     switch (event.detail) {
@@ -51,7 +53,15 @@ const RecycleBin = () => {
     }
   };
 
-  const { isLoading } = useLoadingTimer();
+  useOutsideClick(bookRef, () => {
+    setIsClicked({
+      about: false,
+      work: false,
+      contact: false,
+      recycle: false,
+      book: false
+    });
+  });
 
   return (
     <>
@@ -74,8 +84,9 @@ const RecycleBin = () => {
           <Book
             iconName={book}
             isClicked={isClicked.book}
-            onClick={(event) => handleClick(event)}
+            onMouseDown={(event) => handleClick(event)}
             onKeyDown={(event) => handleKeyDown(event)}
+            ref={bookRef}
           >
             <img src={book} alt="book" />
             <Selection isClicked={isClicked.book} iconName={book} />

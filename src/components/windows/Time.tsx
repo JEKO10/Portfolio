@@ -4,7 +4,7 @@ import Draggable from "react-draggable";
 import { TimeHandle, TimeModal } from "../../assets/style/Time.style";
 import { useGlobalContext } from "../../utils/context";
 import FileLoader from "../../utils/FileLoader";
-import useLoadingTimer from "../../utils/useLoadingTimer";
+import { useLoadingTimer } from "../../utils/hooks";
 import TimeButtons from "../time/TimeButtons";
 import TimeDetails from "../time/TimeDetails";
 

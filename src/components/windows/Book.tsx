@@ -3,7 +3,7 @@ import Draggable from "react-draggable";
 
 import { BookFile, BookHandle, BookText } from "../../assets/style/Book.style";
 import { useGlobalContext } from "../../utils/context";
-import useLoadingTimer from "../../utils/useLoadingTimer";
+import { useLoadingTimer } from "../../utils/hooks";
 import ControlBtns from "../ControlBtns";
 
 const Book = () => {
