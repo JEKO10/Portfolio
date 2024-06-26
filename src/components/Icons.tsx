@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from "react";
 
-import aboutStart from "../assets/images/buttons/aboutStart.png";
-import contactStart from "../assets/images/buttons/contactStart.png";
-import recycleStart from "../assets/images/buttons/recycleStart.png";
-import workStart from "../assets/images/buttons/workStart.png";
+import about from "../assets/images/icons/about.png";
+import contact from "../assets/images/icons/contact.png";
+import recycle from "../assets/images/icons/recycle.png";
+import work from "../assets/images/icons/work.png";
 import {
   Icon,
   IconsContainer,
@@ -97,8 +97,8 @@ const Icons = () => {
           tabIndex={0}
           ref={iconRef}
         >
-          <img src={aboutStart} alt="aboutStart" />
-          <Selection isClicked={isClicked.about} iconName={aboutStart} />
+          <img src={about} alt="aboutIcon" />
+          <Selection isClicked={isClicked.about} iconName={about} />
           <p>About Me</p>
         </Icon>
         <Icon
@@ -108,8 +108,8 @@ const Icons = () => {
           tabIndex={0}
           ref={iconRef}
         >
-          <img src={workStart} alt="workStart" />
-          <Selection isClicked={isClicked.work} iconName={workStart} />
+          <img src={work} alt="workIcon" />
+          <Selection isClicked={isClicked.work} iconName={work} />
           <p>My Work</p>
         </Icon>
         <Icon
@@ -119,8 +119,8 @@ const Icons = () => {
           tabIndex={0}
           ref={iconRef}
         >
-          <img src={contactStart} alt="contactStart" />
-          <Selection isClicked={isClicked.contact} iconName={contactStart} />
+          <img src={contact} alt="contactIcon" />
+          <Selection isClicked={isClicked.contact} iconName={contact} />
           <p>Contact</p>
         </Icon>
       </IconsContainer>
@@ -131,8 +131,8 @@ const Icons = () => {
         tabIndex={0}
         ref={iconRef}
       >
-        <img src={recycleStart} alt="recycleStart" />
-        <Selection isClicked={isClicked.recycle} iconName={recycleStart} />
+        <img src={recycle} alt="recycleIcon" />
+        <Selection isClicked={isClicked.recycle} iconName={recycle} />
         <p>Recycle Bin</p>
       </RecycleBin>
     </>

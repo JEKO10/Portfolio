@@ -1,11 +1,11 @@
 import React from "react";
 
-import About from "../../assets/images/buttons/aboutStart.png";
-import Contact from "../../assets/images/buttons/contactStart.png";
-import Recycle from "../../assets/images/buttons/recycleStart.png";
-import ShutDown from "../../assets/images/buttons/shutDown.png";
-import Work from "../../assets/images/buttons/workStart.png";
-import Dash from "../../assets/images/other/startDash.jpg";
+import about from "../../assets/images/icons/about.png";
+import contact from "../../assets/images/icons/contact.png";
+import recycle from "../../assets/images/icons/recycle.png";
+import shutDown from "../../assets/images/buttons/shutDown.png";
+import work from "../../assets/images/icons/work.png";
+import dash from "../../assets/images/other/startDash.jpg";
 import {
   StartContainer,
   StartMenuBtn
@@ -38,7 +38,7 @@ const StartMenu: React.FC = () => {
           setIsVisible({ ...isVisible, about: true });
         }}
       >
-        <img src={About} alt="AboutStart" />
+        <img src={about} alt="AboutStart" />
         <p>About Me</p>
       </StartMenuBtn>
       <StartMenuBtn
@@ -47,7 +47,7 @@ const StartMenu: React.FC = () => {
           setIsVisible({ ...isVisible, work: true });
         }}
       >
-        <img src={Work} alt="WorkStart" />
+        <img src={work} alt="WorkStart" />
         <p>My Work</p>
       </StartMenuBtn>
       <StartMenuBtn
@@ -56,7 +56,7 @@ const StartMenu: React.FC = () => {
           setIsVisible({ ...isVisible, contact: true });
         }}
       >
-        <img src={Contact} alt="ContactStart" />
+        <img src={contact} alt="ContactStart" />
         <p>Contact</p>
       </StartMenuBtn>
       <StartMenuBtn
@@ -65,12 +65,12 @@ const StartMenu: React.FC = () => {
           setIsVisible({ ...isVisible, recycle: true });
         }}
       >
-        <img src={Recycle} alt="RecycleStart" />
+        <img src={recycle} alt="RecycleStart" />
         <p>Recycle Bin</p>
       </StartMenuBtn>
-      <img src={Dash} alt="StartDash" />
+      <img src={dash} alt="StartDash" />
       <StartMenuBtn onClick={handleShutDown}>
-        <img src={ShutDown} alt="ShutDownStart" />
+        <img src={shutDown} alt="ShutDownStart" />
         <p>Shut Down</p>
       </StartMenuBtn>
     </StartContainer>
