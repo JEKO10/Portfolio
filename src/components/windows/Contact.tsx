@@ -9,7 +9,6 @@ import {
   ContactSocials
 } from "../../assets/style/Contact.style";
 import { useGlobalContext } from "../../utils/context";
-import FileLoader from "../../utils/FileLoader";
 import { useLoadingTimer } from "../../utils/hooks";
 import ContactForm from "../ContactForm";
 import ControlBtns from "../ControlBtns";
@@ -59,7 +58,6 @@ const Contact = () => {
           <ContactForm />
         </ContactFile>
       </Draggable>
-      {isLoading && <FileLoader top={82} left={25} />}
     </>
   );
 };

@@ -1,15 +1,9 @@
-import styled, { css, keyframes } from "styled-components";
+import styled, { css } from "styled-components";
 
 import { flexMixin } from "./GlobalStyles";
 
 type BtnContainer = {
   iconName: string;
-};
-
-type FileLoaderProps = {
-  top: number;
-  left: number;
-  isTime?: boolean;
 };
 
 export const ControlBtnsContainer = styled.div<BtnContainer>`
@@ -103,40 +97,5 @@ export const MinimizeBtn = styled.button<BtnContainer>`
 
   img {
     margin: 0.2rem;
-  }
-`;
-
-const rotating = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-`;
-
-export const FileLoader = styled.div<FileLoaderProps>`
-  height: 200px;
-  width: 500px;
-
-  position: absolute;
-  top: ${({ top }) => top + "%"};
-  left: ${({ left }) => left + "%"};
-
-  transform: translate(-50%, -50%);
-  z-index: ${({ isTime }) => isTime && "4"};
-
-  img {
-    animation: ${({ isTime }) =>
-      isTime &&
-      css`
-        ${rotating} 2s linear infinite
-      `};
-    height: 30px;
-
-    user-select: none;
-    pointer-events: none;
-    -webkit-user-drag: none;
   }
 `;

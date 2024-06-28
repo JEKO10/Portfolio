@@ -1,9 +1,9 @@
 import React from "react";
 
+import shutDown from "../../assets/images/buttons/shutDown.png";
 import about from "../../assets/images/icons/about.png";
 import contact from "../../assets/images/icons/contact.png";
 import recycle from "../../assets/images/icons/recycle.png";
-import shutDown from "../../assets/images/buttons/shutDown.png";
 import work from "../../assets/images/icons/work.png";
 import dash from "../../assets/images/other/startDash.jpg";
 import {

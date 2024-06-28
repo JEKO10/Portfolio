@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 
 import about from "../assets/images/icons/about.png";
 import contact from "../assets/images/icons/contact.png";

@@ -7,7 +7,6 @@ import {
   AboutMeText
 } from "../../assets/style/About.style";
 import { useGlobalContext } from "../../utils/context";
-import FileLoader from "../../utils/FileLoader";
 import { useLoadingTimer } from "../../utils/hooks";
 import ControlBtns from "../ControlBtns";
 
@@ -64,7 +63,6 @@ const About = () => {
           </AboutMeText>
         </AboutFile>
       </Draggable>
-      {isLoading && <FileLoader top={30} left={25} />}
     </>
   );
 };

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useGlobalContext } from "./context";
+import loading from "../assets/images/other/loading.png";
 
 export const useLoadingTimer = (delay = 3000) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -13,6 +14,14 @@ export const useLoadingTimer = (delay = 3000) => {
       clearTimeout(timer);
     };
   }, [delay]);
+
+  useEffect(() => {
+    if (isLoading) {
+      document.body.style.cursor = `url(${loading}), auto`;
+    } else {
+      document.body.style.cursor = "auto";
+    }
+  }, [isLoading]);
 
   return { isLoading };
 };

@@ -9,7 +9,6 @@ import {
   RecycleBinHandle
 } from "../../assets/style/RecycleBin.style";
 import { useGlobalContext } from "../../utils/context";
-import FileLoader from "../../utils/FileLoader";
 import { useLoadingTimer, useOutsideClick } from "../../utils/hooks";
 import ControlBtns from "../ControlBtns";
 
@@ -94,7 +93,6 @@ const RecycleBin = () => {
           </Book>
         </RecycleBinFile>
       </Draggable>
-      {isLoading && <FileLoader top={94} left={113} />}
     </>
   );
 };

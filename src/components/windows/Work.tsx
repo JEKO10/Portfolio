@@ -1,11 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import Draggable from "react-draggable";
 
 import project from "../../assets/images/icons/project.png";
 import { Selection } from "../../assets/style/Icons.style";
 import { Project, WorkFile, WorkHandle } from "../../assets/style/Work.style";
 import { useGlobalContext } from "../../utils/context";
-import FileLoader from "../../utils/FileLoader";
 import { useLoadingTimer, useOutsideClick } from "../../utils/hooks";
 import ControlBtns from "../ControlBtns";
 
@@ -164,7 +163,6 @@ const Work = () => {
           </article>
         </WorkFile>
       </Draggable>
-      {isLoading && <FileLoader top={55} left={25} />}
     </>
   );
 };

@@ -3,7 +3,6 @@ import Draggable from "react-draggable";
 
 import { TimeHandle, TimeModal } from "../../assets/style/Time.style";
 import { useGlobalContext } from "../../utils/context";
-import FileLoader from "../../utils/FileLoader";
 import { useLoadingTimer } from "../../utils/hooks";
 import TimeButtons from "../time/TimeButtons";
 import TimeDetails from "../time/TimeDetails";
@@ -41,7 +40,6 @@ const Time = () => {
           <TimeButtons />
         </TimeModal>
       </Draggable>
-      {isLoading && <FileLoader top={109.2} left={102.5} isTime={true} />}
     </>
   );
 };
