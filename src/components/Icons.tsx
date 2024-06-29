@@ -23,6 +23,11 @@ const Icons = () => {
     setIsVisible
   } = useGlobalContext();
   const iconRef = useRef<HTMLDivElement>(null);
+  const iconsData = [
+    { name: "about", src: about, alt: "aboutIcon", label: "About Me" },
+    { name: "work", src: work, alt: "workIcon", label: "My Work" },
+    { name: "contact", src: contact, alt: "contactIcon", label: "Contact" }
+  ];
 
   const handleClick = (
     event: React.MouseEvent<HTMLDivElement, MouseEvent>,
@@ -81,48 +86,26 @@ const Icons = () => {
   return (
     <>
       <IconsContainer>
-        <Icon
-          isClicked={isClicked.about}
-          onMouseDown={(event) => {
-            event.preventDefault();
-            handleClick(event, "about");
-          }}
-          onKeyDown={(event) => handleKeyDown(event)}
-          tabIndex={0}
-          ref={iconRef}
-        >
-          <img src={about} alt="aboutIcon" />
-          <Selection isClicked={isClicked.about} iconName={about} />
-          <p>About Me</p>
-        </Icon>
-        <Icon
-          isClicked={isClicked.work}
-          onMouseDown={(event) => {
-            event.preventDefault();
-            handleClick(event, "work");
-          }}
-          onKeyDown={(event) => handleKeyDown(event)}
-          tabIndex={0}
-          ref={iconRef}
-        >
-          <img src={work} alt="workIcon" />
-          <Selection isClicked={isClicked.work} iconName={work} />
-          <p>My Work</p>
-        </Icon>
-        <Icon
-          isClicked={isClicked.contact}
-          onMouseDown={(event) => {
-            event.preventDefault();
-            handleClick(event, "contact");
-          }}
-          onKeyDown={(event) => handleKeyDown(event)}
-          tabIndex={0}
-          ref={iconRef}
-        >
-          <img src={contact} alt="contactIcon" />
-          <Selection isClicked={isClicked.contact} iconName={contact} />
-          <p>Contact</p>
-        </Icon>
+        {iconsData.map((icon) => (
+          <Icon
+            key={icon.name}
+            isClicked={isClicked[icon.name] || false}
+            onMouseDown={(event) => {
+              event.preventDefault();
+              handleClick(event, icon.name);
+            }}
+            onKeyDown={(event) => handleKeyDown(event)}
+            tabIndex={0}
+            ref={iconRef}
+          >
+            <img src={icon.src} alt={icon.alt} />
+            <Selection
+              isClicked={isClicked[icon.name] || false}
+              iconName={icon.src}
+            />
+            <p>{icon.label}</p>
+          </Icon>
+        ))}
       </IconsContainer>
       <RecycleBin
         isClicked={isClicked.recycle}
