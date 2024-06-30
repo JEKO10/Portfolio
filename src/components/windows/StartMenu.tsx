@@ -21,6 +21,12 @@ const StartMenu: React.FC = () => {
     setIsShutDown,
     setIsShuttingDown
   } = useGlobalContext();
+  const startData = [
+    { name: "about", src: about, alt: "aboutStart", label: "About Me" },
+    { name: "work", src: work, alt: "workStart", label: "My Work" },
+    { name: "contact", src: contact, alt: "contactStart", label: "Contact" },
+    { name: "recycle", src: recycle, alt: "RecycleStart", label: "Recycle Bin" }
+  ];
 
   const handleShutDown = () => {
     setIsShuttingDown(true);
@@ -32,42 +38,17 @@ const StartMenu: React.FC = () => {
 
   return (
     <StartContainer isOpen={isOpen.start} data-no-select="true">
-      <StartMenuBtn
-        onClick={() => {
-          setIsOpen({ ...isOpen, about: true, start: false });
-          setIsVisible({ ...isVisible, about: true });
-        }}
-      >
-        <img src={about} alt="AboutStart" />
-        <p>About Me</p>
-      </StartMenuBtn>
-      <StartMenuBtn
-        onClick={() => {
-          setIsOpen({ ...isOpen, work: true, start: false });
-          setIsVisible({ ...isVisible, work: true });
-        }}
-      >
-        <img src={work} alt="WorkStart" />
-        <p>My Work</p>
-      </StartMenuBtn>
-      <StartMenuBtn
-        onClick={() => {
-          setIsOpen({ ...isOpen, contact: true, start: false });
-          setIsVisible({ ...isVisible, contact: true });
-        }}
-      >
-        <img src={contact} alt="ContactStart" />
-        <p>Contact</p>
-      </StartMenuBtn>
-      <StartMenuBtn
-        onClick={() => {
-          setIsOpen({ ...isOpen, recycle: true, start: false });
-          setIsVisible({ ...isVisible, recycle: true });
-        }}
-      >
-        <img src={recycle} alt="RecycleStart" />
-        <p>Recycle Bin</p>
-      </StartMenuBtn>
+      {startData.map((startBtn) => (
+        <StartMenuBtn
+          onClick={() => {
+            setIsOpen({ ...isOpen, [startBtn.name]: true, start: false });
+            setIsVisible({ ...isVisible, [startBtn.name]: true });
+          }}
+        >
+          <img src={startBtn.src} alt={startBtn.alt} />
+          <p>{startBtn.label}</p>
+        </StartMenuBtn>
+      ))}
       <img src={dash} alt="StartDash" />
       <StartMenuBtn onClick={handleShutDown}>
         <img src={shutDown} alt="ShutDownStart" />
