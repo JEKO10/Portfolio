@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 import { FilesProps } from "../../utils/context";
-import aboutHandle from "../images/handles/aboutHandle.jpg";
-import aboutModal from "../images/modals/aboutModal.jpg";
+import aboutHandle from "../images/handles/a.jpg";
+import aboutModal from "../images/modals/a.png";
 import scroll from "../images/other/scroll.jpg";
 import scrollArrowDown from "../images/other/scrollArrowDown.jpg";
 import scrollArrowUp from "../images/other/scrollArrowUp.jpg";
@@ -28,11 +28,10 @@ export const AboutFile = styled.section<FilesProps>`
 export const AboutHandle = styled.article<FilesProps>`
   ${flexMixin({ justify: "flex-end", align: "center" })};
   background: url(${aboutHandle}) center/cover no-repeat;
-  height: 50px;
-  width: 100%;
+  height: 37px;
+  width: 959px;
   max-width: 975px;
-  margin: 0 auto;
-  padding: 0 15px;
+  margin: 0.5rem auto;
   cursor: grab;
 `;
 

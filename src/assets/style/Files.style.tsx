@@ -7,12 +7,13 @@ type BtnContainer = {
 };
 
 export const ControlBtnsContainer = styled.div<BtnContainer>`
-  margin-top: ${({ iconName }) =>
-    iconName === "recycle" ? "6px" : iconName === "work" ? "5px" : "3px"};
   ${flexMixin({ justify: "center", align: "center" })};
-
-  margin-top: ${({ iconName }) =>
-    iconName === "recycle" || iconName === "work" ? "5px" : "3px"};
+  height: 53px;
+  width: 125px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-right: 0.8rem;
 
   > div {
     ${flexMixin({ justify: "center", align: "center" })};

@@ -29,9 +29,11 @@ const About = () => {
           isVisible={isVisible.about}
           data-no-select="true"
         >
-          <AboutHandle className="handle" isVisible={isVisible.about}>
-            <ControlBtns iconName="about" />
-          </AboutHandle>
+          <ControlBtns iconName="about" />
+          <AboutHandle
+            className="handle"
+            isVisible={isVisible.about}
+          ></AboutHandle>
           <AboutMeText>
             <p>
               From my earliest memories, computers have been my playground. What
