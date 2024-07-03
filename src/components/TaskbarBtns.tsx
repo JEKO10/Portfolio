@@ -6,9 +6,14 @@ import { useGlobalContext } from "../utils/context";
 type TaskbarBtnProps = {
   iconName: string;
   imgSource: string;
+  label: string;
 };
 
-const TaskbarBtn: React.FC<TaskbarBtnProps> = ({ iconName, imgSource }) => {
+const TaskbarBtn: React.FC<TaskbarBtnProps> = ({
+  iconName,
+  imgSource,
+  label
+}) => {
   const { isVisible, setIsVisible } = useGlobalContext();
 
   return (
@@ -18,7 +23,8 @@ const TaskbarBtn: React.FC<TaskbarBtnProps> = ({ iconName, imgSource }) => {
       }
       iconName={iconName}
     >
-      <img src={imgSource} alt="aboutMe" />
+      {imgSource && <img src={imgSource} alt={label} />}
+      <p>{label}</p>
     </TaskbarButton>
   );
 };

@@ -71,6 +71,7 @@ export const TaskbarButton = styled.div<ButtonProps>`
   width: 163px;
   margin: ${({ iconName }) => (iconName === "name" ? "0 15px 0 5px" : "")};
   margin-right: 15px;
+  cursor: auto;
 
   &:active {
     box-shadow:
@@ -96,12 +97,34 @@ export const TaskbarButton = styled.div<ButtonProps>`
     & img {
       transform: translate(-9px, 1px);
     }
+
+    & p {
+      transform: ${({ iconName }) =>
+        iconName === "name" ? "translate(2px, 1px)" : "translate(-4px, 1px)"};
+    }
   }
 
   img {
-    transform: translate(-10px, 0);
+    height: 31px;
+    width: 31px;
+    margin-left: 10px;
     scale: 0.8;
-    margin-left: ${({ iconName }) => (iconName === "book" ? "-5px" : "")};
+    transform: translate(-10px, 0);
+  }
+
+  p {
+    font-size: 1.5rem;
+    margin-left: 0.2rem;
+    transform: ${({ iconName }) =>
+      iconName === "name" ? "" : "translate(-5px, 0)"};
+    cursor: auto;
+
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
   }
 `;
 
