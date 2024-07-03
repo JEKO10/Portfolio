@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useGlobalContext } from "./context";
+
 import loading from "../assets/images/other/loading.png";
 
 export const useLoadingTimer = (delay = 3000) => {
@@ -78,8 +78,6 @@ export const useOutsideClick = (
   ref: React.RefObject<HTMLDivElement>,
   callback: useOutsideClickCallback
 ) => {
-  const { setIsClicked } = useGlobalContext();
-
   useEffect(() => {
     const clickOutside = (e: MouseEvent) => {
       if (!ref.current?.contains(e.target as Node)) {

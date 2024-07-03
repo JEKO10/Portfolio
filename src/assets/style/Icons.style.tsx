@@ -53,8 +53,7 @@ export const Icon = styled.div<IconProps>`
   ${flexMixin({ justify: "center", align: "center" })};
   flex-direction: column;
   position: relative;
-  margin: 20px 15px;
-  cursor: pointer;
+  margin: 15px 10px;
 
   ${iconsSharedStyle};
 `;
@@ -66,7 +65,6 @@ export const RecycleBin = styled.div<IconProps>`
   bottom: 2rem;
   right: 0;
   margin: 40px 30px;
-  cursor: pointer;
 
   ${iconsSharedStyle};
 `;

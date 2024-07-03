@@ -42,7 +42,6 @@ export const Start = styled.button<ButtonProps>`
       : `url(${startButton})`};
   background-repeat: no-repeat;
   background-size: contain;
-  cursor: pointer;
 `;
 
 export const TaskbarButton = styled.div<ButtonProps>`
@@ -72,7 +71,6 @@ export const TaskbarButton = styled.div<ButtonProps>`
   width: 163px;
   margin: ${({ iconName }) => (iconName === "name" ? "0 15px 0 5px" : "")};
   margin-right: 15px;
-  cursor: pointer;
 
   &:active {
     box-shadow:

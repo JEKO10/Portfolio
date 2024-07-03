@@ -39,7 +39,6 @@ export const StartMenuBtn = styled.article`
   width: 100%;
   padding: 20px 25px;
   transition: all 200ms ease;
-  cursor: pointer;
 
   & {
     :hover {

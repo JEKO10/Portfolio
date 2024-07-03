@@ -40,6 +40,7 @@ const StartMenu: React.FC = () => {
     <StartContainer isOpen={isOpen.start} data-no-select="true">
       {startData.map((startBtn) => (
         <StartMenuBtn
+          key={startBtn.name}
           onClick={() => {
             setIsOpen({ ...isOpen, [startBtn.name]: true, start: false });
             setIsVisible({ ...isVisible, [startBtn.name]: true });
