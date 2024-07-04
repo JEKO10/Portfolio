@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { FilesProps } from "../../utils/context";
-import bookHandle from "../images/handles/bookHandle.jpg";
+import bookHandle from "../images/handles/handle.jpg";
 import book from "../images/modals/bookModal.jpg";
 import { flexMixin } from "./GlobalStyles";
 import { iconsSharedStyle } from "./Icons.style";
@@ -47,12 +47,43 @@ export const Book = styled.div<BookProps>`
 `;
 
 export const BookHandle = styled.div<FilesProps>`
-  ${flexMixin({ justify: "flex-end", align: "center" })};
   background: url(${bookHandle}) center/contain no-repeat;
-  height: 50px;
-  width: 100%;
-  padding: 0 15px;
+  height: 37px;
+  width: 959px;
+  margin: 0.5rem auto;
   cursor: grab;
+
+  div {
+    ${flexMixin({ justify: "flex-start", align: "center" })};
+    height: 37px;
+    width: 270px;
+
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    cursor: auto;
+
+    img {
+      height: 28px;
+      width: 28px;
+      margin: 0 0.5rem;
+
+      user-drag: none;
+      -webkit-user-drag: none;
+      user-select: none;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    }
+
+    p {
+      font-size: 1.875rem;
+      color: #fff;
+    }
+  }
 `;
 
 export const BookText = styled.p`

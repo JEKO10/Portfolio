@@ -1,6 +1,7 @@
 import React from "react";
 import Draggable from "react-draggable";
 
+import handleImg from "../../assets/images/icons/book.png";
 import { BookFile, BookHandle, BookText } from "../../assets/style/Book.style";
 import { useGlobalContext } from "../../utils/context";
 import { useLoadingTimer } from "../../utils/hooks";
@@ -25,8 +26,12 @@ const Book = () => {
           isVisible={isVisible.book}
           data-no-select="true"
         >
+          <ControlBtns iconName="book" />
           <BookHandle className="handle" isVisible={isVisible.book}>
-            <ControlBtns iconName="book" />
+            <div>
+              <img src={handleImg} alt="handleImg" />
+              <p>General - Notepad</p>
+            </div>
           </BookHandle>
           <article>
             <BookText>Site Design and Development:</BookText>
