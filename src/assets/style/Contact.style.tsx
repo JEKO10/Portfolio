@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { FilesProps } from "../../utils/context";
-import contactHandle from "../images/handles/contactHandle.jpg";
+import contactHandle from "../images/handles/handle.jpg";
 import contactModal from "../images/modals/contactModal.jpg";
 import { flexMixin, primaryFont } from "./GlobalStyles";
 
@@ -19,15 +19,51 @@ export const ContactFile = styled.section<FilesProps>`
 
   display: ${({ isVisible }) => (isVisible ? "block" : "none")};
   z-index: ${({ lastClicked }) => (lastClicked === "contact" ? 2 : 1)};
+
+  > div {
+    margin-top: 0.2rem;
+  }
 `;
 
 export const ContactHandle = styled.article<FilesProps>`
-  ${flexMixin({ justify: "flex-end", align: "center" })};
   background: url(${contactHandle}) center/cover no-repeat;
-  height: 57px;
-  width: 100%;
-  padding: 0 20px;
+  height: 43px;
+  width: 980px;
+  margin: 0.5rem auto;
   cursor: grab;
+
+  div {
+    ${flexMixin({ justify: "flex-start", align: "center" })};
+    height: 44px;
+    width: 160px;
+
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    cursor: auto;
+
+    img {
+      height: 33px;
+      width: 33px;
+      margin: 0 0.5rem;
+
+      user-drag: none;
+      -webkit-user-drag: none;
+      user-select: none;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    }
+
+    p {
+      font-size: 1.875rem;
+      color: #fff;
+      margin: 0 0.5rem;
+    }
+  }
 `;
 
 export const ContactTextarea = styled.textarea`

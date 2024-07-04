@@ -3,6 +3,7 @@ import Draggable from "react-draggable";
 
 import github from "../../assets/images/buttons/github.svg";
 import linkedIn from "../../assets/images/buttons/linkedIn.svg";
+import handleImg from "../../assets/images/icons/contact.png";
 import {
   ContactFile,
   ContactHandle,
@@ -32,8 +33,12 @@ const Contact = () => {
           lastClicked={lastClicked}
           data-no-select="true"
         >
+          <ControlBtns iconName="contact" />
           <ContactHandle className="handle" isVisible={isVisible.contact}>
-            <ControlBtns iconName="contact" />
+            <div>
+              <img src={handleImg} alt="handleImg" />
+              <p>Contact</p>
+            </div>
           </ContactHandle>
           <ContactSocials>
             <button>

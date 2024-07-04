@@ -24,6 +24,16 @@ export const WorkFile = styled.section<FilesProps>`
 
   display: ${({ isVisible }) => (isVisible ? "block" : "none")};
   z-index: ${({ lastClicked }) => (lastClicked === "work" ? 2 : 1)};
+
+  > div {
+    height: 45px;
+    width: 115px;
+
+    button {
+      height: 19.5px;
+      width: 22.5px;
+    }
+  }
 `;
 
 export const WorkHandle = styled.article<FilesProps>`
