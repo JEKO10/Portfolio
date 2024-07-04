@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 import { FilesProps } from "../../utils/context";
-import timeHandle from "../images/handles/timeHandle.jpg";
+import timeHandle from "../images/handles/handle.jpg";
 import time from "../images/modals/timeModal.jpg";
-import { flexMixin, primaryFont } from "./GlobalStyles";
+import { primaryFont } from "./GlobalStyles";
 
 type BtnProps = {
   right: number;
@@ -27,12 +27,14 @@ export const TimeModal = styled.section<FilesProps>`
 `;
 
 export const TimeHandle = styled.article`
-  ${flexMixin({ justify: "flex-end", align: "center" })};
   background: url(${timeHandle}) center/cover no-repeat;
-  height: 38px;
-  width: 100%;
-  padding: 0 15px;
+  height: 26px;
+  width: 567px;
   cursor: grab;
+
+  position: absolute;
+  top: 0.25rem;
+  left: 0.25rem;
 `;
 
 export const DigitalClock = styled.p`
