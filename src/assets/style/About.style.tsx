@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 import { FilesProps } from "../../utils/context";
-import aboutHandle from "../images/handles/a.jpg";
-import aboutModal from "../images/modals/a.png";
+import aboutHandle from "../images/handles/handle.jpg";
+import aboutModal from "../images/modals/aboutModal.jpg";
 import scroll from "../images/other/scroll.jpg";
 import scrollArrowDown from "../images/other/scrollArrowDown.jpg";
 import scrollArrowUp from "../images/other/scrollArrowUp.jpg";
@@ -26,13 +26,44 @@ export const AboutFile = styled.section<FilesProps>`
 `;
 
 export const AboutHandle = styled.article<FilesProps>`
-  ${flexMixin({ justify: "flex-end", align: "center" })};
   background: url(${aboutHandle}) center/cover no-repeat;
   height: 37px;
   width: 959px;
   max-width: 975px;
   margin: 0.5rem auto;
   cursor: grab;
+
+  div {
+    ${flexMixin({ justify: "flex-start", align: "center" })};
+    height: 37px;
+    width: 165px;
+
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    cursor: auto;
+
+    img {
+      height: 28px;
+      width: 28px;
+      margin: 0 0.5rem;
+
+      user-drag: none;
+      -webkit-user-drag: none;
+      user-select: none;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    }
+
+    p {
+      font-size: 1.875rem;
+      color: #fff;
+    }
+  }
 `;
 
 export const AboutMeText = styled.article`

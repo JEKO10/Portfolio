@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import Draggable from "react-draggable";
 
 import project from "../../assets/images/icons/project.png";
+import handleImg from "../../assets/images/icons/work.png";
 import { Selection } from "../../assets/style/Icons.style";
 import { Project, WorkFile, WorkHandle } from "../../assets/style/Work.style";
 import { useGlobalContext } from "../../utils/context";
@@ -65,8 +66,12 @@ const Work = () => {
           lastClicked={lastClicked}
           data-no-select="true"
         >
+          <ControlBtns iconName="work" />
           <WorkHandle className="handle" isVisible={isVisible.work}>
-            <ControlBtns iconName="work" />
+            <div>
+              <img src={handleImg} alt="handleImg" />
+              <p>My Work</p>
+            </div>
           </WorkHandle>
           <article>
             <Project

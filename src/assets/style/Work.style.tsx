@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { FilesProps } from "../../utils/context";
-import workHandle from "../images/handles/workHandle.jpg";
+import workHandle from "../images/handles/handle.jpg";
 import workModal from "../images/modals/workModal.jpg";
 import { flexMixin } from "./GlobalStyles";
 import { iconsSharedStyle } from "./Icons.style";
@@ -18,7 +18,7 @@ export const WorkFile = styled.section<FilesProps>`
 
   position: absolute;
   height: 652px;
-  width: 755.5px;
+  width: 756px;
 
   visibility: ${({ isLoading }) => (isLoading ? "hidden" : "visible")};
 
@@ -27,18 +27,41 @@ export const WorkFile = styled.section<FilesProps>`
 `;
 
 export const WorkHandle = styled.article<FilesProps>`
-  ${flexMixin({ justify: "flex-end", align: "center" })};
   background: url(${workHandle}) center/contain no-repeat;
-  height: 42px;
-  width: 100%;
-  max-width: 755px;
-  margin: 0 auto;
-  padding: 0 15px;
+  height: 28px;
+  width: 742px;
+  margin: 0.55rem auto;
   cursor: grab;
 
-  button {
-    height: 19.5px !important;
-    width: 22.5px !important;
+  div {
+    ${flexMixin({ justify: "flex-start", align: "center" })};
+    width: 130px;
+
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    cursor: auto;
+
+    img {
+      height: 26px;
+      width: 26px;
+      margin: 0 0.5rem;
+
+      user-drag: none;
+      -webkit-user-drag: none;
+      user-select: none;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    }
+
+    p {
+      font-size: 1.5rem;
+      color: #fff;
+    }
   }
 `;
 

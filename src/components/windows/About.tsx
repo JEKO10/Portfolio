@@ -1,6 +1,7 @@
 import React from "react";
 import Draggable from "react-draggable";
 
+import handleImg from "../../assets/images/icons/about.png";
 import {
   AboutFile,
   AboutHandle,
@@ -30,10 +31,12 @@ const About = () => {
           data-no-select="true"
         >
           <ControlBtns iconName="about" />
-          <AboutHandle
-            className="handle"
-            isVisible={isVisible.about}
-          ></AboutHandle>
+          <AboutHandle className="handle" isVisible={isVisible.about}>
+            <div>
+              <img src={handleImg} alt="handleImg" />
+              <p>About Me</p>
+            </div>
+          </AboutHandle>
           <AboutMeText>
             <p>
               From my earliest memories, computers have been my playground. What
