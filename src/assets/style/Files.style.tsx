@@ -22,6 +22,18 @@ export const ControlBtnsContainer = styled.div<BtnContainer>`
       margin: 0 0.3rem;
     }
   }
+
+  ${({ iconName }) =>
+    iconName === "recycle" &&
+    css`
+      height: 48px;
+      width: 115px;
+
+      button {
+        height: 19.5px;
+        width: 22.5px;
+      }
+    `}
 `;
 
 const controlButtonStyles = css`

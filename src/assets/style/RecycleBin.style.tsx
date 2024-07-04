@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { FilesProps } from "../../utils/context";
-import recycleHandle from "../images/handles/recycleHandle.jpg";
+import recycleHandle from "../images/handles/handle.jpg";
 import recycleBin from "../images/modals/recycleBin.jpg";
 import { flexMixin } from "./GlobalStyles";
 
@@ -10,7 +10,7 @@ export const RecycleBinFile = styled.section<FilesProps>`
 
   position: absolute;
   height: 652px;
-  width: 755.5px;
+  width: 755px;
 
   visibility: ${({ isLoading }) => (isLoading ? "hidden" : "visible")};
 
@@ -19,12 +19,41 @@ export const RecycleBinFile = styled.section<FilesProps>`
 `;
 
 export const RecycleBinHandle = styled.article<FilesProps>`
-  ${flexMixin({ justify: "flex-end", align: "center" })};
-  background: url(${recycleHandle}) center/contain no-repeat;
-  height: 43px;
-  width: 100%;
-  max-width: 753px;
-  margin: 0 auto;
-  padding: 0 15px;
+  background: url(${recycleHandle}) center/cover no-repeat;
+  height: 33px;
+  width: 741px;
+  margin: 0.45rem auto;
   cursor: grab;
+
+  div {
+    ${flexMixin({ justify: "flex-start", align: "center" })};
+    height: 30px;
+    width: 160px;
+
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    cursor: auto;
+
+    img {
+      height: 26px;
+      width: 26px;
+      margin: 0 0.5rem;
+
+      user-drag: none;
+      -webkit-user-drag: none;
+      user-select: none;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    }
+
+    p {
+      font-size: 1.5rem;
+      color: #fff;
+    }
+  }
 `;

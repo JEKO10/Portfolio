@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import Draggable from "react-draggable";
 
 import book from "../../assets/images/icons/book.png";
+import handleImg from "../../assets/images/icons/recycle.png";
 import { Book } from "../../assets/style/Book.style";
 import { Selection } from "../../assets/style/Icons.style";
 import {
@@ -77,8 +78,12 @@ const RecycleBin = () => {
           isVisible={isVisible.recycle}
           data-no-select="true"
         >
+          <ControlBtns iconName="recycle" />
           <RecycleBinHandle className="handle" isVisible={isVisible.recycle}>
-            <ControlBtns iconName="recycle" />
+            <div>
+              <img src={handleImg} alt="handleImg" />
+              <p>Recycle Bin</p>
+            </div>
           </RecycleBinHandle>
           <Book
             iconName={book}
