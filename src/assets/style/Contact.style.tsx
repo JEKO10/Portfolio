@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { FilesProps } from "../../utils/context";
 import contactHandle from "../images/handles/handle.jpg";
 import contactModal from "../images/modals/contactModal.jpg";
-import { flexMixin, primaryFont } from "./GlobalStyles";
+import { disableUserShared, flexMixin, primaryFont } from "./GlobalStyles";
 
 type ContactProps = {
   bottom: number;
@@ -37,25 +37,14 @@ export const ContactHandle = styled.article<FilesProps>`
     height: 44px;
     width: 160px;
 
-    user-drag: none;
-    -webkit-user-drag: none;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    cursor: auto;
+    ${disableUserShared}
 
     img {
       height: 33px;
       width: 33px;
       margin: 0 0.5rem;
 
-      user-drag: none;
-      -webkit-user-drag: none;
-      user-select: none;
-      -moz-user-select: none;
-      -webkit-user-select: none;
-      -ms-user-select: none;
+      ${disableUserShared}
     }
 
     p {
@@ -273,9 +262,7 @@ export const ContactSocials = styled.article`
       height: 35px;
       width: 100%;
       margin-top: 4px;
-      user-select: none;
-      -webkit-user-drag: none;
-      user-drag: none;
+      ${disableUserShared}
     }
   }
 `;

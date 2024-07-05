@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { FilesProps } from "../../utils/context";
 import timeHandle from "../images/handles/handle.jpg";
 import time from "../images/modals/timeModal.jpg";
-import { primaryFont } from "./GlobalStyles";
+import { disableUserShared, primaryFont } from "./GlobalStyles";
 
 type BtnProps = {
   right: number;
@@ -20,9 +20,7 @@ export const TimeModal = styled.section<FilesProps>`
   z-index: ${({ lastClicked }) => (lastClicked === "time" ? 2 : 1)};
 
   p {
-    user-select: none;
-    -webkit-user-drag: none;
-    user-drag: none;
+    ${disableUserShared}
   }
 `;
 

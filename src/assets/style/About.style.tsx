@@ -7,7 +7,7 @@ import scroll from "../images/other/scroll.jpg";
 import scrollArrowDown from "../images/other/scrollArrowDown.jpg";
 import scrollArrowUp from "../images/other/scrollArrowUp.jpg";
 import scrollHandle from "../images/other/scrollHandle.jpg";
-import { flexMixin } from "./GlobalStyles";
+import { disableUserShared, flexMixin } from "./GlobalStyles";
 
 export const AboutFile = styled.section<FilesProps>`
   background: url(${aboutModal}) center/contain no-repeat;
@@ -38,12 +38,7 @@ export const AboutHandle = styled.article<FilesProps>`
     height: 37px;
     width: 165px;
 
-    user-drag: none;
-    -webkit-user-drag: none;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
+    ${disableUserShared}
     cursor: auto;
 
     img {
@@ -51,12 +46,7 @@ export const AboutHandle = styled.article<FilesProps>`
       width: 28px;
       margin: 0 0.5rem;
 
-      user-drag: none;
-      -webkit-user-drag: none;
-      user-select: none;
-      -moz-user-select: none;
-      -webkit-user-select: none;
-      -ms-user-select: none;
+      ${disableUserShared}
     }
 
     p {
@@ -81,10 +71,8 @@ export const AboutMeText = styled.article`
     padding-right: 20px;
     margin-bottom: 0.8rem;
 
-    user-select: none;
+    ${disableUserShared}
     pointer-events: none;
-    -webkit-user-drag: none;
-    user-drag: none;
   }
 
   ::-webkit-scrollbar {

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import startButton from "../images/buttons/start.png";
 import startClicked from "../images/buttons/startClicked.png";
 import taskbar from "../images/other/taskbar.jpg";
-import { flexMixin } from "./GlobalStyles";
+import { disableUserShared, flexMixin } from "./GlobalStyles";
 
 type ButtonProps = {
   isOpen?: boolean;
@@ -26,8 +26,7 @@ export const TaskBar = styled.section`
   }
 
   img {
-    user-select: none;
-    user-drag: none;
+    ${disableUserShared}
   }
 `;
 
@@ -119,12 +118,7 @@ export const TaskbarButton = styled.div<ButtonProps>`
       iconName === "name" ? "" : "translate(-5px, 0)"};
     cursor: auto;
 
-    user-drag: none;
-    -webkit-user-drag: none;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
+    ${disableUserShared}
   }
 `;
 

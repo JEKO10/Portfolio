@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-import { flexMixin } from "./GlobalStyles";
+import { disableUserShared, flexMixin } from "./GlobalStyles";
 
 type IconProps = {
   isClicked: boolean;
@@ -14,12 +14,7 @@ export const iconsSharedStyle = css<IconProps>`
     /* image-rendering: pixelated; */
     margin-bottom: 0.5rem;
 
-    user-drag: none;
-    -webkit-user-drag: none;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
+    ${disableUserShared}
   }
 
   p {
@@ -29,14 +24,8 @@ export const iconsSharedStyle = css<IconProps>`
       isClicked && "rgba(29, 0, 208, 0.5)"};
     padding: 0 5px;
 
-    user-drag: none;
-    -webkit-user-drag: none;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
+    ${disableUserShared}
 
-    user-select: none;
     pointer-events: none;
   }
 `;

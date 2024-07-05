@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { FilesProps } from "../../utils/context";
 import recycleHandle from "../images/handles/handle.jpg";
 import recycleBin from "../images/modals/recycleBin.jpg";
-import { flexMixin } from "./GlobalStyles";
+import { disableUserShared, flexMixin } from "./GlobalStyles";
 
 export const RecycleBinFile = styled.section<FilesProps>`
   background: url(${recycleBin}) center/contain no-repeat;
@@ -30,12 +30,7 @@ export const RecycleBinHandle = styled.article<FilesProps>`
     height: 30px;
     width: 160px;
 
-    user-drag: none;
-    -webkit-user-drag: none;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
+    ${disableUserShared}
     cursor: auto;
 
     img {
@@ -43,12 +38,7 @@ export const RecycleBinHandle = styled.article<FilesProps>`
       width: 26px;
       margin: 0 0.5rem;
 
-      user-drag: none;
-      -webkit-user-drag: none;
-      user-select: none;
-      -moz-user-select: none;
-      -webkit-user-select: none;
-      -ms-user-select: none;
+      ${disableUserShared}
     }
 
     p {

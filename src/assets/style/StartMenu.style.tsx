@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import start from "../images/modals/startMenuBg.jpg";
-import { flexMixin } from "./GlobalStyles";
+import { disableUserShared, flexMixin } from "./GlobalStyles";
 
 type StartContainerPosition = {
   isOpen: boolean | undefined;
@@ -27,9 +27,7 @@ export const StartContainer = styled.section<StartContainerPosition>`
 
   img,
   p {
-    user-select: none;
-    user-drag: none;
-    -webkit-user-drag: none;
+    ${disableUserShared}
   }
 `;
 

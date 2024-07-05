@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-import { flexMixin } from "./GlobalStyles";
+import { disableUserShared, flexMixin } from "./GlobalStyles";
 
 type BtnContainer = {
   iconName: string;
@@ -91,8 +91,7 @@ const controlButtonStyles = css`
   }
 
   img {
-    user-select: none;
-    user-drag: none;
+    ${disableUserShared}
   }
 `;
 

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { FilesProps } from "../../utils/context";
 import workHandle from "../images/handles/handle.jpg";
 import workModal from "../images/modals/workModal.jpg";
-import { flexMixin } from "./GlobalStyles";
+import { disableUserShared, flexMixin } from "./GlobalStyles";
 import { iconsSharedStyle } from "./Icons.style";
 
 type ProjectProps = {
@@ -45,27 +45,17 @@ export const WorkHandle = styled.article<FilesProps>`
 
   div {
     ${flexMixin({ justify: "flex-start", align: "center" })};
-    width: 130px;
+    width: 140px;
 
-    user-drag: none;
-    -webkit-user-drag: none;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
+    ${disableUserShared}
     cursor: auto;
 
     img {
       height: 26px;
       width: 26px;
-      margin: 0 0.5rem;
+      margin: 0 0.7rem;
 
-      user-drag: none;
-      -webkit-user-drag: none;
-      user-select: none;
-      -moz-user-select: none;
-      -webkit-user-select: none;
-      -ms-user-select: none;
+      ${disableUserShared}
     }
 
     p {
