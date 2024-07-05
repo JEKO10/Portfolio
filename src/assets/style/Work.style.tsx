@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { FilesProps } from "../../utils/context";
-import workHandle from "../images/handles/handle.jpg";
+import workHandle from "../images/other/handle.jpg";
 import workModal from "../images/modals/workModal.jpg";
 import { disableUserShared, flexMixin } from "./GlobalStyles";
 import { iconsSharedStyle } from "./Icons.style";

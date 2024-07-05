@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 import { FilesProps } from "../../utils/context";
-import bookHandle from "../images/handles/handle.jpg";
-import book from "../images/modals/bookModal.jpg";
+import bookHandle from "../images/other/handle.jpg";
+import book from "../images/modals/shared.jpg";
 import { disableUserShared, flexMixin } from "./GlobalStyles";
 import { iconsSharedStyle } from "./Icons.style";
 

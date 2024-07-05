@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { FilesProps } from "../../utils/context";
-import timeHandle from "../images/handles/handle.jpg";
+import timeHandle from "../images/other/handle.jpg";
 import time from "../images/modals/timeModal.jpg";
 import { disableUserShared, primaryFont } from "./GlobalStyles";
 

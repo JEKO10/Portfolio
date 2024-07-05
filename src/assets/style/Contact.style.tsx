@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { FilesProps } from "../../utils/context";
-import contactHandle from "../images/handles/handle.jpg";
+import contactHandle from "../images/other/handle.jpg";
 import contactModal from "../images/modals/contactModal.jpg";
 import { disableUserShared, flexMixin, primaryFont } from "./GlobalStyles";
 

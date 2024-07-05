@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { FilesProps } from "../../utils/context";
-import recycleHandle from "../images/handles/handle.jpg";
+import recycleHandle from "../images/other/handle.jpg";
 import recycleBin from "../images/modals/recycleBin.jpg";
 import { disableUserShared, flexMixin } from "./GlobalStyles";
 
