@@ -94,7 +94,7 @@ const Icons = () => {
               event.preventDefault();
               handleClick(event, icon.name);
             }}
-            onKeyDown={(event) => handleKeyDown(event)}
+            onKeyDown={(e) => handleKeyDown(e)}
             tabIndex={0}
             ref={iconRef}
           >

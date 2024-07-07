@@ -62,7 +62,6 @@ const controlButtonStyles = css`
   height: 22px;
   width: 25px;
   margin-left: 0.5rem;
-  cursor: pointer;
 
   &:active {
     box-shadow:

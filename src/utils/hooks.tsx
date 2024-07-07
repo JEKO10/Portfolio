@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import loading from "../assets/images/other/loading.png";
 
-export const useLoadingTimer = (delay = 3000) => {
+export const useLoadingTimer = (delay = 1000) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {

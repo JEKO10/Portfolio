@@ -1,14 +1,19 @@
 import styled from "styled-components";
 
 import preloaderImg from "../images/other/preloader.jpg";
+import { flexMixin } from "./GlobalStyles";
 
 export const LoaderContainer = styled.div`
-  height: 100vh;
-  width: 100vw;
-  position: relative;
+  ${flexMixin({ justify: "center", align: "center" })};
   background-image: url(${preloaderImg});
   background-size: cover;
   background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
 
   p {
     font-size: 2rem;

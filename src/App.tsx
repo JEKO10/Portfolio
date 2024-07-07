@@ -14,24 +14,26 @@ function App() {
 
   useEffect(() => {
     setIsLoading(true);
-
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setIsLoading(false);
     }, 3000);
-  }, []);
+
+    return () => clearTimeout(timer);
+  }, [setIsLoading]);
 
   return (
     <main>
       <GlobalStyles />
       <GlobalFonts />
-      {isLoading ? (
-        <Preloader />
-      ) : isShuttingDown && !isShutDown ? (
+      {isShuttingDown && !isShutDown ? (
         <ShuttingDown />
       ) : isShutDown ? (
         <ShutDown />
       ) : (
-        <Home />
+        <div>
+          {isLoading && <Preloader />}
+          <Home />
+        </div>
       )}
     </main>
   );
