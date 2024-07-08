@@ -9,7 +9,7 @@ import dash from "../assets/images/other/dash.jpg";
 import { Dash, TaskBar } from "../assets/style/Taskbar.style";
 import { useGlobalContext } from "../utils/context";
 import StartButton from "./StartButton";
-import TaskbarBtn from "./TaskbarBtns";
+import TaskbarBtn from "./TaskbarBtn";
 import Toolbar from "./Toolbar";
 
 const Taskbar = () => {

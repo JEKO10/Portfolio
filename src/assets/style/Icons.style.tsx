@@ -31,10 +31,11 @@ export const iconsSharedStyle = css<IconProps>`
 `;
 
 export const IconsContainer = styled.article`
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  ${flexMixin({ justify: "flex-start", align: "flex-start" })};
   flex-direction: column;
+  flex-wrap: wrap;
+  height: 100%;
+  width: max-content;
   padding: 15px;
 `;
 
@@ -42,7 +43,7 @@ export const Icon = styled.div<IconProps>`
   ${flexMixin({ justify: "center", align: "center" })};
   flex-direction: column;
   position: relative;
-  margin: 15px 10px;
+  margin: 15px 50px 15px 10px;
 
   ${iconsSharedStyle};
 `;

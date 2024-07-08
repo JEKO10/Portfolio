@@ -20,8 +20,8 @@ const Files = () => {
       {isOpen.recycle && <RecycleBin />}
       {isOpen.book && <Book />}
       {isOpen.time && <Time />}
-      {/* {isOpen.start && <StartMenu />} */}
-      <StartMenu />
+      {isOpen.start && <StartMenu />}
+      {/* <StartMenu /> */}
     </section>
   );
 };

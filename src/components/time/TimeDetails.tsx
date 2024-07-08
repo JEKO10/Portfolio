@@ -27,7 +27,9 @@ const TimeDetails: React.FC<TimeDetailsProps> = ({ time }) => {
     "November",
     "December"
   ];
-  const full = time.toLocaleDateString("en-US", { timeZoneName: "long" });
+  const full = time.toLocaleDateString("en-US", {
+    timeZoneName: "longGeneric"
+  });
 
   const formattedTime = time.toLocaleTimeString([], {
     hour: "2-digit",
@@ -40,8 +42,8 @@ const TimeDetails: React.FC<TimeDetailsProps> = ({ time }) => {
     <>
       <article>
         <Month>{month[time.getMonth()]}</Month>
-        <Year>2023</Year>
-        <TimeZone>{full.slice(10)}</TimeZone>
+        <Year>{time.getFullYear()}</Year>
+        <TimeZone>{full.split(", ")[1]}</TimeZone>
       </article>
       <article>
         <AnalogClock />

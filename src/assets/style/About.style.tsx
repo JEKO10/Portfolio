@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 import { FilesProps } from "../../utils/context";
-import aboutHandle from "../images/other/handle.jpg";
 import aboutModal from "../images/modals/shared.jpg";
+import aboutHandle from "../images/other/handle.jpg";
 import scroll from "../images/other/scroll.jpg";
 import scrollArrowDown from "../images/other/scrollArrowDown.jpg";
 import scrollArrowUp from "../images/other/scrollArrowUp.jpg";
@@ -29,7 +29,6 @@ export const AboutHandle = styled.article<FilesProps>`
   background: url(${aboutHandle}) center/cover no-repeat;
   height: 37px;
   width: 959px;
-  max-width: 975px;
   margin: 0.5rem auto;
   cursor: grab;
 
@@ -45,6 +44,7 @@ export const AboutHandle = styled.article<FilesProps>`
       height: 28px;
       width: 28px;
       margin: 0 0.5rem;
+      image-rendering: pixelated;
 
       ${disableUserShared}
     }
@@ -61,7 +61,7 @@ export const AboutMeText = styled.article`
   left: 25px;
   top: 88px;
   padding-top: 5px;
-  max-height: 520px;
+  max-height: 550px;
   overflow: auto;
 
   p {
@@ -69,14 +69,14 @@ export const AboutMeText = styled.article`
     line-height: 40px;
     font-weight: 500;
     padding-right: 20px;
-    margin-bottom: 0.8rem;
+    margin-bottom: 1.2rem;
 
     ${disableUserShared}
     pointer-events: none;
   }
 
   ::-webkit-scrollbar {
-    width: 59px;
+    width: 62px;
   }
 
   ::-webkit-scrollbar-track {
@@ -89,7 +89,7 @@ export const AboutMeText = styled.article`
 
   ::-webkit-scrollbar-button:single-button {
     display: block;
-    height: 35px;
+    height: 39px;
     width: 37px;
   }
 

@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 import { FilesProps } from "../../utils/context";
-import contactHandle from "../images/other/handle.jpg";
 import contactModal from "../images/modals/contactModal.jpg";
+import contactHandle from "../images/other/handle.jpg";
 import { disableUserShared, flexMixin, primaryFont } from "./GlobalStyles";
 
 type ContactProps = {
@@ -38,6 +38,7 @@ export const ContactHandle = styled.article<FilesProps>`
     width: 160px;
 
     ${disableUserShared}
+    cursor: auto;
 
     img {
       height: 33px;

@@ -8,17 +8,17 @@ type StartContainerPosition = {
 };
 
 export const StartContainer = styled.section<StartContainerPosition>`
+  ${flexMixin({ justify: "center", align: "flex-start" })};
+  flex-direction: column;
   background: url(${start}) center/contain no-repeat;
   height: 475px;
   width: 337px;
+  position: absolute;
+  bottom: 2.81rem;
   padding: 6px 6.21px 8px 3.5px;
   transform: ${({ isOpen }) => (isOpen ? "translateY(0)" : "translateY(110%)")};
   transition: transform 500ms ease;
-  position: absolute;
-  bottom: 2.81rem;
   z-index: 10;
-  ${flexMixin({ justify: "center", align: "flex-start" })};
-  flex-direction: column;
 
   > img {
     display: block;
