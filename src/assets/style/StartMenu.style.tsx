@@ -20,6 +20,9 @@ export const StartContainer = styled.section<StartContainerPosition>`
   transition: transform 500ms ease;
   z-index: 10;
 
+  /* height: 300px;
+  width: 212px; */
+
   > img {
     display: block;
     margin: 0 auto;

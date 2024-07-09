@@ -17,12 +17,7 @@ const About = () => {
 
   return (
     <>
-      <Draggable
-        defaultPosition={{ x: 200, y: -650 }}
-        handle=".handle"
-        bounds="body"
-        cancel=".handle *"
-      >
+      <Draggable handle=".handle" bounds="body" cancel=".handle *">
         <AboutFile
           onMouseDownCapture={() => setLastClicked("about")}
           isLoading={isLoading}

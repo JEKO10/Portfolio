@@ -53,12 +53,7 @@ const Work = () => {
 
   return (
     <>
-      <Draggable
-        defaultPosition={{ x: 300, y: -660 }}
-        handle=".handle"
-        bounds="body"
-        cancel=".handle *"
-      >
+      <Draggable handle=".handle" bounds="body" cancel=".handle *">
         <WorkFile
           onMouseDownCapture={() => setLastClicked("work")}
           isLoading={isLoading}

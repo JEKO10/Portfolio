@@ -58,4 +58,7 @@ export const disableUserShared = css`
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
+  touch-action: none;
 `;
+
+export const desktopL = `(max-width: 1440px)`;

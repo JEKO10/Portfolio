@@ -12,8 +12,13 @@ import { disableUserShared, flexMixin } from "./GlobalStyles";
 export const AboutFile = styled.section<FilesProps>`
   background: url(${aboutModal}) center/contain no-repeat;
   position: absolute;
+  top: 0;
+  left: 200px;
   height: 652px;
   width: 975px;
+
+  /* height: 500px;
+  width: 747px; */
 
   overflow: hidden;
   visibility: ${({ isLoading }) => (isLoading ? "hidden" : "visible")};

@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 import { FilesProps } from "../../utils/context";
-import workHandle from "../images/other/handle.jpg";
 import workModal from "../images/modals/workModal.jpg";
+import workHandle from "../images/other/handle.jpg";
 import { disableUserShared, flexMixin } from "./GlobalStyles";
 import { iconsSharedStyle } from "./Icons.style";
 
@@ -17,8 +17,13 @@ export const WorkFile = styled.section<FilesProps>`
   background: url(${workModal}) center/contain no-repeat;
 
   position: absolute;
+  top: 0;
+  left: 300px;
   height: 652px;
   width: 756px;
+
+  /* height: 500px;
+  width: 579px; */
 
   visibility: ${({ isLoading }) => (isLoading ? "hidden" : "visible")};
 

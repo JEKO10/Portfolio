@@ -65,12 +65,7 @@ const RecycleBin = () => {
 
   return (
     <>
-      <Draggable
-        defaultPosition={{ x: 500, y: -660 }}
-        handle=".handle"
-        bounds="body"
-        cancel=".handle *"
-      >
+      <Draggable handle=".handle" bounds="body" cancel=".handle *">
         <RecycleBinFile
           onMouseDownCapture={() => setLastClicked("recycle")}
           isLoading={isLoading}

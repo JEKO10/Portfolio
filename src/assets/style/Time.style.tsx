@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 import { FilesProps } from "../../utils/context";
-import timeHandle from "../images/other/handle.jpg";
 import time from "../images/modals/timeModal.jpg";
+import timeHandle from "../images/other/handle.jpg";
 import { disableUserShared, primaryFont } from "./GlobalStyles";
 
 type BtnProps = {
@@ -11,7 +11,9 @@ type BtnProps = {
 
 export const TimeModal = styled.section<FilesProps>`
   background: url(${time}) center/cover no-repeat;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 200px;
   height: 486px;
   width: 576px;
 

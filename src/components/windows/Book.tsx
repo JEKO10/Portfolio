@@ -13,12 +13,7 @@ const Book = () => {
 
   return (
     <>
-      <Draggable
-        defaultPosition={{ x: 100, y: -650 }}
-        handle=".handle"
-        bounds="body"
-        cancel=".handle *"
-      >
+      <Draggable handle=".handle" bounds="body" cancel=".handle *">
         <BookFile
           onMouseDownCapture={() => setLastClicked("book")}
           isLoading={isLoading}

@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 import { FilesProps } from "../../utils/context";
-import bookHandle from "../images/other/handle.jpg";
 import book from "../images/modals/shared.jpg";
-import { disableUserShared, flexMixin } from "./GlobalStyles";
+import bookHandle from "../images/other/handle.jpg";
+import { desktopL, disableUserShared, flexMixin } from "./GlobalStyles";
 import { iconsSharedStyle } from "./Icons.style";
 
 type BookProps = {
@@ -14,8 +14,13 @@ type BookProps = {
 export const BookFile = styled.section<FilesProps>`
   background: url(${book}) center/cover no-repeat;
   position: absolute;
+  top: 0;
+  left: 200px;
   height: 652px;
   width: 975px;
+
+  /* height: 500px;
+  width: 747px; */
 
   visibility: ${({ isLoading }) => (isLoading ? "hidden" : "visible")};
 
@@ -40,6 +45,11 @@ export const Book = styled.div<BookProps>`
   cursor: pointer;
 
   ${iconsSharedStyle}; /* @TODO: mozda ako ovdje stavim sherd direktno radice */
+
+  @media ${desktopL} {
+    top: 11.5rem;
+    left: 13.5rem;
+  }
 
   p {
     color: ${({ isClicked }) => (isClicked ? "#fff" : "#000")};

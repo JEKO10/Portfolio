@@ -20,12 +20,7 @@ const Contact = () => {
 
   return (
     <>
-      <Draggable
-        defaultPosition={{ x: 300, y: -660 }}
-        handle=".handle"
-        bounds="body"
-        cancel=".handle *"
-      >
+      <Draggable handle=".handle" bounds="body" cancel=".handle *">
         <ContactFile
           onMouseDownCapture={() => setLastClicked("contact")}
           isLoading={isLoading}

@@ -12,8 +12,13 @@ type ContactProps = {
 export const ContactFile = styled.section<FilesProps>`
   background: url(${contactModal}) center/contain no-repeat;
   position: absolute;
+  top: 0;
+  left: 250px;
   height: 620px;
   width: 998px;
+
+  /* height: 500px;
+  width: 804px; */
 
   visibility: ${({ isLoading }) => (isLoading ? "hidden" : "visible")};
 

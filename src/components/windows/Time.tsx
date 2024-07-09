@@ -24,11 +24,7 @@ const Time = () => {
 
   return (
     <>
-      <Draggable
-        defaultPosition={{ x: 800, y: -600 }}
-        handle=".handle"
-        bounds="body"
-      >
+      <Draggable handle=".handle" bounds="body">
         <TimeModal
           onMouseDownCapture={() => setLastClicked("time")}
           isLoading={isLoading}
