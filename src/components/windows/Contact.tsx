@@ -21,7 +21,7 @@ const Contact = () => {
   return (
     <>
       <Draggable
-        defaultPosition={{ x: 300, y: -500 }}
+        defaultPosition={{ x: 300, y: -660 }}
         handle=".handle"
         bounds="body"
         cancel=".handle *"

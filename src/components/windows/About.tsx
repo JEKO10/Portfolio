@@ -18,7 +18,7 @@ const About = () => {
   return (
     <>
       <Draggable
-        defaultPosition={{ x: 200, y: -500 }}
+        defaultPosition={{ x: 200, y: -650 }}
         handle=".handle"
         bounds="body"
         cancel=".handle *"

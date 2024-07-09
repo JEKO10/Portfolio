@@ -14,7 +14,7 @@ const Book = () => {
   return (
     <>
       <Draggable
-        defaultPosition={{ x: 100, y: -400 }}
+        defaultPosition={{ x: 100, y: -650 }}
         handle=".handle"
         bounds="body"
         cancel=".handle *"
