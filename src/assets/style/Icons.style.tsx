@@ -72,7 +72,11 @@ export const Selection = styled.div<IconProps>`
   opacity: 0.5;
 
   @media ${desktopL} {
-    height: 80px;
-    width: 80px;
+    ${({ iconName }) =>
+      iconName?.includes("project") &&
+      `
+      height: 80px;
+      width: 80px;
+    `}
   }
 `;

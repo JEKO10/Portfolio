@@ -24,30 +24,47 @@ export const ControlBtnsContainer = styled.div<BtnContainer>`
   }
 
   ${({ iconName }) =>
-    iconName === "recycle" &&
-    css`
-      height: 48px;
-      width: 115px;
+    iconName === "recycle"
+      ? css`
+          height: 48px;
+          width: 115px;
 
-      @media ${desktopL} {
-        height: 37px;
-        width: 95px;
-      }
-
-      button {
-        height: 19.5px;
-        width: 22.5px;
-
-        @media ${desktopL} {
-          height: 15px;
-          width: 19px;
-
-          img {
-            scale: 0.8;
+          @media ${desktopL} {
+            height: 37px;
+            width: 95px;
           }
-        }
-      }
-    `}
+
+          button {
+            height: 19.5px;
+            width: 22.5px;
+
+            @media ${desktopL} {
+              height: 15px;
+              width: 19px;
+
+              img {
+                scale: 0.8;
+              }
+            }
+          }
+        `
+      : iconName === "book"
+        ? css`
+            @media ${desktopL} {
+              height: 41px;
+              width: 110px;
+
+              button {
+                height: 19px;
+                width: 22px;
+
+                img {
+                  scale: 0.9;
+                }
+              }
+            }
+          `
+        : ""}
 `;
 
 const controlButtonStyles = css`

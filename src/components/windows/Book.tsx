@@ -28,17 +28,15 @@ const Book = () => {
               <p>General - Notepad</p>
             </div>
           </BookHandle>
-          <article>
-            <BookText>Site Design and Development:</BookText>
-            <BookText>
-              Development: Aleksa Bubanja - aleksa3b@gmail.com
-            </BookText>
-            <BookText>Design: Tadija Bubanja - tadija3b@gmail.com</BookText>
-            <BookText>
+          <BookText>
+            <p>Site Design and Development:</p>
+            <p>Development: Aleksa Bubanja - aleksa3b@gmail.com</p>
+            <p>Design: Tadija Bubanja - tadija3b@gmail.com</p>
+            <p>
               Special thanks to Tadija Bubanja for the visually appealing design
               elements that enhance the user experience.
-            </BookText>
-          </article>
+            </p>
+          </BookText>
         </BookFile>
       </Draggable>
     </>
