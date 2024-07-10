@@ -51,8 +51,17 @@ export const Book = styled.div<BookProps>`
     left: 13.5rem;
   }
 
+  img {
+    height: 100px;
+    width: 100px;
+  }
+
   p {
     color: ${({ isClicked }) => (isClicked ? "#fff" : "#000")};
+
+    @media ${desktopL} {
+      font-size: 1.6rem;
+    }
   }
 `;
 
