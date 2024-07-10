@@ -7,7 +7,6 @@ import { desktopL, disableUserShared, flexMixin } from "./GlobalStyles";
 import { iconsSharedStyle } from "./Icons.style";
 
 type ProjectProps = {
-  project: string;
   isClicked: boolean;
   top: number;
   left: number;
