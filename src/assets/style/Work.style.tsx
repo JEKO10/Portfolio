@@ -7,9 +7,10 @@ import { desktopL, disableUserShared, flexMixin } from "./GlobalStyles";
 import { iconsSharedStyle } from "./Icons.style";
 
 type ProjectProps = {
-  isClicked: boolean;
   top: number;
   left: number;
+  alt: string;
+  isClicked: boolean;
 };
 
 export const WorkFile = styled.section<FilesProps>`
@@ -115,7 +116,51 @@ export const Project = styled.div<ProjectProps>`
 
   ${iconsSharedStyle}
 
+  @media ${desktopL} {
+    ${({ alt }) =>
+      alt === "walkmate" &&
+      `
+    top: 11.5rem;
+    left: 13rem;
+  `}
+
+    ${({ alt }) =>
+      alt === "moviexd" &&
+      `
+    top: 11.5rem;
+    left: 25rem;
+  `}
+
+  ${({ alt }) =>
+      alt === "travel" &&
+      `
+    top: 20rem;
+    left: 12rem;
+  `}
+
+  ${({ alt }) =>
+      alt === "basket" &&
+      `
+    top: 20rem;
+    left: 23.5rem;
+  `}
+  }
+
+  img {
+    height: 100px;
+    width: 100px;
+
+    @media ${desktopL} {
+      height: 80px;
+      width: 80px;
+    }
+  }
+
   p {
     color: ${({ isClicked }) => (isClicked ? "#fff" : "#000")};
+
+    @media ${desktopL} {
+      font-size: 1.3rem;
+    }
   }
 `;

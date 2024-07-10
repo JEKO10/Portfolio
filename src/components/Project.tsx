@@ -1,6 +1,7 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import project from "../assets/images/icons/project.png";
+import smallProject from "../assets/images/icons/smallProject.png";
 import { Selection } from "../assets/style/Icons.style";
 import { Project as Container } from "../assets/style/Work.style";
 import { useOutsideClick } from "../utils/hooks";
@@ -38,6 +39,7 @@ const Project: React.FC<ProjectProps> = ({
   isClicked,
   setIsClicked
 }) => {
+  const [innerWidth, setInnerWidth] = useState(window.innerWidth);
   const projectRef = useRef<HTMLDivElement>(null);
 
   const handleClick = (iconName: IsClickedKeys) => {
@@ -62,6 +64,18 @@ const Project: React.FC<ProjectProps> = ({
     }
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+      setInnerWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   useOutsideClick(projectRef, () => {
     setIsClicked({
       walkmate: false,
@@ -75,6 +89,7 @@ const Project: React.FC<ProjectProps> = ({
     <Container
       top={top}
       left={left}
+      alt={alt}
       isClicked={isClicked[alt]}
       onMouseDown={(e) => {
         e.preventDefault();
@@ -90,7 +105,10 @@ const Project: React.FC<ProjectProps> = ({
       ref={projectRef}
     >
       <img src={project} alt={alt} />
-      <Selection isClicked={isClicked[alt]} iconName={project} />
+      <Selection
+        isClicked={isClicked[alt]}
+        iconName={innerWidth > 1440 ? project : smallProject}
+      />
       <p>{label}</p>
     </Container>
   );

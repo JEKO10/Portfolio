@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-import { disableUserShared, flexMixin } from "./GlobalStyles";
+import { desktopL, disableUserShared, flexMixin } from "./GlobalStyles";
 
 type IconProps = {
   isClicked: boolean;
@@ -70,4 +70,9 @@ export const Selection = styled.div<IconProps>`
   mask-image: ${({ iconName }) => `url(${iconName})`};
   -webkit-mask-image: ${({ iconName }) => `url(${iconName})`};
   opacity: 0.5;
+
+  @media ${desktopL} {
+    height: 80px;
+    width: 80px;
+  }
 `;
