@@ -4,7 +4,7 @@ import React, { useRef, useState } from "react";
 import {
   ContactButton,
   ContactInput,
-  ContactTextarea,
+  ContactTextarea
 } from "../assets/style/Contact.style";
 import { useGlobalContext } from "../utils/context";
 
@@ -16,7 +16,7 @@ const ContactForm = () => {
   const [userInfo, setUserInfo] = useState({
     name: "",
     email: "",
-    message: "",
+    message: ""
   });
 
   const sendEmail = (e: React.FormEvent) => {
@@ -42,13 +42,13 @@ const ContactForm = () => {
           setUserInfo({
             ...userInfo,
             message:
-              "Thank you so much for reaching out! :) \n\nI'll get back to you as soon as possible! :)",
+              "Thank you so much for reaching out! :) \n\nI'll get back to you as soon as possible! :)"
           });
 
           setTimeout(() => {
             setUserInfo({
               ...userInfo,
-              message: "",
+              message: ""
             });
           }, 3000);
         },
@@ -75,30 +75,34 @@ const ContactForm = () => {
             setUserInfo({ ...userInfo, message: e.currentTarget.value });
           }}
         />
-        <ContactInput
-          type="text"
-          name="from_name"
-          autoComplete="off"
-          value={userInfo.name}
-          onChange={(e) => {
-            setUserInfo({ ...userInfo, name: e.currentTarget.value });
-          }}
-          bottom={6.2}
-        />
-        <ContactInput
-          type="email"
-          name="email_id"
-          autoComplete="off"
-          value={userInfo.email}
-          onChange={(e) => {
-            setUserInfo({
-              ...userInfo,
-              email: e.currentTarget.value,
-            });
-          }}
-          bottom={1.8}
-        />
-        <ContactButton type="submit" value="Send" bottom={6.2}>
+        <ContactInput bottom={6.2}>
+          <label>Your name:</label>
+          <input
+            type="text"
+            name="from_name"
+            autoComplete="off"
+            value={userInfo.name}
+            onChange={(e) => {
+              setUserInfo({ ...userInfo, name: e.currentTarget.value });
+            }}
+          />
+        </ContactInput>
+        <ContactInput bottom={1.8}>
+          <label>Your email:</label>
+          <input
+            type="email"
+            name="email_id"
+            autoComplete="off"
+            value={userInfo.email}
+            onChange={(e) => {
+              setUserInfo({
+                ...userInfo,
+                email: e.currentTarget.value
+              });
+            }}
+          />
+        </ContactInput>
+        <ContactButton type="submit" value="Send" bottom={6.2} id="send">
           Send
         </ContactButton>
       </form>

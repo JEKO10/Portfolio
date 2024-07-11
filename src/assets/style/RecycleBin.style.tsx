@@ -33,8 +33,9 @@ export const RecycleBinHandle = styled.article<FilesProps>`
   cursor: grab;
 
   @media ${desktopL} {
-    height: 24px;
-    width: 566px;
+    height: 25.5px;
+    width: 569px;
+    margin: 0.35rem auto;
   }
 
   div {
@@ -43,7 +44,7 @@ export const RecycleBinHandle = styled.article<FilesProps>`
     width: 160px;
 
     @media ${desktopL} {
-      height: 24px;
+      height: 25.5px;
     }
 
     ${disableUserShared}
