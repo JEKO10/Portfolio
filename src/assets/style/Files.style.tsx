@@ -29,7 +29,7 @@ export const ControlBtnsContainer = styled.div<BtnContainer>`
           height: 48px;
           width: 115px;
 
-          @media ${desktopL} {
+          ${desktopL} {
             height: 37px;
             width: 95px;
           }
@@ -38,7 +38,7 @@ export const ControlBtnsContainer = styled.div<BtnContainer>`
             height: 19.5px;
             width: 22.5px;
 
-            @media ${desktopL} {
+            ${desktopL} {
               height: 15px;
               width: 19px;
 
@@ -50,7 +50,7 @@ export const ControlBtnsContainer = styled.div<BtnContainer>`
         `
       : iconName === "book"
         ? css`
-            @media ${desktopL} {
+            ${desktopL} {
               height: 41px;
               width: 110px;
 

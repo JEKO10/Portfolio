@@ -22,7 +22,7 @@ export const WorkFile = styled.section<FilesProps>`
   height: 652px;
   width: 756px;
 
-  @media ${desktopL} {
+  ${desktopL} {
     height: 500px;
     width: 579px;
   }
@@ -36,7 +36,7 @@ export const WorkFile = styled.section<FilesProps>`
     height: 45px;
     width: 115px;
 
-    @media ${desktopL} {
+    ${desktopL} {
       height: 37px;
       width: 95px;
     }
@@ -45,7 +45,7 @@ export const WorkFile = styled.section<FilesProps>`
       height: 19.5px;
       width: 22.5px;
 
-      @media ${desktopL} {
+      ${desktopL} {
         height: 14px;
         width: 17px;
 
@@ -64,7 +64,7 @@ export const WorkHandle = styled.article<FilesProps>`
   margin: 0.55rem auto;
   cursor: grab;
 
-  @media ${desktopL} {
+  ${desktopL} {
     height: 21px;
     width: 569px;
   }
@@ -76,7 +76,7 @@ export const WorkHandle = styled.article<FilesProps>`
     ${disableUserShared}
     cursor: auto;
 
-    @media ${desktopL} {
+    ${desktopL} {
       height: 19px;
     }
 
@@ -87,7 +87,7 @@ export const WorkHandle = styled.article<FilesProps>`
 
       ${disableUserShared}
 
-      @media ${desktopL} {
+      ${desktopL} {
         height: 20px;
         width: 20px;
       }
@@ -97,7 +97,7 @@ export const WorkHandle = styled.article<FilesProps>`
       font-size: 1.5rem;
       color: #fff;
 
-      @media ${desktopL} {
+      ${desktopL} {
         font-size: 1.3rem;
       }
     }
@@ -116,7 +116,7 @@ export const Project = styled.div<ProjectProps>`
 
   ${iconsSharedStyle}
 
-  @media ${desktopL} {
+  ${desktopL} {
     ${({ alt }) =>
       alt === "walkmate" &&
       `
@@ -150,7 +150,7 @@ export const Project = styled.div<ProjectProps>`
     height: 100px;
     width: 100px;
 
-    @media ${desktopL} {
+    ${desktopL} {
       height: 80px;
       width: 80px;
     }
@@ -159,7 +159,7 @@ export const Project = styled.div<ProjectProps>`
   p {
     color: ${({ isClicked }) => (isClicked ? "#fff" : "#000")};
 
-    @media ${desktopL} {
+    ${desktopL} {
       font-size: 1.3rem;
     }
   }

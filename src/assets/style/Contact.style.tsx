@@ -22,7 +22,7 @@ export const ContactFile = styled.section<FilesProps>`
   height: 620px;
   width: 998px;
 
-  @media ${desktopL} {
+  ${desktopL} {
     height: 480px;
     width: 772px;
   }
@@ -35,7 +35,7 @@ export const ContactFile = styled.section<FilesProps>`
   > div {
     margin-top: 0.2rem;
 
-    @media ${desktopL} {
+    ${desktopL} {
       height: 50px;
       width: 120px;
       margin-top: 0;
@@ -59,7 +59,7 @@ export const ContactHandle = styled.article<FilesProps>`
   margin: 0.5rem auto;
   cursor: grab;
 
-  @media ${desktopL} {
+  ${desktopL} {
     height: 33px;
     width: 759px;
   }
@@ -72,7 +72,7 @@ export const ContactHandle = styled.article<FilesProps>`
     ${disableUserShared}
     cursor: auto;
 
-    @media ${desktopL} {
+    ${desktopL} {
       height: 34px;
     }
 
@@ -83,7 +83,7 @@ export const ContactHandle = styled.article<FilesProps>`
 
       ${disableUserShared}
 
-      @media ${desktopL} {
+      ${desktopL} {
         height: 30px;
         width: 30px;
         margin: 0 0.8rem;
@@ -95,7 +95,7 @@ export const ContactHandle = styled.article<FilesProps>`
       color: #fff;
       margin: 0 0.5rem;
 
-      @media ${desktopL} {
+      ${desktopL} {
         font-size: 1.7rem;
         margin: 0;
       }
@@ -136,7 +136,7 @@ export const ContactTextarea = styled.textarea`
   outline: none;
   resize: none;
 
-  @media ${desktopL} {
+  ${desktopL} {
     font-size: 1.5rem;
     height: 240px;
     width: 720px;
@@ -150,7 +150,7 @@ export const ContactInput = styled.div<ContactProps>`
   left: 4rem;
   bottom: ${({ bottom }) => bottom + "rem"};
 
-  @media ${desktopL} {
+  ${desktopL} {
     bottom: ${({ bottom }) => bottom - 0.5}rem;
 
     &:first-of-type {
@@ -196,7 +196,7 @@ export const ContactInput = styled.div<ContactProps>`
     padding: 0 10px;
     outline: none;
 
-    @media ${desktopL} {
+    ${desktopL} {
       font-size: 1.5rem;
       height: 35px;
       width: 400px;
@@ -258,7 +258,7 @@ export const ContactButton = styled.button<ContactProps>`
   bottom: ${({ bottom }) => bottom + "rem"};
   cursor: pointer;
 
-  @media ${desktopL} {
+  ${desktopL} {
     font-size: 1.5rem;
     height: 35px;
     width: 120px;
@@ -300,7 +300,7 @@ export const ContactSocials = styled.article`
   top: 4.3rem;
   right: 10.5rem;
 
-  @media ${desktopL} {
+  ${desktopL} {
     top: 3.4rem;
     right: 8.5rem;
   }
@@ -312,7 +312,7 @@ export const ContactSocials = styled.article`
     margin-left: 1rem;
     cursor: pointer;
 
-    @media ${desktopL} {
+    ${desktopL} {
       height: 32px;
       width: 36px;
     }
@@ -369,7 +369,7 @@ export const ContactSocials = styled.article`
       margin-top: 4px;
       ${disableUserShared}
 
-      @media ${desktopL} {
+      ${desktopL} {
         margin-top: -2px;
         scale: 0.8;
       }

@@ -14,7 +14,7 @@ export const RecycleBinFile = styled.section<FilesProps>`
   height: 652px;
   width: 755px;
 
-  @media ${desktopL} {
+  ${desktopL} {
     height: 500px;
     width: 578px;
   }
@@ -32,7 +32,7 @@ export const RecycleBinHandle = styled.article<FilesProps>`
   margin: 0.45rem auto;
   cursor: grab;
 
-  @media ${desktopL} {
+  ${desktopL} {
     height: 25.5px;
     width: 569px;
     margin: 0.35rem auto;
@@ -43,7 +43,7 @@ export const RecycleBinHandle = styled.article<FilesProps>`
     height: 30px;
     width: 160px;
 
-    @media ${desktopL} {
+    ${desktopL} {
       height: 25.5px;
     }
 
@@ -57,7 +57,7 @@ export const RecycleBinHandle = styled.article<FilesProps>`
 
       ${disableUserShared}
 
-      @media ${desktopL} {
+      ${desktopL} {
         height: 20px;
         width: 20px;
       }
@@ -67,7 +67,7 @@ export const RecycleBinHandle = styled.article<FilesProps>`
       font-size: 1.5rem;
       color: #fff;
 
-      @media ${desktopL} {
+      ${desktopL} {
         font-size: 1.3rem;
       }
     }

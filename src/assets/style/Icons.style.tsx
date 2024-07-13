@@ -74,7 +74,7 @@ export const Selection = styled.div<IconProps>`
   ${({ iconName }) =>
     iconName === "/Portfolio/src/assets/images/icons/smallProject.png" &&
     `
-    @media ${desktopL} {
+    ${desktopL} {
       height: 80px;
       width: 80px;
     }

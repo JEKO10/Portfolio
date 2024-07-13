@@ -20,7 +20,7 @@ export const StartContainer = styled.section<StartContainerPosition>`
   transition: transform 500ms ease;
   z-index: 10;
 
-  @media ${desktopL} {
+  ${desktopL} {
     height: 300px;
     width: 212px;
     transform: ${({ isOpen }) =>
@@ -31,7 +31,7 @@ export const StartContainer = styled.section<StartContainerPosition>`
     display: block;
     margin: 0 auto;
 
-    @media ${desktopL} {
+    ${desktopL} {
       width: 204.5px;
     }
   }
@@ -49,7 +49,7 @@ export const StartMenuBtn = styled.article`
   padding: 20px 25px;
   transition: all 200ms ease;
 
-  @media ${desktopL} {
+  ${desktopL} {
     height: 55px;
     padding: 10px 15px;
   }
@@ -63,7 +63,7 @@ export const StartMenuBtn = styled.article`
     :last-of-type {
       padding: 20px 25px 8px;
 
-      @media ${desktopL} {
+      ${desktopL} {
         padding: 10px 15px 5px;
       }
     }
@@ -76,7 +76,7 @@ export const StartMenuBtn = styled.article`
     margin-right: 1.8rem;
     image-rendering: pixelated;
 
-    @media ${desktopL} {
+    ${desktopL} {
       height: 39px;
       width: 39px;
       margin-right: 1rem;
@@ -86,7 +86,7 @@ export const StartMenuBtn = styled.article`
   p {
     font-size: 1.8rem;
 
-    @media ${desktopL} {
+    ${desktopL} {
       font-size: 1.4rem;
     }
   }

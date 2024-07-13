@@ -19,7 +19,7 @@ export const BookFile = styled.section<FilesProps>`
   height: 652px;
   width: 975px;
 
-  @media ${desktopL} {
+  ${desktopL} {
     height: 500px;
     width: 747px;
   }
@@ -42,7 +42,7 @@ export const Book = styled.div<BookProps>`
 
   ${iconsSharedStyle}; /* @TODO: mozda ako ovdje stavim sherd direktno radice */
 
-  @media ${desktopL} {
+  ${desktopL} {
     top: 11.5rem;
     left: 13.5rem;
   }
@@ -55,7 +55,7 @@ export const Book = styled.div<BookProps>`
   p {
     color: ${({ isClicked }) => (isClicked ? "#fff" : "#000")};
 
-    @media ${desktopL} {
+    ${desktopL} {
       font-size: 1.6rem;
     }
   }
@@ -68,7 +68,7 @@ export const BookHandle = styled.div<FilesProps>`
   margin: 0.5rem auto;
   cursor: grab;
 
-  @media ${desktopL} {
+  ${desktopL} {
     height: 29px;
     width: 736px;
     margin: 0.35rem auto;
@@ -81,7 +81,7 @@ export const BookHandle = styled.div<FilesProps>`
     cursor: auto;
     ${disableUserShared}
 
-    @media ${desktopL} {
+    ${desktopL} {
       height: 29px;
     }
 
@@ -92,7 +92,7 @@ export const BookHandle = styled.div<FilesProps>`
 
       ${disableUserShared}
 
-      @media ${desktopL} {
+      ${desktopL} {
         height: 23px;
         width: 23px;
       }
@@ -102,7 +102,7 @@ export const BookHandle = styled.div<FilesProps>`
       font-size: 1.875rem;
       color: #fff;
 
-      @media ${desktopL} {
+      ${desktopL} {
         font-size: 1.5rem;
       }
     }
@@ -114,7 +114,7 @@ export const BookText = styled.article`
   top: 100px;
   left: 30px;
 
-  @media ${desktopL} {
+  ${desktopL} {
     top: 80px;
     left: 25px;
   }

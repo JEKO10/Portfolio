@@ -17,7 +17,7 @@ export const AboutFile = styled.section<FilesProps>`
   height: 652px;
   width: 975px;
 
-  @media ${desktopL} {
+  ${desktopL} {
     height: 500px;
     width: 747px;
   }
@@ -32,7 +32,7 @@ export const AboutFile = styled.section<FilesProps>`
   overflow: auto; */
 
   > div {
-    @media ${desktopL} {
+    ${desktopL} {
       height: 40px;
       width: 110px;
 
@@ -55,7 +55,7 @@ export const AboutHandle = styled.article<FilesProps>`
   margin: 0.5rem auto;
   cursor: grab;
 
-  @media ${desktopL} {
+  ${desktopL} {
     height: 29px;
     width: 736px;
     margin: 0.35rem auto;
@@ -66,7 +66,7 @@ export const AboutHandle = styled.article<FilesProps>`
     height: 37px;
     width: 165px;
 
-    @media ${desktopL} {
+    ${desktopL} {
       height: 29px;
     }
 
@@ -81,7 +81,7 @@ export const AboutHandle = styled.article<FilesProps>`
 
       ${disableUserShared}
 
-      @media ${desktopL} {
+      ${desktopL} {
         height: 25px;
         width: 25px;
       }
@@ -91,7 +91,7 @@ export const AboutHandle = styled.article<FilesProps>`
       font-size: 1.875rem;
       color: #fff;
 
-      @media ${desktopL} {
+      ${desktopL} {
         font-size: 1.5rem;
       }
     }
@@ -106,7 +106,7 @@ export const AboutMeText = styled.article`
   max-height: 550px;
   overflow: auto;
 
-  @media ${desktopL} {
+  ${desktopL} {
     top: 80px;
     max-height: 400px;
     padding-top: 0;
@@ -121,7 +121,7 @@ export const AboutMeText = styled.article`
     ${disableUserShared}
     pointer-events: none;
 
-    @media ${desktopL} {
+    ${desktopL} {
       font-size: 1.3rem;
       line-height: 30px;
       margin-bottom: 1rem;
@@ -132,7 +132,7 @@ export const AboutMeText = styled.article`
   ::-webkit-scrollbar {
     width: 62px;
 
-    @media ${desktopL} {
+    ${desktopL} {
       display: none;
     }
   }

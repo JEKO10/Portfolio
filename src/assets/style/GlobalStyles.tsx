@@ -61,4 +61,4 @@ export const disableUserShared = css`
   touch-action: none;
 `;
 
-export const desktopL = `(max-width: 1440px)`;
+export const desktopL = `@media (max-width: 1440px)`;
