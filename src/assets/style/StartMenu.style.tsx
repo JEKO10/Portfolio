@@ -16,13 +16,15 @@ export const StartContainer = styled.section<StartContainerPosition>`
   position: absolute;
   bottom: 2.81rem;
   padding: 6px 6.21px 8px 3.5px;
-  transform: ${({ isOpen }) => (isOpen ? "translateY(0)" : "translateY(0%)")};
+  transform: ${({ isOpen }) => (isOpen ? "translateY(0)" : "translateY(110%)")};
   transition: transform 500ms ease;
   z-index: 10;
 
   @media ${desktopL} {
     height: 300px;
     width: 212px;
+    transform: ${({ isOpen }) =>
+      isOpen ? "translateY(0)" : "translateY(120%)"};
   }
 
   > img {

@@ -71,12 +71,12 @@ export const Selection = styled.div<IconProps>`
   -webkit-mask-image: ${({ iconName }) => `url(${iconName})`};
   opacity: 0.5;
 
-  @media ${desktopL} {
-    ${({ iconName }) =>
-      iconName?.includes("project") &&
-      `
+  ${({ iconName }) =>
+    iconName === "/Portfolio/src/assets/images/icons/smallProject.png" &&
+    `
+    @media ${desktopL} {
       height: 80px;
       width: 80px;
-    `}
-  }
+    }
+  `}
 `;

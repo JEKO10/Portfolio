@@ -92,3 +92,21 @@ export const useOutsideClick = (
     };
   }, []);
 };
+
+export const useResize = () => {
+  const [innerWidth, setInnerWidth] = useState<number>(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setInnerWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  return innerWidth;
+};

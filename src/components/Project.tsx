@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 
 import project from "../assets/images/icons/project.png";
 import smallProject from "../assets/images/icons/smallProject.png";
 import { Selection } from "../assets/style/Icons.style";
 import { Project as Container } from "../assets/style/Work.style";
-import { useOutsideClick } from "../utils/hooks";
+import { useOutsideClick, useResize } from "../utils/hooks";
 
 type IsClickedKeys = "walkmate" | "moviexd" | "travel" | "basket";
 
@@ -39,7 +39,7 @@ const Project: React.FC<ProjectProps> = ({
   isClicked,
   setIsClicked
 }) => {
-  const [innerWidth, setInnerWidth] = useState(window.innerWidth);
+  const innerWidth = useResize();
   const projectRef = useRef<HTMLDivElement>(null);
 
   const handleClick = (iconName: IsClickedKeys) => {
@@ -63,18 +63,6 @@ const Project: React.FC<ProjectProps> = ({
       window.open(link, "_blank");
     }
   };
-
-  useEffect(() => {
-    const handleResize = () => {
-      setInnerWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   useOutsideClick(projectRef, () => {
     setIsClicked({
