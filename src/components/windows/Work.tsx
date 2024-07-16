@@ -80,28 +80,3 @@ const Work = () => {
 };
 
 export default Work;
-
-{
-  /* <Project
-  project={project}
-  top={15}
-  left={18}
-  isClicked={isClicked.walkmate}
-  onMouseDown={(e) => {
-    e.preventDefault();
-    handleClick("walkmate");
-  }}
-  onDoubleClick={() =>
-    window.open("https://github.com/JEKO10/WalkMate", "_blank")
-  }
-  onKeyDown={(event) =>
-    handleKeyDown(event, "https://github.com/JEKO10/WalkMate")
-  }
-  tabIndex={0}
-  ref={projectRef}
->
-  <img src={project} alt="projectWalkmate" />
-  <Selection isClicked={isClicked.walkmate} iconName={project} />
-  <p>WalkMate.doc</p>
-</Project>; */
-}

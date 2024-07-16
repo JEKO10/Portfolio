@@ -28,6 +28,8 @@ const RecycleBin = () => {
   const { isLoading } = useLoadingTimer();
 
   const handleClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    bookRef.current?.focus();
+
     switch (event.detail) {
       case 1:
         setIsClicked({ ...isClicked, book: true });
@@ -86,6 +88,7 @@ const RecycleBin = () => {
             onMouseDown={(event) => handleClick(event)}
             onKeyDown={(event) => handleKeyDown(event)}
             ref={bookRef}
+            tabIndex={0}
           >
             <img src={book} alt="book" />
             <Selection isClicked={isClicked.book} iconName={book} />

@@ -43,6 +43,8 @@ const Project: React.FC<ProjectProps> = ({
   const projectRef = useRef<HTMLDivElement>(null);
 
   const handleClick = (iconName: IsClickedKeys) => {
+    projectRef.current?.focus();
+
     setIsClicked({
       walkmate: false,
       moviexd: false,
@@ -79,10 +81,7 @@ const Project: React.FC<ProjectProps> = ({
       left={left}
       alt={alt}
       isClicked={isClicked[alt]}
-      onMouseDown={(e) => {
-        e.preventDefault();
-        handleClick(`${alt}`);
-      }}
+      onMouseDown={() => handleClick(`${alt}`)}
       onDoubleClick={() =>
         window.open(`https://github.com/JEKO10/${link}`, "_blank")
       }

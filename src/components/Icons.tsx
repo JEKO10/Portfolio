@@ -33,6 +33,8 @@ const Icons = () => {
     event: React.MouseEvent<HTMLDivElement, MouseEvent>,
     iconName: string
   ) => {
+    iconRef.current?.focus();
+
     switch (event.detail) {
       case 1:
         setIsClicked({
@@ -91,7 +93,6 @@ const Icons = () => {
             key={icon.name}
             isClicked={isClicked[icon.name] || false}
             onMouseDown={(event) => {
-              event.preventDefault();
               handleClick(event, icon.name);
             }}
             onKeyDown={(e) => handleKeyDown(e)}
@@ -110,7 +111,6 @@ const Icons = () => {
       <RecycleBin
         isClicked={isClicked.recycle}
         onMouseDown={(event) => {
-          event.preventDefault();
           handleClick(event, "recycle");
         }}
         onKeyDown={(event) => handleKeyDown(event)}
