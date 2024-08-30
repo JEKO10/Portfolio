@@ -3,12 +3,11 @@ import styled from "styled-components";
 import startButton from "../images/buttons/start.png";
 import startClicked from "../images/buttons/startClicked.png";
 import taskbar from "../images/other/taskbar.jpg";
-import { disableUserShared, flexMixin } from "./GlobalStyles";
+import { desktopL, disableUserShared, flexMixin } from "./GlobalStyles";
 
 type ButtonProps = {
   isOpen?: boolean;
   iconName?: string;
-  innerWidth: number;
 };
 
 export const TaskBar = styled.section`
@@ -68,16 +67,16 @@ export const TaskbarButton = styled.div<ButtonProps>`
     4px -4px black;
 
   height: 28px;
-  width: ${({ innerWidth }) =>
-    innerWidth > 1200 ? "163px" : innerWidth > 992 ? "120px" : "75px"};
-  margin: ${({ iconName }) =>
-    iconName === "name"
-      ? "0 15px 0 5px"
-      : iconName === "about" && innerWidth < 1440
-        ? "0 15px 0 5px"
-        : ""};
+  width: 163px;
+  margin: ${({ iconName }) => (iconName === "name" ? "0 15px 0 5px" : "")};
   margin-right: 15px;
   cursor: auto;
+
+  ${desktopL} {
+    &:not(:first-of-type) {
+      width: 85px;
+    }
+  }
 
   &:active {
     box-shadow:
@@ -106,7 +105,7 @@ export const TaskbarButton = styled.div<ButtonProps>`
 
     & p {
       transform: ${({ iconName }) =>
-        iconName === "name" ? "translate(2px, 1px)" : "translate(-4px, 1px)"};
+        iconName === "name" ? "translate(2px, 1px)" : "translate(-4px, 3px)"};
     }
   }
 
@@ -122,7 +121,7 @@ export const TaskbarButton = styled.div<ButtonProps>`
     font-size: 1.5rem;
     margin-left: 0.2rem;
     transform: ${({ iconName }) =>
-      iconName === "name" ? "" : "translate(-5px, 0)"};
+      iconName === "name" ? "" : "translate(-5px, 2px)"};
     cursor: auto;
 
     ${disableUserShared}

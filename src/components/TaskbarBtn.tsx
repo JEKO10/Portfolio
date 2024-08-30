@@ -24,10 +24,9 @@ const TaskbarBtn: React.FC<TaskbarBtnProps> = ({
         setIsVisible({ ...isVisible, [iconName]: !isVisible[iconName] })
       }
       iconName={iconName}
-      innerWidth={innerWidth}
     >
       {imgSource && <img src={imgSource} alt={label} />}
-      {innerWidth > 1200 && <p>{label}</p>}
+      {(innerWidth > 1440 || iconName === "name") && <p>{label}</p>}
     </TaskbarButton>
   );
 };

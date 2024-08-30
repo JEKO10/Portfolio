@@ -8,14 +8,12 @@ import workImg from "../assets/images/icons/work.png";
 import dash from "../assets/images/other/dash.jpg";
 import { Dash, TaskBar } from "../assets/style/Taskbar.style";
 import { useGlobalContext } from "../utils/context";
-import { useResize } from "../utils/hooks";
 import StartButton from "./StartButton";
 import TaskbarBtn from "./TaskbarBtn";
 import Toolbar from "./Toolbar";
 
 const Taskbar = () => {
   const { isOpen } = useGlobalContext();
-  const innerWidth = useResize();
 
   const buttons = [
     {
@@ -56,9 +54,7 @@ const Taskbar = () => {
         <article>
           <StartButton />
           <Dash src={dash} alt="dash" />
-          {innerWidth > 1440 && (
-            <TaskbarBtn iconName="name" imgSource="" label="Aleksa Bubanja" />
-          )}
+          <TaskbarBtn iconName="name" imgSource="" label="Aleksa Bubanja" />
           {buttons.map(
             (btn) =>
               btn.isVisible && (

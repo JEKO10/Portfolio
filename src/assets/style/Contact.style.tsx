@@ -7,7 +7,7 @@ import {
   desktopL,
   disableUserShared,
   flexMixin,
-  primaryFont
+  primaryFont,
 } from "./GlobalStyles";
 
 type ContactProps = {
@@ -18,7 +18,7 @@ export const ContactFile = styled.section<FilesProps>`
   background: url(${contactModal}) center/contain no-repeat;
   position: absolute;
   top: 0;
-  left: 250px;
+  left: 200px;
   height: 620px;
   width: 998px;
 
