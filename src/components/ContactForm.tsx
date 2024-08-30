@@ -4,20 +4,20 @@ import React, { useRef, useState } from "react";
 import {
   ContactButton,
   ContactInput,
-  ContactTextarea
+  ContactTextarea,
 } from "../assets/style/Contact.style";
 import { useGlobalContext } from "../utils/context";
 
 const ContactForm = () => {
   const { setIsOpen, isOpen } = useGlobalContext();
-
-  const form = useRef<HTMLFormElement>(null);
-
   const [userInfo, setUserInfo] = useState({
     name: "",
     email: "",
-    message: ""
+    message: "",
   });
+  const [loading, setLoading] = useState(false);
+
+  const form = useRef<HTMLFormElement>(null);
 
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
@@ -35,6 +35,8 @@ const ContactForm = () => {
       userInfo.email &&
       userInfo.message
     ) {
+      setLoading(true);
+
       emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
         () => {
           setUserInfo({ ...userInfo, name: "" });
@@ -42,13 +44,15 @@ const ContactForm = () => {
           setUserInfo({
             ...userInfo,
             message:
-              "Thank you so much for reaching out! :) \n\nI'll get back to you as soon as possible! :)"
+              "Thank you so much for reaching out! :) \n\nI'll get back to you as soon as possible! :)",
           });
+
+          setLoading(false);
 
           setTimeout(() => {
             setUserInfo({
               ...userInfo,
-              message: ""
+              message: "",
             });
           }, 3000);
         },
@@ -56,6 +60,11 @@ const ContactForm = () => {
           console.log(error.text);
         }
       );
+    } else {
+      setUserInfo({
+        ...userInfo,
+        message: "All fields are required!",
+      });
     }
   };
 
@@ -70,7 +79,7 @@ const ContactForm = () => {
       <form ref={form} onSubmit={sendEmail} onKeyPress={handleKeyPress}>
         <ContactTextarea
           name="message"
-          value={userInfo.message}
+          value={loading ? "Sending..." : userInfo.message}
           onChange={(e) => {
             setUserInfo({ ...userInfo, message: e.currentTarget.value });
           }}
@@ -97,7 +106,7 @@ const ContactForm = () => {
             onChange={(e) => {
               setUserInfo({
                 ...userInfo,
-                email: e.currentTarget.value
+                email: e.currentTarget.value,
               });
             }}
           />

@@ -127,10 +127,14 @@ export const AboutMeText = styled.article`
       margin-bottom: 1rem;
       padding-right: 30px;
     }
+
+    &:last-of-type {
+      margin-bottom: 3rem;
+    }
   }
 
   ::-webkit-scrollbar {
-    width: 62px;
+    width: 55px;
 
     ${desktopL} {
       display: none;
@@ -147,7 +151,7 @@ export const AboutMeText = styled.article`
 
   ::-webkit-scrollbar-button:single-button {
     display: block;
-    height: 39px;
+    height: 37px;
     width: 37px;
   }
 

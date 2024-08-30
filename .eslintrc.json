@@ -28,5 +28,10 @@
       "error",
       { "considerQueryString": true, "prefer-inline": true }
     ]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
