@@ -8,6 +8,7 @@ import { disableUserShared, flexMixin } from "./GlobalStyles";
 type ButtonProps = {
   isOpen?: boolean;
   iconName?: string;
+  innerWidth: number;
 };
 
 export const TaskBar = styled.section`
@@ -67,8 +68,14 @@ export const TaskbarButton = styled.div<ButtonProps>`
     4px -4px black;
 
   height: 28px;
-  width: 163px;
-  margin: ${({ iconName }) => (iconName === "name" ? "0 15px 0 5px" : "")};
+  width: ${({ innerWidth }) =>
+    innerWidth > 1200 ? "163px" : innerWidth > 992 ? "120px" : "75px"};
+  margin: ${({ iconName }) =>
+    iconName === "name"
+      ? "0 15px 0 5px"
+      : iconName === "about" && innerWidth < 1440
+        ? "0 15px 0 5px"
+        : ""};
   margin-right: 15px;
   cursor: auto;
 

@@ -2,6 +2,7 @@ import React from "react";
 
 import { TaskbarButton } from "../assets/style/Taskbar.style";
 import { useGlobalContext } from "../utils/context";
+import { useResize } from "../utils/hooks";
 
 type TaskbarBtnProps = {
   iconName: string;
@@ -12,9 +13,10 @@ type TaskbarBtnProps = {
 const TaskbarBtn: React.FC<TaskbarBtnProps> = ({
   iconName,
   imgSource,
-  label
+  label,
 }) => {
   const { isVisible, setIsVisible } = useGlobalContext();
+  const innerWidth = useResize();
 
   return (
     <TaskbarButton
@@ -22,9 +24,10 @@ const TaskbarBtn: React.FC<TaskbarBtnProps> = ({
         setIsVisible({ ...isVisible, [iconName]: !isVisible[iconName] })
       }
       iconName={iconName}
+      innerWidth={innerWidth}
     >
       {imgSource && <img src={imgSource} alt={label} />}
-      <p>{label}</p>
+      {innerWidth > 1200 && <p>{label}</p>}
     </TaskbarButton>
   );
 };

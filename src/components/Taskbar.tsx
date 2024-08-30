@@ -8,44 +8,46 @@ import workImg from "../assets/images/icons/work.png";
 import dash from "../assets/images/other/dash.jpg";
 import { Dash, TaskBar } from "../assets/style/Taskbar.style";
 import { useGlobalContext } from "../utils/context";
+import { useResize } from "../utils/hooks";
 import StartButton from "./StartButton";
 import TaskbarBtn from "./TaskbarBtn";
 import Toolbar from "./Toolbar";
 
 const Taskbar = () => {
   const { isOpen } = useGlobalContext();
+  const innerWidth = useResize();
 
   const buttons = [
     {
       iconName: "about",
       imgSource: aboutMe,
       label: "About me",
-      isVisible: isOpen.about
+      isVisible: isOpen.about,
     },
     {
       iconName: "work",
       imgSource: workImg,
       label: "Work",
-      isVisible: isOpen.work
+      isVisible: isOpen.work,
     },
     {
       iconName: "contact",
       imgSource: contactImg,
       label: "Contact",
-      isVisible: isOpen.contact
+      isVisible: isOpen.contact,
     },
     {
       iconName: "recycle",
       imgSource: recycleImg,
       label: "Recycle Bin",
-      isVisible: isOpen.recycle
+      isVisible: isOpen.recycle,
     },
     {
       iconName: "book",
       imgSource: bookImg,
       label: "Book",
-      isVisible: isOpen.book
-    }
+      isVisible: isOpen.book,
+    },
   ];
 
   return (
@@ -54,7 +56,9 @@ const Taskbar = () => {
         <article>
           <StartButton />
           <Dash src={dash} alt="dash" />
-          <TaskbarBtn iconName="name" imgSource="" label="Aleksa Bubanja" />
+          {innerWidth > 1440 && (
+            <TaskbarBtn iconName="name" imgSource="" label="Aleksa Bubanja" />
+          )}
           {buttons.map(
             (btn) =>
               btn.isVisible && (
