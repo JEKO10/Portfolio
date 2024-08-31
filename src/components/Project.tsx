@@ -6,7 +6,7 @@ import { Selection } from "../assets/style/Icons.style";
 import { Project as Container } from "../assets/style/Work.style";
 import { useOutsideClick, useResize } from "../utils/hooks";
 
-type IsClickedKeys = "walkmate" | "moviexd" | "travel" | "basket";
+type IsClickedKeys = "portfolio" | "moviexd" | "hiking" | "basket";
 
 type ProjectProps = {
   top: number;
@@ -15,16 +15,16 @@ type ProjectProps = {
   label: string;
   link: string;
   isClicked: {
-    walkmate: boolean;
+    portfolio: boolean;
     moviexd: boolean;
-    travel: boolean;
+    hiking: boolean;
     basket: boolean;
   };
   setIsClicked: React.Dispatch<
     React.SetStateAction<{
-      walkmate: boolean;
+      portfolio: boolean;
       moviexd: boolean;
-      travel: boolean;
+      hiking: boolean;
       basket: boolean;
     }>
   >;
@@ -37,7 +37,7 @@ const Project: React.FC<ProjectProps> = ({
   label,
   link,
   isClicked,
-  setIsClicked
+  setIsClicked,
 }) => {
   const innerWidth = useResize();
   const projectRef = useRef<HTMLDivElement>(null);
@@ -46,14 +46,14 @@ const Project: React.FC<ProjectProps> = ({
     projectRef.current?.focus();
 
     setIsClicked({
-      walkmate: false,
+      portfolio: false,
       moviexd: false,
-      travel: false,
-      basket: false
+      hiking: false,
+      basket: false,
     });
     setIsClicked((prevState) => ({
       ...prevState,
-      [iconName]: true
+      [iconName]: true,
     }));
   };
 
@@ -68,10 +68,10 @@ const Project: React.FC<ProjectProps> = ({
 
   useOutsideClick(projectRef, () => {
     setIsClicked({
-      walkmate: false,
+      portfolio: false,
       moviexd: false,
-      travel: false,
-      basket: false
+      hiking: false,
+      basket: false,
     });
   });
 

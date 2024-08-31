@@ -11,10 +11,10 @@ import Project from "../Project";
 const Work = () => {
   const { lastClicked, setLastClicked, isVisible } = useGlobalContext();
   const [isClicked, setIsClicked] = useState({
-    walkmate: false,
+    portfolio: false,
     moviexd: false,
-    travel: false,
-    basket: false
+    hiking: false,
+    basket: false,
   });
   const { isLoading } = useLoadingTimer();
 
@@ -39,9 +39,9 @@ const Work = () => {
             <Project
               top={15}
               left={18}
-              alt="walkmate"
-              label="WalkMate.doc"
-              link="WalkMate"
+              alt="portfolio"
+              label="Portfolio.doc"
+              link="Portfolio"
               isClicked={isClicked}
               setIsClicked={setIsClicked}
             />
@@ -57,9 +57,9 @@ const Work = () => {
             <Project
               top={26}
               left={16.5}
-              alt="travel"
-              label="Travel advisor.doc"
-              link="Travel-advisor"
+              alt="hiking"
+              label="Hiking guide.doc"
+              link="A-Hiking-guide"
               isClicked={isClicked}
               setIsClicked={setIsClicked}
             />
@@ -68,7 +68,7 @@ const Work = () => {
               left={32}
               alt="basket"
               label="Basket report.doc"
-              link="BasketReport"
+              link="Turniri"
               isClicked={isClicked}
               setIsClicked={setIsClicked}
             />

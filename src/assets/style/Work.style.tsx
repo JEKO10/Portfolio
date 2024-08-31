@@ -118,7 +118,7 @@ export const Project = styled.div<ProjectProps>`
 
   ${desktopL} {
     ${({ alt }) =>
-      alt === "walkmate" &&
+      alt === "portfolio" &&
       `
     top: 11.5rem;
     left: 13rem;
@@ -132,7 +132,7 @@ export const Project = styled.div<ProjectProps>`
   `}
 
   ${({ alt }) =>
-      alt === "travel" &&
+      alt === "hiking" &&
       `
     top: 20rem;
     left: 12rem;
