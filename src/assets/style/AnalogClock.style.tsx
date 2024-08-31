@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { tablet } from "./GlobalStyles";
+
 export const Clock = styled.div`
   width: 181px;
   height: 181px;
@@ -11,6 +13,12 @@ export const Clock = styled.div`
   font-size: 24px;
   text-align: center;
   background: url("/src/assets/images/other/clock.png") center/cover no-repeat;
+
+  ${tablet} {
+    top: 33%;
+    left: 67%;
+    scale: 0.7;
+  }
 
   &::after {
     background: #ff0000;

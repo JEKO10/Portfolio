@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { FilesProps } from "../../utils/context";
 import time from "../images/modals/timeModal.jpg";
 import timeHandle from "../images/other/handle.jpg";
-import { disableUserShared, primaryFont } from "./GlobalStyles";
+import { disableUserShared, primaryFont, tablet } from "./GlobalStyles";
 
 type BtnProps = {
   right: number;
@@ -16,6 +16,11 @@ export const TimeModal = styled.section<FilesProps>`
   left: 200px;
   height: 486px;
   width: 576px;
+
+  ${tablet} {
+    height: 337px;
+    width: 400px;
+  }
 
   visibility: ${({ isLoading }) => (isLoading ? "hidden" : "visible")};
 
@@ -30,11 +35,15 @@ export const TimeHandle = styled.article`
   background: url(${timeHandle}) center/cover no-repeat;
   height: 26px;
   width: 567px;
-  cursor: grab;
-
   position: absolute;
   top: 0.25rem;
   left: 0.25rem;
+  cursor: grab;
+
+  ${tablet} {
+    height: 18px;
+    width: 393px;
+  }
 `;
 
 export const DigitalClock = styled.p`
@@ -44,6 +53,12 @@ export const DigitalClock = styled.p`
   user-select: none;
   pointer-events: none;
   letter-spacing: 1px;
+
+  ${tablet} {
+    font-size: 0.8rem;
+    right: 19.3%;
+    letter-spacing: 0.5px;
+  }
 `;
 
 export const Year = styled.p`
@@ -52,6 +67,12 @@ export const Year = styled.p`
   left: 10.7rem;
   font-size: 1.3rem;
   user-select: none;
+
+  ${tablet} {
+    font-size: 1rem;
+    top: 5.15rem;
+    left: 7.5rem;
+  }
 `;
 
 export const Month = styled.p`
@@ -60,6 +81,12 @@ export const Month = styled.p`
   left: 3rem;
   font-size: 1.1rem;
   user-select: none;
+
+  ${tablet} {
+    font-size: 0.7rem;
+    top: 5.2rem;
+    left: 2.1rem;
+  }
 `;
 
 export const TimeZone = styled.p`
@@ -68,6 +95,13 @@ export const TimeZone = styled.p`
   position: absolute;
   bottom: 4.95rem;
   left: 9.5rem;
+
+  ${tablet} {
+    font-size: 0.8rem;
+    font-weight: 400;
+    bottom: 3.4rem;
+    left: 6.6rem;
+  }
 `;
 
 export const TimeBtn = styled.button<BtnProps>`
@@ -100,6 +134,13 @@ export const TimeBtn = styled.button<BtnProps>`
   bottom: 1.1rem;
   right: ${({ right }) => right + "rem"};
   cursor: pointer;
+
+  ${tablet} {
+    font-size: 0.8rem;
+    height: 15px;
+    width: 60px;
+    bottom: 0.85rem;
+  }
 
   &:active {
     box-shadow:

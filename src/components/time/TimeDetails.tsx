@@ -4,7 +4,7 @@ import {
   DigitalClock,
   Month,
   TimeZone,
-  Year
+  Year,
 } from "../../assets/style/Time.style";
 import AnalogClock from "./AnalogClock";
 
@@ -25,17 +25,17 @@ const TimeDetails: React.FC<TimeDetailsProps> = ({ time }) => {
     "September",
     "October",
     "November",
-    "December"
+    "December",
   ];
   const full = time.toLocaleDateString("en-US", {
-    timeZoneName: "longGeneric"
+    timeZoneName: "longGeneric",
   });
 
   const formattedTime = time.toLocaleTimeString([], {
     hour: "2-digit",
     minute: "2-digit",
     second: "2-digit",
-    hour12: true
+    hour12: true,
   });
 
   return (
