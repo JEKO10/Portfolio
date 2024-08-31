@@ -24,6 +24,11 @@ export const BookFile = styled.section<FilesProps>`
     width: 747px;
   }
 
+  ${tablet} {
+    height: 334px;
+    width: 500px;
+  }
+
   visibility: ${({ isLoading }) => (isLoading ? "hidden" : "visible")};
 
   display: ${({ isVisible }) => (isVisible ? "block" : "none")};
@@ -88,6 +93,11 @@ export const BookHandle = styled.div<FilesProps>`
     margin: 0.35rem auto;
   }
 
+  ${tablet} {
+    height: 20px;
+    width: 492px;
+  }
+
   div {
     ${flexMixin({ justify: "flex-start", align: "center" })};
     height: 37px;
@@ -97,6 +107,11 @@ export const BookHandle = styled.div<FilesProps>`
 
     ${desktopL} {
       height: 29px;
+    }
+
+    ${tablet} {
+      height: 18px;
+      width: 160px;
     }
 
     img {
@@ -110,6 +125,11 @@ export const BookHandle = styled.div<FilesProps>`
         height: 23px;
         width: 23px;
       }
+
+      ${tablet} {
+        height: 18px;
+        width: 18px;
+      }
     }
 
     p {
@@ -118,6 +138,11 @@ export const BookHandle = styled.div<FilesProps>`
 
       ${desktopL} {
         font-size: 1.5rem;
+      }
+
+      ${tablet} {
+        font-size: 1rem;
+        margin-top: 0.1rem;
       }
     }
   }
@@ -133,12 +158,25 @@ export const BookText = styled.article`
     left: 25px;
   }
 
+  ${tablet} {
+    top: 50px;
+    left: 15px;
+    max-height: 275px;
+  }
+
   p {
     font-size: 1.5rem;
     line-height: 40px;
     font-weight: 500;
     padding-right: 80px;
     margin-bottom: 0.5rem;
+
+    ${desktopL} {
+      font-size: 1.2rem;
+      line-height: 30px;
+      margin: 0.5rem 0.2rem;
+      padding-right: 30px;
+    }
 
     ${disableUserShared}
   }

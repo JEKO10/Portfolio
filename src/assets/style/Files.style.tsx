@@ -77,6 +77,20 @@ export const ControlBtnsContainer = styled.div<BtnContainer>`
                 }
               }
             }
+
+            ${tablet} {
+              height: 29.5px;
+              width: 85px;
+
+              button {
+                height: 12px;
+                width: 14px;
+
+                img {
+                  scale: 0.6;
+                }
+              }
+            }
           `
         : ""}
 `;
