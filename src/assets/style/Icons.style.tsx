@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-import { desktopL, disableUserShared, flexMixin } from "./GlobalStyles";
+import { desktopL, disableUserShared, flexMixin, tablet } from "./GlobalStyles";
 
 type IconProps = {
   isClicked: boolean;
@@ -15,6 +15,11 @@ export const iconsSharedStyle = css<IconProps>`
     margin-bottom: 0.5rem;
 
     ${disableUserShared}
+
+    ${tablet} {
+      height: 70px;
+      width: 70px;
+    }
   }
 
   p {
@@ -27,6 +32,10 @@ export const iconsSharedStyle = css<IconProps>`
     ${disableUserShared}
 
     pointer-events: none;
+
+    ${tablet} {
+      font-size: 1.4rem;
+    }
   }
 `;
 
@@ -70,6 +79,11 @@ export const Selection = styled.div<IconProps>`
   mask-image: ${({ iconName }) => `url(${iconName})`};
   -webkit-mask-image: ${({ iconName }) => `url(${iconName})`};
   opacity: 0.5;
+
+  ${tablet} {
+    height: 70px;
+    width: 70px;
+  }
 
   ${({ iconName }) =>
     iconName === "/Portfolio/src/assets/images/icons/smallProject.png" &&

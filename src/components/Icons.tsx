@@ -1,17 +1,21 @@
 import React, { useRef } from "react";
 
 import about from "../assets/images/icons/about.png";
+import aboutSmall from "../assets/images/icons/aboutSmall.png";
 import contact from "../assets/images/icons/contact.png";
+import contactSmall from "../assets/images/icons/contactSmall.png";
 import recycle from "../assets/images/icons/recycle.png";
+import recycleSmall from "../assets/images/icons/recycleSmall.png";
 import work from "../assets/images/icons/work.png";
+import workSmall from "../assets/images/icons/workSmall.png";
 import {
   Icon,
   IconsContainer,
   RecycleBin,
-  Selection
+  Selection,
 } from "../assets/style/Icons.style";
 import { useGlobalContext } from "../utils/context";
-import { useOutsideClick } from "../utils/hooks";
+import { useOutsideClick, useResize } from "../utils/hooks";
 
 const Icons = () => {
   const {
@@ -20,13 +24,32 @@ const Icons = () => {
     isOpen,
     setIsOpen,
     isVisible,
-    setIsVisible
+    setIsVisible,
   } = useGlobalContext();
+  const innerWidth = useResize();
   const iconRef = useRef<HTMLDivElement>(null);
   const iconsData = [
-    { name: "about", src: about, alt: "aboutIcon", label: "About Me" },
-    { name: "work", src: work, alt: "workIcon", label: "My Work" },
-    { name: "contact", src: contact, alt: "contactIcon", label: "Contact" }
+    {
+      name: "about",
+      src: about,
+      smallSrc: aboutSmall,
+      alt: "aboutIcon",
+      label: "About Me",
+    },
+    {
+      name: "work",
+      src: work,
+      smallSrc: workSmall,
+      alt: "workIcon",
+      label: "My Work",
+    },
+    {
+      name: "contact",
+      src: contact,
+      smallSrc: contactSmall,
+      alt: "contactIcon",
+      label: "Contact",
+    },
   ];
 
   const handleClick = (
@@ -42,11 +65,11 @@ const Icons = () => {
           work: false,
           contact: false,
           recycle: false,
-          book: false
+          book: false,
         });
         setIsClicked((prevState) => ({
           ...prevState,
-          [iconName]: true
+          [iconName]: true,
         }));
 
         setIsOpen({ ...isOpen, start: false });
@@ -81,7 +104,7 @@ const Icons = () => {
       work: false,
       contact: false,
       recycle: false,
-      book: false
+      book: false,
     });
   });
 
@@ -102,7 +125,7 @@ const Icons = () => {
             <img src={icon.src} alt={icon.alt} />
             <Selection
               isClicked={isClicked[icon.name] || false}
-              iconName={icon.src}
+              iconName={innerWidth > 992 ? icon.src : icon.smallSrc}
             />
             <p>{icon.label}</p>
           </Icon>
@@ -118,7 +141,10 @@ const Icons = () => {
         ref={iconRef}
       >
         <img src={recycle} alt="recycleIcon" />
-        <Selection isClicked={isClicked.recycle} iconName={recycle} />
+        <Selection
+          isClicked={isClicked.recycle}
+          iconName={innerWidth > 992 ? recycle : recycleSmall}
+        />
         <p>Recycle Bin</p>
       </RecycleBin>
     </>

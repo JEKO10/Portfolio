@@ -48,7 +48,7 @@ export const DigitalClock = styled.p`
 
 export const Year = styled.p`
   position: absolute;
-  top: 7.25rem;
+  top: 7.4rem;
   left: 10.7rem;
   font-size: 1.3rem;
   user-select: none;
@@ -56,7 +56,7 @@ export const Year = styled.p`
 
 export const Month = styled.p`
   position: absolute;
-  top: 7.35rem;
+  top: 7.5rem;
   left: 3rem;
   font-size: 1.1rem;
   user-select: none;
