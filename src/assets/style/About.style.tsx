@@ -7,7 +7,7 @@ import scroll from "../images/other/scroll.jpg";
 import scrollArrowDown from "../images/other/scrollArrowDown.jpg";
 import scrollArrowUp from "../images/other/scrollArrowUp.jpg";
 import scrollHandle from "../images/other/scrollHandle.jpg";
-import { desktopL, disableUserShared, flexMixin } from "./GlobalStyles";
+import { desktopL, disableUserShared, flexMixin, tablet } from "./GlobalStyles";
 
 export const AboutFile = styled.section<FilesProps>`
   background: url(${aboutModal}) center/contain no-repeat;
@@ -20,6 +20,11 @@ export const AboutFile = styled.section<FilesProps>`
   ${desktopL} {
     height: 500px;
     width: 747px;
+  }
+
+  ${tablet} {
+    height: 334px;
+    width: 500px;
   }
 
   overflow: hidden;
@@ -45,6 +50,20 @@ export const AboutFile = styled.section<FilesProps>`
         }
       }
     }
+
+    ${tablet} {
+      height: 29.5px;
+      width: 85px;
+
+      button {
+        height: 12px;
+        width: 14px;
+
+        img {
+          scale: 0.6;
+        }
+      }
+    }
   }
 `;
 
@@ -61,6 +80,11 @@ export const AboutHandle = styled.article<FilesProps>`
     margin: 0.35rem auto;
   }
 
+  ${tablet} {
+    height: 20px;
+    width: 492px;
+  }
+
   div {
     ${flexMixin({ justify: "flex-start", align: "center" })};
     height: 37px;
@@ -68,6 +92,11 @@ export const AboutHandle = styled.article<FilesProps>`
 
     ${desktopL} {
       height: 29px;
+    }
+
+    ${tablet} {
+      height: 18px;
+      width: 90px;
     }
 
     ${disableUserShared}
@@ -85,6 +114,12 @@ export const AboutHandle = styled.article<FilesProps>`
         height: 25px;
         width: 25px;
       }
+
+      ${tablet} {
+        height: 17px;
+        width: 17px;
+        margin: 0 0.3rem;
+      }
     }
 
     p {
@@ -93,6 +128,11 @@ export const AboutHandle = styled.article<FilesProps>`
 
       ${desktopL} {
         font-size: 1.5rem;
+      }
+
+      ${tablet} {
+        font-size: 1rem;
+        margin-top: 0.3rem;
       }
     }
   }
@@ -112,6 +152,12 @@ export const AboutMeText = styled.article`
     padding-top: 0;
   }
 
+  ${tablet} {
+    top: 50px;
+    left: 15px;
+    max-height: 275px;
+  }
+
   p {
     font-size: 1.5rem;
     line-height: 40px;
@@ -128,8 +174,17 @@ export const AboutMeText = styled.article`
       padding-right: 30px;
     }
 
+    ${tablet} {
+      font-size: 1.1rem;
+      line-height: 25px;
+    }
+
     &:last-of-type {
       margin-bottom: 3rem;
+
+      ${tablet} {
+        margin-bottom: 1rem;
+      }
     }
   }
 

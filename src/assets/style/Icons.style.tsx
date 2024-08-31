@@ -94,3 +94,6 @@ export const Selection = styled.div<IconProps>`
     }
   `}
 `;
+/* ${tablet} {
+    margin: 10px 50px 15px 0;
+  } */
