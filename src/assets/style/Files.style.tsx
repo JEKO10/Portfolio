@@ -29,21 +29,35 @@ export const ControlBtnsContainer = styled.div<BtnContainer>`
           height: 48px;
           width: 115px;
 
-          ${desktopL} {
-            height: 37px;
-            width: 95px;
-          }
-
           button {
             height: 19.5px;
             width: 22.5px;
+          }
 
-            ${desktopL} {
+          ${desktopL} {
+            height: 37px;
+            width: 95px;
+
+            button {
               height: 15px;
               width: 19px;
 
               img {
                 scale: 0.8;
+              }
+            }
+          }
+
+          ${tablet} {
+            height: 25px;
+            width: 70px;
+
+            button {
+              height: 8px;
+              width: 11px;
+
+              img {
+                scale: 0.5;
               }
             }
           }

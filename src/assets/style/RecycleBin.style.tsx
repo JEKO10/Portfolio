@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { FilesProps } from "../../utils/context";
 import recycleBin from "../images/modals/recycleBin.jpg";
 import recycleHandle from "../images/other/handle.jpg";
-import { desktopL, disableUserShared, flexMixin } from "./GlobalStyles";
+import { desktopL, disableUserShared, flexMixin, tablet } from "./GlobalStyles";
 
 export const RecycleBinFile = styled.section<FilesProps>`
   background: url(${recycleBin}) center/contain no-repeat;
@@ -17,6 +17,11 @@ export const RecycleBinFile = styled.section<FilesProps>`
   ${desktopL} {
     height: 500px;
     width: 578px;
+  }
+
+  ${tablet} {
+    height: 346px;
+    width: 400px;
   }
 
   visibility: ${({ isLoading }) => (isLoading ? "hidden" : "visible")};
@@ -38,6 +43,12 @@ export const RecycleBinHandle = styled.article<FilesProps>`
     margin: 0.35rem auto;
   }
 
+  ${tablet} {
+    height: 17px;
+    width: 392px;
+    margin: 0.25rem auto;
+  }
+
   div {
     ${flexMixin({ justify: "flex-start", align: "center" })};
     height: 30px;
@@ -45,6 +56,11 @@ export const RecycleBinHandle = styled.article<FilesProps>`
 
     ${desktopL} {
       height: 25.5px;
+    }
+
+    ${tablet} {
+      height: 17px;
+      width: 100px;
     }
 
     ${disableUserShared}
@@ -61,6 +77,12 @@ export const RecycleBinHandle = styled.article<FilesProps>`
         height: 20px;
         width: 20px;
       }
+
+      ${tablet} {
+        height: 14px;
+        width: 14px;
+        margin: 0 0.3rem;
+      }
     }
 
     p {
@@ -69,6 +91,11 @@ export const RecycleBinHandle = styled.article<FilesProps>`
 
       ${desktopL} {
         font-size: 1.3rem;
+      }
+
+      ${tablet} {
+        font-size: 1rem;
+        margin-top: 0.1rem;
       }
     }
   }

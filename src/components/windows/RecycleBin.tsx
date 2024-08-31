@@ -2,15 +2,16 @@ import React, { useRef } from "react";
 import Draggable from "react-draggable";
 
 import book from "../../assets/images/icons/book.png";
+import bookSmall from "../../assets/images/icons/bookSmall.png";
 import handleImg from "../../assets/images/icons/recycle.png";
 import { Book } from "../../assets/style/Book.style";
 import { Selection } from "../../assets/style/Icons.style";
 import {
   RecycleBinFile,
-  RecycleBinHandle
+  RecycleBinHandle,
 } from "../../assets/style/RecycleBin.style";
 import { useGlobalContext } from "../../utils/context";
-import { useLoadingTimer, useOutsideClick } from "../../utils/hooks";
+import { useLoadingTimer, useOutsideClick, useResize } from "../../utils/hooks";
 import ControlBtns from "../ControlBtns";
 
 const RecycleBin = () => {
@@ -22,10 +23,11 @@ const RecycleBin = () => {
     isVisible,
     setIsVisible,
     isClicked,
-    setIsClicked
+    setIsClicked,
   } = useGlobalContext();
   const bookRef = useRef<HTMLDivElement>(null);
   const { isLoading } = useLoadingTimer();
+  const innerWidth = useResize();
 
   const handleClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     bookRef.current?.focus();
@@ -61,7 +63,7 @@ const RecycleBin = () => {
       work: false,
       contact: false,
       recycle: false,
-      book: false
+      book: false,
     });
   });
 
@@ -91,7 +93,10 @@ const RecycleBin = () => {
             tabIndex={0}
           >
             <img src={book} alt="book" />
-            <Selection isClicked={isClicked.book} iconName={book} />
+            <Selection
+              isClicked={isClicked.book}
+              iconName={innerWidth > 992 ? book : bookSmall}
+            />
             <p>???</p>
           </Book>
         </RecycleBinFile>
