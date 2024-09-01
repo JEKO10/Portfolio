@@ -8,6 +8,7 @@ import {
   disableUserShared,
   flexMixin,
   primaryFont,
+  tablet,
 } from "./GlobalStyles";
 
 type ContactProps = {
@@ -25,6 +26,11 @@ export const ContactFile = styled.section<FilesProps>`
   ${desktopL} {
     height: 480px;
     width: 772px;
+  }
+
+  ${tablet} {
+    height: 310px;
+    width: 500px;
   }
 
   visibility: ${({ isLoading }) => (isLoading ? "hidden" : "visible")};
@@ -49,6 +55,21 @@ export const ContactFile = styled.section<FilesProps>`
         }
       }
     }
+
+    ${tablet} {
+      height: 30px;
+      width: 90px;
+      margin-top: 0;
+
+      button {
+        height: 13px;
+        width: 15px;
+
+        img {
+          scale: 0.6;
+        }
+      }
+    }
   }
 `;
 
@@ -64,6 +85,12 @@ export const ContactHandle = styled.article<FilesProps>`
     width: 759px;
   }
 
+  ${tablet} {
+    height: 21px;
+    width: 491px;
+    margin: 0.3rem auto;
+  }
+
   div {
     ${flexMixin({ justify: "flex-start", align: "center" })};
     height: 44px;
@@ -74,6 +101,10 @@ export const ContactHandle = styled.article<FilesProps>`
 
     ${desktopL} {
       height: 34px;
+    }
+
+    ${tablet} {
+      height: 22px;
     }
 
     img {
@@ -88,6 +119,12 @@ export const ContactHandle = styled.article<FilesProps>`
         width: 30px;
         margin: 0 0.8rem;
       }
+
+      ${tablet} {
+        height: 17px;
+        width: 17px;
+        margin: 0 0.4rem;
+      }
     }
 
     p {
@@ -98,6 +135,10 @@ export const ContactHandle = styled.article<FilesProps>`
       ${desktopL} {
         font-size: 1.7rem;
         margin: 0;
+      }
+
+      ${tablet} {
+        font-size: 1.1rem;
       }
     }
   }
@@ -143,6 +184,15 @@ export const ContactTextarea = styled.textarea`
     top: 6.5rem;
     padding: 10px;
   }
+
+  ${tablet} {
+    font-size: 1.3rem;
+    height: 150px;
+    width: 450px;
+    top: 4.5rem;
+    left: 1.1rem;
+    padding: 5px 10px;
+  }
 `;
 
 export const ContactInput = styled.div<ContactProps>`
@@ -158,9 +208,24 @@ export const ContactInput = styled.div<ContactProps>`
     }
   }
 
+  ${tablet} {
+    left: 1rem;
+
+    bottom: ${({ bottom }) => bottom - 1}rem;
+
+    &:first-of-type {
+      bottom: ${({ bottom }) => bottom - 3}rem;
+    }
+  }
+
   label {
     font-size: 1.5rem;
     margin-right: 1rem;
+
+    ${tablet} {
+      font-size: 0.8rem;
+      margin-right: 0.7rem;
+    }
   }
 
   &:first-of-type input {
@@ -201,6 +266,12 @@ export const ContactInput = styled.div<ContactProps>`
       height: 35px;
       width: 400px;
       padding: 0 5px;
+    }
+
+    ${tablet} {
+      font-size: 1rem;
+      height: 20px;
+      width: 250px;
     }
 
     &:focus {
@@ -270,6 +341,17 @@ export const ContactButton = styled.button<ContactProps>`
     }
   }
 
+  ${tablet} {
+    font-size: 1rem;
+    height: 20px;
+
+    bottom: ${({ bottom }) => bottom - 1}rem;
+
+    &#send {
+      bottom: ${({ bottom }) => bottom - 3}rem;
+    }
+  }
+
   &:active {
     box-shadow:
       -2px -2px #818181,
@@ -305,6 +387,11 @@ export const ContactSocials = styled.article`
     right: 8.5rem;
   }
 
+  ${tablet} {
+    top: 2.3rem;
+    right: 5.5rem;
+  }
+
   button {
     height: 44px;
     width: 47px;
@@ -315,6 +402,11 @@ export const ContactSocials = styled.article`
     ${desktopL} {
       height: 32px;
       width: 36px;
+    }
+
+    ${tablet} {
+      height: 18px;
+      width: 22px;
     }
 
     box-shadow:
@@ -372,6 +464,10 @@ export const ContactSocials = styled.article`
       ${desktopL} {
         margin-top: -2px;
         scale: 0.8;
+      }
+
+      ${tablet} {
+        margin-top: -8px;
       }
     }
   }
