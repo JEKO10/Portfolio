@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { FilesProps } from "../../utils/context";
 import workModal from "../images/modals/workModal.jpg";
 import workHandle from "../images/other/handle.jpg";
-import { desktopL, disableUserShared, flexMixin } from "./GlobalStyles";
+import { desktopL, disableUserShared, flexMixin, tablet } from "./GlobalStyles";
 import { iconsSharedStyle } from "./Icons.style";
 
 type ProjectProps = {
@@ -27,6 +27,11 @@ export const WorkFile = styled.section<FilesProps>`
     width: 579px;
   }
 
+  ${tablet} {
+    height: 344px;
+    width: 400px;
+  }
+
   visibility: ${({ isLoading }) => (isLoading ? "hidden" : "visible")};
 
   display: ${({ isVisible }) => (isVisible ? "block" : "none")};
@@ -36,21 +41,35 @@ export const WorkFile = styled.section<FilesProps>`
     height: 45px;
     width: 115px;
 
-    ${desktopL} {
-      height: 37px;
-      width: 95px;
-    }
-
     button {
       height: 19.5px;
       width: 22.5px;
+    }
 
-      ${desktopL} {
+    ${desktopL} {
+      height: 37px;
+      width: 95px;
+
+      button {
         height: 14px;
         width: 17px;
 
         img {
           scale: 0.7;
+        }
+      }
+    }
+
+    ${tablet} {
+      height: 25px;
+      width: 70px;
+
+      button {
+        height: 7px;
+        width: 10px;
+
+        img {
+          scale: 0.4;
         }
       }
     }
@@ -69,6 +88,12 @@ export const WorkHandle = styled.article<FilesProps>`
     width: 569px;
   }
 
+  ${tablet} {
+    height: 17px;
+    width: 392px;
+    margin: 0.25rem auto;
+  }
+
   div {
     ${flexMixin({ justify: "flex-start", align: "center" })};
     width: 140px;
@@ -78,6 +103,10 @@ export const WorkHandle = styled.article<FilesProps>`
 
     ${desktopL} {
       height: 19px;
+    }
+
+    ${tablet} {
+      height: 15px;
     }
 
     img {
@@ -91,6 +120,12 @@ export const WorkHandle = styled.article<FilesProps>`
         height: 20px;
         width: 20px;
       }
+
+      ${tablet} {
+        height: 14px;
+        width: 14px;
+        margin: 0 0.5rem;
+      }
     }
 
     p {
@@ -99,6 +134,11 @@ export const WorkHandle = styled.article<FilesProps>`
 
       ${desktopL} {
         font-size: 1.3rem;
+      }
+
+      ${tablet} {
+        font-size: 0.9rem;
+        margin-top: 0.2rem;
       }
     }
   }
@@ -146,6 +186,36 @@ export const Project = styled.div<ProjectProps>`
   `}
   }
 
+  ${tablet} {
+    ${({ alt }) =>
+      alt === "portfolio" &&
+      `
+    top: 8rem;
+    left: 9.5rem;
+  `}
+
+    ${({ alt }) =>
+      alt === "moviexd" &&
+      `
+    top: 8rem;
+    left: 17.5rem;
+  `}
+
+  ${({ alt }) =>
+      alt === "hiking" &&
+      `
+    top: 14rem;
+    left: 8.6rem;
+  `}
+
+  ${({ alt }) =>
+      alt === "basket" &&
+      `
+    top: 14rem;
+    left: 16.4rem;
+  `}
+  }
+
   img {
     height: 100px;
     width: 100px;
@@ -154,6 +224,11 @@ export const Project = styled.div<ProjectProps>`
       height: 80px;
       width: 80px;
     }
+
+    ${tablet} {
+      height: 60px;
+      width: 60px;
+    }
   }
 
   p {
@@ -161,6 +236,10 @@ export const Project = styled.div<ProjectProps>`
 
     ${desktopL} {
       font-size: 1.3rem;
+    }
+
+    ${tablet} {
+      font-size: 1rem;
     }
   }
 `;

@@ -86,13 +86,18 @@ export const Selection = styled.div<IconProps>`
   }
 
   ${({ iconName }) =>
-    iconName === "/Portfolio/src/assets/images/icons/smallProject.png" &&
-    `
-    ${desktopL} {
-      height: 80px;
-      width: 80px;
-    }
-  `}
+    iconName?.includes("project") &&
+    css`
+      ${desktopL} {
+        height: 80px;
+        width: 80px;
+      }
+
+      ${tablet} {
+        height: 60px;
+        width: 60px;
+      }
+    `}
 `;
 /* ${tablet} {
     margin: 10px 50px 15px 0;

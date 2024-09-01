@@ -1,7 +1,8 @@
 import React, { useRef } from "react";
 
 import project from "../assets/images/icons/project.png";
-import smallProject from "../assets/images/icons/smallProject.png";
+import projectSmall from "../assets/images/icons/projectSmall.png";
+import projectTablet from "../assets/images/icons/projectTablet.png";
 import { Selection } from "../assets/style/Icons.style";
 import { Project as Container } from "../assets/style/Work.style";
 import { useOutsideClick, useResize } from "../utils/hooks";
@@ -94,7 +95,13 @@ const Project: React.FC<ProjectProps> = ({
       <img src={project} alt={alt} />
       <Selection
         isClicked={isClicked[alt]}
-        iconName={innerWidth > 1440 ? project : smallProject}
+        iconName={
+          innerWidth > 1440
+            ? project
+            : innerWidth > 992
+              ? projectSmall
+              : projectTablet
+        }
       />
       <p>{label}</p>
     </Container>
