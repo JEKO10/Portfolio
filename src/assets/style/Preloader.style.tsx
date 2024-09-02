@@ -30,6 +30,11 @@ export const LoaderContainer = styled.div`
     background-position: -100px;
     background-size: 120% 100%;
   }
+
+  @media (max-width: 768px) {
+    background-position: -270px;
+    background-size: 170% 100%;
+  }
 `;
 
 export const Loader = styled.div`

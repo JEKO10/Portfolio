@@ -63,3 +63,4 @@ export const disableUserShared = css`
 
 export const desktopL = `@media (max-width: 1440px)`;
 export const tablet = `@media (max-width: 992px)`;
+export const tabletS = `@media (max-width: 768px)`;
