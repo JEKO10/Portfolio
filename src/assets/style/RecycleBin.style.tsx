@@ -22,6 +22,7 @@ export const RecycleBinFile = styled.section<FilesProps>`
   ${tablet} {
     height: 346px;
     width: 400px;
+    left: 300px;
   }
 
   visibility: ${({ isLoading }) => (isLoading ? "hidden" : "visible")};

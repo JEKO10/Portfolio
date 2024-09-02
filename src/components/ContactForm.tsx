@@ -68,15 +68,9 @@ const ContactForm = () => {
     }
   };
 
-  const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter") {
-      sendEmail(e);
-    }
-  };
-
   return (
     <>
-      <form ref={form} onSubmit={sendEmail} onKeyPress={handleKeyPress}>
+      <form ref={form} onSubmit={sendEmail}>
         <ContactTextarea
           name="message"
           value={loading ? "Sending..." : userInfo.message}

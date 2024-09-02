@@ -15,14 +15,15 @@ const TaskbarBtn: React.FC<TaskbarBtnProps> = ({
   imgSource,
   label,
 }) => {
-  const { isVisible, setIsVisible } = useGlobalContext();
+  const { isVisible, setIsVisible, setLastClicked } = useGlobalContext();
   const innerWidth = useResize();
 
   return (
     <TaskbarButton
-      onClick={() =>
-        setIsVisible({ ...isVisible, [iconName]: !isVisible[iconName] })
-      }
+      onClick={() => {
+        setIsVisible({ ...isVisible, [iconName]: !isVisible[iconName] });
+        setLastClicked(iconName);
+      }}
       iconName={iconName}
     >
       {imgSource && <img src={imgSource} alt={label} />}

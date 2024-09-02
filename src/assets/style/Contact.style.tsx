@@ -168,6 +168,7 @@ export const ContactTextarea = styled.textarea`
 
   font-size: 2rem;
   font-family: ${primaryFont};
+  line-height: 40px;
   height: 320px;
   width: 950px;
   position: absolute;
@@ -187,6 +188,7 @@ export const ContactTextarea = styled.textarea`
 
   ${tablet} {
     font-size: 1.3rem;
+    line-height: 30px;
     height: 150px;
     width: 450px;
     top: 4.5rem;

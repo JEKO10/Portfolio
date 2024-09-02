@@ -3,7 +3,7 @@ import styled from "styled-components";
 import startButton from "../images/buttons/start.png";
 import startClicked from "../images/buttons/startClicked.png";
 import taskbar from "../images/other/taskbar.jpg";
-import { desktopL, disableUserShared, flexMixin } from "./GlobalStyles";
+import { desktopL, disableUserShared, flexMixin, tablet } from "./GlobalStyles";
 
 type ButtonProps = {
   isOpen?: boolean;
@@ -72,9 +72,13 @@ export const TaskbarButton = styled.div<ButtonProps>`
   margin-right: 15px;
   cursor: auto;
 
-  ${desktopL} {
-    &:not(:first-of-type) {
+  &:not(:first-of-type) {
+    ${desktopL} {
       width: 85px;
+    }
+
+    ${tablet} {
+      width: 40px;
     }
   }
 
