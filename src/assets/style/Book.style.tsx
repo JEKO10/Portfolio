@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { FilesProps } from "../../utils/context";
 import book from "../images/modals/shared.jpg";
 import bookHandle from "../images/other/handle.jpg";
-import { desktopL, disableUserShared, flexMixin, tablet } from "./GlobalStyles";
+import { desktopL, disableUserShared, flexMixin, laptop } from "./GlobalStyles";
 import { iconsSharedStyle } from "./Icons.style";
 
 type BookProps = {
@@ -24,7 +24,7 @@ export const BookFile = styled.section<FilesProps>`
     width: 747px;
   }
 
-  ${tablet} {
+  ${laptop} {
     height: 334px;
     width: 500px;
   }
@@ -52,7 +52,7 @@ export const Book = styled.div<BookProps>`
     left: 13.5rem;
   }
 
-  ${tablet} {
+  ${laptop} {
     top: 8rem;
     left: 9rem;
   }
@@ -61,7 +61,7 @@ export const Book = styled.div<BookProps>`
     height: 100px;
     width: 100px;
 
-    ${tablet} {
+    ${laptop} {
       height: 70px;
       width: 70px;
     }
@@ -74,7 +74,7 @@ export const Book = styled.div<BookProps>`
       font-size: 1.6rem;
     }
 
-    ${tablet} {
+    ${laptop} {
       font-size: 1.3rem;
     }
   }
@@ -93,7 +93,7 @@ export const BookHandle = styled.div<FilesProps>`
     margin: 0.35rem auto;
   }
 
-  ${tablet} {
+  ${laptop} {
     height: 20px;
     width: 492px;
   }
@@ -109,7 +109,7 @@ export const BookHandle = styled.div<FilesProps>`
       height: 29px;
     }
 
-    ${tablet} {
+    ${laptop} {
       height: 18px;
       width: 160px;
     }
@@ -126,7 +126,7 @@ export const BookHandle = styled.div<FilesProps>`
         width: 23px;
       }
 
-      ${tablet} {
+      ${laptop} {
         height: 18px;
         width: 18px;
       }
@@ -140,7 +140,7 @@ export const BookHandle = styled.div<FilesProps>`
         font-size: 1.5rem;
       }
 
-      ${tablet} {
+      ${laptop} {
         font-size: 1rem;
         margin-top: 0.1rem;
       }
@@ -158,7 +158,7 @@ export const BookText = styled.article`
     left: 25px;
   }
 
-  ${tablet} {
+  ${laptop} {
     top: 50px;
     left: 15px;
     max-height: 275px;

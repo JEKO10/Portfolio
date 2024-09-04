@@ -2,7 +2,7 @@ import React, {
   createContext,
   PropsWithChildren,
   useContext,
-  useState
+  useState,
 } from "react";
 
 export type WindowsState = {
@@ -41,7 +41,7 @@ const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
     work: false,
     contact: false,
     recycle: false,
-    book: false
+    book: false,
   });
 
   const [isOpen, setIsOpen] = useState<WindowsState>({
@@ -50,7 +50,7 @@ const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
     contact: false,
     recycle: false,
     time: false,
-    book: false
+    book: false,
   });
 
   const [lastClicked, setLastClicked] = useState<string>("");
@@ -61,7 +61,7 @@ const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
     contact: true,
     recycle: true,
     book: false,
-    start: false
+    start: false,
   });
 
   const [isLoading, setIsLoading] = useState(true);
@@ -84,7 +84,7 @@ const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
         isLoading,
         setIsLoading,
         isShuttingDown,
-        setIsShuttingDown
+        setIsShuttingDown,
       }}
     >
       {children}

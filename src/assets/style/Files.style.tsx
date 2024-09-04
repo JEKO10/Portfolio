@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-import { desktopL, disableUserShared, flexMixin, tablet } from "./GlobalStyles";
+import { desktopL, disableUserShared, flexMixin, laptop } from "./GlobalStyles";
 
 type BtnContainer = {
   iconName: string;
@@ -48,7 +48,7 @@ export const ControlBtnsContainer = styled.div<BtnContainer>`
             }
           }
 
-          ${tablet} {
+          ${laptop} {
             height: 25px;
             width: 70px;
 
@@ -78,7 +78,7 @@ export const ControlBtnsContainer = styled.div<BtnContainer>`
               }
             }
 
-            ${tablet} {
+            ${laptop} {
               height: 29.5px;
               width: 85px;
 
@@ -168,7 +168,7 @@ export const MinimizeBtn = styled.button<BtnContainer>`
   img {
     margin: 0.2rem;
 
-    ${tablet} {
+    ${laptop} {
       margin: 0;
     }
   }

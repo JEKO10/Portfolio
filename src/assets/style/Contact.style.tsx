@@ -8,7 +8,7 @@ import {
   disableUserShared,
   flexMixin,
   primaryFont,
-  tablet,
+  laptop,
 } from "./GlobalStyles";
 
 type ContactProps = {
@@ -28,7 +28,7 @@ export const ContactFile = styled.section<FilesProps>`
     width: 772px;
   }
 
-  ${tablet} {
+  ${laptop} {
     height: 310px;
     width: 500px;
   }
@@ -56,7 +56,7 @@ export const ContactFile = styled.section<FilesProps>`
       }
     }
 
-    ${tablet} {
+    ${laptop} {
       height: 30px;
       width: 90px;
       margin-top: 0;
@@ -85,7 +85,7 @@ export const ContactHandle = styled.article<FilesProps>`
     width: 759px;
   }
 
-  ${tablet} {
+  ${laptop} {
     height: 21px;
     width: 491px;
     margin: 0.3rem auto;
@@ -103,7 +103,7 @@ export const ContactHandle = styled.article<FilesProps>`
       height: 34px;
     }
 
-    ${tablet} {
+    ${laptop} {
       height: 22px;
     }
 
@@ -120,7 +120,7 @@ export const ContactHandle = styled.article<FilesProps>`
         margin: 0 0.8rem;
       }
 
-      ${tablet} {
+      ${laptop} {
         height: 17px;
         width: 17px;
         margin: 0 0.4rem;
@@ -137,7 +137,7 @@ export const ContactHandle = styled.article<FilesProps>`
         margin: 0;
       }
 
-      ${tablet} {
+      ${laptop} {
         font-size: 1.1rem;
       }
     }
@@ -186,7 +186,7 @@ export const ContactTextarea = styled.textarea`
     padding: 10px;
   }
 
-  ${tablet} {
+  ${laptop} {
     font-size: 1.3rem;
     line-height: 30px;
     height: 150px;
@@ -210,7 +210,7 @@ export const ContactInput = styled.div<ContactProps>`
     }
   }
 
-  ${tablet} {
+  ${laptop} {
     left: 1rem;
 
     bottom: ${({ bottom }) => bottom - 1}rem;
@@ -224,7 +224,7 @@ export const ContactInput = styled.div<ContactProps>`
     font-size: 1.5rem;
     margin-right: 1rem;
 
-    ${tablet} {
+    ${laptop} {
       font-size: 0.8rem;
       margin-right: 0.7rem;
     }
@@ -270,7 +270,7 @@ export const ContactInput = styled.div<ContactProps>`
       padding: 0 5px;
     }
 
-    ${tablet} {
+    ${laptop} {
       font-size: 1rem;
       height: 20px;
       width: 250px;
@@ -343,7 +343,7 @@ export const ContactButton = styled.button<ContactProps>`
     }
   }
 
-  ${tablet} {
+  ${laptop} {
     font-size: 1rem;
     height: 20px;
 
@@ -389,7 +389,7 @@ export const ContactSocials = styled.article`
     right: 8.5rem;
   }
 
-  ${tablet} {
+  ${laptop} {
     top: 2.3rem;
     right: 5.5rem;
   }
@@ -406,7 +406,7 @@ export const ContactSocials = styled.article`
       width: 36px;
     }
 
-    ${tablet} {
+    ${laptop} {
       height: 18px;
       width: 22px;
     }
@@ -468,7 +468,7 @@ export const ContactSocials = styled.article`
         scale: 0.8;
       }
 
-      ${tablet} {
+      ${laptop} {
         margin-top: -8px;
       }
     }

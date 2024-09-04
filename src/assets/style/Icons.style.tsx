@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-import { desktopL, disableUserShared, flexMixin, tablet } from "./GlobalStyles";
+import { desktopL, disableUserShared, flexMixin, laptop } from "./GlobalStyles";
 
 type IconProps = {
   isClicked: boolean;
@@ -16,7 +16,7 @@ export const iconsSharedStyle = css<IconProps>`
 
     ${disableUserShared}
 
-    ${tablet} {
+    ${laptop} {
       height: 70px;
       width: 70px;
     }
@@ -33,7 +33,7 @@ export const iconsSharedStyle = css<IconProps>`
 
     pointer-events: none;
 
-    ${tablet} {
+    ${laptop} {
       font-size: 1.4rem;
     }
   }
@@ -80,7 +80,7 @@ export const Selection = styled.div<IconProps>`
   -webkit-mask-image: ${({ iconName }) => `url(${iconName})`};
   opacity: 0.5;
 
-  ${tablet} {
+  ${laptop} {
     height: 70px;
     width: 70px;
   }
@@ -93,12 +93,12 @@ export const Selection = styled.div<IconProps>`
         width: 80px;
       }
 
-      ${tablet} {
+      ${laptop} {
         height: 60px;
         width: 60px;
       }
     `}
 `;
-/* ${tablet} {
+/* ${laptop} {
     margin: 10px 50px 15px 0;
   } */

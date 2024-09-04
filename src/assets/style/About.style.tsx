@@ -2,12 +2,19 @@ import styled from "styled-components";
 
 import { FilesProps } from "../../utils/context";
 import aboutModal from "../images/modals/shared.jpg";
+import aboutModalSmall from "../images/modals/sharedSmall.jpg";
 import aboutHandle from "../images/other/handle.jpg";
 import scroll from "../images/other/scroll.jpg";
 import scrollArrowDown from "../images/other/scrollArrowDown.jpg";
 import scrollArrowUp from "../images/other/scrollArrowUp.jpg";
 import scrollHandle from "../images/other/scrollHandle.jpg";
-import { desktopL, disableUserShared, flexMixin, tablet } from "./GlobalStyles";
+import {
+  desktopL,
+  disableUserShared,
+  flexMixin,
+  laptop,
+  tablet,
+} from "./GlobalStyles";
 
 export const AboutFile = styled.section<FilesProps>`
   background: url(${aboutModal}) center/contain no-repeat;
@@ -22,9 +29,15 @@ export const AboutFile = styled.section<FilesProps>`
     width: 747px;
   }
 
-  ${tablet} {
+  ${laptop} {
     height: 334px;
     width: 500px;
+  }
+
+  ${tablet} {
+    background: url(${aboutModalSmall}) center/contain no-repeat;
+    height: 200px;
+    width: 300px;
   }
 
   overflow: hidden;
@@ -51,7 +64,7 @@ export const AboutFile = styled.section<FilesProps>`
       }
     }
 
-    ${tablet} {
+    ${laptop} {
       height: 29.5px;
       width: 85px;
 
@@ -61,6 +74,19 @@ export const AboutFile = styled.section<FilesProps>`
 
         img {
           scale: 0.6;
+        }
+      }
+    }
+
+    ${tablet} {
+      height: 24px;
+
+      button {
+        height: 9px;
+        width: 11px;
+
+        img {
+          scale: 0.5;
         }
       }
     }
@@ -80,9 +106,15 @@ export const AboutHandle = styled.article<FilesProps>`
     margin: 0.35rem auto;
   }
 
-  ${tablet} {
+  ${laptop} {
     height: 20px;
     width: 492px;
+  }
+
+  ${tablet} {
+    height: 18px;
+    width: 282px;
+    margin: 0.15rem auto;
   }
 
   div {
@@ -94,7 +126,7 @@ export const AboutHandle = styled.article<FilesProps>`
       height: 29px;
     }
 
-    ${tablet} {
+    ${laptop} {
       height: 18px;
       width: 90px;
     }
@@ -115,10 +147,15 @@ export const AboutHandle = styled.article<FilesProps>`
         width: 25px;
       }
 
-      ${tablet} {
+      ${laptop} {
         height: 17px;
         width: 17px;
         margin: 0 0.3rem;
+      }
+
+      ${tablet} {
+        height: 15px;
+        width: 15px;
       }
     }
 
@@ -130,9 +167,14 @@ export const AboutHandle = styled.article<FilesProps>`
         font-size: 1.5rem;
       }
 
-      ${tablet} {
+      ${laptop} {
         font-size: 1rem;
         margin-top: 0.3rem;
+      }
+
+      ${tablet} {
+        font-size: 0.9rem;
+        margin-top: 0.2rem;
       }
     }
   }
@@ -152,10 +194,16 @@ export const AboutMeText = styled.article`
     padding-top: 0;
   }
 
-  ${tablet} {
+  ${laptop} {
     top: 50px;
     left: 15px;
     max-height: 275px;
+  }
+
+  ${tablet} {
+    top: 40px;
+    left: 17px;
+    max-height: 155px;
   }
 
   p {
@@ -174,15 +222,21 @@ export const AboutMeText = styled.article`
       padding-right: 30px;
     }
 
-    ${tablet} {
+    ${laptop} {
       font-size: 1.1rem;
       line-height: 25px;
+    }
+
+    ${tablet} {
+      font-size: 0.9rem;
+      line-height: 18px;
+      margin-bottom: 0.8rem;
     }
 
     &:last-of-type {
       margin-bottom: 3rem;
 
-      ${tablet} {
+      ${laptop} {
         margin-bottom: 1rem;
       }
     }

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { FilesProps } from "../../utils/context";
 import recycleBin from "../images/modals/recycleBin.jpg";
 import recycleHandle from "../images/other/handle.jpg";
-import { desktopL, disableUserShared, flexMixin, tablet } from "./GlobalStyles";
+import { desktopL, disableUserShared, flexMixin, laptop } from "./GlobalStyles";
 
 export const RecycleBinFile = styled.section<FilesProps>`
   background: url(${recycleBin}) center/contain no-repeat;
@@ -19,7 +19,7 @@ export const RecycleBinFile = styled.section<FilesProps>`
     width: 578px;
   }
 
-  ${tablet} {
+  ${laptop} {
     height: 346px;
     width: 400px;
     left: 300px;
@@ -44,7 +44,7 @@ export const RecycleBinHandle = styled.article<FilesProps>`
     margin: 0.35rem auto;
   }
 
-  ${tablet} {
+  ${laptop} {
     height: 17px;
     width: 392px;
     margin: 0.25rem auto;
@@ -59,7 +59,7 @@ export const RecycleBinHandle = styled.article<FilesProps>`
       height: 25.5px;
     }
 
-    ${tablet} {
+    ${laptop} {
       height: 17px;
       width: 100px;
     }
@@ -79,7 +79,7 @@ export const RecycleBinHandle = styled.article<FilesProps>`
         width: 20px;
       }
 
-      ${tablet} {
+      ${laptop} {
         height: 14px;
         width: 14px;
         margin: 0 0.3rem;
@@ -94,7 +94,7 @@ export const RecycleBinHandle = styled.article<FilesProps>`
         font-size: 1.3rem;
       }
 
-      ${tablet} {
+      ${laptop} {
         font-size: 1rem;
         margin-top: 0.1rem;
       }

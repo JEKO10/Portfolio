@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { FilesProps } from "../../utils/context";
 import workModal from "../images/modals/workModal.jpg";
 import workHandle from "../images/other/handle.jpg";
-import { desktopL, disableUserShared, flexMixin, tablet } from "./GlobalStyles";
+import { desktopL, disableUserShared, flexMixin, laptop } from "./GlobalStyles";
 import { iconsSharedStyle } from "./Icons.style";
 
 type ProjectProps = {
@@ -27,7 +27,7 @@ export const WorkFile = styled.section<FilesProps>`
     width: 579px;
   }
 
-  ${tablet} {
+  ${laptop} {
     height: 344px;
     width: 400px;
   }
@@ -60,7 +60,7 @@ export const WorkFile = styled.section<FilesProps>`
       }
     }
 
-    ${tablet} {
+    ${laptop} {
       height: 25px;
       width: 70px;
 
@@ -88,7 +88,7 @@ export const WorkHandle = styled.article<FilesProps>`
     width: 569px;
   }
 
-  ${tablet} {
+  ${laptop} {
     height: 17px;
     width: 392px;
     margin: 0.25rem auto;
@@ -105,7 +105,7 @@ export const WorkHandle = styled.article<FilesProps>`
       height: 19px;
     }
 
-    ${tablet} {
+    ${laptop} {
       height: 15px;
     }
 
@@ -121,7 +121,7 @@ export const WorkHandle = styled.article<FilesProps>`
         width: 20px;
       }
 
-      ${tablet} {
+      ${laptop} {
         height: 14px;
         width: 14px;
         margin: 0 0.5rem;
@@ -136,7 +136,7 @@ export const WorkHandle = styled.article<FilesProps>`
         font-size: 1.3rem;
       }
 
-      ${tablet} {
+      ${laptop} {
         font-size: 0.9rem;
         margin-top: 0.2rem;
       }
@@ -186,7 +186,7 @@ export const Project = styled.div<ProjectProps>`
   `}
   }
 
-  ${tablet} {
+  ${laptop} {
     ${({ alt }) =>
       alt === "portfolio" &&
       `
@@ -225,7 +225,7 @@ export const Project = styled.div<ProjectProps>`
       width: 80px;
     }
 
-    ${tablet} {
+    ${laptop} {
       height: 60px;
       width: 60px;
     }
@@ -238,7 +238,7 @@ export const Project = styled.div<ProjectProps>`
       font-size: 1.3rem;
     }
 
-    ${tablet} {
+    ${laptop} {
       font-size: 1rem;
     }
   }

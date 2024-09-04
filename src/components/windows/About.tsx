@@ -5,7 +5,7 @@ import handleImg from "../../assets/images/icons/about.png";
 import {
   AboutFile,
   AboutHandle,
-  AboutMeText
+  AboutMeText,
 } from "../../assets/style/About.style";
 import { useGlobalContext } from "../../utils/context";
 import { useLoadingTimer } from "../../utils/hooks";

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { FilesProps } from "../../utils/context";
 import time from "../images/modals/timeModal.jpg";
 import timeHandle from "../images/other/handle.jpg";
-import { disableUserShared, primaryFont, tablet } from "./GlobalStyles";
+import { disableUserShared, primaryFont, laptop } from "./GlobalStyles";
 
 type BtnProps = {
   right: number;
@@ -17,7 +17,7 @@ export const TimeModal = styled.section<FilesProps>`
   height: 486px;
   width: 576px;
 
-  ${tablet} {
+  ${laptop} {
     height: 337px;
     width: 400px;
   }
@@ -40,7 +40,7 @@ export const TimeHandle = styled.article`
   left: 0.25rem;
   cursor: grab;
 
-  ${tablet} {
+  ${laptop} {
     height: 18px;
     width: 393px;
   }
@@ -54,7 +54,7 @@ export const DigitalClock = styled.p`
   pointer-events: none;
   letter-spacing: 1px;
 
-  ${tablet} {
+  ${laptop} {
     font-size: 0.8rem;
     right: 19.3%;
     letter-spacing: 0.5px;
@@ -68,7 +68,7 @@ export const Year = styled.p`
   font-size: 1.3rem;
   user-select: none;
 
-  ${tablet} {
+  ${laptop} {
     font-size: 1rem;
     top: 5.15rem;
     left: 7.5rem;
@@ -82,7 +82,7 @@ export const Month = styled.p`
   font-size: 1.1rem;
   user-select: none;
 
-  ${tablet} {
+  ${laptop} {
     font-size: 0.7rem;
     top: 5.2rem;
     left: 2.1rem;
@@ -96,7 +96,7 @@ export const TimeZone = styled.p`
   bottom: 4.95rem;
   left: 9.5rem;
 
-  ${tablet} {
+  ${laptop} {
     font-size: 0.8rem;
     font-weight: 400;
     bottom: 3.4rem;
@@ -135,7 +135,7 @@ export const TimeBtn = styled.button<BtnProps>`
   right: ${({ right }) => right + "rem"};
   cursor: pointer;
 
-  ${tablet} {
+  ${laptop} {
     font-size: 0.8rem;
     height: 15px;
     width: 60px;
