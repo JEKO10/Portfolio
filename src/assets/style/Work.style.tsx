@@ -146,6 +146,7 @@ export const WorkHandle = styled.article<FilesProps>`
 
     ${tablet} {
       height: 18px;
+      width: 90px;
     }
 
     img {

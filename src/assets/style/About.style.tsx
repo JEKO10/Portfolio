@@ -132,6 +132,10 @@ export const AboutHandle = styled.article<FilesProps>`
       width: 90px;
     }
 
+    ${tablet} {
+      width: 80px;
+    }
+
     ${disableUserShared}
     cursor: auto;
 
