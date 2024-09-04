@@ -112,6 +112,11 @@ export const Selection = styled.div<IconProps>`
         height: 60px;
         width: 60px;
       }
+
+      ${tablet} {
+        height: 45px;
+        width: 45px;
+      }
     `};
 `;
 /* ${laptop} {

@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 
 import project from "../assets/images/icons/project.png";
+import project45x45 from "../assets/images/icons/project45x45.png";
 import projectSmall from "../assets/images/icons/projectSmall.png";
 import projectTablet from "../assets/images/icons/projectTablet.png";
 import { Selection } from "../assets/style/Icons.style";
@@ -100,7 +101,9 @@ const Project: React.FC<ProjectProps> = ({
             ? project
             : innerWidth > 992
               ? projectSmall
-              : projectTablet
+              : innerWidth > 768
+                ? projectTablet
+                : project45x45
         }
       />
       <p>{label}</p>

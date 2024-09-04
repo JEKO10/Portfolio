@@ -70,7 +70,6 @@ export const ControlBtnsContainer = styled.div<BtnContainer>`
 
           ${tablet} {
             height: 30px;
-            width: 80px;
 
             button {
               height: 10px;
