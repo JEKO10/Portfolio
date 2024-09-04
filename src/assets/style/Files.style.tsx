@@ -1,6 +1,12 @@
 import styled, { css } from "styled-components";
 
-import { desktopL, disableUserShared, flexMixin, laptop } from "./GlobalStyles";
+import {
+  desktopL,
+  disableUserShared,
+  flexMixin,
+  laptop,
+  tablet,
+} from "./GlobalStyles";
 
 type BtnContainer = {
   iconName: string;
@@ -59,6 +65,16 @@ export const ControlBtnsContainer = styled.div<BtnContainer>`
               img {
                 scale: 0.5;
               }
+            }
+          }
+
+          ${tablet} {
+            height: 30px;
+            width: 80px;
+
+            button {
+              height: 10px;
+              width: 12px;
             }
           }
         `

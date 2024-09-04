@@ -3,7 +3,13 @@ import styled from "styled-components";
 import { FilesProps } from "../../utils/context";
 import book from "../images/modals/shared.jpg";
 import bookHandle from "../images/other/handle.jpg";
-import { desktopL, disableUserShared, flexMixin, laptop } from "./GlobalStyles";
+import {
+  desktopL,
+  disableUserShared,
+  flexMixin,
+  laptop,
+  tablet,
+} from "./GlobalStyles";
 import { iconsSharedStyle } from "./Icons.style";
 
 type BookProps = {
@@ -57,6 +63,11 @@ export const Book = styled.div<BookProps>`
     left: 9rem;
   }
 
+  ${tablet} {
+    top: 6.5rem;
+    left: 7rem;
+  }
+
   img {
     height: 100px;
     width: 100px;
@@ -64,6 +75,11 @@ export const Book = styled.div<BookProps>`
     ${laptop} {
       height: 70px;
       width: 70px;
+    }
+
+    ${tablet} {
+      height: 50px;
+      width: 50px;
     }
   }
 
@@ -76,6 +92,10 @@ export const Book = styled.div<BookProps>`
 
     ${laptop} {
       font-size: 1.3rem;
+    }
+
+    ${tablet} {
+      font-size: 1rem;
     }
   }
 `;

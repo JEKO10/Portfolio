@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import Draggable from "react-draggable";
 
 import book from "../../assets/images/icons/book.png";
+import book50 from "../../assets/images/icons/book50x50.png";
 import bookSmall from "../../assets/images/icons/bookSmall.png";
 import handleImg from "../../assets/images/icons/recycle.png";
 import { Book } from "../../assets/style/Book.style";
@@ -95,7 +96,9 @@ const RecycleBin = () => {
             <img src={book} alt="book" />
             <Selection
               isClicked={isClicked.book}
-              iconName={innerWidth > 992 ? book : bookSmall}
+              iconName={
+                innerWidth < 768 ? book50 : innerWidth < 992 ? bookSmall : book
+              }
             />
             <p>???</p>
           </Book>

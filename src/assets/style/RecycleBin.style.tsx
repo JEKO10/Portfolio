@@ -2,8 +2,15 @@ import styled from "styled-components";
 
 import { FilesProps } from "../../utils/context";
 import recycleBin from "../images/modals/recycleBin.jpg";
+import recycleBinSmall from "../images/modals/recycleBinSmall.jpg";
 import recycleHandle from "../images/other/handle.jpg";
-import { desktopL, disableUserShared, flexMixin, laptop } from "./GlobalStyles";
+import {
+  desktopL,
+  disableUserShared,
+  flexMixin,
+  laptop,
+  tablet,
+} from "./GlobalStyles";
 
 export const RecycleBinFile = styled.section<FilesProps>`
   background: url(${recycleBin}) center/contain no-repeat;
@@ -23,6 +30,13 @@ export const RecycleBinFile = styled.section<FilesProps>`
     height: 346px;
     width: 400px;
     left: 300px;
+  }
+
+  ${tablet} {
+    background: url(${recycleBinSmall}) center/contain no-repeat;
+    height: 271px;
+    width: 300px;
+    left: 150px;
   }
 
   visibility: ${({ isLoading }) => (isLoading ? "hidden" : "visible")};
@@ -50,6 +64,12 @@ export const RecycleBinHandle = styled.article<FilesProps>`
     margin: 0.25rem auto;
   }
 
+  ${tablet} {
+    height: 20px;
+    width: 294px;
+    margin: 0.3rem auto;
+  }
+
   div {
     ${flexMixin({ justify: "flex-start", align: "center" })};
     height: 30px;
@@ -62,6 +82,10 @@ export const RecycleBinHandle = styled.article<FilesProps>`
     ${laptop} {
       height: 17px;
       width: 100px;
+    }
+
+    ${tablet} {
+      height: 20px;
     }
 
     ${disableUserShared}

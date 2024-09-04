@@ -1,6 +1,12 @@
 import styled, { css } from "styled-components";
 
-import { desktopL, disableUserShared, flexMixin, laptop } from "./GlobalStyles";
+import {
+  desktopL,
+  disableUserShared,
+  flexMixin,
+  laptop,
+  tablet,
+} from "./GlobalStyles";
 
 type IconProps = {
   isClicked: boolean;
@@ -86,6 +92,15 @@ export const Selection = styled.div<IconProps>`
   }
 
   ${({ iconName }) =>
+    iconName?.includes("book") &&
+    css`
+      ${tablet} {
+        height: 50px;
+        width: 50px;
+      }
+    `};
+
+  ${({ iconName }) =>
     iconName?.includes("project") &&
     css`
       ${desktopL} {
@@ -97,7 +112,7 @@ export const Selection = styled.div<IconProps>`
         height: 60px;
         width: 60px;
       }
-    `}
+    `};
 `;
 /* ${laptop} {
     margin: 10px 50px 15px 0;
