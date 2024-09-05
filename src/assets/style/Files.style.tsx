@@ -5,7 +5,7 @@ import {
   disableUserShared,
   flexMixin,
   laptop,
-  tablet,
+  tablet
 } from "./GlobalStyles";
 
 type BtnContainer = {
@@ -103,6 +103,20 @@ export const ControlBtnsContainer = styled.div<BtnContainer>`
 
                 img {
                   scale: 0.6;
+                }
+              }
+            }
+
+            ${tablet} {
+              height: 23.5px;
+              width: 80px;
+
+              button {
+                height: 8px;
+                width: 10px;
+
+                img {
+                  scale: 0.5;
                 }
               }
             }

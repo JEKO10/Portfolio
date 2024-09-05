@@ -2,13 +2,14 @@ import styled from "styled-components";
 
 import { FilesProps } from "../../utils/context";
 import book from "../images/modals/shared.jpg";
+import bookSmall from "../images/modals/sharedSmall.jpg";
 import bookHandle from "../images/other/handle.jpg";
 import {
   desktopL,
   disableUserShared,
   flexMixin,
   laptop,
-  tablet,
+  tablet
 } from "./GlobalStyles";
 import { iconsSharedStyle } from "./Icons.style";
 
@@ -33,6 +34,13 @@ export const BookFile = styled.section<FilesProps>`
   ${laptop} {
     height: 334px;
     width: 500px;
+  }
+
+  ${tablet} {
+    background: url(${bookSmall}) center/contain no-repeat;
+    height: 200px;
+    width: 300px;
+    left: 100px;
   }
 
   visibility: ${({ isLoading }) => (isLoading ? "hidden" : "visible")};
@@ -118,6 +126,12 @@ export const BookHandle = styled.div<FilesProps>`
     width: 492px;
   }
 
+  ${tablet} {
+    height: 18px;
+    width: 282px;
+    margin: 0.15rem auto;
+  }
+
   div {
     ${flexMixin({ justify: "flex-start", align: "center" })};
     height: 37px;
@@ -132,6 +146,10 @@ export const BookHandle = styled.div<FilesProps>`
     ${laptop} {
       height: 18px;
       width: 160px;
+    }
+
+    ${tablet} {
+      width: 140px;
     }
 
     img {
@@ -150,6 +168,11 @@ export const BookHandle = styled.div<FilesProps>`
         height: 18px;
         width: 18px;
       }
+
+      ${tablet} {
+        height: 15px;
+        width: 15px;
+      }
     }
 
     p {
@@ -163,6 +186,11 @@ export const BookHandle = styled.div<FilesProps>`
       ${laptop} {
         font-size: 1rem;
         margin-top: 0.1rem;
+      }
+
+      ${tablet} {
+        font-size: 0.9rem;
+        margin-top: 0;
       }
     }
   }
@@ -184,6 +212,12 @@ export const BookText = styled.article`
     max-height: 275px;
   }
 
+  ${tablet} {
+    top: 35px;
+    left: 17px;
+    max-height: 155px;
+  }
+
   p {
     font-size: 1.5rem;
     line-height: 40px;
@@ -196,6 +230,12 @@ export const BookText = styled.article`
       line-height: 30px;
       margin: 0.5rem 0.2rem;
       padding-right: 30px;
+    }
+
+    ${tablet} {
+      font-size: 0.8rem;
+      line-height: 18px;
+      margin: 0.4rem 0;
     }
 
     ${disableUserShared}

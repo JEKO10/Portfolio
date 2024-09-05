@@ -13,7 +13,7 @@ import {
   disableUserShared,
   flexMixin,
   laptop,
-  tablet,
+  tablet
 } from "./GlobalStyles";
 
 export const AboutFile = styled.section<FilesProps>`
