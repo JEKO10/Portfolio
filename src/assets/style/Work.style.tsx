@@ -43,6 +43,7 @@ export const WorkFile = styled.section<FilesProps>`
     background: url(${workModalSmall}) center/contain no-repeat;
     height: 266px;
     width: 300px;
+    top: 20px;
     left: 100px;
   }
 

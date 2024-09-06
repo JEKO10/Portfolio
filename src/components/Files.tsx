@@ -21,7 +21,7 @@ const Files = () => {
       {isOpen.book && <Book />}
       {isOpen.time && <Time />}
       {/* {isOpen.start && <StartMenu />} */}
-      {/* <StartMenu /> */}
+      <StartMenu />
     </section>
   );
 };

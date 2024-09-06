@@ -9,7 +9,7 @@ import {
   disableUserShared,
   flexMixin,
   laptop,
-  tablet
+  tablet,
 } from "./GlobalStyles";
 import { iconsSharedStyle } from "./Icons.style";
 
@@ -40,6 +40,7 @@ export const BookFile = styled.section<FilesProps>`
     background: url(${bookSmall}) center/contain no-repeat;
     height: 200px;
     width: 300px;
+    top: 20px;
     left: 100px;
   }
 

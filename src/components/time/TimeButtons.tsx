@@ -12,13 +12,13 @@ const TimeButtons = () => {
     <article>
       <TimeBtn
         onClick={() => setIsOpen({ ...isOpen, time: false })}
-        right={innerWidth > 992 ? 15.5 : 11}
+        right={innerWidth > 992 ? 15.5 : innerWidth > 768 ? 11 : 8.5}
       >
         OK
       </TimeBtn>
       <TimeBtn
         onClick={() => setIsOpen({ ...isOpen, time: false })}
-        right={innerWidth > 992 ? 8.2 : 6}
+        right={innerWidth > 992 ? 8.2 : innerWidth > 768 ? 6 : 4.5}
       >
         Cancel
       </TimeBtn>

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { FilesProps } from "../../utils/context";
 import time from "../images/modals/timeModal.jpg";
 import timeHandle from "../images/other/handle.jpg";
-import { disableUserShared, primaryFont, laptop } from "./GlobalStyles";
+import { disableUserShared, laptop, primaryFont, tablet } from "./GlobalStyles";
 
 type BtnProps = {
   right: number;
@@ -20,6 +20,13 @@ export const TimeModal = styled.section<FilesProps>`
   ${laptop} {
     height: 337px;
     width: 400px;
+  }
+
+  ${tablet} {
+    height: 253px;
+    width: 300px;
+    top: 20px;
+    left: 70px;
   }
 
   visibility: ${({ isLoading }) => (isLoading ? "hidden" : "visible")};
@@ -44,6 +51,13 @@ export const TimeHandle = styled.article`
     height: 18px;
     width: 393px;
   }
+
+  ${tablet} {
+    height: 13px;
+    width: 295px;
+    top: 0.15rem;
+    left: 0.15rem;
+  }
 `;
 
 export const DigitalClock = styled.p`
@@ -59,6 +73,11 @@ export const DigitalClock = styled.p`
     right: 19.3%;
     letter-spacing: 0.5px;
   }
+
+  ${tablet} {
+    font-size: 0.6rem;
+    right: 18.7%;
+  }
 `;
 
 export const Year = styled.p`
@@ -72,6 +91,12 @@ export const Year = styled.p`
     font-size: 1rem;
     top: 5.15rem;
     left: 7.5rem;
+  }
+
+  ${tablet} {
+    font-size: 0.8rem;
+    top: 3.85rem;
+    left: 5.6rem;
   }
 `;
 
@@ -87,6 +112,12 @@ export const Month = styled.p`
     top: 5.2rem;
     left: 2.1rem;
   }
+
+  ${tablet} {
+    font-size: 0.55rem;
+    top: 3.95rem;
+    left: 1.6rem;
+  }
 `;
 
 export const TimeZone = styled.p`
@@ -101,6 +132,12 @@ export const TimeZone = styled.p`
     font-weight: 400;
     bottom: 3.4rem;
     left: 6.6rem;
+  }
+
+  ${tablet} {
+    font-size: 0.7rem;
+    bottom: 2.55rem;
+    left: 5rem;
   }
 `;
 
@@ -140,6 +177,13 @@ export const TimeBtn = styled.button<BtnProps>`
     height: 15px;
     width: 60px;
     bottom: 0.85rem;
+  }
+
+  ${tablet} {
+    font-size: 0.6rem;
+    height: 10px;
+    width: 50px;
+    bottom: 0.7rem;
   }
 
   &:active {

@@ -39,6 +39,7 @@ export const ContactFile = styled.section<FilesProps>`
     background: url(${contactModalSmall}) center/contain no-repeat;
     height: 193px;
     width: 300px;
+    top: 10px;
     left: 120px;
   }
 

@@ -13,7 +13,7 @@ import {
   disableUserShared,
   flexMixin,
   laptop,
-  tablet
+  tablet,
 } from "./GlobalStyles";
 
 export const AboutFile = styled.section<FilesProps>`
@@ -38,6 +38,7 @@ export const AboutFile = styled.section<FilesProps>`
     background: url(${aboutModalSmall}) center/contain no-repeat;
     height: 200px;
     width: 300px;
+    top: 10px;
     left: 100px;
   }
 

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { laptop } from "./GlobalStyles";
+import { laptop, tablet } from "./GlobalStyles";
 
 export const Clock = styled.div`
   width: 181px;
@@ -18,6 +18,12 @@ export const Clock = styled.div`
     top: 33%;
     left: 67%;
     scale: 0.7;
+  }
+
+  ${tablet} {
+    top: 25%;
+    left: 60%;
+    scale: 0.55;
   }
 
   &::after {
