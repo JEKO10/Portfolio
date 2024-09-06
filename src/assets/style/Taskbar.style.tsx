@@ -3,11 +3,21 @@ import styled from "styled-components";
 import startButton from "../images/buttons/start.png";
 import startClicked from "../images/buttons/startClicked.png";
 import taskbar from "../images/other/taskbar.jpg";
-import { desktopL, disableUserShared, flexMixin, laptop } from "./GlobalStyles";
+import {
+  desktopL,
+  disableUserShared,
+  flexMixin,
+  laptop,
+  tablet,
+} from "./GlobalStyles";
 
 type ButtonProps = {
   isOpen?: boolean;
   iconName?: string;
+};
+
+type DashProps = {
+  place: string;
 };
 
 export const TaskBar = styled.section`
@@ -72,6 +82,10 @@ export const TaskbarButton = styled.div<ButtonProps>`
   margin-right: 15px;
   cursor: auto;
 
+  ${tablet} {
+    width: 40px;
+  }
+
   &:not(:first-of-type) {
     ${desktopL} {
       width: 85px;
@@ -132,7 +146,11 @@ export const TaskbarButton = styled.div<ButtonProps>`
   }
 `;
 
-export const Dash = styled.img`
+export const Dash = styled.img<DashProps>`
   height: 35px;
   margin: 0 5px;
+
+  ${tablet} {
+    ${({ place }) => place === "task" && "margin-right: 0.7rem"}
+  }
 `;

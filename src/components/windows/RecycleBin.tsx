@@ -97,7 +97,7 @@ const RecycleBin = () => {
             <Selection
               isClicked={isClicked.book}
               iconName={
-                innerWidth < 768
+                innerWidth < 769
                   ? book50x50
                   : innerWidth < 992
                     ? bookSmall

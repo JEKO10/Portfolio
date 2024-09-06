@@ -145,7 +145,7 @@ const Home = () => {
       )}
       <Icons />
       <Files />
-      {/* <Taskbar /> */}
+      <Taskbar />
     </HomePage>
   );
 };

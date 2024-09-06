@@ -6,7 +6,7 @@ import { Dash } from "../assets/style/Taskbar.style";
 import {
   Clock,
   ToolbarContainer,
-  ToolButton
+  ToolButton,
 } from "../assets/style/Toolbar.style";
 import { useGlobalContext } from "../utils/context";
 
@@ -28,12 +28,12 @@ const Toolbar = () => {
   const formattedTime = time.toLocaleTimeString([], {
     hour: "2-digit",
     minute: "2-digit",
-    hour12: false
+    hour12: false,
   });
 
   return (
     <ToolbarContainer>
-      <Dash src={dash} alt="dash" />
+      <Dash src={dash} alt="dash" place="tool" />
       <ToolButton
         onClick={() => {
           setIsOpen({ ...isOpen, time: !isOpen.time });

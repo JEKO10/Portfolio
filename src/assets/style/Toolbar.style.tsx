@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { flexMixin } from "./GlobalStyles";
+import { flexMixin, tablet } from "./GlobalStyles";
 
 export const ToolbarContainer = styled.div`
   ${flexMixin({ justify: "center", align: "center" })};
@@ -34,6 +34,12 @@ export const ToolButton = styled.div`
   margin-left: 5px;
   padding: 0 10px 0 5px;
 
+  ${tablet} {
+    width: 65px;
+    padding: 0;
+    justify-content: center;
+  }
+
   &:active {
     box-shadow:
       -2px -2px #818181,
@@ -63,6 +69,10 @@ export const ToolButton = styled.div`
   img {
     height: 25px;
     width: 60px;
+
+    ${tablet} {
+      display: none;
+    }
   }
 `;
 
