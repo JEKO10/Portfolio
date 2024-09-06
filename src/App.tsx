@@ -3,9 +3,8 @@ import React, { useEffect } from "react";
 import GlobalFonts from "./assets/fonts/fonts";
 import { GlobalStyles } from "./assets/style/GlobalStyles";
 import Home from "./pages/Home";
-import { Preloader } from "./pages/Preloader";
+import Loader from "./pages/Loader";
 import ShutDown from "./pages/ShutDown";
-import { ShuttingDown } from "./pages/ShuttingDown";
 import { useGlobalContext } from "./utils/context";
 
 function App() {
@@ -26,12 +25,12 @@ function App() {
       <GlobalStyles />
       <GlobalFonts />
       {isShuttingDown && !isShutDown ? (
-        <ShuttingDown />
+        <Loader preloader={false} />
       ) : isShutDown ? (
         <ShutDown />
       ) : (
         <div>
-          {isLoading && <Preloader />}
+          {isLoading && <Loader preloader={true} />}
           <Home />
         </div>
       )}
