@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
 import preloaderImg from "../images/other/preloader.jpg";
-import { flexMixin } from "./GlobalStyles";
+import { flexMixin, tablet } from "./GlobalStyles";
 
 export const LoaderContainer = styled.div`
   ${flexMixin({ justify: "center", align: "center" })};
   background-image: url(${preloaderImg});
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   position: absolute;
   top: 0;
@@ -24,16 +25,11 @@ export const LoaderContainer = styled.div`
     left: 50%;
     transform: translate(-50%);
     user-select: none;
-  }
 
-  @media (max-width: 1200px) {
-    background-position: -100px;
-    background-size: 120% 100%;
-  }
-
-  @media (max-width: 768px) {
-    background-position: -270px;
-    background-size: 170% 100%;
+    ${tablet} {
+      width: 100%;
+      text-align: center;
+    }
   }
 `;
 
