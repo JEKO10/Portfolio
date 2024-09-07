@@ -41,7 +41,7 @@ const About = () => {
               eventually navigating the vast world of web development.
             </p>
             <p>
-              A quick learner and committed coder, I embrace each day as an
+              As a quick learner and committed coder, I embrace each day as an
               opportunity for growth. Beyond proficiency, I value collaboration
               and respect for others` time—working seamlessly with senior
               developers.

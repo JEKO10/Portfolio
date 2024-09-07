@@ -234,7 +234,7 @@ export const AboutMeText = styled.article`
     }
 
     ${tablet} {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       line-height: 18px;
       margin-bottom: 0.8rem;
     }

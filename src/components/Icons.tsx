@@ -1,12 +1,16 @@
 import React, { useRef } from "react";
 
 import about from "../assets/images/icons/about.png";
+import about50x50 from "../assets/images/icons/about50x50.png";
 import aboutSmall from "../assets/images/icons/aboutSmall.png";
 import contact from "../assets/images/icons/contact.png";
+import contact50x50 from "../assets/images/icons/contact50x50.png";
 import contactSmall from "../assets/images/icons/contactSmall.png";
 import recycle from "../assets/images/icons/recycle.png";
+import recycle50x50 from "../assets/images/icons/recycle50x50.png";
 import recycleSmall from "../assets/images/icons/recycleSmall.png";
 import work from "../assets/images/icons/work.png";
+import work50x50 from "../assets/images/icons/work50x50.png";
 import workSmall from "../assets/images/icons/workSmall.png";
 import {
   Icon,
@@ -33,6 +37,7 @@ const Icons = () => {
       name: "about",
       src: about,
       smallSrc: aboutSmall,
+      src50x50: about50x50,
       alt: "aboutIcon",
       label: "About Me",
     },
@@ -40,6 +45,7 @@ const Icons = () => {
       name: "work",
       src: work,
       smallSrc: workSmall,
+      src50x50: work50x50,
       alt: "workIcon",
       label: "My Work",
     },
@@ -47,6 +53,7 @@ const Icons = () => {
       name: "contact",
       src: contact,
       smallSrc: contactSmall,
+      src50x50: contact50x50,
       alt: "contactIcon",
       label: "Contact",
     },
@@ -125,7 +132,13 @@ const Icons = () => {
             <img src={icon.src} alt={icon.alt} />
             <Selection
               isClicked={isClicked[icon.name] || false}
-              iconName={innerWidth > 992 ? icon.src : icon.smallSrc}
+              iconName={
+                innerWidth > 992
+                  ? icon.src
+                  : innerWidth > 480
+                    ? icon.smallSrc
+                    : icon.src50x50
+              }
             />
             <p>{icon.label}</p>
           </Icon>
@@ -143,7 +156,13 @@ const Icons = () => {
         <img src={recycle} alt="recycleIcon" />
         <Selection
           isClicked={isClicked.recycle}
-          iconName={innerWidth > 992 ? recycle : recycleSmall}
+          iconName={
+            innerWidth > 992
+              ? recycle
+              : innerWidth > 480
+                ? recycleSmall
+                : recycle50x50
+          }
         />
         <p>Recycle Bin</p>
       </RecycleBin>

@@ -5,6 +5,7 @@ import {
   disableUserShared,
   flexMixin,
   laptop,
+  mobile,
   tablet,
 } from "./GlobalStyles";
 
@@ -26,6 +27,11 @@ export const iconsSharedStyle = css<IconProps>`
       height: 70px;
       width: 70px;
     }
+
+    ${mobile} {
+      height: 50px;
+      width: 50px;
+    }
   }
 
   p {
@@ -42,6 +48,10 @@ export const iconsSharedStyle = css<IconProps>`
     ${laptop} {
       font-size: 1.4rem;
     }
+
+    ${mobile} {
+      font-size: 1.2rem;
+    }
   }
 `;
 
@@ -52,6 +62,10 @@ export const IconsContainer = styled.article`
   height: 100%;
   width: max-content;
   padding: 15px;
+
+  ${mobile} {
+    padding: 5px;
+  }
 `;
 
 export const Icon = styled.div<IconProps>`
@@ -72,6 +86,10 @@ export const RecycleBin = styled.div<IconProps>`
   margin: 40px 30px;
 
   ${iconsSharedStyle};
+
+  ${mobile} {
+    margin: 40px 15px;
+  }
 `;
 
 export const Selection = styled.div<IconProps>`
@@ -89,6 +107,11 @@ export const Selection = styled.div<IconProps>`
   ${laptop} {
     height: 70px;
     width: 70px;
+  }
+
+  ${mobile} {
+    height: 50px;
+    width: 50px;
   }
 
   ${({ iconName }) =>
