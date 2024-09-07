@@ -9,11 +9,12 @@ import {
   ToolButton,
 } from "../assets/style/Toolbar.style";
 import { useGlobalContext } from "../utils/context";
+import { useResize } from "../utils/hooks";
 
 const Toolbar = () => {
-  const { setIsOpen, isOpen } = useGlobalContext();
-
   const [time, setTime] = useState(new Date());
+  const { setIsOpen, isOpen } = useGlobalContext();
+  const innerWidth = useResize();
 
   useEffect(() => {
     const intervalID = setInterval(() => {
@@ -41,7 +42,7 @@ const Toolbar = () => {
       >
         <img src={toolBtnImg} alt="toolButton" />
         <Clock onClick={() => setIsOpen({ ...isOpen, time: !isOpen.time })}>
-          {formattedTime}
+          {innerWidth < 480 ? formattedTime.slice(0, 2) : formattedTime}
         </Clock>
       </ToolButton>
     </ToolbarContainer>

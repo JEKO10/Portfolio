@@ -8,6 +8,7 @@ import {
   disableUserShared,
   flexMixin,
   laptop,
+  mobile,
   tablet,
 } from "./GlobalStyles";
 
@@ -29,6 +30,10 @@ export const TaskBar = styled.section`
   width: 100%;
   padding: 0 10px;
   z-index: 3;
+
+  ${mobile} {
+    padding-left: 5px;
+  }
 
   article {
     ${flexMixin({ justify: "center", align: "center" })};
@@ -86,6 +91,14 @@ export const TaskbarButton = styled.div<ButtonProps>`
     width: 40px;
   }
 
+  ${mobile} {
+    width: 20px;
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
   &:not(:first-of-type) {
     ${desktopL} {
       width: 85px;
@@ -93,6 +106,10 @@ export const TaskbarButton = styled.div<ButtonProps>`
 
     ${laptop} {
       width: 40px;
+    }
+
+    ${mobile} {
+      width: 20px;
     }
   }
 
@@ -133,6 +150,11 @@ export const TaskbarButton = styled.div<ButtonProps>`
     margin-left: 10px;
     scale: 0.8;
     transform: translate(-10px, 0);
+
+    ${mobile} {
+      scale: 0.6;
+      margin-left: 0;
+    }
   }
 
   p {
@@ -152,5 +174,10 @@ export const Dash = styled.img<DashProps>`
 
   ${tablet} {
     ${({ place }) => place === "task" && "margin-right: 0.7rem"}
+  }
+
+  ${mobile} {
+    margin: 0 2px;
+    ${({ place }) => place === "task" && "margin-right: 0.5rem"};
   }
 `;

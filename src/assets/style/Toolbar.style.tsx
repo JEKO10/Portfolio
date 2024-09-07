@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { flexMixin, tablet } from "./GlobalStyles";
+import { flexMixin, mobile, tablet } from "./GlobalStyles";
 
 export const ToolbarContainer = styled.div`
   ${flexMixin({ justify: "center", align: "center" })};
@@ -38,6 +38,10 @@ export const ToolButton = styled.div`
     width: 65px;
     padding: 0;
     justify-content: center;
+  }
+
+  ${mobile} {
+    width: 30px;
   }
 
   &:active {
@@ -79,4 +83,8 @@ export const ToolButton = styled.div`
 export const Clock = styled.p`
   font-size: 1.4rem;
   user-select: none;
+
+  ${mobile} {
+    font-size: 1rem;
+  }
 `;

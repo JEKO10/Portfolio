@@ -81,8 +81,8 @@ export const RecycleBin = styled.div<IconProps>`
   ${flexMixin({ justify: "center", align: "center" })};
   flex-direction: column;
   position: absolute;
-  bottom: 2rem;
   right: 0;
+  bottom: 2rem;
   margin: 40px 30px;
 
   ${iconsSharedStyle};

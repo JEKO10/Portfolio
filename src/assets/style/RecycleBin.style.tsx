@@ -9,6 +9,7 @@ import {
   disableUserShared,
   flexMixin,
   laptop,
+  mobile,
   tablet,
 } from "./GlobalStyles";
 
@@ -37,6 +38,10 @@ export const RecycleBinFile = styled.section<FilesProps>`
     height: 271px;
     width: 300px;
     left: 150px;
+  }
+
+  ${mobile} {
+    left: 60px;
   }
 
   visibility: ${({ isLoading }) => (isLoading ? "hidden" : "visible")};
