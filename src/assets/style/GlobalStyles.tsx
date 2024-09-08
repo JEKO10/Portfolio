@@ -45,15 +45,10 @@ export const GlobalStyles = React.memo(
       background-color: #008080;
       overflow: hidden;
       font-family: ${primaryFont};
-      height: 155vh;
-      /* width: 130vw; */
+      height: 135vh;
 
-      ${laptop} {
-        height: 135vh;
-      }
-
-      ${tablet} {
-        height: 120vh;
+      ${desktopL} {
+        height: 110vh;
       }
     }
   `}`

@@ -20,6 +20,7 @@ import {
 } from "../assets/style/Icons.style";
 import { useGlobalContext } from "../utils/context";
 import { useOutsideClick, useResize } from "../utils/hooks";
+import { handleClick, handleKeyDown } from "../utils/mouseHandlers";
 
 const Icons = () => {
   const {
@@ -59,52 +60,6 @@ const Icons = () => {
     },
   ];
 
-  const handleClick = (
-    event: React.MouseEvent<HTMLDivElement, MouseEvent>,
-    iconName: string
-  ) => {
-    iconRef.current?.focus();
-
-    switch (event.detail) {
-      case 1:
-        setIsClicked({
-          about: false,
-          work: false,
-          contact: false,
-          recycle: false,
-          book: false,
-        });
-        setIsClicked((prevState) => ({
-          ...prevState,
-          [iconName]: true,
-        }));
-
-        setIsOpen({ ...isOpen, start: false });
-        break;
-      case 2:
-        setIsOpen({ ...isOpen, [iconName]: true });
-        setIsVisible({ ...isVisible, [iconName]: true });
-        setIsClicked({ ...isClicked, [iconName]: true });
-
-        break;
-      default:
-        setIsClicked({ ...isClicked, [iconName]: true });
-
-        break;
-    }
-  };
-
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
-    if (event.key === "Enter") {
-      Object.keys(isClicked).forEach((icon) => {
-        if (isClicked[icon] === true) {
-          setIsOpen((prev) => ({ ...prev, [icon]: true }));
-          setIsVisible((prev) => ({ ...prev, [icon]: true }));
-        }
-      });
-    }
-  };
-
   useOutsideClick(iconRef, () => {
     setIsClicked({
       about: false,
@@ -123,9 +78,21 @@ const Icons = () => {
             key={icon.name}
             isClicked={isClicked[icon.name] || false}
             onMouseDown={(event) => {
-              handleClick(event, icon.name);
+              handleClick(
+                event,
+                icon.name,
+                iconRef,
+                isClicked,
+                setIsClicked,
+                isOpen,
+                setIsOpen,
+                isVisible,
+                setIsVisible
+              );
             }}
-            onKeyDown={(e) => handleKeyDown(e)}
+            onKeyDown={(e) =>
+              handleKeyDown(e, isClicked, setIsOpen, setIsVisible)
+            }
             tabIndex={0}
             ref={iconRef}
           >
@@ -147,9 +114,21 @@ const Icons = () => {
       <RecycleBin
         isClicked={isClicked.recycle}
         onMouseDown={(event) => {
-          handleClick(event, "recycle");
+          handleClick(
+            event,
+            "recycle",
+            iconRef,
+            isClicked,
+            setIsClicked,
+            isOpen,
+            setIsOpen,
+            isVisible,
+            setIsVisible
+          );
         }}
-        onKeyDown={(event) => handleKeyDown(event)}
+        onKeyDown={(event) =>
+          handleKeyDown(event, isClicked, setIsOpen, setIsVisible)
+        }
         tabIndex={0}
         ref={iconRef}
       >
