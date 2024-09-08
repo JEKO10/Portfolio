@@ -22,31 +22,52 @@ const Home = () => {
   const [endPosition, setEndPosition] = useState({ x: 0, y: 0 });
 
   const { isClicked, setIsClicked, setIsOpen, isOpen } = useGlobalContext();
+  const iconsSize = {
+    about: {
+      height: window.innerWidth > 992 ? 140 : window.innerWidth > 480 ? 99 : 75,
+      width: window.innerWidth > 992 ? 116 : window.innerWidth > 480 ? 95 : 80,
+    },
+    work: {
+      height: window.innerWidth > 992 ? 140 : window.innerWidth > 480 ? 99 : 75,
+      width: window.innerWidth > 992 ? 116 : window.innerWidth > 480 ? 90 : 75,
+    },
+    contact: {
+      height: window.innerWidth > 992 ? 140 : window.innerWidth > 480 ? 99 : 75,
+      width: window.innerWidth > 992 ? 116 : window.innerWidth > 480 ? 80 : 70,
+    },
+    recycle: {
+      height:
+        window.innerWidth > 992 ? 136 : window.innerWidth > 480 ? 100 : 75,
+      width: window.innerWidth > 992 ? 147 : window.innerWidth > 480 ? 110 : 96,
+      x: window.innerWidth > 480 ? 30 : 20,
+      y: window.innerWidth > 480 ? 72 : 70,
+    },
+  };
 
   const icons: IconsType = {
     about: {
-      x: 30,
-      y: 30,
-      height: 140,
-      width: 116,
+      x: window.innerWidth > 480 ? 30 : 20,
+      y: window.innerWidth > 480 ? 30 : 20,
+      height: iconsSize.about.height,
+      width: iconsSize.about.width,
     },
     work: {
-      x: 30,
-      y: 195,
-      height: 140,
-      width: 116,
+      x: window.innerWidth > 480 ? 30 : 20,
+      y: window.innerWidth > 992 ? 195 : window.innerWidth > 480 ? 160 : 125,
+      height: iconsSize.work.height,
+      width: iconsSize.work.width,
     },
     contact: {
-      x: 30,
-      y: 360,
-      height: 140,
-      width: 116,
+      x: window.innerWidth > 480 ? 30 : 15,
+      y: window.innerWidth > 992 ? 360 : window.innerWidth > 480 ? 290 : 230,
+      height: iconsSize.contact.height,
+      width: iconsSize.contact.width,
     },
     recycle: {
-      x: window.innerWidth - 30 - 147,
-      y: window.innerHeight - 72 - 136,
-      height: 136,
-      width: 147,
+      x: window.innerWidth - iconsSize.recycle.x - iconsSize.recycle.width,
+      y: window.innerHeight - iconsSize.recycle.y - iconsSize.recycle.height,
+      height: iconsSize.recycle.height,
+      width: iconsSize.recycle.width,
     },
   };
 
