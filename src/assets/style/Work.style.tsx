@@ -9,6 +9,7 @@ import {
   disableUserShared,
   flexMixin,
   laptop,
+  mobile,
   tablet,
 } from "./GlobalStyles";
 import { iconsSharedStyle } from "./Icons.style";
@@ -45,6 +46,10 @@ export const WorkFile = styled.section<FilesProps>`
     width: 300px;
     top: 20px;
     left: 100px;
+  }
+
+  ${mobile} {
+    left: 10px;
   }
 
   visibility: ${({ isLoading }) => (isLoading ? "hidden" : "visible")};
@@ -91,7 +96,7 @@ export const WorkFile = styled.section<FilesProps>`
 
     ${tablet} {
       height: 26.5px;
-      width: 75px;
+      width: 80px;
 
       button {
         height: 11px;
@@ -139,10 +144,12 @@ export const WorkHandle = styled.article<FilesProps>`
 
     ${desktopL} {
       height: 19px;
+      width: 120px;
     }
 
     ${laptop} {
       height: 15px;
+      width: 85px;
     }
 
     ${tablet} {
@@ -177,6 +184,7 @@ export const WorkHandle = styled.article<FilesProps>`
     p {
       font-size: 1.5rem;
       color: #fff;
+      margin-top: 0.2rem;
 
       ${desktopL} {
         font-size: 1.3rem;
@@ -184,7 +192,6 @@ export const WorkHandle = styled.article<FilesProps>`
 
       ${laptop} {
         font-size: 0.9rem;
-        margin-top: 0.2rem;
       }
 
       ${tablet} {

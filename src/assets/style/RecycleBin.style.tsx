@@ -41,7 +41,8 @@ export const RecycleBinFile = styled.section<FilesProps>`
   }
 
   ${mobile} {
-    left: 60px;
+    top: 10px;
+    left: 10px;
   }
 
   visibility: ${({ isLoading }) => (isLoading ? "hidden" : "visible")};
@@ -82,6 +83,7 @@ export const RecycleBinHandle = styled.article<FilesProps>`
 
     ${desktopL} {
       height: 25.5px;
+      width: 135px;
     }
 
     ${laptop} {
@@ -118,6 +120,7 @@ export const RecycleBinHandle = styled.article<FilesProps>`
     p {
       font-size: 1.5rem;
       color: #fff;
+      margin-top: 0.2rem;
 
       ${desktopL} {
         font-size: 1.3rem;

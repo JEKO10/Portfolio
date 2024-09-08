@@ -13,6 +13,7 @@ import {
   disableUserShared,
   flexMixin,
   laptop,
+  mobile,
   tablet,
 } from "./GlobalStyles";
 
@@ -40,6 +41,10 @@ export const AboutFile = styled.section<FilesProps>`
     width: 300px;
     top: 10px;
     left: 100px;
+  }
+
+  ${mobile} {
+    left: 15px;
   }
 
   overflow: hidden;
@@ -126,6 +131,7 @@ export const AboutHandle = styled.article<FilesProps>`
 
     ${desktopL} {
       height: 29px;
+      width: 135px;
     }
 
     ${laptop} {

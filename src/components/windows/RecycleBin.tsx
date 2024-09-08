@@ -99,7 +99,7 @@ const RecycleBin = () => {
               iconName={
                 innerWidth < 769
                   ? book50x50
-                  : innerWidth < 992
+                  : innerWidth < 993
                     ? bookSmall
                     : book
               }

@@ -27,6 +27,11 @@ export const flexMixin = ({ justify, align }: IFlexMixin) => css`
 
 export const primaryFont = "w95fa, sans-serif";
 
+export const desktopL = `@media (max-width: 1440px)`;
+export const laptop = `@media (max-width: 992px)`;
+export const tablet = `@media (max-width: 768px)`;
+export const mobile = `@media (max-width: 480px)`;
+
 export const GlobalStyles = React.memo(
   createGlobalStyle`${css`
     * {
@@ -42,6 +47,14 @@ export const GlobalStyles = React.memo(
       font-family: ${primaryFont};
       height: 155vh;
       /* width: 130vw; */
+
+      ${laptop} {
+        height: 135vh;
+      }
+
+      ${tablet} {
+        height: 120vh;
+      }
     }
   `}`
 );
@@ -60,8 +73,3 @@ export const disableUserShared = css`
   -ms-user-select: none;
   touch-action: none;
 `;
-
-export const desktopL = `@media (max-width: 1440px)`;
-export const laptop = `@media (max-width: 992px)`;
-export const tablet = `@media (max-width: 768px)`;
-export const mobile = `@media (max-width: 480px)`;

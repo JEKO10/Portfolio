@@ -9,6 +9,7 @@ import {
   disableUserShared,
   flexMixin,
   laptop,
+  mobile,
   primaryFont,
   tablet,
 } from "./GlobalStyles";
@@ -41,6 +42,10 @@ export const ContactFile = styled.section<FilesProps>`
     width: 300px;
     top: 10px;
     left: 120px;
+  }
+
+  ${mobile} {
+    left: 10px;
   }
 
   visibility: ${({ isLoading }) => (isLoading ? "hidden" : "visible")};
@@ -83,7 +88,7 @@ export const ContactFile = styled.section<FilesProps>`
 
     ${tablet} {
       height: 25px;
-      width: 80px;
+      width: 70px;
 
       button {
         height: 9px;
@@ -131,10 +136,12 @@ export const ContactHandle = styled.article<FilesProps>`
 
     ${desktopL} {
       height: 34px;
+      width: 140px;
     }
 
     ${laptop} {
       height: 22px;
+      width: 85px;
     }
 
     ${tablet} {

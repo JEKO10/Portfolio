@@ -3,7 +3,13 @@ import styled from "styled-components";
 import { FilesProps } from "../../utils/context";
 import time from "../images/modals/timeModal.jpg";
 import timeHandle from "../images/other/handle.jpg";
-import { disableUserShared, laptop, primaryFont, tablet } from "./GlobalStyles";
+import {
+  disableUserShared,
+  laptop,
+  mobile,
+  primaryFont,
+  tablet,
+} from "./GlobalStyles";
 
 type BtnProps = {
   right: number;
@@ -27,6 +33,10 @@ export const TimeModal = styled.section<FilesProps>`
     width: 300px;
     top: 20px;
     left: 70px;
+  }
+
+  ${mobile} {
+    left: 10px;
   }
 
   visibility: ${({ isLoading }) => (isLoading ? "hidden" : "visible")};
