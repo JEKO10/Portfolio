@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 import preloaderImg from "../images/other/preloader.jpg";
-import { flexMixin, tablet } from "./GlobalStyles";
+import preloaderSmall from "../images/other/preloaderSmall.jpg";
+import { flexMixin, mobile, tablet } from "./GlobalStyles";
 
 export const LoaderContainer = styled.div`
   ${flexMixin({ justify: "center", align: "center" })};
@@ -16,6 +17,10 @@ export const LoaderContainer = styled.div`
   width: 100%;
   z-index: 10;
 
+  ${mobile} {
+    background-image: url(${preloaderSmall});
+  }
+
   p {
     font-size: 2rem;
     color: #163394;
@@ -29,6 +34,10 @@ export const LoaderContainer = styled.div`
     ${tablet} {
       width: 100%;
       text-align: center;
+    }
+
+    ${mobile} {
+      font-size: 1.8rem;
     }
   }
 `;
