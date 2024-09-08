@@ -26,27 +26,27 @@ const Home = () => {
   const icons: IconsType = {
     about: {
       x: 30,
-      y: 35,
+      y: 30,
       height: 140,
       width: 116,
     },
     work: {
       x: 30,
-      y: 215,
+      y: 195,
       height: 140,
       width: 116,
     },
     contact: {
       x: 30,
-      y: 395,
+      y: 360,
       height: 140,
       width: 116,
     },
     recycle: {
-      x: 1530,
-      y: 680,
-      height: 140,
-      width: 116,
+      x: window.innerWidth - 30 - 147,
+      y: window.innerHeight - 72 - 136,
+      height: 136,
+      width: 147,
     },
   };
 

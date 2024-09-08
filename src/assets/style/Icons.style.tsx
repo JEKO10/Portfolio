@@ -17,6 +17,8 @@ type IconProps = {
 };
 
 export const iconsSharedStyle = css<IconProps>`
+  outline: none;
+
   img {
     height: 100px;
     width: 100px;
@@ -83,14 +85,14 @@ export const RecycleBin = styled.div<IconProps>`
   ${flexMixin({ justify: "center", align: "center" })};
   flex-direction: column;
   position: absolute;
-  right: 0;
-  bottom: 2rem;
-  margin: 40px 30px;
+  right: 1.875rem;
+  bottom: 4.5rem;
 
   ${iconsSharedStyle};
 
   ${mobile} {
-    margin: 40px 15px;
+    right: 1rem;
+    bottom: 4rem;
   }
 `;
 

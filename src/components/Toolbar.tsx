@@ -42,7 +42,7 @@ const Toolbar = () => {
       >
         <img src={toolBtnImg} alt="toolButton" />
         <Clock onClick={() => setIsOpen({ ...isOpen, time: !isOpen.time })}>
-          {innerWidth < 480 ? formattedTime.slice(0, 2) : formattedTime}
+          {innerWidth < 481 ? formattedTime.slice(0, 2) : formattedTime}
         </Clock>
       </ToolButton>
     </ToolbarContainer>
