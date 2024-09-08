@@ -105,6 +105,7 @@ const Project: React.FC<ProjectProps> = ({
                 ? projectTablet
                 : project45x45
         }
+        project={true}
       />
       <p>{label}</p>
     </Container>

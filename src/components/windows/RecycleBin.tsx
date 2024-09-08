@@ -103,6 +103,7 @@ const RecycleBin = () => {
                     ? bookSmall
                     : book
               }
+              book={true}
             />
             <p>???</p>
           </Book>

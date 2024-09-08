@@ -12,6 +12,8 @@ import {
 type IconProps = {
   isClicked: boolean;
   iconName?: string;
+  book?: boolean;
+  project?: boolean;
 };
 
 export const iconsSharedStyle = css<IconProps>`
@@ -114,8 +116,8 @@ export const Selection = styled.div<IconProps>`
     width: 50px;
   }
 
-  ${({ iconName }) =>
-    iconName?.includes("book") &&
+  ${({ book }) =>
+    book &&
     css`
       ${tablet} {
         height: 50px;
@@ -123,8 +125,8 @@ export const Selection = styled.div<IconProps>`
       }
     `};
 
-  ${({ iconName }) =>
-    iconName?.includes("project") &&
+  ${({ project }) =>
+    project &&
     css`
       ${desktopL} {
         height: 80px;

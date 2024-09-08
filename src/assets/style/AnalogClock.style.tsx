@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+import bigNeedle from "../images/other/bigNeedle.png";
+import clock from "../images/other/clock.png";
+import seconds from "../images/other/seconds.png";
 import { laptop, tablet } from "./GlobalStyles";
 
 export const Clock = styled.div`
@@ -12,7 +15,7 @@ export const Clock = styled.div`
   transform: translate(-50%, -50%);
   font-size: 24px;
   text-align: center;
-  background: url("/src/assets/images/other/clock.png") center/cover no-repeat;
+  background: url(${clock}) center/cover no-repeat;
 
   ${laptop} {
     top: 33%;
@@ -49,8 +52,7 @@ export const Hours = styled.div`
   position: absolute;
   width: 75px;
   height: 55px;
-  background: url("/src/assets/images/other/bigNeedle.png") center/contain
-    no-repeat;
+  background: url(${bigNeedle}) center/contain no-repeat;
   top: 26%;
   left: 28.5%;
 `;
@@ -59,8 +61,7 @@ export const Minutes = styled.div`
   position: absolute;
   width: 75px;
   height: 70px;
-  background: url("/src/assets/images/other/bigNeedle.png") center/contain
-    no-repeat;
+  background: url(${bigNeedle}) center/contain no-repeat;
   top: 19.5%;
   left: 29%;
   z-index: 2;
@@ -70,7 +71,7 @@ export const Seconds = styled.div`
   position: absolute;
   width: 2px;
   height: 75px;
-  background: url("/src/assets/images/other/seconds.png") center/cover no-repeat;
+  background: url(${seconds}) center/cover no-repeat;
   top: 8.5%;
   left: 49.5%;
   transform-origin: bottom;
