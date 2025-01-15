@@ -229,10 +229,10 @@ export const Project = styled.div<ProjectProps>`
   `}
 
   ${({ alt }) =>
-      alt === "hiking" &&
+      alt === "vehicle" &&
       `
     top: 20rem;
-    left: 12rem;
+    left: 13.5rem;
   `}
 
   ${({ alt }) =>
@@ -259,10 +259,10 @@ export const Project = styled.div<ProjectProps>`
   `}
 
   ${({ alt }) =>
-      alt === "hiking" &&
+      alt === "vehicle" &&
       `
     top: 14rem;
-    left: 8.6rem;
+    left: 9.8rem;
   `}
 
   ${({ alt }) =>
@@ -289,10 +289,10 @@ export const Project = styled.div<ProjectProps>`
   `}
 
   ${({ alt }) =>
-      alt === "hiking" &&
+      alt === "vehicle" &&
       `
     top: 10.8rem;
-    left: 6rem;
+    left: 6.8rem;
   `}
 
   ${({ alt }) =>

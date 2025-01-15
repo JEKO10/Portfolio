@@ -8,7 +8,7 @@ import { Selection } from "../assets/style/Icons.style";
 import { Project as Container } from "../assets/style/Work.style";
 import { useOutsideClick, useResize } from "../utils/hooks";
 
-type IsClickedKeys = "portfolio" | "moviexd" | "hiking" | "basket";
+type IsClickedKeys = "portfolio" | "moviexd" | "vehicle" | "basket";
 
 type ProjectProps = {
   top: number;

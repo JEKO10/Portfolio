@@ -56,10 +56,10 @@ const Work = () => {
             />
             <Project
               top={26}
-              left={16.5}
-              alt="hiking"
-              label="Hiking guide.doc"
-              link="A-Hiking-guide"
+              left={18.5}
+              alt="vehicle"
+              label="Market.doc"
+              link="vehicle-market"
               isClicked={isClicked}
               setIsClicked={setIsClicked}
             />
